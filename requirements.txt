@@ -1,5 +1,27 @@
+# API & data
 fastapi
 uvicorn[standard]
 httpx
 pandas
 python-dotenv
+pydantic
+
+# PDF parsing (Phase 1) — Datalab cloud API; no local model deps needed
+# (httpx above is sufficient)
+
+# LLMs (Phase 2, 5+)
+anthropic
+openai
+
+# Embeddings & retrieval (Phase 4, 5)
+#chromadb
+#sentence-transformers
+#FlagEmbedding   # BGE reranker
+
+# Graph & normalization (Phase 3, 4)
+#networkx
+#pint
+
+# Utilities
+#tiktoken
+tqdm

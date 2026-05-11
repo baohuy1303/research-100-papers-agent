@@ -14,16 +14,16 @@ Take-home assessment requires a system that answers natural-language questions a
 
 | Layer | Choice | Why this over others |
 |---|---|---|
-| PDF parser | **Marker** | Markdown output with section headers, good tables, runs on CPU. Considered Nougat (slow without GPU), Docling (newer, less battle-tested), PyMuPDF (loses tables). |
-| Extraction LLM | **Claude Haiku 4.5** | ~10× cheaper than Sonnet for structured extraction work. Sonnet reserved for hard query-time reasoning. Considered Gemini Flash (less reliable structured outputs), GPT-4o-mini (no benefit over Haiku). |
+| PDF parser | **Marker via Datalab cloud API** | Same Marker model, Datalab-hosted GPUs. Local Marker attempted first but unworkable here: RTX 3050 Ti has only 4 GB VRAM vs Marker's documented 5 GB minimum — caused severe thrashing (5+ min/page). CPU mode equally slow (9 GB RAM, no progress in tens of minutes). Cloud API removes the hardware constraint. Considered Nougat, Docling, PyMuPDF — same quality concerns or worse. |
+| Extraction LLM | **GPT-5.4-mini (OpenAI)** | Fast, cheap structured outputs; OpenAI auto-caches identical system-prompt prefixes (≥1024 tokens) at 0.1× input cost — no explicit cache markers needed. Anthropic Haiku 4.5 was the original choice but the account ran out of credits; switched to OpenAI. |
 | Embeddings | **OpenAI text-embedding-3-small** | ~$0.05 total for our corpus, strong semantic match. Considered local BGE/MiniLM (free but lower quality), Voyage (overkill at our scale). |
 | Vector store | **Chroma local** | Persistent local store, easy Python client, survives restarts. Considered sqlite-vec (single-file but less mature), LanceDB (better at larger scale). |
 | Reranker | **BGE-reranker-v2 local** | Free, ~10× top-1 lift after dense retrieval. Considered Cohere rerank (paid, similar quality), LLM-rerank (Haiku, more flexible but adds latency/cost). |
 | Structured store | **SQLite** | Universal, serverless, fits beside Chroma. DuckDB faster on analytics but unnecessary at this scale. |
 | Citation graph | **Semantic Scholar `references` API** | Free, pre-resolved IDs to match against our 100. Considered Grobid (extract from PDF text, brittle), OpenAlex (equivalent, S2 already used for corpus). |
 | Query routing | **LLM tier-classifier + per-tier handlers** | Predictable cost, debuggable, easy to instrument. Considered ReAct agent (unpredictable cost), DSPy (more setup), hybrid agent-per-tier (middle ground, deferred). |
-| Query LLM | **Tiered: Haiku default, Sonnet for tiers 3/6/7** | Best $/quality. Hard reasoning tiers get Sonnet; lookups/aggregations stay on Haiku. |
-| Caching | **Aggressive Anthropic prompt caching** | Cache extraction system prompt + schema (~3-5k tokens) repeated 100×; cuts extraction cost ~10×. |
+| Query LLM | **Tiered: GPT-5.4-mini default, GPT-4.1 (or Sonnet) for tiers 3/6/7** | Best $/quality split. Hard reasoning tiers get the larger model; lookups/aggregations stay on mini. |
+| Caching | **OpenAI automatic prefix caching** | Identical system-prompt prefixes cached automatically by OpenAI; no explicit `cache_control` markers required (unlike Anthropic). ~10× cost reduction on the frozen 4k-token extraction prompt. |
 
 ---
 
@@ -33,7 +33,8 @@ Take-home assessment requires a system that answers natural-language questions a
                   ┌────────────────────────────────────────────────┐
                   │ ONE-TIME PREP (~$5 of $30 budget)              │
                   │                                                │
-PDFs ─► Marker ──►│ Pass 1: Verbatim Extraction (Haiku 4.5)        │
+PDFs ─►Datalab──►│ Pass 1: Verbatim Extraction (GPT-5.4-mini)     │
+       (Marker)  │
                   │   - per-paper structured JSON (verbatim)       │
                   │   - section-aware markdown chunks              │
                   │                                                │
@@ -54,7 +55,7 @@ PDFs ─► Marker ──►│ Pass 1: Verbatim Extraction (Haiku 4.5)        �
                   ┌────────────────────────────────────────────────┐
                   │ QUERY TIME                                     │
                   │                                                │
-question ──►Tier  │  Tier classifier (Haiku) → routes to handler   │
+question ──►Tier  │  Tier classifier (GPT-5.4-mini) → routes to handler │
 classifier        │                                                │
                   │  Per-tier handlers (see table below)           │
                   │     - return: answer, citations,               │
@@ -154,7 +155,7 @@ Per paper, Haiku 4.5 produces this JSON (verbatim surface forms — normalizatio
 }
 ```
 
-**Caching**: the system prompt + JSON schema + 2 few-shot examples (~4k tokens) is cached and reused for all 100 papers. Per-paper input is just the markdown.
+**Caching**: the system prompt + JSON schema + 2 few-shot examples (~4k tokens) is identical across all 100 calls. OpenAI automatically caches this prefix; subsequent calls pay 0.1× input rate on the cached portion.
 
 ---
 
@@ -197,7 +198,7 @@ Each eval run reports `accuracy_per_tier × cost_usd_per_question` for the curve
 ```
 research-100-papers-agent/
 ├── scripts/
-│   ├── parse_pdfs.py          # NEW — Marker run over data/pdfs/ → data/markdown/
+│   ├── parse_pdfs.py          # NEW — Datalab API submit+poll → data/markdown/{paper_id}.md
 │   ├── extract_papers.py      # NEW — Haiku pass over markdown → data/extractions/*.json
 │   ├── normalize_entities.py  # NEW — PWC lookup + cluster + Haiku confirm → SQLite
 │   ├── build_indexes.py       # NEW — Chroma (chunks) + SQLite (structured) + NetworkX (graph)
@@ -253,10 +254,12 @@ references(paper_id_src, paper_id_dst)   -- in-corpus citations
 
 | Bucket | Budget | What |
 |---|---|---|
-| One-time prep | ~$5 | $3 extraction (Haiku, 100 papers, cached prompt) + $1 normalization (Haiku confirm) + $1 dev queries |
-| Eval × 3 budget levels | ~$20 | $1 + $5 + ~$14 across 40+ questions × 3 runs |
-| Buffer | ~$5 | Re-runs, debugging, hidden test bandwidth |
+| One-time prep | ~$8 | **+~$3 Datalab parsing** (~1200 pages, est. $0.0025/page) + $3 extraction (Haiku, 100 papers, cached prompt) + $1 normalization (Haiku confirm) + $1 dev queries |
+| Eval × 3 budget levels | ~$18 | $1 + $5 + ~$12 across 40+ questions × 3 runs |
+| Buffer | ~$4 | Re-runs, debugging, hidden test bandwidth |
 | **Total** | **$30** | |
+
+> **Datalab pricing note**: Pricing page wasn't fully accessible at planning time. If actual cost is materially higher than estimate, fall back to PyMuPDF (free, weaker tables) and adjust extraction prompt to compensate.
 
 ---
 

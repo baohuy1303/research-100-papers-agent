@@ -1,0 +1,6 @@
+[
+  {
+    "paper_id": "003326a15fc4a8833785a47a741d7712474fa256",
+    "error": "BadRequestError: Error code: 400 - {'error': {'message': \"Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.\", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}"
+  }
+]
