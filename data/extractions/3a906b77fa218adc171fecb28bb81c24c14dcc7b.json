@@ -1,0 +1,620 @@
+{
+  "paper_id": "3a906b77fa218adc171fecb28bb81c24c14dcc7b",
+  "architecture_summary": "This is a survey of Transformer models in computer vision. It organizes the literature around self-attention design space and vision tasks, covering single-head and multi-head Transformer variants, their architectural differences, and their applications across recognition, detection, segmentation, generation, multi-modal learning, video understanding, low-shot learning, clustering, and 3D analysis.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT dataset",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cityscapes",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LIP",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CamVid",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "UNC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "G-Ref",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ReferIt",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DIV2K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MS-COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-700",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "UCF101",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ESC50",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Charades",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-Sounds",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO Captions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr 30K Captions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VQA 2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Meta-dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ModelNet40",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ShapeNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Human3.6M",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "3DPW",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10/100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "STL",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "STL-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "YouTube VIS dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NTU-RGB+D 60",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NTU-RGB+D 120",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO Captions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr 30K Captions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet benchmark",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet test set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet train set",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "non-local deep neural networks",
+      "dataset_surface": "Kinetics dataset",
+      "metric_surface": "video classification",
+      "value_surface": "superiority",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "criss-cross attention",
+      "dataset_surface": "Cityscapes",
+      "metric_surface": "semantic and instance segmentation",
+      "value_surface": "State-of-the-art results are reported",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "criss-cross attention",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "semantic and instance segmentation",
+      "value_surface": "State-of-the-art results are reported",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "criss-cross attention",
+      "dataset_surface": "COCO",
+      "metric_surface": "semantic and instance segmentation",
+      "value_surface": "State-of-the-art results are reported",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "criss-cross attention",
+      "dataset_surface": "LIP",
+      "metric_surface": "semantic and instance segmentation",
+      "value_surface": "State-of-the-art results are reported",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "criss-cross attention",
+      "dataset_surface": "CamVid",
+      "metric_surface": "semantic and instance segmentation",
+      "value_surface": "State-of-the-art results are reported",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "self-attention networks (SAN)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "beat ResNet baselines",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "DETR",
+      "dataset_surface": "Faster R-CNN",
+      "metric_surface": "performance",
+      "value_surface": "comparable",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "Deformable DETR",
+      "dataset_surface": "DETR",
+      "metric_surface": "training time",
+      "value_surface": "10× lower",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "Anchor DETR",
+      "dataset_surface": "DETR",
+      "metric_surface": "training epochs",
+      "value_surface": "10× fewer",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "axial-attention",
+      "dataset_surface": "COCO",
+      "metric_surface": "performance",
+      "value_surface": "competitive",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "axial-attention",
+      "dataset_surface": "Mapillary Vistas",
+      "metric_surface": "performance",
+      "value_surface": "competitive",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "axial-attention",
+      "dataset_surface": "Cityscapes",
+      "metric_surface": "performance",
+      "value_surface": "competitive",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "axial-attention",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "performance",
+      "value_surface": "competitive",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "EsViT",
+      "dataset_surface": "17 out of 18 evaluated datasets",
+      "metric_surface": "transfer",
+      "value_surface": "better than supervised SwinTransformer",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "iGPT",
+      "dataset_surface": "CIFAR-10/100",
+      "metric_surface": "performance",
+      "value_surface": "state-of-the-art",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "iGPT",
+      "dataset_surface": "STL",
+      "metric_surface": "performance",
+      "value_surface": "state-of-the-art",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "iGPT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "performance",
+      "value_surface": "comparably to SimCLR",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "TransGAN",
+      "dataset_surface": "STL-10",
+      "metric_surface": "Inception Score and Fréchet Inception Distance (FID)",
+      "value_surface": "state-of-the-art results",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "CCT",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "accuracy",
+      "value_surface": "~ 95%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "LeViT",
+      "dataset_surface": "CPU",
+      "metric_surface": "inference speed",
+      "value_surface": "5 × faster than EfficientNet",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "CoAtNets",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "IPT",
+      "dataset_surface": "ImageNet benchmark",
+      "metric_surface": "images",
+      "value_surface": "10 million",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "TTSR",
+      "dataset_surface": "super-resolution",
+      "metric_surface": "performance gains",
+      "value_surface": "significant",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "Colorization Transformer",
+      "dataset_surface": "256 × 256",
+      "metric_surface": "resolution",
+      "value_surface": "high",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "CLIP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "zero-shot classification accuracy",
+      "value_surface": "75%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "CLIP",
+      "dataset_surface": "30 different computer vision benchmarks",
+      "metric_surface": "zero-shot transfer capabilities",
+      "value_surface": "excellent",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "PEMT",
+      "dataset_surface": "Kinetics-700",
+      "metric_surface": "dataset",
+      "value_surface": "pre-trained",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "PEMT",
+      "dataset_surface": "UCF101",
+      "metric_surface": "short video classification",
+      "value_surface": "fine-tuned",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "PEMT",
+      "dataset_surface": "ESC50",
+      "metric_surface": "audio classification",
+      "value_surface": "fine-tuned",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "PEMT",
+      "dataset_surface": "Charades",
+      "metric_surface": "long-term action recognition",
+      "value_surface": "fine-tuned",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "PEMT",
+      "dataset_surface": "Kinetics-Sounds",
+      "metric_surface": "long-term action recognition",
+      "value_surface": "fine-tuned",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "METRO",
+      "dataset_surface": "Human3.6M",
+      "metric_surface": "human mesh reconstruction",
+      "value_surface": "state-of-the-art results",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "METRO",
+      "dataset_surface": "3DPW",
+      "metric_surface": "human mesh reconstruction",
+      "value_surface": "state-of-the-art results",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    }
+  ],
+  "training_details": {
+    "compute_surface": "18 days on 592 V100 GPUs",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head attention",
+    "masked self-attention",
+    "positional encodings",
+    "pre-training",
+    "fine-tuning",
+    "self-supervised learning",
+    "contrastive learning",
+    "distillation",
+    "patch embedding",
+    "window-based attention",
+    "spatial reduction attention",
+    "deformable attention",
+    "cross-attention",
+    "vector attention",
+    "relative position encoding",
+    "masked image modeling",
+    "masked language modeling",
+    "next sentence prediction",
+    "bipartite matching",
+    "Hungarian loss",
+    "encoder-decoder",
+    "CNN backbones",
+    "MLP decoder",
+    "row/column attention",
+    "Longformer",
+    "DINO",
+    "MoCo v3",
+    "BYOL",
+    "CutMix"
+  ],
+  "novel_contributions": [
+    "This survey provides a comprehensive overview of Transformer models in the computer vision discipline.",
+    "It develops a taxonomy of the network design space and organizes recent approaches according to the intrinsic features of self-attention and the investigated task.",
+    "It compares the respective advantages and limitations of popular techniques both in terms of architectural design and their experimental value.",
+    "It analyzes open research directions and possible future works for Transformer models in computer vision."
+  ],
+  "key_claims": [
+    {
+      "claim": "The survey provides a comprehensive overview of Transformer models in computer vision and covers applications from recognition and detection to generation, multi-modal tasks, video processing, low-level vision, and 3D analysis.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Transformers enable modeling long dependencies, parallel sequence processing, minimal inductive biases, and scalability to very large capacity networks and huge datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper organizes vision Transformers into single-head self-attention and multi-head self-attention families, and further categorizes multi-head designs into uniform-scale, multi-scale, hybrid, and self-supervised ViTs.",
+      "evidence_section": "3 SELF-ATTENTION & TRANSFORMERS IN VISION",
+      "page": null
+    },
+    {
+      "claim": "The survey states that recent approaches show convolution operations can be fully replaced with attention-based transformer modules and can also be used jointly with convolution in hybrid designs.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper highlights that self-supervised pre-training is crucial for Transformer scalability and generalization, enabling training even above a trillion parameter networks.",
+      "evidence_section": "2.2 (Self) Supervised Pre-training",
+      "page": null
+    },
+    {
+      "claim": "The survey emphasizes that Transformer models often require large-scale data and high computational cost, motivating efficient designs such as sparse attention, linear attention, and other approximations.",
+      "evidence_section": "4.1 High Computational Cost",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that CLIP achieves 75% zero-shot classification accuracy on ImageNet and demonstrates zero-shot transfer on 30 different computer vision benchmarks.",
+      "evidence_section": "3.7.1 Multi-stream Transformers",
+      "page": null
+    },
+    {
+      "claim": "The paper states that METRO obtains state-of-the-art results on human mesh reconstruction on Human3.6M and 3DPW.",
+      "evidence_section": "3.11 Transformers for 3D Analysis",
+      "page": null
+    }
+  ]
+}

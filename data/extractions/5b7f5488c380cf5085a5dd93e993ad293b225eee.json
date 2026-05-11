@@ -1,0 +1,289 @@
+{
+  "paper_id": "5b7f5488c380cf5085a5dd93e993ad293b225eee",
+  "architecture_summary": "The paper proposes a Frozen Pretrained Transformer (FPT) for time series analysis, reusing frozen self-attention and feedforward layers from pre-trained language or image models while fine-tuning the input embedding, normalization layers, and output layer. It applies patching and reverse instance normalization to adapt the pretrained backbone to classification, anomaly detection, imputation, forecasting, few-shot, and zero-shot time series tasks.",
+  "model_variants": [
+    {
+      "name": "GPT2(3)",
+      "param_count_surface": "4M",
+      "page": null
+    },
+    {
+      "name": "GPT2(6)",
+      "param_count_surface": "4M",
+      "page": null
+    },
+    {
+      "name": "GPT2(0)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "BERT(6)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "BeiT(6)",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ETT1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETT2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETTm1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETTm2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Electricity",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Weather",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "UEA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SMD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSL",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SMAP",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SWaT",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PSM",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "M4",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ILI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Traffic",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "M3",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TOURISM",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ELECTR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETTh1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETTh2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "GPT2(3)",
+      "dataset_surface": "ETTm1",
+      "metric_surface": "MSE",
+      "value_surface": "0.028",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Imputation task. We randomly mask {12.5%, 25%, 37.5%, 50%} time points of 96-length time series. The results are averaged from 4 different mask ratios. Black: best, Red: second best. Appendix H.8 shows the full results."
+    },
+    {
+      "model": "GPT2(3)",
+      "dataset_surface": "ETTm1",
+      "metric_surface": "MAE",
+      "value_surface": "0.105",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Imputation task. We randomly mask {12.5%, 25%, 37.5%, 50%} time points of 96-length time series. The results are averaged from 4 different mask ratios. Black: best, Red: second best. Appendix H.8 shows the full results."
+    },
+    {
+      "model": "TimesNet",
+      "dataset_surface": "ETTm1",
+      "metric_surface": "MSE",
+      "value_surface": "0.027",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Imputation task. We randomly mask {12.5%, 25%, 37.5%, 50%} time points of 96-length time series. The results are averaged from 4 different mask ratios. Black: best, Red: second best. Appendix H.8 shows the full results."
+    },
+    {
+      "model": "TimesNet",
+      "dataset_surface": "ETTm1",
+      "metric_surface": "MAE",
+      "value_surface": "0.107",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Imputation task. We randomly mask {12.5%, 25%, 37.5%, 50%} time points of 96-length time series. The results are averaged from 4 different mask ratios. Black: best, Red: second best. Appendix H.8 shows the full results."
+    },
+    {
+      "model": "GPT2(6)",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "F1-score",
+      "value_surface": "86.72%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Anomaly detection task. We calculate the F1-score (as %) for each dataset. *. In, the Transformers indicates the name of +formr. Black: best, Red: second best. Appendix H.7 shows the full results."
+    },
+    {
+      "model": "TimesNet",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "F1-score",
+      "value_surface": "85.24%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Anomaly detection task. We calculate the F1-score (as %) for each dataset. *. In, the Transformers indicates the name of +formr. Black: best, Red: second best. Appendix H.7 shows the full results."
+    },
+    {
+      "model": "GPT2(6)",
+      "dataset_surface": "M4",
+      "metric_surface": "sMAPE",
+      "value_surface": "13.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot performance on M4 (sMAPE)."
+    },
+    {
+      "model": "GPT2(6)",
+      "dataset_surface": "M3",
+      "metric_surface": "sMAPE",
+      "value_surface": "13.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot performance on M3 (sMAPE)."
+    },
+    {
+      "model": "GPT2(6)",
+      "dataset_surface": "TOURISM",
+      "metric_surface": "MAPE",
+      "value_surface": "22.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot performance on Tourism (MAPE)."
+    },
+    {
+      "model": "GPT2(6)",
+      "dataset_surface": "ELECTR",
+      "metric_surface": "ND",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot learning results. Dataset-specific metrics aggregated over each dataset. A lower value indicates better performance. The source dataset of M3, Tourism, Electricity are M4. For M4, the source data for N-BEATS is FRED, and M3 for other models. Black: best, Red: second best, Violet: third best. Appendix D.7 shows full results."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "32G V100 GPU",
+    "batch_size": 128,
+    "epochs": null
+  },
+  "methods_used": [
+    "frozen pretrained transformer",
+    "self-attention",
+    "feedforward layers",
+    "positional embeddings",
+    "layer normalization",
+    "reverse instance norm",
+    "patching",
+    "linear probing",
+    "fine-tuning",
+    "instance normalization"
+  ],
+  "novel_contributions": [
+    "We propose a unified framework that uses a frozen pre-trained language model to achieve a SOTA or comparable performance in all major types of time series analysis tasks supported by thorough and extensive experiments, including time series classification, short/long-term forecasting, imputation, anomaly detection, few-shot and zero-sample forecasting.",
+    "We found, both theoretically and empirically, that self-attention performs a function similar to PCA, which helps explain the universality of transformer models.",
+    "We demonstrate the universality of our approach by exploring a pre-trained transformer model from another backbone model (BERT) or modality (computer vision) to power the time series forecasting."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes a unified framework that uses a frozen pre-trained language model for general time series analysis across classification, anomaly detection, forecasting, and few-shot/zero-shot learning.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "GPT2-backbone FPT outperforms other models in most tasks, including long/short-term forecasting, classification, anomaly detection, imputation, and few-shot/zero-shot forecasting.",
+      "evidence_section": "4 Main Time Series Analysis Tasks",
+      "page": null
+    },
+    {
+      "claim": "GPT2(3) FPT achieves the best performance on most imputation datasets and yields a relative 11.5% MSE reduction on ETT1 versus TimesNet.",
+      "evidence_section": "4.2 Imputation",
+      "page": null
+    },
+    {
+      "claim": "GPT2(6) FPT achieves an average accuracy of 74.00% on UEA classification, surpassing TimesNet (73.60%).",
+      "evidence_section": "4.3 Time Series Classification",
+      "page": null
+    },
+    {
+      "claim": "GPT2(6) FPT achieves the best averaged F1-score of 86.72% on anomaly detection and surpasses TimesNet by 1.7%.",
+      "evidence_section": "4.4 Time Series Anomaly Detection",
+      "page": null
+    },
+    {
+      "claim": "GPT2(6) FPT achieves comparable performance with PatchTST on long-term forecasting and yields a relative 9.3% average MSE reduction versus TimesNet.",
+      "evidence_section": "4.5 Long-term Forecasting",
+      "page": null
+    },
+    {
+      "claim": "GPT2(6) FPT consistently outperforms recent methods in zero-shot forecasting and is comparable to N-BEATS without meta-learning design.",
+      "evidence_section": "4.8 Zero-shot forecasting",
+      "page": null
+    },
+    {
+      "claim": "The paper argues both theoretically and empirically that self-attention behaves similarly to PCA, and that this helps explain transformer universality.",
+      "evidence_section": "8 Towards Understanding the Universality of Transformer: Connecting Self-Attention with PCA",
+      "page": null
+    }
+  ]
+}

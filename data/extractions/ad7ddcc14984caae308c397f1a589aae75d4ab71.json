@@ -1,0 +1,408 @@
+{
+  "paper_id": "ad7ddcc14984caae308c397f1a589aae75d4ab71",
+  "architecture_summary": "DeiT is a vision transformer architecture identical to ViT-B with no convolutions, trained on Imagenet only with strong data augmentation and a transformer-specific distillation token. The paper also introduces smaller variants DeiT-S and DeiT-Ti, and uses bicubic interpolation for fine-tuning at higher resolution.",
+  "model_variants": [
+    {
+      "name": "DeiT-Ti",
+      "param_count_surface": "5M",
+      "page": null
+    },
+    {
+      "name": "DeiT-S",
+      "param_count_surface": "22M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "RegNetY-16GF",
+      "param_count_surface": "84M parameters",
+      "page": null
+    },
+    {
+      "name": "ViT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "ViT-L",
+      "param_count_surface": "307M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B†384",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B★",
+      "param_count_surface": "87M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B★ / 1000 epochs",
+      "param_count_surface": "87M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B★ †384",
+      "param_count_surface": "87M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B★ †384 / 1000 epochs",
+      "param_count_surface": "87M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B#",
+      "param_count_surface": "83.4",
+      "page": null
+    },
+    {
+      "name": "DeiT-B#†384",
+      "param_count_surface": "84.4",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Imagenet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Imagenet1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet [42]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet V2 matched frequency",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford-102 flowers",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Stanford Cars",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist-18/19",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2018",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2019",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flowers-102",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "top-1",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Distillation experiments on Imagenet with DeiT, 300 epochs of pre-training."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "top-1",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Distillation experiments on Imagenet with DeiT, 300 epochs of pre-training."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "top-1",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Distillation experiments on Imagenet with DeiT, 300 epochs of pre-training."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "top-1",
+      "value_surface": "84.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Distillation experiments on Imagenet with DeiT, 300 epochs of pre-training."
+    },
+    {
+      "model": "DeiT-B★",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B★",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "top-1",
+      "value_surface": "88.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B★",
+      "dataset_surface": "ImageNet V2 matched frequency",
+      "metric_surface": "top-1",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B★ †384 / 1000 epochs",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B★ †384 / 1000 epochs",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "top-1",
+      "value_surface": "89.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B★ †384 / 1000 epochs",
+      "dataset_surface": "ImageNet V2 matched frequency",
+      "metric_surface": "top-1",
+      "value_surface": "75.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Throughput on and accuracy on Imagenet [42], Imagenet Real [5] and Imagenet V2 matched frequency [41] of DeiT and of several state-of-the-art convnets, for models trained with no external data."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "Top-1",
+      "value_surface": "97.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison vs training from scratch."
+    },
+    {
+      "model": "DeiT-B +",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "Top-1",
+      "value_surface": "98.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison vs training from scratch."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. top-1",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "acc. top-1",
+      "value_surface": "86.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet V2 matched frequency",
+      "metric_surface": "acc. top-1",
+      "value_surface": "71.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    },
+    {
+      "model": "DeiT-B†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. top-1",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    },
+    {
+      "model": "DeiT-B†384",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "acc. top-1",
+      "value_surface": "87.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    },
+    {
+      "model": "DeiT-B†384",
+      "dataset_surface": "ImageNet V2 matched frequency",
+      "metric_surface": "acc. top-1",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of DeiT trained at size 2242 for varying finetuning sizes on ImageNet-1k, ImageNet-Real and ImageNet-v2 matched frequency."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "single 8-GPU node in two to three days (53 hours of pre-training, and optionally 20 hours of fine-tuning)",
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "attention",
+    "self-attention",
+    "multi-head self-attention",
+    "patch embeddings",
+    "class token",
+    "distillation token",
+    "knowledge distillation",
+    "hard distillation",
+    "soft distillation",
+    "label smoothing",
+    "Rand-Augment",
+    "Auto-Augment",
+    "random erasing",
+    "Mixup",
+    "Cutmix",
+    "stochastic depth",
+    "repeated augmentation",
+    "AdamW",
+    "SGD",
+    "bicubic interpolation",
+    "exponential moving average",
+    "late fusion"
+  ],
+  "novel_contributions": [
+    "We introduce a teacher-student strategy specific to transformers based on a distillation token ensuring that the student learns from the teacher through attention.",
+    "We show that convolution-free vision transformers can be trained on Imagenet only, on a single computer in less than 3 days, with competitive results and no external data.",
+    "We introduce DeiT-S and DeiT-Ti as smaller models with fewer parameters that can be seen as the counterpart of ResNet-50 and ResNet-18.",
+    "Our transformer-specific distillation strategy outperforms vanilla distillation by a significant margin.",
+    "Our models pre-learned on Imagenet are competitive when transferred to different downstream tasks such as CIFAR-10, CIFAR-100, Oxford-102 flowers, Stanford Cars and iNaturalist-18/19."
+  ],
+  "key_claims": [
+    {
+      "claim": "The reference vision transformer achieves 83.1% top-1 accuracy on ImageNet with 86M parameters and no external data.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper trains convolution-free transformers on Imagenet only, on a single computer in less than 3 days.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The distillation token lets the student learn from the teacher through attention and improves over vanilla distillation.",
+      "evidence_section": "Abstract / 4 Distillation through attention",
+      "page": null
+    },
+    {
+      "claim": "The best model on ImageNet reaches up to 85.2% accuracy and is competitive with convnets.",
+      "evidence_section": "Abstract / 5.2 Distillation",
+      "page": null
+    },
+    {
+      "claim": "DeiT-B★ †384 / 1000 epochs achieves 85.2 top-1 on ImageNet and 89.3 on ImageNet Real.",
+      "evidence_section": "5.3 Efficiency vs accuracy: a comparative study with convnets",
+      "page": null
+    },
+    {
+      "claim": "DeiT models transfer well to downstream tasks and are competitive with convnet models on several public benchmarks.",
+      "evidence_section": "5.4 Transfer learning: Performance on downstream tasks",
+      "page": null
+    },
+    {
+      "claim": "Strong data augmentation, repeated augmentation, stochastic depth, Mixup, Cutmix, and careful optimization are key ingredients for data-efficient training.",
+      "evidence_section": "6 Training details & ablation",
+      "page": null
+    }
+  ]
+}

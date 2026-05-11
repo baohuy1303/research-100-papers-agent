@@ -1,0 +1,303 @@
+{
+  "paper_id": "79c93274429d6355959f1e4374c2147bb81ea649",
+  "architecture_summary": "LXMERT is a Transformer-based cross-modality framework with three encoders: an object relationship encoder, a language encoder, and a cross-modality encoder. It learns vision-and-language connections through masked cross-modality language modeling, masked object prediction, cross-modality matching, and image question answering pre-training on large-scale image-and-sentence pairs.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "MS COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA v2.0",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "GQA balanced version",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VG-QA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA v2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLVR2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "Accu",
+      "value_surface": "72.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "Binary",
+      "value_surface": "88.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "Number",
+      "value_surface": "54.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "Other",
+      "value_surface": "63.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "Accu",
+      "value_surface": "60.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "Binary",
+      "value_surface": "77.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "Open",
+      "value_surface": "45.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Cons",
+      "value_surface": "42.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Accu",
+      "value_surface": "76.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Test-set results. VQA/GQA results are reported on the ‘test-standard’ splits and NLVR2 results are reported on the unreleased test set (‘Test-U’). The highest method results are in bold. Our LXMERT framework outperforms previous (comparable) state-of-the-art methods on all three datasets w.r.t. all metrics."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "accuracy",
+      "value_surface": "69.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of using BERT."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "accuracy",
+      "value_surface": "60.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of using BERT."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "accuracy",
+      "value_surface": "74.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of using BERT."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "accuracy",
+      "value_surface": "69.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy showing the importance of the image-QA pre-training task."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "accuracy",
+      "value_surface": "60.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy showing the importance of the image-QA pre-training task."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "accuracy",
+      "value_surface": "74.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy showing the importance of the image-QA pre-training task."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "accuracy",
+      "value_surface": "69.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "accuracy",
+      "value_surface": "59.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "accuracy",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "VQA",
+      "metric_surface": "accuracy",
+      "value_surface": "69.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "GQA",
+      "metric_surface": "accuracy",
+      "value_surface": "59.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    },
+    {
+      "model": "LXMERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "accuracy",
+      "value_surface": "73.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dev-set accuracy of different vision pre-training tasks. ‘Feat’ is RoI-feature regression; ‘Label’ is detected-label classification."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "10 days on 4 Titan Xp",
+    "batch_size": 256,
+    "epochs": 20
+  },
+  "methods_used": [
+    "self-attention",
+    "cross-attention",
+    "Transformer",
+    "WordPiece tokenizer",
+    "masked language modeling",
+    "masked object prediction",
+    "RoI-feature regression",
+    "detected-label classification",
+    "cross-modality matching",
+    "image question answering",
+    "Faster R-CNN",
+    "LayerNorm",
+    "residual connection",
+    "Adam"
+  ],
+  "novel_contributions": [
+    "a pre-trained vision-and-language cross-modality framework, LXMERT",
+    "three Transformer encoders: an object relationship encoder, a language encoder, and a cross-modality encoder",
+    "five diverse representative pre-training tasks for vision-and-language learning",
+    "a large aggregated pre-training dataset of 9.18M image-and-sentence pairs on 180K distinct images",
+    "state-of-the-art results on VQA and GQA, and a 22% absolute improvement on NLVR2"
+  ],
+  "key_claims": [
+    {
+      "claim": "LXMERT is a pre-trained vision-and-language cross-modality framework built with three encoders and five pre-training tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "After fine-tuning, LXMERT achieves state-of-the-art results on VQA and GQA.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "LXMERT improves the previous best result on NLVR2 by 22% absolute, from 54% to 76%.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model uses self-attention and cross-attention layers to generate language, vision, and cross-modality representations.",
+      "evidence_section": "2 Model Architecture",
+      "page": null
+    },
+    {
+      "claim": "Pre-training uses 9.18M image-and-sentence pairs from five vision-and-language datasets.",
+      "evidence_section": "3.2 Pre-Training Data",
+      "page": null
+    },
+    {
+      "claim": "The whole pre-training process takes 10 days on 4 Titan Xp with batch size 256 for 20 epochs.",
+      "evidence_section": "3.3 Pre-Training Procedure",
+      "page": null
+    },
+    {
+      "claim": "LXMERT outperforms previous (comparable) state-of-the-art methods on VQA, GQA, and NLVR2 test sets.",
+      "evidence_section": "4.3 Empirical Comparison Results",
+      "page": null
+    }
+  ]
+}

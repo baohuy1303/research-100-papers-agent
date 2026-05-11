@@ -1,0 +1,271 @@
+{
+  "paper_id": "da74a10824193be9d3889ce0d6ed4c6f8ee48b9e",
+  "architecture_summary": "MobileViT combines a strided 3 × 3 convolution, MobileNetv2 blocks, and MobileViT blocks that replace local processing with transformer-based global processing over unfolded patches, aiming to be light-weight, general-purpose, and mobile-friendly.",
+  "model_variants": [
+    {
+      "name": "MobileViT-XXS",
+      "param_count_surface": "1.3 M",
+      "page": null
+    },
+    {
+      "name": "MobileViT-XS",
+      "param_count_surface": "2.3 M",
+      "page": null
+    },
+    {
+      "name": "MobileViT-S",
+      "param_count_surface": "5.6 M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MS-COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PASCAL VOC 2012",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "MS-COCO",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1k validation set"
+    },
+    {
+      "model": "MobileViT-XS",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "74.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1k validation set"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1k validation set"
+    },
+    {
+      "model": "MobileViT-XS",
+      "dataset_surface": "MS-COCO",
+      "metric_surface": "mAP",
+      "value_surface": "24.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Detection w/ SSDLite"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "MS-COCO",
+      "metric_surface": "mAP",
+      "value_surface": "27.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Detection w/ SSDLite"
+    },
+    {
+      "model": "MobileViT-XXS",
+      "dataset_surface": "PASCAL VOC 2012",
+      "metric_surface": "mIoU",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation w/ DeepLabv3"
+    },
+    {
+      "model": "MobileViT-XS",
+      "dataset_surface": "PASCAL VOC 2012",
+      "metric_surface": "mIoU",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation w/ DeepLabv3"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "PASCAL VOC 2012",
+      "metric_surface": "mIoU",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation w/ DeepLabv3"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of weight decay"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of skip connection"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of patch sizes"
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of label smoothing (LS) and exponential moving average (EMA) on the performance of MobileViT-S on the ImageNet-1k dataset."
+    },
+    {
+      "model": "MobileViT-S",
+      "dataset_surface": "MS-COCO",
+      "metric_surface": "mIOU",
+      "value_surface": "65.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the MS-COCO validation set."
+    },
+    {
+      "model": "MobileViT-XS",
+      "dataset_surface": "MS-COCO",
+      "metric_surface": "mIOU",
+      "value_surface": "57.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the MS-COCO validation set."
+    },
+    {
+      "model": "MobileViT-XXS",
+      "dataset_surface": "MS-COCO",
+      "metric_surface": "mIOU",
+      "value_surface": "46.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the MS-COCO validation set."
+    },
+    {
+      "model": "MobileViT",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "74.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Inference time on different devices."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 NVIDIA GPUs",
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "convolutional neural networks",
+    "self-attention",
+    "vision transformers",
+    "MobileNetv2 blocks",
+    "MobileViT blocks",
+    "multi-scale sampler",
+    "AdamW optimizer",
+    "label smoothing cross-entropy loss",
+    "basic data augmentation",
+    "exponential moving average",
+    "separable convolutions",
+    "DeepLabv3",
+    "SSDLite"
+  ],
+  "novel_contributions": [
+    "We introduce MobileViT, a light-weight and general-purpose vision transformer for mobile devices.",
+    "We introduce the MobileViT block that encodes both local and global information in a tensor effectively.",
+    "We extend multi-scale training to variably-sized batch sizes with a multi-scale sampler for training efficiency.",
+    "We show that light-weight ViTs can achieve light-weight CNN-level performance with simple training recipes across different mobile vision tasks."
+  ],
+  "key_claims": [
+    {
+      "claim": "MobileViT significantly outperforms CNN- and ViT-based networks across different tasks and datasets.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1k, MobileViT achieves top-1 accuracy of 78.4% with about 6 million parameters.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "On MS-COCO object detection, MobileViT is 5.7% more accurate than MobileNetv3 for a similar number of parameters.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "MobileViT combines the strengths of CNNs and ViTs to build a light-weight, general-purpose, and low latency network for mobile vision tasks.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "The MobileViT block replaces local processing in convolutions with global processing using transformers while preserving convolution-like properties.",
+      "evidence_section": "3 MOBILEViT: A LIGHT-WEIGHT TRANSFORMER",
+      "page": null
+    },
+    {
+      "claim": "MobileViT trains with basic augmentation and is less sensitive to L2 regularization than most ViT-based models.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "MobileViT is faster, smaller, and better than DeiT on ImageNet-1K in the paper's comparison.",
+      "evidence_section": "3.1 MOBILEViT ARCHITECTURE",
+      "page": null
+    },
+    {
+      "claim": "MobileViT is a powerful backbone for downstream detection and segmentation tasks, improving SSDLite and DeepLabv3 results.",
+      "evidence_section": "4.2 MOBILEViT AS A GENERAL-PURPOSE BACKBONE",
+      "page": null
+    }
+  ]
+}

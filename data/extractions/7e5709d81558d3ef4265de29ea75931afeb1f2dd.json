@@ -1,0 +1,120 @@
+{
+  "paper_id": "7e5709d81558d3ef4265de29ea75931afeb1f2dd",
+  "architecture_summary": "This is a survey paper that characterizes and organizes recent efficiency-flavored Transformer variants across language and vision, focusing on reducing the quadratic time and memory complexity of self-attention. It proposes a taxonomy of efficient Transformers and provides a comprehensive overview of models based on fixed patterns, learnable patterns, memory, low-rank methods, kernels, recurrence, downsampling, and sparse conditional computation.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "wikitext",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PG-19",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NaturalQuestions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TriviaQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GLUE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Long Range Arena",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head self-attention",
+    "layer normalization",
+    "residual connectors",
+    "fixed patterns",
+    "strided patterns",
+    "compressed patterns",
+    "combination of patterns",
+    "learnable patterns",
+    "neural memory",
+    "low-rank methods",
+    "kernels",
+    "recurrence",
+    "downsampling",
+    "sparse models",
+    "Mixture-of-Experts",
+    "knowledge distillation",
+    "quantization / mixed precision",
+    "network pruning",
+    "Neural Architecture Search (NAS)",
+    "task adapters",
+    "alternative architectures"
+  ],
+  "novel_contributions": [
+    "A comprehensive survey of efficient Transformer models across multiple domains.",
+    "A taxonomy of efficient Transformer models characterized by technical innovation and primary use case.",
+    "A detailed walk-through of representative efficient Transformer models and connections between them.",
+    "A discussion of evaluation challenges, design trends, orthogonal efficiency efforts, and future research directions."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper surveys a large and thoughtful selection of recent efficiency-flavored “X-former” models and provides an organized and comprehensive overview of existing work and models across multiple domains.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The survey proposes a taxonomy of efficient Transformer models, characterizing them by their technical innovation and primary use case.",
+      "evidence_section": "1. Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper is primarily interested in modeling advances and architectural innovations that improve the general efficiency of Transformers, including tackling the quadratic complexity issue of self-attention and reducing computation costs by means such as pooling and/or sparsity.",
+      "evidence_section": "1. Introduction",
+      "page": null
+    },
+    {
+      "claim": "The survey reviews Transformer models with applications in both language and vision domains and attempts to consolidate the literature across the spectrum.",
+      "evidence_section": "1. Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper discusses a broad set of efficient Transformer categories, including fixed patterns, combination of patterns, learnable patterns, neural memory, low-rank methods, kernels, recurrence, downsampling, and sparse models.",
+      "evidence_section": "3.1 A Taxonomy of Efficient Transformers",
+      "page": null
+    },
+    {
+      "claim": "The authors argue that efficient attention does not always imply faster models in practice, and that many linear attention models may trade throughput for theoretical complexity gains.",
+      "evidence_section": "4.4 A Retrospective on the Past Year and Future Research Directions",
+      "page": null
+    },
+    {
+      "claim": "The survey notes that the field lacks easy side-by-side comparison because papers use different benchmarks, model sizes, and pretraining/fine-tuning setups.",
+      "evidence_section": "4.1 On Evaluation",
+      "page": null
+    }
+  ]
+}

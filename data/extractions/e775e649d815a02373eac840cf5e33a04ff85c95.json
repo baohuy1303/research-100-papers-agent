@@ -1,0 +1,453 @@
+{
+  "paper_id": "e775e649d815a02373eac840cf5e33a04ff85c95",
+  "architecture_summary": "CvT introduces convolutions into Vision Transformers through a hierarchical multi-stage design with Convolutional Token Embedding and Convolutional Projection, aiming to combine CNN inductive biases with Transformer attention while improving performance and efficiency.",
+  "model_variants": [
+    {
+      "name": "CvT-13",
+      "param_count_surface": "19.98M parameters",
+      "page": null
+    },
+    {
+      "name": "CvT-21",
+      "param_count_surface": "31.54M parameters",
+      "page": null
+    },
+    {
+      "name": "CvT-W24",
+      "param_count_surface": "298.3M parameters",
+      "page": null
+    },
+    {
+      "name": "CvT-13-NAS",
+      "param_count_surface": "18",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIIT-Pet",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIIT-Flower",
+      "purpose": "finetune",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "CvT-13",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "81.6%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "82.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "83.0%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "83.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13-NAS",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "82.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-W24†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1 accuracy",
+      "value_surface": "87.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "86.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "87.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13†384",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "87.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21†384",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "87.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13-NAS",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "87.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-W24†384",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1",
+      "value_surface": "90.6%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "70.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "71.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13†384",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "71.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-21†384",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "71.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13-NAS",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "71.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-W24†384",
+      "dataset_surface": "ImageNet V2",
+      "metric_surface": "V2 top-1",
+      "value_surface": "78.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "BiT-M†480",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "ViT-B/16†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "ViT-L/16†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "ViT-H/16†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet top-1",
+      "value_surface": "85.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of manual designed architecture on ImageNet [9], ImageNet Real [2] and ImageNet V2 matched frequency [26]."
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "CIFAR 10",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "98.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "CIFAR 10",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "99.16",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-W24",
+      "dataset_surface": "CIFAR 10",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "99.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "CIFAR 100",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "91.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "CIFAR 100",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "92.88",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-W24",
+      "dataset_surface": "CIFAR 100",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "94.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "Pets",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "93.25",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "Pets",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "94.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-W24",
+      "dataset_surface": "Pets",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "94.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-13",
+      "dataset_surface": "Flowers 102",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "99.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-21",
+      "dataset_surface": "Flowers 102",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "99.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    },
+    {
+      "model": "CvT-W24",
+      "dataset_surface": "Flowers 102",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "99.72",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on downstream tasks. All the models are pre-trained on ImageNet-22k data"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 2048,
+    "epochs": 300
+  },
+  "methods_used": [
+    "convolutional token embedding",
+    "convolutional projection",
+    "hierarchical multi-stage design",
+    "depth-wise separable convolution",
+    "layer normalization",
+    "multi-head self-attention",
+    "AdamW",
+    "cosine learning rate decay",
+    "data augmentation",
+    "regularization",
+    "SGD",
+    "neural architecture search"
+  ],
+  "novel_contributions": [
+    "a new architecture, named Convolutional vision Transformer (CvT), that improves Vision Transformer (ViT) in performance and efficiency by introducing convolutions into ViT to yield the best of both designs",
+    "a hierarchy of Transformers containing a new convolutional token embedding",
+    "a convolutional Transformer block leveraging a convolutional projection",
+    "the positional encoding, a crucial component in existing Vision Transformers, can be safely removed in our model"
+  ],
+  "key_claims": [
+    {
+      "claim": "CvT improves Vision Transformer performance and efficiency by introducing convolutions into ViT, combining the best of CNNs and Transformers.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CvT achieves state-of-the-art performance over other Vision Transformers and ResNets on ImageNet-1k, with fewer parameters and lower FLOPs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Pretrained on ImageNet-22k, CvT-W24 obtains a top-1 accuracy of 87.7% on the ImageNet-1k val set.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CvT can safely remove positional encoding without degradation, simplifying the design for higher resolution vision tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CvT-21 obtains a 82.5% ImageNet Top-1 accuracy, which is 0.5% higher than DeiT-B with the reduction of 63% parameters and 60% FLOPs.",
+      "evidence_section": "4.2. Comparison to state of the art",
+      "page": null
+    },
+    {
+      "claim": "CvT-13 achieves a 81.6% ImageNet Top-1 accuracy, outperforming PVT-Small, T2T-ViT-14, and TNT-S.",
+      "evidence_section": "4.2. Comparison to state of the art",
+      "page": null
+    },
+    {
+      "claim": "Removing position embedding of CvT does not degrade performance, and CvT-13 reaches 81.6% ImageNet Top-1 accuracy without positional embeddings.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    },
+    {
+      "claim": "Using stride 2 for key and value projection reduces FLOPs by 30% with only a 0.3% drop in ImageNet Top-1 accuracy.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    }
+  ]
+}

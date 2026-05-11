@@ -1,0 +1,694 @@
+{
+  "paper_id": "ad4a0938c48e61b7827869e4ac3baffd0aefab35",
+  "architecture_summary": "The paper introduces DINO, a simple self-supervised method for Vision Transformers that uses self-distillation with no labels: a student network matches a momentum-teacher network on multiple augmented views, with centering and sharpening to avoid collapse. The method is designed to work on both ViTs and convnets, but the paper emphasizes that ViTs with small patches particularly benefit from DINO.",
+  "model_variants": [
+    {
+      "name": "ViT-S/16",
+      "param_count_surface": "21M",
+      "page": null
+    },
+    {
+      "name": "ViT-S/8",
+      "param_count_surface": "21M",
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": "85M",
+      "page": null
+    },
+    {
+      "name": "ViT-B/8",
+      "param_count_surface": "85M",
+      "page": null
+    },
+    {
+      "name": "ResNet-50",
+      "param_count_surface": "23M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Google Landmarks v2 (GLDv2)",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "revisited Oxford",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Paris",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Copydays",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "YFCC100M",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "DAVIS-2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PASCAL VOC12",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cifar 10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cifar 100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "INat 18",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "INat 19",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flwrs",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cars",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Places205",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "75.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "k-NN",
+      "value_surface": "67.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "77.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "k-NN",
+      "value_surface": "74.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "k-NN",
+      "value_surface": "76.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "79.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "k-NN",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "k-NN",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear and  k-NN classification on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Oxford",
+      "metric_surface": "M",
+      "value_surface": "41.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Oxford",
+      "metric_surface": "H",
+      "value_surface": "13.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Paris",
+      "metric_surface": "M",
+      "value_surface": "63.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Paris",
+      "metric_surface": "H",
+      "value_surface": "34.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Oxford",
+      "metric_surface": "M",
+      "value_surface": "51.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Oxford",
+      "metric_surface": "H",
+      "value_surface": "24.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Paris",
+      "metric_surface": "M",
+      "value_surface": "75.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "revisited Paris",
+      "metric_surface": "H",
+      "value_surface": "51.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image retrieval"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Copydays",
+      "metric_surface": "mAP",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Copy detection"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Copydays",
+      "metric_surface": "mAP",
+      "value_surface": "85.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Copy detection"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "(\\mathcal{J}&\\mathcal{F})_m",
+      "value_surface": "61.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{J}_m",
+      "value_surface": "60.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{F}_m",
+      "value_surface": "63.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "(\\mathcal{J}&\\mathcal{F})_m",
+      "value_surface": "62.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{J}_m",
+      "value_surface": "60.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{F}_m",
+      "value_surface": "63.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "(\\mathcal{J}&\\mathcal{F})_m",
+      "value_surface": "69.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{J}_m",
+      "value_surface": "66.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{F}_m",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "(\\mathcal{J}&\\mathcal{F})_m",
+      "value_surface": "71.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{J}_m",
+      "value_surface": "67.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "DAVIS 2017",
+      "metric_surface": "\\mathcal{F}_m",
+      "value_surface": "74.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "DAVIS 2017 Video object segmentation"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "45.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentations from supervised versus DINO"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "44.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentations from supervised versus DINO"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "45.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Self-attention maps from supervised versus self-supervised learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "45.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Self-attention maps from supervised versus self-supervised learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "46.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Self-attention maps from supervised versus self-supervised learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Self-attention maps from supervised versus self-supervised learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "PASCAL VOC12",
+      "metric_surface": "Jaccard similarity",
+      "value_surface": "46.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Self-attention maps from supervised versus self-supervised learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cifar 10",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "99.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cifar 100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INat 18",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INat 19",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Flwrs",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "98.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cars",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "93.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cifar 10",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "99.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cifar 100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INat 18",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INat 19",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Flwrs",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "98.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "Cars",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "93.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "INet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning by finetuning pretrained models on different datasets"
+    },
+    {
+      "model": "DINO -FROZEN",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "64.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Low-shot learning on ImageNet with frozen ViT features"
+    },
+    {
+      "model": "DINO -FROZEN",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Low-shot learning on ImageNet with frozen ViT features"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "two 8-GPU servers over 3 days",
+    "batch_size": 1024,
+    "epochs": 800
+  },
+  "methods_used": [
+    "self-distillation",
+    "momentum encoder",
+    "multi-crop training",
+    "centering",
+    "sharpening",
+    "self-attention",
+    "Vision Transformer",
+    "ResNet-50",
+    "AdamW",
+    "data augmentation",
+    "knowledge distillation",
+    "nearest neighbor classifier",
+    "linear evaluation",
+    "finetuning",
+    "GELU activations",
+    "weight normalization",
+    "L2-normalization",
+    "cosine schedule"
+  ],
+  "novel_contributions": [
+    "We implement our findings into a simple self-supervised method, called DINO, which we interpret as a form of self-distillation with no labels.",
+    "Self-supervised ViT features contain explicit information about the semantic segmentation of an image, which does not emerge as clearly with supervised ViTs, nor with convnets.",
+    "These features are also excellent k-NN classifiers, reaching 78.3% top-1 on ImageNet with a small ViT.",
+    "The study underlines the importance of momentum encoder, multi-crop training, and the use of small patches with ViTs.",
+    "DINO is flexible and works on both convnets and ViTs without the need to modify the architecture, nor adapt internal normalizations."
+  ],
+  "key_claims": [
+    {
+      "claim": "Self-supervised ViT features explicitly contain scene layout and object boundaries, visible in the last-layer self-attention maps, unlike supervised ViTs or convnets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Self-supervised ViT features are strong k-NN classifiers, reaching 78.3% top-1 on ImageNet with a small ViT.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DINO achieves 80.1% top-1 on ImageNet in linear evaluation with ViT-Base and small patches.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DINO works on both convnets and ViTs, and matches the state of the art with a ResNet-50 architecture.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Training DINO with ViT takes just two 8-GPU servers over 3 days to achieve 76.1% on ImageNet linear benchmark.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "Small patches improve performance substantially, and ViT-B/8 with DINO reaches 80.1% linear and 77.4% k-NN on ImageNet.",
+      "evidence_section": "4.1. Comparing with SSL frameworks on ImageNet",
+      "page": null
+    },
+    {
+      "claim": "Momentum encoder and multi-crop are crucial components for good DINO performance, while predictor and advanced normalization add little benefit.",
+      "evidence_section": "5.1. Importance of the Different Components",
+      "page": null
+    },
+    {
+      "claim": "Centering and sharpening are complementary and both are needed to avoid collapse.",
+      "evidence_section": "5.3. Avoiding collapse",
+      "page": null
+    }
+  ]
+}

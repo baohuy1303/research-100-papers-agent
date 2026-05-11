@@ -1,0 +1,531 @@
+{
+  "paper_id": "177e957f5cd93229c9794ea652c646d2557b4a69",
+  "architecture_summary": "The paper modernizes a standard ResNet into a family of pure ConvNet models dubbed ConvNeXt by adopting several design choices inspired by hierarchical vision Transformers, including a patchify stem, depthwise convolutions, inverted bottlenecks, large kernel sizes, GELU, LayerNorm, and separate downsampling layers.",
+  "model_variants": [
+    {
+      "name": "ConvNeXt-T",
+      "param_count_surface": "29M",
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-S",
+      "param_count_surface": "50M",
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-B",
+      "param_count_surface": "89M",
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-L",
+      "param_count_surface": "198M",
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-XL",
+      "param_count_surface": "350M",
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-T/B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ConvNeXt-S/B",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "83.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "85.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "85.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "84.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "85.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "85.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "86.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "87.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K top-1 acc.",
+      "value_surface": "87.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Classification accuracy on ImageNet-1K."
+    },
+    {
+      "model": "ConvNeXt-S (iso.)",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "79.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing isotropic ConvNeXt and ViT."
+    },
+    {
+      "model": "ConvNeXt-B (iso.)",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "82.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing isotropic ConvNeXt and ViT."
+    },
+    {
+      "model": "ConvNeXt-L (iso.)",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing isotropic ConvNeXt and ViT."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "46.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "41.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "50.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "51.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "45.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "52.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "45.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "54.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "46.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "54.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "47.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "55.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "47.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "COCO object detection and segmentation results using Mask-RCNN and Cascade Mask-RCNN."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "46.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "49.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "49.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "53.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "53.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "54.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ADE20K validation results using UperNet [85]."
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robustness evaluation of ConvNeXt."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "83.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robustness evaluation of ConvNeXt."
+    },
+    {
+      "model": "ConvNeXt-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robustness evaluation of ConvNeXt."
+    },
+    {
+      "model": "ConvNeXt-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robustness evaluation of ConvNeXt."
+    },
+    {
+      "model": "ConvNeXt-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN-1K acc.",
+      "value_surface": "87.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robustness evaluation of ConvNeXt."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "AdamW",
+    "Mixup",
+    "Cutmix",
+    "RandAugment",
+    "Random Erasing",
+    "Stochastic Depth",
+    "Label Smoothing",
+    "Layer Scale",
+    "Exponential Moving Average (EMA)",
+    "LayerNorm",
+    "depthwise convolution",
+    "inverted bottleneck",
+    "large kernel-sized convolutions",
+    "patchify stem",
+    "separate downsampling layers",
+    "multi-scale training",
+    "UperNet",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN"
+  ],
+  "novel_contributions": [
+    "We gradually \"modernize\" a standard ResNet toward the design of a vision Transformer and identify several key components that contribute to the performance difference.",
+    "We propose a family of pure ConvNet models dubbed ConvNeXt, constructed entirely from standard ConvNet modules.",
+    "ConvNeXt competes favorably with Transformers in terms of accuracy and scalability, achieving 87.8% ImageNet top-1 accuracy and outperforming Swin Transformers on COCO detection and ADE20K segmentation.",
+    "The paper shows that many Transformer architectural choices can be mapped to ConvNet instantiations without introducing attention-based modules.",
+    "The paper demonstrates that ConvNeXt retains the simplicity and efficiency of standard ConvNets while scaling well to larger models and larger datasets."
+  ],
+  "key_claims": [
+    {
+      "claim": "A standard ConvNet can be modernized using Transformer-inspired design choices to match or exceed hierarchical vision Transformers while remaining purely convolutional.",
+      "evidence_section": "Abstract; 2. Modernizing a ConvNet: a Roadmap",
+      "page": null
+    },
+    {
+      "claim": "The enhanced training recipe alone raises ResNet-50 performance from 76.1% to 78.8%, showing that training techniques explain a substantial part of the ConvNet/Transformer gap.",
+      "evidence_section": "2.1. Training Techniques",
+      "page": null
+    },
+    {
+      "claim": "ConvNeXt-T reaches 82.1% top-1 accuracy on ImageNet-1K and ConvNeXt-B reaches 83.8% at 224^2, outperforming Swin Transformer of similar complexity.",
+      "evidence_section": "3.2. Results",
+      "page": null
+    },
+    {
+      "claim": "With ImageNet-22K pre-training, ConvNeXt scales further and ConvNeXt-XL reaches 87.8% top-1 accuracy on ImageNet-1K.",
+      "evidence_section": "3.2. Results",
+      "page": null
+    },
+    {
+      "claim": "ConvNeXt achieves on-par or better COCO detection and instance segmentation performance than Swin Transformer, especially for larger ImageNet-22K pre-trained models.",
+      "evidence_section": "4. Empirical Evaluation on Downstream Tasks",
+      "page": null
+    },
+    {
+      "claim": "ConvNeXt achieves competitive ADE20K semantic segmentation results with UperNet, including 54.0 mIoU for ConvNeXt-XL with ImageNet-22K pre-training.",
+      "evidence_section": "4. Empirical Evaluation on Downstream Tasks",
+      "page": null
+    },
+    {
+      "claim": "ConvNeXt models exhibit strong robustness and domain generalization, outperforming state-of-the-art robust transformer models on several benchmarks.",
+      "evidence_section": "B. Robustness Evaluation",
+      "page": null
+    }
+  ]
+}

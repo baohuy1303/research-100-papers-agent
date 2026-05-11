@@ -1,0 +1,202 @@
+{
+  "paper_id": "44e481c9645c057ea9273023aa7e23572226cee7",
+  "architecture_summary": "The paper proposes UNetFormer, a UNet-like Transformer for efficient semantic segmentation of remotely sensed urban scene imagery. It uses a lightweight ResNet18 encoder and a Transformer-based decoder built from global-local Transformer blocks (GLTB) with an efficient global-local attention mechanism and a feature refinement head (FRH).",
+  "model_variants": [
+    {
+      "name": "UNetFormer",
+      "param_count_surface": "11.7",
+      "page": null
+    },
+    {
+      "name": "FT-UNetFormer",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "UAVid",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LoveDA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Vaihingen",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Potsdam",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "UAVid",
+      "metric_surface": "mIoU",
+      "value_surface": "67.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the UAVid test set with state-of-the-art lightweight networks."
+    },
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "LoveDA",
+      "metric_surface": "mIoU",
+      "value_surface": "52.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the LoveDA test set with other networks."
+    },
+    {
+      "model": "FT-UNetFormer",
+      "dataset_surface": "Vaihingen",
+      "metric_surface": "F1 score",
+      "value_surface": "91.3%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Vaihingen test set with the state-of-the-art networks."
+    },
+    {
+      "model": "FT-UNetFormer",
+      "dataset_surface": "Vaihingen",
+      "metric_surface": "mIoU",
+      "value_surface": "84.1%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Vaihingen test set with the state-of-the-art networks."
+    },
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "Vaihingen",
+      "metric_surface": "MeanF1",
+      "value_surface": "90.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Vaihingen test set with state-of-the-art lightweight networks."
+    },
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "Vaihingen",
+      "metric_surface": "mIoU",
+      "value_surface": "82.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Vaihingen test set with state-of-the-art lightweight networks."
+    },
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "Potsdam",
+      "metric_surface": "MeanF1",
+      "value_surface": "92.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Potsdam test set with state-of-the-art lightweight networks."
+    },
+    {
+      "model": "UNetFormer",
+      "dataset_surface": "Potsdam",
+      "metric_surface": "mIoU",
+      "value_surface": "86.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Potsdam test set with state-of-the-art lightweight networks."
+    },
+    {
+      "model": "FT-UNetFormer",
+      "dataset_surface": "Potsdam",
+      "metric_surface": "mIoU",
+      "value_surface": "87.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison results on the Potsdam test set with state-of-the-art networks."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "single NVIDIA GTX 3090 GPU",
+    "batch_size": 16,
+    "epochs": 100
+  },
+  "methods_used": [
+    "ResNet18",
+    "Transformer-based decoder",
+    "global-local Transformer block (GLTB)",
+    "efficient global-local attention",
+    "window-based multi-head self-attention",
+    "cross-shaped window context interaction module",
+    "convolutional local branch",
+    "feature refinement head (FRH)",
+    "weighted sum operation",
+    "skip connection",
+    "batch normalization",
+    "depth-wise convolution",
+    "global average pooling",
+    "dice loss",
+    "cross-entropy loss",
+    "AdamW",
+    "cosine strategy",
+    "random vertical flip",
+    "random horizontal flip",
+    "random brightness",
+    "random scale",
+    "random rotate",
+    "test-time augmentation (TTA)",
+    "multi-scale and random flip augmentations"
+  ],
+  "novel_contributions": [
+    "a UNet-like Transformer (UNetFormer) for efficient semantic segmentation of remotely sensed urban scene imagery",
+    "a Transformer-based decoder with a global-local Transformer block (GLTB) that captures both global and local contexts",
+    "an efficient global-local attention mechanism with an attentional global branch and a convolutional local branch",
+    "a cross-shaped window context interaction module to capture cross-window relations with high computational efficiency",
+    "a feature refinement head (FRH) to shrink the semantic gap between shallow and deep features",
+    "a fully Transformer structure (FT-UNetFormer) that also achieves state-of-the-art results on the Vaihingen dataset"
+  ],
+  "key_claims": [
+    {
+      "claim": "UNetFormer is a UNet-like Transformer that uses a lightweight ResNet18 encoder and a Transformer-based decoder for efficient semantic segmentation of remotely sensed urban scene imagery.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "UNetFormer achieved 67.8% mIoU on UAVid and 52.4% mIoU on LoveDA, while reaching up to 322.4 FPS with a 512 × 512 input on a single NVIDIA GTX 3090 GPU.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed Transformer-based decoder combined with a Swin Transformer encoder also achieves the state-of-the-art result on the Vaihingen dataset.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The efficient global-local attention achieves the highest mIoU among the compared attention mechanisms on UAVid and is more accurate and faster than shifted window attention and efficient multi-head self-attention.",
+      "evidence_section": "4.2.2 Efficient global-local attention",
+      "page": null
+    },
+    {
+      "claim": "UNetFormer outperforms the compared networks on UAVid test set with 67.8% mIoU and strong speed/efficiency trade-offs.",
+      "evidence_section": "4.3.1 Comparison of network efficiency",
+      "page": null
+    },
+    {
+      "claim": "UNetFormer delivers the best F1, OA and mIoU on the Vaihingen test set and achieves 92.8% mean F1 and 86.8% mIoU on Potsdam.",
+      "evidence_section": "4.3.3 Results on the Vaihingen and Potsdam dataset",
+      "page": null
+    },
+    {
+      "claim": "UNetFormer obtains the highest mIoU on LoveDA with the least complexity and the fastest speed among the compared methods.",
+      "evidence_section": "4.3.4 Results on the LoveDA dataset",
+      "page": null
+    },
+    {
+      "claim": "The paper argues that the hybrid structure with a CNN-based encoder and Transformer-based decoder is superior for real-time urban scene segmentation.",
+      "evidence_section": "5.2 Model efficiency",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,408 @@
+{
+  "paper_id": "18863dbfa32eaa1ccdb56ff180e6ab079a7f1ec6",
+  "architecture_summary": "Multiscale Vision Transformers (MViT) connect multiscale feature hierarchies with transformer models by using several channel-resolution scale stages that hierarchically expand channel capacity while reducing spatial resolution. The model uses Multi Head Pooling Attention (MHPA) and MLP layers to build a multiscale pyramid of features for video and image recognition.",
+  "model_variants": [
+    {
+      "name": "MViT-S",
+      "param_count_surface": "26.1M",
+      "page": null
+    },
+    {
+      "name": "MViT-B",
+      "param_count_surface": "36.6M",
+      "page": null
+    },
+    {
+      "name": "MViT-B, 16×4",
+      "param_count_surface": "36.6M",
+      "page": null
+    },
+    {
+      "name": "MViT-B, 32×3",
+      "param_count_surface": "36.6M",
+      "page": null
+    },
+    {
+      "name": "MViT-B, 64×3",
+      "param_count_surface": "36.6M",
+      "page": null
+    },
+    {
+      "name": "MViT-B-24",
+      "param_count_surface": "52.9M",
+      "page": null
+    },
+    {
+      "name": "MViT-B-24, 32×3",
+      "param_count_surface": "52.9M",
+      "page": null
+    },
+    {
+      "name": "MViT-B-16",
+      "param_count_surface": "37.0M",
+      "page": null
+    },
+    {
+      "name": "MViT-B-24-wide-320",
+      "param_count_surface": "72.9M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Kinetics-400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Something-Something-v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Charades",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AVA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing ViT-B to two instantiations of MViT with varying complexity, MViT-S in (c) and MViT-B in (b)."
+    },
+    {
+      "model": "MViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "77.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing ViT-B to two instantiations of MViT with varying complexity, MViT-S in (c) and MViT-B in (b)."
+    },
+    {
+      "model": "MViT-S",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "74.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing ViT-B to two instantiations of MViT with varying complexity, MViT-S in (c) and MViT-B in (b)."
+    },
+    {
+      "model": "MViT-B, 16×4",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "78.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViT-B, 32×3",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "80.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViT-B, 64×3",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "81.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViT-B, 16×4",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "82.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViT-B, 32×3",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "83.4%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViT-B-24, 32×3",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "83.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViT-B, 16×4",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "64.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViT-B, 32×3",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "67.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViT-B, 64×3",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "67.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViT-B-24, 32×3",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "68.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViT-B, 16×4",
+      "dataset_surface": "Charades",
+      "metric_surface": "mAP",
+      "value_surface": "40.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Charades."
+    },
+    {
+      "model": "MViT-B, 32×3",
+      "dataset_surface": "Charades",
+      "metric_surface": "mAP",
+      "value_surface": "44.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Charades."
+    },
+    {
+      "model": "MViT-B, 64×3",
+      "dataset_surface": "Charades",
+      "metric_surface": "mAP",
+      "value_surface": "46.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Charades."
+    },
+    {
+      "model": "MViT-B, 16×4",
+      "dataset_surface": "AVA",
+      "metric_surface": "val mAP",
+      "value_surface": "24.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2. All methods use single center crop inference following [29]."
+    },
+    {
+      "model": "MViT-B, 32×3",
+      "dataset_surface": "AVA",
+      "metric_surface": "val mAP",
+      "value_surface": "26.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2. All methods use single center crop inference following [29]."
+    },
+    {
+      "model": "MViT-B, 64×3",
+      "dataset_surface": "AVA",
+      "metric_surface": "val mAP",
+      "value_surface": "27.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2. All methods use single center crop inference following [29]."
+    },
+    {
+      "model": "MViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "77.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Shuffling frames in inference."
+    },
+    {
+      "model": "MViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "70.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Shuffling frames in inference."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "68.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Shuffling frames in inference."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "68.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Shuffling frames in inference."
+    },
+    {
+      "model": "MViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "83.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to prior work on ImageNet."
+    },
+    {
+      "model": "MViT-B-16",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to prior work on ImageNet."
+    },
+    {
+      "model": "MViT-B-24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to prior work on ImageNet."
+    },
+    {
+      "model": "MViT-B-24-wide-320",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "84.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to prior work on ImageNet."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "128 GPUs",
+    "batch_size": 512,
+    "epochs": 200
+  },
+  "methods_used": [
+    "Multi Head Pooling Attention",
+    "self-attention",
+    "MLP",
+    "Layer Normalization",
+    "residual connections",
+    "patch embedding",
+    "pooling attention",
+    "query pooling",
+    "key-value pooling",
+    "stochastic depth",
+    "Mixup",
+    "CutMix",
+    "Random Erasing",
+    "Rand Augment",
+    "AdamW",
+    "SGD",
+    "cosine schedule",
+    "positional embedding",
+    "separate space and time positional embedding"
+  ],
+  "novel_contributions": [
+    "Multiscale Vision Transformers (MViT) for video and image recognition",
+    "Multi Head Pooling Attention (MHPA) that pools query, key, and value sequences to reduce resolution",
+    "A multiscale pyramid of features that hierarchically expands channel capacity while reducing spatial resolution",
+    "Strong performance on video recognition tasks without any external pre-training data",
+    "Applying the video architecture to image classification by simply removing the temporal dimension"
+  ],
+  "key_claims": [
+    {
+      "claim": "MViT connects multiscale feature hierarchies with transformer models by progressively expanding channel capacity while reducing spatial resolution.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MViT outperforms concurrent vision transformers on video recognition tasks without any external pre-training data.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MViT also outperforms prior work on vision transformers for image classification after removing the temporal dimension.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On Kinetics-400, MViT-B achieves 77.2% top-1 accuracy while ViT-B achieves 68.5% in the ablation table.",
+      "evidence_section": "4.2. Ablations on Kinetics",
+      "page": null
+    },
+    {
+      "claim": "On Kinetics-600, MViT achieves state-of-the-art of 83.4% with 5-clip center crop testing.",
+      "evidence_section": "4.1. Main Results",
+      "page": null
+    },
+    {
+      "claim": "Shuffling frames causes a significant accuracy drop for MViT-B but almost no change for ViT-B, indicating stronger temporal modeling in MViT.",
+      "evidence_section": "4.2. Ablations on Kinetics",
+      "page": null
+    },
+    {
+      "claim": "For ImageNet-1K, MViT-B-24-wide-320 reaches 84.8% top-1 accuracy.",
+      "evidence_section": "5.1. Main Results",
+      "page": null
+    }
+  ]
+}

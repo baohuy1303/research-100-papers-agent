@@ -1,0 +1,494 @@
+{
+  "paper_id": "03db529f0bfae6d0b64b0feef565196327fe8d50",
+  "architecture_summary": "The paper systematically studies three Vision Transformer families (ViT, DeiT and T2T) and compares them with CNNs, focusing on robustness, shape-vs-texture behavior, positional encoding, and off-the-shelf feature transfer. It also introduces a shape token / shape distillation modification to DeiT and an ensemble-style transfer method using class tokens from multiple blocks.",
+  "model_variants": [
+    {
+      "name": "DeiT-S",
+      "param_count_surface": "22 Million parameters",
+      "page": null
+    },
+    {
+      "name": "ResNet50",
+      "param_count_surface": "23 Million parameters",
+      "page": null
+    },
+    {
+      "name": "DeiT-B",
+      "param_count_surface": "86 million",
+      "page": null
+    },
+    {
+      "name": "T2T-24",
+      "param_count_surface": "64 million",
+      "page": null
+    },
+    {
+      "name": "TnT-S",
+      "param_count_surface": "23 million",
+      "page": null
+    },
+    {
+      "name": "ViT-L",
+      "param_count_surface": "over 300 million trainable parameters",
+      "page": null
+    },
+    {
+      "name": "DeiT-T",
+      "param_count_surface": "5 times fewer parameters than ResNet50",
+      "page": null
+    },
+    {
+      "name": "Swin-B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin-S",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin-T",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "RegNetY-4",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "RegNetY-8",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "RegNetY-16",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet val. set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet [8] val. set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Stylized ImageNet",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "SIN",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "PASCAL-VOC12 validation set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CUB [37]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flowers [38]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist [39]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Aircraft [40]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTD [41]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GTSRB [42]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Fungi [43]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Places365 [44]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Meta-dataset [45]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "QuickDraw",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HS-COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MNIST",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "accuracy",
+      "value_surface": "0.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robust Performance of Transformers Against Occlusions"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "accuracy",
+      "value_surface": "70%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Robust Performance of Transformers Against Occlusions"
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Correlation Coefficient",
+      "value_surface": "0.32 ± 0.16",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Correlation coefficient b/w features/final class tokens of original and occluded images for Random PatchDrop"
+    },
+    {
+      "model": "TnT-S",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Correlation Coefficient",
+      "value_surface": "0.83 ± 0.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Correlation coefficient b/w features/final class tokens of original and occluded images for Random PatchDrop"
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Correlation Coefficient",
+      "value_surface": "0.92 ± 0.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Correlation coefficient b/w features/final class tokens of original and occluded images for Random PatchDrop"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Correlation Coefficient",
+      "value_surface": "0.90 ± 0.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Correlation coefficient b/w features/final class tokens of original and occluded images for Random PatchDrop"
+    },
+    {
+      "model": "T2T-24",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Correlation Coefficient",
+      "value_surface": "0.80 ± 0.10",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Correlation coefficient b/w features/final class tokens of original and occluded images for Random PatchDrop"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.93",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "ImageNet top-1 (%)",
+      "metric_surface": "Shape Bias",
+      "value_surface": "0.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of models trained on SIN"
+    },
+    {
+      "model": "DeiT-T-Random",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "19.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-T",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "32.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "29.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "40.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-T-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "42.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-S-Random",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "22.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "29.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "37.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "42.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "DeiT-S-SIN",
+      "dataset_surface": "PASCAL-VOC12 validation set",
+      "metric_surface": "Jaccard Index",
+      "value_surface": "42.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We compute the Jaccard similarity between ground truth and masks generated from the attention maps of ViT models"
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "5.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We rescale the input image to 128x128 and place it within the upper/lower right and left corners of the background of size 224x224"
+    },
+    {
+      "model": "DeiT-T",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "51.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We rescale the input image to 128x128 and place it within the upper/lower right and left corners of the background of size 224x224"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "63.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We rescale the input image to 128x128 and place it within the upper/lower right and left corners of the background of size 224x224"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet val. set",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "69.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We rescale the input image to 128x128 and place it within the upper/lower right and left corners of the background of size 224x224"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "4 V100 GPUs",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "multi-head self-attention",
+    "PatchDrop",
+    "Random PatchDrop",
+    "Salient PatchDrop",
+    "Non-salient PatchDrop",
+    "DINO",
+    "shape token",
+    "knowledge distillation",
+    "attentive distillation",
+    "stylized ImageNet",
+    "SIN",
+    "label smoothing",
+    "mixup",
+    "positional encoding",
+    "adversarial patch attack",
+    "FGSM",
+    "PGD",
+    "Augmix",
+    "feature ensemble",
+    "linear classifier",
+    "few-shot learning"
+  ],
+  "novel_contributions": [
+    "an architectural modification to DeiT to encode shape-information via a dedicated token",
+    "a shape distillation approach that distills shape knowledge from a pretrained CNN model with high shape-bias",
+    "an off-the-shelf feature transfer approach that ensembles representations derived from a single architecture to obtain state-of-the-art generalization",
+    "an extensive empirical study of robustness, shape-vs-texture bias, positional encoding, and transferability across fifteen vision datasets"
+  ],
+  "key_claims": [
+    {
+      "claim": "ViTs are highly robust to severe occlusions, perturbations and domain shifts, retaining as high as 60% top-1 accuracy on ImageNet even after randomly occluding 80% of the image content.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViTs are significantly less biased towards local textures than CNNs, and when properly trained to encode shape-based features they demonstrate shape recognition capability comparable to humans.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Using ViTs to encode shape representation leads to accurate semantic segmentation without pixel-level supervision.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Off-the-shelf features from a single ViT model can be combined into a feature ensemble, leading to high accuracy across classification datasets in traditional and few-shot learning settings.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper proposes a shape token in DeiT and shows that distinct tokens can model shape and texture cues within the same architecture.",
+      "evidence_section": "3.2 Shape vs. Texture: Can Transformer Model Both Characteristics?",
+      "page": null
+    },
+    {
+      "claim": "The paper finds that positional encoding is not absolutely crucial for correct classification decisions under patch shuffling, and attributes ViT permutation robustness to dynamic receptive fields.",
+      "evidence_section": "3.3 Does Positional Encoding Preserve the Global Image Context?",
+      "page": null
+    },
+    {
+      "claim": "The paper shows that ViT features transfer better than CNN features across several downstream datasets, and that the proposed ensemble strategy achieves the best results.",
+      "evidence_section": "3.5 Effective Off-the-shelf Tokens for Vision Transformer",
+      "page": null
+    }
+  ]
+}

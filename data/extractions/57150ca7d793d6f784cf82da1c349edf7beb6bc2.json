@@ -1,0 +1,319 @@
+{
+  "paper_id": "57150ca7d793d6f784cf82da1c349edf7beb6bc2",
+  "architecture_summary": "The paper abstracts Transformers into a general architecture called MetaFormer, where the token mixer is not specified, and instantiates it with an embarrassingly simple pooling operator to build PoolFormer. PoolFormer is a hierarchical 4-stage vision model with patch embedding, Modified Layer Normalization, pooling-based token mixing, channel MLPs, residual connections, stochastic depth, and LayerScale.",
+  "model_variants": [
+    {
+      "name": "PoolFormer-S12",
+      "param_count_surface": "12M",
+      "page": null
+    },
+    {
+      "name": "PoolFormer-S24",
+      "param_count_surface": "21M",
+      "page": null
+    },
+    {
+      "name": "PoolFormer-S36",
+      "param_count_surface": "31M",
+      "page": null
+    },
+    {
+      "name": "PoolFormer-M36",
+      "param_count_surface": "56M",
+      "page": null
+    },
+    {
+      "name": "PoolFormer-M48",
+      "param_count_surface": "73M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "PoolFormer-S12",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "77.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "PoolFormer-S24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "PoolFormer-S36",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "PoolFormer-M36",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "PoolFormer-M48",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "ResMLP-B24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of different types of models on ImageNet-1K classification"
+    },
+    {
+      "model": "PoolFormer-S12",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "36.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S12",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^b",
+      "value_surface": "37.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S12",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^m",
+      "value_surface": "34.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S24",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "38.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S24",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^b",
+      "value_surface": "40.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S24",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^m",
+      "value_surface": "37.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S36",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "39.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S36",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^b",
+      "value_surface": "41.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S36",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP^m",
+      "value_surface": "37.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of object detection using RetinaNet, and object detection and instance segmentation using Mask R-CNN on COCO val2017 [34]"
+    },
+    {
+      "model": "PoolFormer-S12",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "37.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Semantic segmentation on ADE20K [67] validation set"
+    },
+    {
+      "model": "PoolFormer-S24",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "40.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Semantic segmentation on ADE20K [67] validation set"
+    },
+    {
+      "model": "PoolFormer-S36",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Semantic segmentation on ADE20K [67] validation set"
+    },
+    {
+      "model": "PoolFormer-M36",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Semantic segmentation on ADE20K [67] validation set"
+    },
+    {
+      "model": "PoolFormer-M48",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Semantic segmentation on ADE20K [67] validation set"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 NVIDIA A100 GPUs",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "MetaFormer",
+    "pooling",
+    "patch embedding",
+    "Modified Layer Normalization",
+    "channel MLP",
+    "residual connection",
+    "stochastic depth",
+    "LayerScale",
+    "MixUp",
+    "CutMix",
+    "CutOut",
+    "RandAugment",
+    "AdamW",
+    "cosine schedule",
+    "AutoAugment",
+    "Grad-CAM"
+  ],
+  "novel_contributions": [
+    "We abstract Transformers into a general architecture MetaFormer where the token mixer is not specified.",
+    "We deliberately replace attention with an embarrassingly simple pooling operator and build PoolFormer.",
+    "We show PoolFormer achieves competitive performance on ImageNet-1K, COCO, and ADE20K.",
+    "We argue that MetaFormer is actually what you need for vision instead of focusing on specific token mixers."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes MetaFormer as a general architecture abstracted from Transformers by not specifying the token mixer, and argues that the architecture is more important than the specific token mixer.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "PoolFormer replaces attention with pooling as a non-parametric token mixer and still achieves competitive performance on multiple computer vision tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "PoolFormer-M36 achieves 82.1% top-1 accuracy on ImageNet-1K, surpassing DeiT-B/ResMLP-B24 by 0.3%/1.1% accuracy with 35%/52% fewer parameters and 50%/62% fewer MACs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "PoolFormer-S24 reaches more than 80 top-1 accuracy on ImageNet-1K with only 21M parameters and 3.4G MACs.",
+      "evidence_section": "4.1. Image classification",
+      "page": null
+    },
+    {
+      "claim": "On COCO val2017, PoolFormer-based models consistently outperform comparable ResNet counterparts for object detection and instance segmentation.",
+      "evidence_section": "4.2. Object detection and instance segmentation",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K validation set, PoolFormer-based models consistently outperform CNN-based ResNet and ResNeXt backbones as well as Transformer-based PVT.",
+      "evidence_section": "4.3. Semantic segmentation",
+      "page": null
+    },
+    {
+      "claim": "Ablations show that even identity mapping or random token mixing can retain reasonable accuracy, supporting the claim that MetaFormer is the key factor.",
+      "evidence_section": "4.4. Ablation studies",
+      "page": null
+    },
+    {
+      "claim": "The default ImageNet-1K training recipe uses 300 epochs, batch size 4096, AdamW, MixUp, CutMix, CutOut, RandAugment, stochastic depth, and LayerScale.",
+      "evidence_section": "4.1. Image classification",
+      "page": null
+    }
+  ]
+}

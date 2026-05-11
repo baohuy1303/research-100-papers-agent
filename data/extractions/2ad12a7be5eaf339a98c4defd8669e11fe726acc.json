@@ -1,0 +1,368 @@
+{
+  "paper_id": "2ad12a7be5eaf339a98c4defd8669e11fe726acc",
+  "architecture_summary": "MaxViT is a hierarchical vision backbone that stacks repeated MaxViT blocks, each combining MBConv with blocked local attention and dilated global grid attention. The multi-axis attention module is designed to provide both local and global spatial interactions with linear complexity and no explicit positional encoding.",
+  "model_variants": [
+    {
+      "name": "MaxViT-T",
+      "param_count_surface": "31M",
+      "page": null
+    },
+    {
+      "name": "MaxViT-S",
+      "param_count_surface": "69M",
+      "page": null
+    },
+    {
+      "name": "MaxViT-B",
+      "param_count_surface": "120M",
+      "page": null
+    },
+    {
+      "name": "MaxViT-L",
+      "param_count_surface": "212M",
+      "page": null
+    },
+    {
+      "name": "MaxViT-XL",
+      "param_count_surface": "475M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AVA benchmark",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "MaxViT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.17",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.70",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison under ImageNet-1K setting"
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.51",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.70",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison for large-scale data regimes: ImageNet-21K and JFT pretrained models"
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP 50",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP 75",
+      "value_surface": "58.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP m",
+      "value_surface": "45.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP m 50",
+      "value_surface": "70.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-B",
+      "dataset_surface": "COCO2017",
+      "metric_surface": "AP m 75",
+      "value_surface": "50.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of two-stage object detection and instance segmentation on COCO2017. All models are pretrained on ImageNet-1K."
+    },
+    {
+      "model": "MaxViT-T",
+      "dataset_surface": "AVA benchmark",
+      "metric_surface": "PLCC",
+      "value_surface": "0.745",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image aesthetic assessment results on the AVA benchmark [61]. PLCC and SRCC represent the Pearson’s linear and Spearman’s rank correlation coefficients."
+    },
+    {
+      "model": "MaxViT-T",
+      "dataset_surface": "AVA benchmark",
+      "metric_surface": "SRCC",
+      "value_surface": "0.708",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image aesthetic assessment results on the AVA benchmark [61]. PLCC and SRCC represent the Pearson’s linear and Spearman’s rank correlation coefficients."
+    },
+    {
+      "model": "MaxViT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "30.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of image generation on ImageNet. $\\dagger$ used a pre-trained ImageNet classifier."
+    },
+    {
+      "model": "MaxViT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IS",
+      "value_surface": "22.58",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of image generation on ImageNet. $\\dagger$ used a pre-trained ImageNet classifier."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "TPU for one million steps",
+    "batch_size": 256,
+    "epochs": 300
+  },
+  "methods_used": [
+    "multi-axis attention",
+    "blocked local attention",
+    "dilated global attention",
+    "MBConv",
+    "squeeze-and-excitation",
+    "relative self-attention",
+    "LayerNorm",
+    "FFN",
+    "skip-connections",
+    "global average pooling",
+    "FPN",
+    "Faster-RCNN",
+    "Mask-RCNN",
+    "Cascade Mask-RCNN",
+    "normalized Earth Mover’s Distance",
+    "cross-attention",
+    "BatchNorm",
+    "AdamW",
+    "Adam",
+    "RandAugment",
+    "Mixup",
+    "stochastic depth",
+    "label smoothing",
+    "gradient clip",
+    "EMA decay rate",
+    "pixel shuffle",
+    "R1 gradient penalty"
+  ],
+  "novel_contributions": [
+    "A new efficient and scalable attention model called multi-axis attention, consisting of blocked local and dilated global attention.",
+    "A new hierarchical vision backbone, dubbed MaxViT, by repeating the basic building block over multiple stages.",
+    "A stand-alone multi-axis attention module that can be used either standalone or combined in any order.",
+    "A simple modular design that unifies convolution, local attention, and global attention.",
+    "Strong results across image classification, object detection, image aesthetic assessment, and image generation."
+  ],
+  "key_claims": [
+    {
+      "claim": "MaxViT introduces multi-axis attention that decomposes full self-attention into blocked local attention and dilated global grid attention, giving linear complexity while preserving global-local interactions.",
+      "evidence_section": "Abstract; 3.2 Multi-axis Attention",
+      "page": null
+    },
+    {
+      "claim": "MaxViT is a hierarchical backbone built by stacking repeated MaxViT blocks that combine MBConv with block attention and grid attention.",
+      "evidence_section": "Abstract; 3 Method; Fig. 2",
+      "page": null
+    },
+    {
+      "claim": "The paper claims MaxViT achieves state-of-the-art performance on ImageNet-1K under various settings, including 86.5% without extra data and 88.7% with ImageNet-21K pre-training.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1K, MaxViT-L sets a new performance record of 85.17% at 224 × 224 training without extra training strategies, and MaxViT-L reaches 86.70% at 512 × 512.",
+      "evidence_section": "4.1 Image Classification on ImageNet-1K",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-21K pre-trained models, MaxViT-XL achieves 88.51% at 384 and 88.70% at 512, which the paper describes as new SOTA performance.",
+      "evidence_section": "4.1 Image Classification on ImageNet-1K",
+      "page": null
+    },
+    {
+      "claim": "On COCO2017 detection and instance segmentation, MaxViT backbones outperform Swin, ConvNeXt, and UViT by large margins in both accuracy and efficiency.",
+      "evidence_section": "4.2 Object Detection and Instance Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On AVA, MaxViT-T reaches 0.745 PLCC and 0.708 SRCC at 512 × 512, and the paper states it outperforms existing image aesthetic assessment methods.",
+      "evidence_section": "4.3 Image Aesthetic Assessment",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet unconditional generation, MaxViT achieves 30.77 FID and 22.58 IS with 18.6M parameters, outperforming HiT in the reported table.",
+      "evidence_section": "4.4 Image Generation",
+      "page": null
+    }
+  ]
+}

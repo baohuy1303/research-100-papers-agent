@@ -1,0 +1,663 @@
+{
+  "paper_id": "26c80bd65baa90f5b18157de4951f4eb0b62ab69",
+  "architecture_summary": "InternImage is a large-scale CNN-based foundation model built around an improved deformable convolution operator, DCNv3, combined with transformer-like block designs, stacking rules, and scaling rules. The model uses a 3 × 3 dynamic sparse convolution core with shared weights, multi-group aggregation, and softmax-normalized modulation to support long-range dependencies and adaptive spatial aggregation.",
+  "model_variants": [
+    {
+      "name": "InternImage-T",
+      "param_count_surface": "30M",
+      "page": null
+    },
+    {
+      "name": "InternImage-S",
+      "param_count_surface": "50M",
+      "page": null
+    },
+    {
+      "name": "InternImage-B",
+      "param_count_surface": "97M",
+      "page": null
+    },
+    {
+      "name": "InternImage-L",
+      "param_count_surface": "223M",
+      "page": null
+    },
+    {
+      "name": "InternImage-XL",
+      "param_count_surface": "335M",
+      "page": null
+    },
+    {
+      "name": "InternImage-H",
+      "param_count_surface": "1.08B",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Laion-400M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "YFCC-15M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CC12M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Objects365",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO-Stuff-164K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO-Stuff-10K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2018",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Places205",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Places365",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "LVIS v1.0",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Pascal VOC 2007",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Pascal VOC 2012",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "OpenImages v6",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "CrowdHuman",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "BDD100K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Pascal Context",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Cityscapes",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "NYU Depth V2",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Mapillary Vistas",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set"
+    },
+    {
+      "model": "InternImage-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set"
+    },
+    {
+      "model": "InternImage-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.0%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.6%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set"
+    },
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "47.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "42.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "43.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "48.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "44.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "54.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "47.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "55.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "56.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "48.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "56.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "48.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "65.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of the state-of-the-art detectors on COCO val2017 and test-dev"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^b",
+      "value_surface": "65.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison of the state-of-the-art detectors on COCO val2017 and test-dev"
+    },
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "50.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "50.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "50.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "51.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "53.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "54.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "55.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-XL",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "55.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "59.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "60.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "62.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "62.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation performance on the ADE20K validation set"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "iNaturalist 2018",
+      "metric_surface": "accuracy",
+      "value_surface": "92.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "Places205",
+      "metric_surface": "accuracy",
+      "value_surface": "71.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "Places365",
+      "metric_surface": "accuracy",
+      "value_surface": "61.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "COCO-Stuff-10K",
+      "metric_surface": "mIoU",
+      "value_surface": "59.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU",
+      "value_surface": "70.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "Cityscapes (val)",
+      "metric_surface": "mIoU",
+      "value_surface": "87.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "Cityscapes (test)",
+      "metric_surface": "mIoU",
+      "value_surface": "87.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-H",
+      "dataset_surface": "NYU Depth V2",
+      "metric_surface": "mIoU",
+      "value_surface": "68.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Summary of InternImage-H performance on various mainstream vision benchmarks"
+    },
+    {
+      "model": "InternImage-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of different models at different data scales"
+    },
+    {
+      "model": "ConvNeXt-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of different models at different data scales"
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of different models at different data scales"
+    },
+    {
+      "model": "InternImage-T-dattn",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Accuracy of different models at different data scales"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "deformable convolution",
+    "deformable convolution v2",
+    "deformable convolution v3",
+    "layer normalization",
+    "feed-forward network",
+    "GELU",
+    "depth-wise convolution",
+    "point-wise projection",
+    "multi-group mechanism",
+    "softmax normalization",
+    "AdamW",
+    "AutoAugment",
+    "mixup",
+    "CutMix",
+    "random resized crop",
+    "horizontal flip",
+    "layer scale",
+    "drop path",
+    "gradient clipping",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN",
+    "DINO",
+    "UperNet",
+    "Mask2Former",
+    "M3I Pre-training"
+  ],
+  "novel_contributions": [
+    "A new large-scale CNN-based foundation model, InternImage, that scales to over 1 billion parameters and 400 million training images.",
+    "An improved deformable convolution operator, DCNv3, with shared weights, multi-group aggregation, and softmax-normalized modulation scalars.",
+    "Tailored block-level, stacking, and scaling rules that make CNNs extensible to large-scale foundation-model settings.",
+    "Strong results on ImageNet, COCO, and ADE20K, including a new record 65.4 box AP on COCO test-dev and 62.9 mIoU on ADE20K."
+  ],
+  "key_claims": [
+    {
+      "claim": "InternImage is presented as the first CNN that effectively scales to over 1 billion parameters and 400 million training images while matching or exceeding state-of-the-art ViTs.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "InternImage uses deformable convolution as the core operator and combines it with transformer-like components such as LN, FFN, and GELU to build a CNN-based foundation model.",
+      "evidence_section": "3. Proposed Method",
+      "page": null
+    },
+    {
+      "claim": "DCNv3 introduces shared weights, multi-group spatial aggregation, and softmax normalization to make deformable convolution more suitable for large-scale training.",
+      "evidence_section": "3.1. Deformable Convolution v3",
+      "page": null
+    },
+    {
+      "claim": "InternImage-B achieves 84.9% top-1 accuracy on ImageNet-1K, and InternImage-H reaches 89.6% after large-scale pre-training and fine-tuning.",
+      "evidence_section": "4.1. Image Classification",
+      "page": null
+    },
+    {
+      "claim": "InternImage-H achieves 65.4% box mAP on COCO test-dev and is described as a new record, outperforming prior CNNs and ViTs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "InternImage-H reaches 62.9 mIoU on ADE20K with Mask2Former, which the paper states is the best result on that benchmark.",
+      "evidence_section": "4.3. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "Ablations show that shared weights, multi-group aggregation, and softmax normalization are all important for performance and efficiency.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    }
+  ]
+}

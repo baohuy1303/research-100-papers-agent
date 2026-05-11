@@ -1,0 +1,537 @@
+{
+  "paper_id": "9137efc758f80dd22bb56f82cca5c94f78a5db3e",
+  "architecture_summary": "MViTv2 is an improved Multiscale Vision Transformer that adds decomposed relative positional embeddings and residual pooling connections to pooling attention, and is instantiated in five sizes for image classification, object detection, and video recognition.",
+  "model_variants": [
+    {
+      "name": "MViT-T",
+      "param_count_surface": "24",
+      "page": null
+    },
+    {
+      "name": "MViT-S",
+      "param_count_surface": "35",
+      "page": null
+    },
+    {
+      "name": "MViT-B",
+      "param_count_surface": "52",
+      "page": null
+    },
+    {
+      "name": "MViT-L",
+      "param_count_surface": "218",
+      "page": null
+    },
+    {
+      "name": "MViT-H",
+      "param_count_surface": "667",
+      "page": null
+    },
+    {
+      "name": "MViTv2-T",
+      "param_count_surface": "24",
+      "page": null
+    },
+    {
+      "name": "MViTv2-S",
+      "param_count_surface": "35",
+      "page": null
+    },
+    {
+      "name": "MViTv2-B",
+      "param_count_surface": "52",
+      "page": null
+    },
+    {
+      "name": "MViTv2-L",
+      "param_count_surface": "218",
+      "page": null
+    },
+    {
+      "name": "MViTv2-H",
+      "param_count_surface": "667",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-700",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Something-Something-v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AVA",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "MViTv2-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "84.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-B † 384²",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "85.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-L † 384²",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "86.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to published work on ImageNet-1K."
+    },
+    {
+      "model": "MViTv2-L † 384²",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "86.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results using IN-21K data."
+    },
+    {
+      "model": "MViTv2-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results using IN-21K data."
+    },
+    {
+      "model": "MViTv2-H",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "88.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results using IN-21K data."
+    },
+    {
+      "model": "MViTv2-H † 384²",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "88.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results using IN-21K data."
+    },
+    {
+      "model": "MViTv2-H † 512²",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Acc",
+      "value_surface": "88.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results using IN-21K data."
+    },
+    {
+      "model": "MViTv2-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "48.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "49.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "51.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-L†",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "52.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "52.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "53.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "54.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-B†",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "54.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-L††",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "55.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-H††",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "56.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTv2-L††*",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "58.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Results on COCO object detection with (a) Mask R-CNN and (b) Cascade Mask R-CNN."
+    },
+    {
+      "model": "MViTV2-S",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViTV2-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViTV2-L",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "86.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-400."
+    },
+    {
+      "model": "MViTV2-B",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "85.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViTV2-L↑ 312↑, 32×3",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "87.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViTV2-L↑ 312↑, 40×3",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViTV2-L↑ 352↑, 40×3",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "top-1",
+      "value_surface": "87.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-600."
+    },
+    {
+      "model": "MViTV2-B",
+      "dataset_surface": "Kinetics-700",
+      "metric_surface": "top-1",
+      "value_surface": "76.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-700."
+    },
+    {
+      "model": "MViTV2-L↑ 312↑, 40×3",
+      "dataset_surface": "Kinetics-700",
+      "metric_surface": "top-1",
+      "value_surface": "79.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on Kinetics-700."
+    },
+    {
+      "model": "MViTV2-S",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "68.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViTV2-B",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViTV2-B",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "72.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViTV2-L↑ 312↑, 40×3",
+      "dataset_surface": "Something-Something-v2",
+      "metric_surface": "top-1",
+      "value_surface": "73.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on SSv2."
+    },
+    {
+      "model": "MViTv2-S",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "26.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    },
+    {
+      "model": "MViTv2-B, 32×3",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "28.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    },
+    {
+      "model": "MViTv2-B, 32×3",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "29.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    },
+    {
+      "model": "MViTv2-B, 32×3",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "31.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    },
+    {
+      "model": "MViTv2-L† 312² , 40×3",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "33.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    },
+    {
+      "model": "MViTv2-L† 312² , 40×3",
+      "dataset_surface": "AVA v2.2",
+      "metric_surface": "val mAP",
+      "value_surface": "34.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous work on AVA v2.2."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "64 GPUs",
+    "batch_size": 32,
+    "epochs": 300
+  },
+  "methods_used": [
+    "decomposed relative positional embeddings",
+    "residual pooling connections",
+    "pooling attention",
+    "Feature Pyramid Networks (FPN)",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN",
+    "Hybrid window attention",
+    "AdamW",
+    "mixup",
+    "cutmix",
+    "random erasing",
+    "rand augment",
+    "stochastic depth",
+    "label-smoothing",
+    "synchronized SGD",
+    "SoftNMS",
+    "multi-scale testing",
+    "large-scale jittering"
+  ],
+  "novel_contributions": [
+    "We present an improved version of MViT that incorporates decomposed relative positional embeddings and residual pooling connections.",
+    "We study MViT as a unified architecture for image and video classification, as well as object detection.",
+    "We develop a simple-yet-effective Hybrid window attention scheme that can complement pooling attention for better accuracy/compute tradeoff.",
+    "We instantiate the architecture in five sizes and report a practical training recipe for large multiscale transformers."
+  ],
+  "key_claims": [
+    {
+      "claim": "MViTv2 is a unified architecture for image and video classification, as well as object detection, and the improved pooling attention uses decomposed relative positional embeddings and residual pooling connections.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Without bells-and-whistles, MViTv2 has state-of-the-art performance in 3 domains: 88.8% accuracy on ImageNet classification, 58.7 APbox on COCO object detection, and 86.1% on Kinetics-400 video classification.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MViTv2 outperforms prior work on ImageNet-1K, COCO detection, and Kinetics video recognition, and pooling attention outperforms window attention in accuracy/compute.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper instantiates MViTv2 in five sizes and reports that the improved architecture scales from Tiny to Huge variants.",
+      "evidence_section": "4.4. MVIT Architecture Variants",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1K, MViTv2-L † 384² reaches 86.3 with full-sized crop testing and is described as the highest accuracy on IN-1K to date without external data or distillation models.",
+      "evidence_section": "5.1. Image Classification on ImageNet-1K",
+      "page": null
+    },
+    {
+      "claim": "On COCO, MViTv2-L††* achieves 58.7 APbox with Cascade Mask R-CNN, SoftNMS, and multi-scale testing.",
+      "evidence_section": "5.2. Object Detection on COCO",
+      "page": null
+    },
+    {
+      "claim": "On Kinetics-400, MViTv2-L reaches 86.1% top-1 accuracy, and on Kinetics-600 and Kinetics-700 the larger models reach 87.9% and 79.4% top-1 respectively.",
+      "evidence_section": "6. Experiments: Video Recognition",
+      "page": null
+    }
+  ]
+}

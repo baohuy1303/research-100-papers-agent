@@ -1,0 +1,582 @@
+{
+  "paper_id": "a26a7a74f1e5fd562be95c3611a0680759fbdf84",
+  "architecture_summary": "CoCa (Contrastive Captioner) is a minimalist image-text encoder-decoder foundation model that jointly pretrains with contrastive loss and captioning loss. It decouples the decoder into unimodal layers without cross-attention and multimodal layers with cross-attention to the image encoder, and uses attentional pooling for task-specific visual representations.",
+  "model_variants": [
+    {
+      "name": "CoCa-Base",
+      "param_count_surface": "383M",
+      "page": null
+    },
+    {
+      "name": "CoCa-Large",
+      "param_count_surface": "787M",
+      "page": null
+    },
+    {
+      "name": "CoCa",
+      "param_count_surface": "2.1B",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ALIGN",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-700",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Moments-in-Time",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSCOCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSR-VTT",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VQA v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SNLI-VE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLVR2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NoCaps",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-A",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-R",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Sketch",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ObjectNet",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "CoCa (frozen)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "90.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (finetuned)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "91.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (frozen)",
+      "dataset_surface": "K-400",
+      "metric_surface": "Top-1",
+      "value_surface": "88.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (frozen)",
+      "dataset_surface": "K-600",
+      "metric_surface": "Top-1",
+      "value_surface": "88.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (frozen)",
+      "dataset_surface": "K-700",
+      "metric_surface": "Top-1",
+      "value_surface": "81.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (frozen)",
+      "dataset_surface": "Moments-in-Time",
+      "metric_surface": "Top-1",
+      "value_surface": "47.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (finetuned)",
+      "dataset_surface": "K-400",
+      "metric_surface": "Top-1",
+      "value_surface": "88.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (finetuned)",
+      "dataset_surface": "K-600",
+      "metric_surface": "Top-1",
+      "value_surface": "89.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (finetuned)",
+      "dataset_surface": "K-700",
+      "metric_surface": "Top-1",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa (finetuned)",
+      "dataset_surface": "Moments-in-Time",
+      "metric_surface": "Top-1",
+      "value_surface": "49.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification and video action recognition with frozen encoder or finetuned encoder."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "92.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5",
+      "value_surface": "99.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10",
+      "value_surface": "99.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "66.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@5",
+      "value_surface": "86.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@10",
+      "value_surface": "91.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "80.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "51.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K [62] and MSCOCO [63] datasets."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "86.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ImageNet-A",
+      "metric_surface": "Top-1",
+      "value_surface": "90.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ImageNet-R",
+      "metric_surface": "Top-1",
+      "value_surface": "96.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ImageNet-V2",
+      "metric_surface": "Top-1",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ImageNet-Sketch",
+      "metric_surface": "Top-1",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "Top-1",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image classification results on ImageNet [9], ImageNet-A [64], ImageNet-R [65], ImageNet-V2 [66], ImageNet-Sketch [67] and ObjectNet [68]."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@1",
+      "value_surface": "30.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@5",
+      "value_surface": "52.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@10",
+      "value_surface": "61.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@1",
+      "value_surface": "49.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@5",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSR-VTT Full",
+      "metric_surface": "R@10",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Video-Text Retrieval on MSR-VTT Full test set."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-dev",
+      "value_surface": "82.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-std",
+      "value_surface": "82.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "SNLI-VE",
+      "metric_surface": "dev",
+      "value_surface": "87.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "SNLI-VE",
+      "metric_surface": "test",
+      "value_surface": "87.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "dev",
+      "value_surface": "86.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "test-p",
+      "value_surface": "87.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Multimodal understanding results comparing vision-language pretraining methods."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "B@4",
+      "value_surface": "40.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "M",
+      "value_surface": "33.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "C",
+      "value_surface": "143.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "S",
+      "value_surface": "24.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "C",
+      "value_surface": "122.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "S",
+      "value_surface": "15.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "C",
+      "value_surface": "120.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    },
+    {
+      "model": "CoCa",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "S",
+      "value_surface": "15.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Image captioning results on MSCOCO and NoCaps (B@4: BLEU@4, M: METEOR, C: CIDEr, S: SPICE)."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "5 days on 2,048 CloudTPUv4 chips",
+    "batch_size": 65536,
+    "epochs": 500000
+  },
+  "methods_used": [
+    "contrastive loss",
+    "captioning loss",
+    "encoder-decoder architecture",
+    "cross-attention",
+    "attentional pooling",
+    "causal masking",
+    "autoregressive decoding",
+    "teacher-forcing",
+    "AdaFactor",
+    "GSPMD",
+    "sentence-piece model",
+    "large-scale pretraining",
+    "zero-shot transfer",
+    "frozen-feature evaluation",
+    "finetuning"
+  ],
+  "novel_contributions": [
+    "A minimalist Contrastive Captioner (CoCa) that unifies single-encoder, dual-encoder, and encoder-decoder paradigms in one model",
+    "A decoupled decoder design that splits unimodal and multimodal layers by omitting cross-attention in the first half of decoder layers",
+    "Task-specific attentional pooling to produce different-length visual representations for contrastive and generative objectives",
+    "Single-stage pretraining from scratch on both web-scale alt-text data and annotated images by treating all labels as text",
+    "State-of-the-art performance across visual recognition, crossmodal retrieval, multimodal understanding, and image captioning with a single checkpoint"
+  ],
+  "key_claims": [
+    {
+      "claim": "CoCa is a minimalist image-text foundation model that jointly pretrains with contrastive loss and captioning loss, subsuming CLIP-like and SimVLM-like capabilities.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CoCa omits cross-attention in the first half of decoder layers to encode unimodal text representations and uses the remaining layers for multimodal image-text representations.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CoCa is pretrained end-to-end and from scratch on both web-scale alt-text data and annotated images by treating all labels simply as text.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CoCa obtains 86.3% zero-shot top-1 accuracy, 90.6% with a frozen encoder, and 91.0% with a finetuned encoder on ImageNet.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CoCa sets new state-of-the-art results on a broad range of downstream tasks spanning visual recognition, crossmodal retrieval, multimodal understanding, and image captioning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model uses a single forward propagation to compute both contrastive and captioning losses with minimal overhead compared to standard encoder-decoder models.",
+      "evidence_section": "3.2 Contrastive Captioners Pretraining",
+      "page": null
+    },
+    {
+      "claim": "CoCa is pretrained on JFT-3B and ALIGN in a single stage, with 500k steps and a batch size of 65,536 image-text pairs.",
+      "evidence_section": "4.1 Training Setup",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "paper_id": "e5cb26148791b57bfd36aa26ce2401e231d01b57",
+  "architecture_summary": "The paper proposes Deformable Attention Transformer (DAT), a hierarchical Vision Transformer backbone that replaces vanilla self-attention with a deformable self-attention module. DAT learns query-agnostic offsets to shift keys and values toward important regions, and uses local attention in early stages plus deformable attention in later stages for image classification and dense prediction tasks.",
+  "model_variants": [
+    {
+      "name": "DAT-T",
+      "param_count_surface": "29M",
+      "page": null
+    },
+    {
+      "name": "DAT-S",
+      "param_count_surface": "50M",
+      "page": null
+    },
+    {
+      "name": "DAT-B",
+      "param_count_surface": "88M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DAT-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc.",
+      "value_surface": "82.0 (+0.7)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of DAT with other vision transformer backbones on FLOPs, parameters, accuracy on the ImageNet-1K classification task."
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc.",
+      "value_surface": "83.7 (+0.7)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of DAT with other vision transformer backbones on FLOPs, parameters, accuracy on the ImageNet-1K classification task."
+    },
+    {
+      "model": "DAT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc.",
+      "value_surface": "84.0 (+0.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of DAT with other vision transformer backbones on FLOPs, parameters, accuracy on the ImageNet-1K classification task."
+    },
+    {
+      "model": "DAT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc.",
+      "value_surface": "84.8 (+0.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of DAT with other vision transformer backbones on FLOPs, parameters, accuracy on the ImageNet-1K classification task."
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "42.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with RetinaNet [24]."
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "45.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with RetinaNet [24]."
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "45.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with RetinaNet [24]."
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO object detection with RetinaNet [24]."
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "44.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "(a) Mask R-CNN Object Detection & Instance Segmentation on COCO"
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "47.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "(a) Mask R-CNN Object Detection & Instance Segmentation on COCO"
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "47.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "(a) Mask R-CNN Object Detection & Instance Segmentation on COCO"
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "49.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "(a) Mask R-CNN Object Detection & Instance Segmentation on COCO"
+    },
+    {
+      "model": "DAT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "53.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "(b) Cascade Mask R-CNN Object Detection & Instance Segmentation on COCO"
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "42.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "46.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    },
+    {
+      "model": "DAT-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "47.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    },
+    {
+      "model": "DAT-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "45.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    },
+    {
+      "model": "DAT-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "48.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    },
+    {
+      "model": "DAT-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "49.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "deformable self-attention",
+    "multi-head self-attention",
+    "bilinear interpolation",
+    "relative position bias",
+    "depthwise convolution",
+    "patch embedding",
+    "window-based local attention",
+    "shift-window attention",
+    "AdamW",
+    "RandAugment",
+    "Mixup",
+    "CutMix",
+    "stochastic depth",
+    "weight decay"
+  ],
+  "novel_contributions": [
+    "a novel deformable self-attention module where the positions of key and value pairs in self-attention are selected in a data-dependent way",
+    "Deformable Attention Transformer (DAT), a general backbone model with deformable attention for both image classification and dense prediction tasks",
+    "the first deformable self-attention backbone for visual recognition",
+    "a simple and efficient deformable self-attention design with linear space complexity",
+    "query agnostic offsets to shift keys and values to important regions"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes a novel deformable self-attention module that selects key and value positions in a data-dependent way, enabling the model to focus on relevant regions and capture more informative features.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DAT is presented as a general backbone model for both image classification and dense prediction tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The authors claim their model outperforms competitive baselines including Swin Transformer consistently, by 0.7 on top-1 accuracy, 1.2 on mIoU, and 1.1 on object detection for both box AP and mask AP.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DAT uses query agnostic offsets and shared deformed keys and values to achieve an efficient trade-off with linear space complexity.",
+      "evidence_section": "1. Introduction",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1K classification, DAT outperforms Swin Transformer counterparts by +0.7, +0.7 and +0.5 across the three scales, and DAT-B improves further to 84.8 at 384×384.",
+      "evidence_section": "4.1. ImageNet-1K Classification",
+      "page": null
+    },
+    {
+      "claim": "On COCO object detection and instance segmentation, DAT achieves consistent improvements over Swin Transformer in RetinaNet, Mask R-CNN, and Cascade Mask R-CNN settings.",
+      "evidence_section": "4.2. COCO Object Detection",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K semantic segmentation, DAT improves over Swin Transformer at each of three model scales.",
+      "evidence_section": "4.3. ADE20K Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "The ablation studies show that deformable relative position bias is more compatible with deformable attention than fixed learnable position bias or depth-wise convolution, and that using deformable attention in later stages is more effective than in early stages.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    }
+  ]
+}

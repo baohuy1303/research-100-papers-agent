@@ -1,0 +1,220 @@
+{
+  "paper_id": "68f080e0ac836ea230cb5316fbed273c70422d75",
+  "architecture_summary": "Segmenter is a fully transformer-based encoder-decoder for semantic segmentation built on ViT patch embeddings. It uses a transformer encoder over image patches and either a point-wise linear decoder or a mask transformer decoder to produce pixel-level class annotations without convolutions.",
+  "model_variants": [
+    {
+      "name": "Seg-Ti",
+      "param_count_surface": "6M",
+      "page": null
+    },
+    {
+      "name": "Seg-S",
+      "param_count_surface": "22M",
+      "page": null
+    },
+    {
+      "name": "Seg-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "Seg-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "Seg-L",
+      "param_count_surface": "307M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pascal Context",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cityscapes",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Seg-L-Mask/16",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "53.63%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "State-of-the-art comparison on ADE20K validation set."
+    },
+    {
+      "model": "Seg-L-Mask/16",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU",
+      "value_surface": "59.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "State-of-the-art comparison on Pascal Context validation set."
+    },
+    {
+      "model": "Seg-L-Mask/16",
+      "dataset_surface": "Cityscapes",
+      "metric_surface": "mIoU",
+      "value_surface": "81.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art comparison on Cityscapes validation set."
+    },
+    {
+      "model": "Seg-B/16",
+      "dataset_surface": "ADE20K validation set",
+      "metric_surface": "mIoU (SS)",
+      "value_surface": "48.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different Segmenter models with varying backbones and input patch sizes on ADE20K validation set."
+    },
+    {
+      "model": "Seg-B/8",
+      "dataset_surface": "ADE20K validation set",
+      "metric_surface": "mIoU (SS)",
+      "value_surface": "49.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different Segmenter models with varying backbones and input patch sizes on ADE20K validation set."
+    },
+    {
+      "model": "Seg-L/16",
+      "dataset_surface": "ADE20K validation set",
+      "metric_surface": "mIoU (SS)",
+      "value_surface": "50.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different Segmenter models with varying backbones and input patch sizes on ADE20K validation set."
+    },
+    {
+      "model": "Seg-L-Mask/16",
+      "dataset_surface": "ADE20K validation set",
+      "metric_surface": "mIoU (SS)",
+      "value_surface": "51.30",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation with respect to the object size on ADE20K validation set (mean IoU). Comparison of DeepLabv3+ ResNeSt-101 to Segmenter models with a linear or a mask transformer decoder."
+    },
+    {
+      "model": "Seg-S/16",
+      "dataset_surface": "ADE20K validation set",
+      "metric_surface": "mIoU (SS)",
+      "value_surface": "45.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of pretraining on the performance on ADE20K validation set."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 8,
+    "epochs": 160000
+  },
+  "methods_used": [
+    "Vision Transformer (ViT)",
+    "patch embeddings",
+    "position embeddings",
+    "multi-headed self-attention (MSA)",
+    "layer norm",
+    "MLP",
+    "point-wise linear decoder",
+    "mask transformer decoder",
+    "class embeddings",
+    "bilinear interpolation",
+    "cross-entropy loss",
+    "stochastic depth",
+    "dropout",
+    "Mixup",
+    "RandAugment",
+    "random resizing",
+    "random left-right flipping",
+    "random cropping",
+    "padding",
+    "SGD",
+    "poly learning rate decay",
+    "sliding-window inference",
+    "multi-scale inference"
+  ],
+  "novel_contributions": [
+    "We propose a novel approach to semantic segmentation based on the Vision Transformer (ViT) that does not use convolutions, captures contextual information by design and outperforms FCN based approaches.",
+    "We present a family of models with varying levels of resolution which allows to trade-off between precision and runtime, ranging from state-of-the-art performance to models with fast inference and good performances.",
+    "We propose a transformer-based decoder generating class masks which outperforms our linear baseline and can be extended to perform more general image segmentation tasks.",
+    "We demonstrate that our approach yields state-of-the-art results on both ADE20K and Pascal Context datasets and is competitive on Cityscapes."
+  ],
+  "key_claims": [
+    {
+      "claim": "Segmenter is a pure transformer encoder-decoder for semantic segmentation that models global image context at every stage and does not use convolutions.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "A point-wise linear decoder already gives excellent results, and a mask transformer decoder further improves performance.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Large models with small patch sizes perform better, and the best model reaches 53.63% mIoU on ADE20K.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Segmenter outperforms the state of the art on both ADE20K and Pascal Context and is competitive on Cityscapes.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Stochastic depth improves transformer training for segmentation, while dropout hurts performance.",
+      "evidence_section": "4.3. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "Reducing patch size is a key factor for segmentation performance and improves boundary quality.",
+      "evidence_section": "4.3. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "The mask transformer consistently improves over the linear decoder.",
+      "evidence_section": "4.3. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "ImageNet pre-training is important; Seg-S/16 with ImageNet-21k pre-training and SGD reaches 45.37% mIoU on ADE20K validation set.",
+      "evidence_section": "Appendix A. ImageNet pre-training",
+      "page": null
+    }
+  ]
+}

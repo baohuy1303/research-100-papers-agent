@@ -1,0 +1,611 @@
+{
+  "paper_id": "722ad6ac92286507437b31486f47987d6ece05c9",
+  "architecture_summary": "BEiT is a self-supervised vision Transformer pretrained with masked image modeling: images are split into patches, some patches are masked, and the model predicts discrete visual tokens obtained from an image tokenizer. The pretrained encoder is then fine-tuned on downstream tasks such as image classification and semantic segmentation.",
+  "model_variants": [
+    {
+      "name": "BEiT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "BEiT-L",
+      "param_count_surface": "307M",
+      "page": null
+    },
+    {
+      "name": "BEiT+",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ILSVRC-2012 ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MS COCO",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Google JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Google JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "In-House-70M",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "BEiT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K"
+    },
+    {
+      "model": "BEiT 384-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K"
+    },
+    {
+      "model": "BEiT-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K"
+    },
+    {
+      "model": "BEiT 384-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K"
+    },
+    {
+      "model": "Supervised Pre-Training on ImageNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "45.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on ADE20K"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "44.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on ADE20K"
+    },
+    {
+      "model": "BEiT",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "45.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on ADE20K"
+    },
+    {
+      "model": "BEiT + Intermediate Fine-Tuning",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "47.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on ADE20K"
+    },
+    {
+      "model": "BEiT (300 Epochs)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "– Blockwise masking",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "– Visual tokens (i.e., recover masked pixels)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "81.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "– Visual tokens – Blockwise masking",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "80.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "+ Recover 100% visual tokens",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "– Masking + Recover 100% visual tokens",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "81.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "Pretrain longer (800 epochs)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies for BEiT pre-training on image classification and semantic segmentation"
+    },
+    {
+      "model": "ViT (used in this paper)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies of architecture variants on image classification and semantic segmentation"
+    },
+    {
+      "model": "ViT+LayerScale",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies of architecture variants on image classification and semantic segmentation"
+    },
+    {
+      "model": "ViT+LayerScale+Relative Position Bias",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation studies of architecture variants on image classification and semantic segmentation"
+    },
+    {
+      "model": "BEiT-B +",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K fine-tuning"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K fine-tuning"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K fine-tuning"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K fine-tuning"
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "50.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "BEiT-B +",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "53.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "56.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "57.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "BEiT-L +",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "Multi-Scale mIoU (%)",
+      "value_surface": "58.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison on the ADE20K semantic segmentation"
+    },
+    {
+      "model": "DALL-E Tokenizer",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "82.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K using different image tokenizers during pre-training"
+    },
+    {
+      "model": "Our reimplemention",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "82.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy on ImageNet-1K using different image tokenizers during pre-training"
+    },
+    {
+      "model": "DINO-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "MoCo v3-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "MoCo v3-L",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "iGPT-L",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "65.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "iGPT-XL",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "68.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "iGPT-XL",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "72.0*",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "BEiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "56.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "BEiT-L",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Accuracy",
+      "value_surface": "73.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear probing accuracy on ImageNet"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "BEiT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "BEiT + DINO",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "44.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "BEiT",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "44.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "BEiT + DINO",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K",
+      "value_surface": "46.85",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "We train the pre-training tasks of BEiT and DINO [CTM+21] in the way of multi-task learning"
+    },
+    {
+      "model": "ViT 384",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "48.5*",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "ViT 384",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "DeiT",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "DINO",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "MoCo v3",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "BEiT",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    },
+    {
+      "model": "BEiT",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy of image classification on CIFAR-100"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "16 Nvidia Telsa V100 32GB GPU cards",
+    "batch_size": 2048,
+    "epochs": 800
+  },
+  "methods_used": [
+    "masked image modeling",
+    "self-supervised learning",
+    "image tokenizer",
+    "discrete variational autoencoder",
+    "Gumbel-softmax relaxation",
+    "patch embedding",
+    "self-attention",
+    "blockwise masking",
+    "Adam",
+    "stochastic depth",
+    "layer-wise learning rate decay",
+    "random resized cropping",
+    "horizontal flipping",
+    "color jittering",
+    "intermediate fine-tuning",
+    "deconvolution layers",
+    "average pooling",
+    "softmax classifier",
+    "multi-task learning",
+    "relative position bias",
+    "LayerScale",
+    "AdamW"
+  ],
+  "novel_contributions": [
+    "We propose a masked image modeling task to pretrain vision Transformers in a self-supervised manner.",
+    "We also provide a theoretical explanation from the perspective of downstream autoencoder.",
+    "We pretrain BEiT and conduct extensive fine-tuning experiments on downstream tasks, such as image classification, and semantic segmentation.",
+    "We present that the self-attention mechanism of self-supervised BEiT learns to distinguish semantic regions and object boundaries, although without using any human annotation."
+  ],
+  "key_claims": [
+    {
+      "claim": "BEiT introduces masked image modeling for vision Transformers, predicting discrete visual tokens rather than raw pixels during self-supervised pre-training.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BEiT outperforms from-scratch training and previous strong self-supervised models on image classification and semantic segmentation, and is complementary to supervised pre-training.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model can learn reasonable semantic regions via self-supervised pre-training, as shown by self-attention visualizations.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BEiT-B reaches 83.2 top-1 accuracy on ImageNet-1K, and BEiT 384-L reaches 86.3 in Table 1.",
+      "evidence_section": "3.1 Image Classification",
+      "page": null
+    },
+    {
+      "claim": "BEiT-L + on In-House-70M reaches 89.5 top-1 accuracy on ImageNet-1K, and BEiT-L + reaches 58.4 Multi-Scale mIoU on ADE20K.",
+      "evidence_section": "B Comparison with Large-Scale Supervised Pre-Training",
+      "page": null
+    },
+    {
+      "claim": "BEiT achieves 45.6 on ADE20K and improves to 47.7 with intermediate fine-tuning.",
+      "evidence_section": "3.2 Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "Blockwise masking, discrete visual tokens, and longer pre-training are all shown by ablation to matter for downstream performance.",
+      "evidence_section": "3.3 Ablation Studies",
+      "page": null
+    },
+    {
+      "claim": "BEiT fine-tuning converges faster than training DeiT from scratch on ImageNet-1K.",
+      "evidence_section": "3.1 Image Classification",
+      "page": null
+    }
+  ]
+}

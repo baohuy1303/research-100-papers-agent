@@ -1,0 +1,602 @@
+{
+  "paper_id": "739ceacfafb1c4eaa17509351b647c773270b3ae",
+  "architecture_summary": "The paper studies self-supervised training of Vision Transformers in contrastive/Siamese frameworks, centered on a MoCo v3 setup with a backbone, projection head, and prediction head. It emphasizes training stability issues and shows that freezing the patch projection as a fixed random patch projection can improve stability and accuracy across several self-supervised frameworks.",
+  "model_variants": [
+    {
+      "name": "ViT-Small",
+      "param_count_surface": "22 M",
+      "page": null
+    },
+    {
+      "name": "ViT-Base",
+      "param_count_surface": "86 M",
+      "page": null
+    },
+    {
+      "name": "ViT-Large",
+      "param_count_surface": "304 M",
+      "page": null
+    },
+    {
+      "name": "ViT-Huge",
+      "param_count_surface": "632 M",
+      "page": null
+    },
+    {
+      "name": "ViT-S/16",
+      "param_count_surface": "22 M",
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": "86 M",
+      "page": null
+    },
+    {
+      "name": "ViT-L/16",
+      "param_count_surface": "304 M",
+      "page": null
+    },
+    {
+      "name": "ViT-H/14",
+      "param_count_surface": "632 M",
+      "page": null
+    },
+    {
+      "name": "ViT-BN-H",
+      "param_count_surface": "632M",
+      "page": null
+    },
+    {
+      "name": "ViT-BN-L/7",
+      "param_count_surface": "304M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet training set",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford Flowers-102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIIT-Pets",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "iGPT-L",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "69.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "iGPT-XL",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "72.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-H",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "78.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-BN-H",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-BN-L/7",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "MoCo v3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "MoCo v3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "acc. (%)",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "State-of-the-art Self-supervised Transformers in ImageNet classification, evaluated by linear probing (top panel) or end-to-end fine-tuning (bottom panel)."
+    },
+    {
+      "model": "R50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "73.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "R-50, 800-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "73.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "ViT-S, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "R-50, 800-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "70.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "R-50, 800-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "74.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "R-50, 800-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "71.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-S/16 and ViT-B/16 in different self-supervised learning frameworks (ImageNet, linear probing)."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Position embedding ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Position embedding ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "74.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Position embedding ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Class token ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "69.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Class token ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Class token ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BatchNorm in MLP heads."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "74.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BatchNorm in MLP heads."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Prediction head ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "75.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Prediction head ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "74.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Momentum encoder ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "75.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Momentum encoder ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Momentum encoder ablation."
+    },
+    {
+      "model": "ViT-B, 300-ep",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "75.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Momentum encoder ablation."
+    },
+    {
+      "model": "ViT-S/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Training length."
+    },
+    {
+      "model": "ViT-S/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Training length."
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Training length."
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "linear acc.",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Training length."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "98.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "99.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-H",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "99.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "90.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "91.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-H",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "91.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "Oxford Flowers-102",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "97.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "Oxford Flowers-102",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "98.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-H",
+      "dataset_surface": "Oxford Flowers-102",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "98.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-B",
+      "dataset_surface": "Oxford-IIIT-Pets",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "93.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-L",
+      "dataset_surface": "Oxford-IIIT-Pets",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "93.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    },
+    {
+      "model": "ViT-H",
+      "dataset_surface": "Oxford-IIIT-Pets",
+      "metric_surface": "accuracy (%)",
+      "value_surface": "94.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning accuracy (%) in four datasets. All entries are end-to-end fine-tuned [16]."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "~ 625 TPU-days",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "self-supervised learning",
+    "contrastive learning",
+    "Siamese networks",
+    "MoCo v3",
+    "SimCLR",
+    "BYOL",
+    "SwAV",
+    "AdamW",
+    "LAMB",
+    "LARS",
+    "random resized cropping",
+    "horizontal flipping",
+    "color jittering",
+    "grayscale conversion",
+    "blurring",
+    "solarization",
+    "patch projection",
+    "BatchNorm",
+    "LayerNorm",
+    "sine-cosine variant",
+    "class token",
+    "momentum encoder",
+    "prediction head",
+    "projection head",
+    "linear probing",
+    "end-to-end fine-tuning",
+    "kNN monitor",
+    "stop-gradient"
+  ],
+  "novel_contributions": [
+    "A systematic empirical study of training self-supervised Vision Transformers.",
+    "A MoCo v3 framework adapted for self-supervised ViT training with a simplified large-batch contrastive setup.",
+    "An empirical finding that instability is a major issue in self-supervised ViT training and can cause hidden 1~3% accuracy degradation.",
+    "A simple fixed random patch projection trick that improves stability and accuracy across MoCo v3, SimCLR, BYOL, and SwAV.",
+    "Benchmarking and ablations of self-supervised ViT across multiple frameworks, architectures, and downstream transfer tasks."
+  ],
+  "key_claims": [
+    {
+      "claim": "Instability is a major issue in self-supervised ViT training, and it can cause mild but hidden accuracy degradation rather than catastrophic divergence.",
+      "evidence_section": "Abstract; 4. Stability of Self-Supervised ViT Training",
+      "page": null
+    },
+    {
+      "claim": "Freezing the patch projection layer as a fixed random patch projection alleviates instability and consistently increases accuracy.",
+      "evidence_section": "4.2. A Trick for Improving Stability",
+      "page": null
+    },
+    {
+      "claim": "MoCo v3 performs better than SimCLR, BYOL, and SwAV for ViT in ImageNet linear probing, with ViT-B reaching 76.5.",
+      "evidence_section": "6.1. Self-supervised Learning Frameworks",
+      "page": null
+    },
+    {
+      "claim": "MoCo v3 achieves 83.2% with ViT-B and 84.1% with ViT-L under end-to-end fine-tuning on ImageNet-1k.",
+      "evidence_section": "6.3. Comparisons with Prior Art",
+      "page": null
+    },
+    {
+      "claim": "Self-supervised ViT transfer learning improves from ViT-B to ViT-L and is better than ImageNet-supervised counterparts on three of four downstream datasets.",
+      "evidence_section": "6.4. Transfer Learning",
+      "page": null
+    },
+    {
+      "claim": "Removing position embedding only slightly hurts performance, indicating that self-supervised ViT can learn strong representations without positional inductive bias.",
+      "evidence_section": "6.2. Ablations of ViT + MoCo v3",
+      "page": null
+    },
+    {
+      "claim": "The paper finds that bigger self-supervised ViT models can improve accuracy, unlike the supervised ViT trend reported in prior work.",
+      "evidence_section": "Abstract; 6.3. Comparisons with Prior Art",
+      "page": null
+    }
+  ]
+}

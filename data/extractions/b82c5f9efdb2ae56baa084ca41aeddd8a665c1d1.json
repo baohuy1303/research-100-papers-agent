@@ -1,0 +1,431 @@
+{
+  "paper_id": "b82c5f9efdb2ae56baa084ca41aeddd8a665c1d1",
+  "architecture_summary": "ALBEF aligns image and text representations before fusing them with a multimodal encoder. It uses a detector-free ViT-B/16 image encoder, a BERT_base text encoder, and a 6-layer multimodal transformer trained with image-text contrastive learning, masked language modeling, image-text matching, and momentum distillation.",
+  "model_variants": [
+    {
+      "name": "BERT_base",
+      "param_count_surface": "123.7M parameters",
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": "85.8M parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Conceptual 12M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SNLI-VE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VQA2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLVR2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCO+",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "TR",
+      "value_surface": "97.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of the proposed methods on four downstream V+L tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "IR",
+      "value_surface": "92.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of the proposed methods on four downstream V+L tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "SNLI-VE",
+      "metric_surface": "test",
+      "value_surface": "80.30",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of the proposed methods on four downstream V+L tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "test-P",
+      "value_surface": "80.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of the proposed methods on four downstream V+L tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-dev",
+      "value_surface": "74.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of the proposed methods on four downstream V+L tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "95.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5",
+      "value_surface": "99.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10",
+      "value_surface": "100.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "85.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5",
+      "value_surface": "97.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10",
+      "value_surface": "98.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@1",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@5",
+      "value_surface": "94.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@10",
+      "value_surface": "97.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@1",
+      "value_surface": "60.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@5",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "COCO",
+      "metric_surface": "R@10",
+      "value_surface": "90.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuned image-text retrieval results on Flickr30K and COCO datasets"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "94.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5",
+      "value_surface": "99.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10",
+      "value_surface": "99.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10",
+      "value_surface": "98.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot image-text retrieval results on Flickr30K"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-dev",
+      "value_surface": "75.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-std",
+      "value_surface": "76.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "dev",
+      "value_surface": "82.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "test-P",
+      "value_surface": "83.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "SNLI-VE",
+      "metric_surface": "val",
+      "value_surface": "80.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "SNLI-VE",
+      "metric_surface": "test",
+      "value_surface": "80.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on downstream vision-language tasks"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "RefCOCO+",
+      "metric_surface": "Val",
+      "value_surface": "58.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Weakly-supervised visual grounding on RefCOCO+ [56] dataset"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "RefCOCO+",
+      "metric_surface": "TestA",
+      "value_surface": "65.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Weakly-supervised visual grounding on RefCOCO+ [56] dataset"
+    },
+    {
+      "model": "ALBEF",
+      "dataset_surface": "RefCOCO+",
+      "metric_surface": "TestB",
+      "value_surface": "46.25",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Weakly-supervised visual grounding on RefCOCO+ [56] dataset"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 NVIDIA A100 GPUs",
+    "batch_size": 512,
+    "epochs": 30
+  },
+  "methods_used": [
+    "contrastive loss",
+    "cross-modal attention",
+    "image-text contrastive learning (ITC)",
+    "masked language modeling (MLM)",
+    "image-text matching (ITM)",
+    "hard negative mining",
+    "momentum distillation",
+    "self-training",
+    "RandAugment",
+    "AdamW",
+    "cosine schedule",
+    "Grad-CAM",
+    "transformer decoder"
+  ],
+  "novel_contributions": [
+    "ALBEF, a new VLP framework that aligns image and text representations before fusion",
+    "Momentum Distillation (MoD), a self-training method that learns from pseudo-targets produced by a momentum model",
+    "A theoretical mutual-information maximization perspective for ITC, MLM, and MoD",
+    "A detector-free vision-language pre-training approach that does not require bounding box annotations nor high-resolution images"
+  ],
+  "key_claims": [
+    {
+      "claim": "ALBEF aligns image and text representations before fusing them through cross-modal attention, enabling more grounded vision-language representation learning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The method does not require bounding box annotations nor high-resolution images.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Momentum distillation is proposed to improve learning from noisy web data by using pseudo-targets from a momentum model.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ALBEF achieves state-of-the-art performance on multiple downstream vision-language tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On VQA and NLVR2, ALBEF achieves absolute improvements of 2.37% and 3.84% compared to the state-of-the-art.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ALBEF outperforms methods pre-trained on orders of magnitude larger datasets on image-text retrieval.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "With 14M pre-training images, ALBEF achieves 98.70 TR, 94.07 IR, 80.91 on SNLI-VE test, 83.14 on NLVR2 test-P, and 75.84 on VQA test-dev in Table 1.",
+      "evidence_section": "6.1 Evaluation on the Proposed Methods",
+      "page": null
+    }
+  ]
+}

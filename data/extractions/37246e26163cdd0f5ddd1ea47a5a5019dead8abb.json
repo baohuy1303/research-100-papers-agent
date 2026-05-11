@@ -1,0 +1,552 @@
+{
+  "paper_id": "37246e26163cdd0f5ddd1ea47a5a5019dead8abb",
+  "architecture_summary": "DehazeFormer is a modified 5-stage U-Net based on Swin Transformer, with RescaleNorm, ReLU/SoftReLU-style activation choices, shifted window partitioning with reflection padding, parallel convolution with attention, SK fusion, and a soft reconstruction module for single image dehazing.",
+  "model_variants": [
+    {
+      "name": "DehazeFormer-T",
+      "param_count_surface": "0.686M",
+      "page": null
+    },
+    {
+      "name": "DehazeFormer-S",
+      "param_count_surface": "1.283M",
+      "page": null
+    },
+    {
+      "name": "DehazeFormer-B",
+      "param_count_surface": "2.514M",
+      "page": null
+    },
+    {
+      "name": "DehazeFormer-M",
+      "param_count_surface": "4.634M",
+      "page": null
+    },
+    {
+      "name": "DehazeFormer-L",
+      "param_count_surface": "25.44M",
+      "page": null
+    },
+    {
+      "name": "DehazeFormer-A",
+      "param_count_surface": "0.671M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "SOTS indoor set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RS-Haze",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RESIDE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RESIDE-Full",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RESIDE-6K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ITS",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "OTS",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "SOTS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SOTS-mix",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RS-Haze-mix",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RS-Haze-L",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RS-Haze-M",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RS-Haze-D",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "PSNR",
+      "value_surface": "35.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.989",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "PSNR",
+      "value_surface": "33.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.982",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "30.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.973",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "39.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-T",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.968",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "PSNR",
+      "value_surface": "36.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.992",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "PSNR",
+      "value_surface": "34.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.983",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "30.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.976",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "39.57",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.970",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "PSNR",
+      "value_surface": "37.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.994",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "PSNR",
+      "value_surface": "34.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.984",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "31.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.980",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "39.87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-B",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.971",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "PSNR",
+      "value_surface": "38.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.994",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "PSNR",
+      "value_surface": "34.29",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-outdoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.983",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "30.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "SOTS-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.977",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR",
+      "value_surface": "39.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-M",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "SSIM",
+      "value_surface": "0.971",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-L",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "PSNR",
+      "value_surface": "40.05",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-L",
+      "dataset_surface": "SOTS-indoor",
+      "metric_surface": "SSIM",
+      "value_surface": "0.996",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "TABLE IV  QUANTITATIVE COMPARISON OF VARIOUS DEHAZING METHODS TRAINED ON THE RESIDE DATASETS."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-L",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "43.68/0.993",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-M",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "39.58/0.979",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-D",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "35.46/0.938",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "39.57/0.970",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-L",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "55.44/0.999",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-M",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "50.75/0.997",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-D",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "43.66/0.984",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    },
+    {
+      "model": "DehazeFormer-S",
+      "dataset_surface": "RS-Haze-mix",
+      "metric_surface": "PSNR / SSIM",
+      "value_surface": "49.95/0.993",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE V  PSNR / SSIM OF DEHAZEFORMER-S ON THE RGB / MS SET."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Swin Transformer",
+    "U-Net",
+    "LayerNorm",
+    "RescaleNorm",
+    "ReLU",
+    "SoftReLU",
+    "LeakyReLU",
+    "shifted window partitioning",
+    "reflection padding",
+    "masked multi-head self-attention",
+    "multi-head self-attention",
+    "parallel convolution",
+    "DWConv",
+    "ConvBlock",
+    "SK fusion",
+    "soft reconstruction",
+    "AdamW",
+    "cosine annealing",
+    "L1 loss",
+    "data augmentation",
+    "patch embedding"
+  ],
+  "novel_contributions": [
+    "We propose DehazeFormer, an image dehazing Transformer inspired by Swin Transformer with several critical modifications for image dehazing.",
+    "We propose RescaleNorm to replace LayerNorm and argue that LayerNorm harms image dehazing performance.",
+    "We propose SoftReLU and find ReLU / LeakyReLU work better than GELU for image dehazing.",
+    "We propose a shifted window partitioning scheme based on reflection padding and cropping to keep constant window size at image edges.",
+    "We propose a spatial information aggregation scheme that combines MHSA with convolution in parallel.",
+    "We propose a prior-based soft reconstruction module and an SK fusion module.",
+    "We collect a large-scale realistic remote sensing dehazing dataset named RS-Haze."
+  ],
+  "key_claims": [
+    {
+      "claim": "DehazeFormer is a modified Swin Transformer-based U-Net for single image dehazing, with improvements in normalization, activation, window partitioning, aggregation, fusion, and reconstruction.",
+      "evidence_section": "Abstract; III. DEHAZEFORMER",
+      "page": null
+    },
+    {
+      "claim": "On the SOTS indoor set, the small model outperforms FFA-Net with only 25% #Param and 5% computational cost.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The large model is the first method with the PSNR over 40 dB on the SOTS indoor set.",
+      "evidence_section": "Abstract; V. B. Quantitative Comparison",
+      "page": null
+    },
+    {
+      "claim": "DehazeFormer-B surpasses all baseline methods in terms of PSNR and SSIM on the RESIDE-Full indoor set.",
+      "evidence_section": "V. B. Quantitative Comparison",
+      "page": null
+    },
+    {
+      "claim": "DehazeFormer-S surpasses FFA-Net on RS-Haze, and the dataset is designed to evaluate highly non-homogeneous haze removal.",
+      "evidence_section": "IV. RS-HAZE DATASET; V. B. Quantitative Comparison",
+      "page": null
+    },
+    {
+      "claim": "RescaleNorm, reflection-padding-based shifted window partitioning, and parallel convolution each improve performance in ablation studies.",
+      "evidence_section": "V. D. Ablation Study",
+      "page": null
+    }
+  ]
+}

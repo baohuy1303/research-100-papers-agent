@@ -1,0 +1,385 @@
+{
+  "paper_id": "c3e5a20b844c042d2174263d2fd5b30d8cc8f0b0",
+  "architecture_summary": "Grounding DINO is a dual-encoder-single-decoder open-set object detector that marries DINO with grounded pre-training. It uses an image backbone, a text backbone, a feature enhancer with self-attention and cross-attention, language-guided query selection, and a cross-modality decoder to detect arbitrary objects from category names or referring expressions.",
+  "model_variants": [
+    {
+      "name": "Grounding DINO T",
+      "param_count_surface": "172M",
+      "page": null
+    },
+    {
+      "name": "Grounding DINO L",
+      "param_count_surface": "841M",
+      "page": null
+    },
+    {
+      "name": "Grounding DINO T (BERT-B)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Grounding DINO T (BERT-L)",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "O365",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "OpenImage(OI)",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "GoldG",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "RefC",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LVIS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ODiW",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCO+/g",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCO+",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCOg",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ODinW",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "IN22K-LVIS-1M",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Grounding DINO L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "52.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot domain transfer and fine-tuning on COCO"
+    },
+    {
+      "model": "Grounding DINO L",
+      "dataset_surface": "ODiW",
+      "metric_surface": "mean AP",
+      "value_surface": "26.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Zero-shot domain transfer and fine-tuning on COCO"
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results for Grounding DINO and other detection models with the ResNet50 backbone on COCO val2017 trained with 12 epochs (the so called the 1× setting)."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model results on LVIS."
+    },
+    {
+      "model": "Grounding DINO L",
+      "dataset_surface": "ODiW",
+      "metric_surface": "AP_average",
+      "value_surface": "26.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model results on the ODIW benchmark."
+    },
+    {
+      "model": "Grounding DINO L",
+      "dataset_surface": "ODiW",
+      "metric_surface": "AP_median",
+      "value_surface": "18.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model results on the ODIW benchmark."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "RefCOCO",
+      "metric_surface": "val",
+      "value_surface": "89.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy comparison on the referring expression comprehension task."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "RefCOCO+",
+      "metric_surface": "val",
+      "value_surface": "81.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy comparison on the referring expression comprehension task."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "RefCOCOg",
+      "metric_surface": "val",
+      "value_surface": "84.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracy comparison on the referring expression comprehension task."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "COCO minimal",
+      "metric_surface": "Zero-Shot",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impacts of RefC and COCO data for open-set settings. All models are trained with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "COCO minimal",
+      "metric_surface": "Fine-Tune",
+      "value_surface": "57.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impacts of RefC and COCO data for open-set settings. All models are trained with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "LVIS minimal",
+      "metric_surface": "Zero-Shot",
+      "value_surface": "25.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impacts of RefC and COCO data for open-set settings. All models are trained with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "ODinW",
+      "metric_surface": "Zero-Shot",
+      "value_surface": "20.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impacts of RefC and COCO data for open-set settings. All models are trained with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO (Full Model)",
+      "dataset_surface": "COCO minimal",
+      "metric_surface": "Zero-Shot",
+      "value_surface": "46.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablations for our model. All models are trained on the O365 dataset with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO (Full Model)",
+      "dataset_surface": "COCO minimal",
+      "metric_surface": "Fine-Tune",
+      "value_surface": "56.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablations for our model. All models are trained on the O365 dataset with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO (Full Model)",
+      "dataset_surface": "LVIS minimal",
+      "metric_surface": "Zero-Shot",
+      "value_surface": "16.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablations for our model. All models are trained on the O365 dataset with a Swin Transformer Tiny backbone."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results for Grounding DINO Tiny with more decoder queries"
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP",
+      "value_surface": "15.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results for Grounding DINO Tiny with more decoder queries"
+    },
+    {
+      "model": "Grounding DINO T (BERT-B)",
+      "dataset_surface": "RefCOCO",
+      "metric_surface": "val",
+      "value_surface": "87.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results for Grounding DINO with different language encoders"
+    },
+    {
+      "model": "Grounding DINO T (BERT-L)",
+      "dataset_surface": "RefCOCO",
+      "metric_surface": "val",
+      "value_surface": "87.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results for Grounding DINO with different language encoders"
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "LVIS MiniVal",
+      "metric_surface": "Zero-shot",
+      "value_surface": "40.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Oracle experiments on LVIS."
+    },
+    {
+      "model": "Grounding DINO T",
+      "dataset_surface": "LVIS MiniVal",
+      "metric_surface": "Fine-tune",
+      "value_surface": "54.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Oracle experiments on LVIS."
+    },
+    {
+      "model": "Grounding DINO T (9ep)",
+      "dataset_surface": "refcoco",
+      "metric_surface": "val",
+      "value_surface": "81.42",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Training on RefCOCO from scratch."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "16 Nvidia V100 GPUs",
+    "batch_size": 32,
+    "epochs": 12
+  },
+  "methods_used": [
+    "Transformer-based detector",
+    "self-attention",
+    "text-to-image cross-attention",
+    "image-to-text cross-attention",
+    "deformable attention",
+    "language-guided query selection",
+    "cross-modality decoder",
+    "grounded pre-training",
+    "contrastive loss",
+    "L1 loss",
+    "GIOU loss",
+    "focal loss",
+    "Hungarian matching",
+    "BERT",
+    "Swin Transformer",
+    "BPE scheme",
+    "auxiliary loss"
+  ],
+  "novel_contributions": [
+    "develop Grounding DINO, an open-set object detector, by marrying Transformer-based detector DINO with grounded pre-training",
+    "propose a tight fusion solution that includes a feature enhancer, a language-guided query selection, and a cross-modality decoder",
+    "introduce sub-sentence level text features to remove attention between unrelated categories during word feature extractions",
+    "pre-train on large-scale datasets including object detection data, grounding data, and caption data",
+    "extend evaluation to open-set object detection and referring object detection benchmarks"
+  ],
+  "key_claims": [
+    {
+      "claim": "Grounding DINO can detect arbitrary objects with human inputs such as category names or referring expressions.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model proposes tight modality fusion through a feature enhancer, language-guided query selection, and a cross-modality decoder.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Grounding DINO is pre-trained on large-scale datasets including object detection data, grounding data, and caption data.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Grounding DINO achieves a 52.5 AP on the COCO zero-shot detection benchmark.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "It sets a new record on the ODiW zero-shot benchmark with a mean 26.1 AP.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Grounding DINO outperforms previous models on zero-shot COCO transfer, LVIS, ODiW, and RefCOCO+/g settings.",
+      "evidence_section": "4.2 Zero-Shot Transfer of Grounding DINO; 4.3 Referring Object Detection Settings",
+      "page": null
+    },
+    {
+      "claim": "The sub-sentence level text prompt removes attention between unrelated category names while keeping per-word features.",
+      "evidence_section": "3.4 Sub-Sentence Level Text Feature",
+      "page": null
+    },
+    {
+      "claim": "Grounding DINO has smaller parameter size and better efficiency than GLIP.",
+      "evidence_section": "C.4 Model Efficiency",
+      "page": null
+    }
+  ]
+}

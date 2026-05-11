@@ -1,0 +1,316 @@
+{
+  "paper_id": "800cfb3d23115cdcd4d114234b65bbdf2080f798",
+  "architecture_summary": "CSWin Transformer is a hierarchical vision Transformer backbone that replaces full self-attention with Cross-Shaped Window self-attention, computing attention in horizontal and vertical stripes in parallel, and adds Locally-enhanced Positional Encoding (LePE) as a parallel module to the attention branch.",
+  "model_variants": [
+    {
+      "name": "CSWin-T",
+      "param_count_surface": "23M",
+      "page": null
+    },
+    {
+      "name": "CSWin-S",
+      "param_count_surface": "35M",
+      "page": null
+    },
+    {
+      "name": "CSWin-B",
+      "param_count_surface": "78M",
+      "page": null
+    },
+    {
+      "name": "CSWin-L",
+      "param_count_surface": "173M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "85.4%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "84.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K fine-tuning results by pre-training on ImageNet-21K datasets"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "box AP",
+      "value_surface": "53.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "mask AP",
+      "value_surface": "46.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "box AP",
+      "value_surface": "48.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "box AP",
+      "value_surface": "49.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "mask AP",
+      "value_surface": "46.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "box AP",
+      "value_surface": "53.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Cascade Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "mask AP",
+      "value_surface": "46.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on the COCO val2017 with the Mask R-CNN framework"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "52.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "51.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different backbones on the ADE20K segmentation task"
+    },
+    {
+      "model": "CSWin-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "55.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison of different backbones on the ADE20K segmentation task"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "49.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different backbones on the ADE20K segmentation task"
+    },
+    {
+      "model": "CSWin-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "50.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different backbones on the ADE20K segmentation task"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "51.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of different backbones on the ADE20K segmentation task"
+    },
+    {
+      "model": "CSWin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "84.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    },
+    {
+      "model": "CSWin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different models on ImageNet-1K"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 2048,
+    "epochs": 300
+  },
+  "methods_used": [
+    "Cross-Shaped Window self-attention",
+    "horizontal and vertical stripes",
+    "parallel multi-head grouping",
+    "Locally-enhanced Positional Encoding (LePE)",
+    "hierarchical Transformer architecture",
+    "overlapped convolutional token embedding",
+    "stochastic depth",
+    "AdamW",
+    "RandAugment",
+    "Mixup",
+    "CutMix",
+    "Random Erasing",
+    "Exponential Moving Average",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN",
+    "Semantic FPN",
+    "UperNet",
+    "multi-scale training"
+  ],
+  "novel_contributions": [
+    "Cross-Shaped Window self-attention that computes self-attention in horizontal and vertical stripes in parallel",
+    "Locally-enhanced Positional Encoding (LePE) that operates on projected values as a parallel module",
+    "A hierarchical vision Transformer backbone named CSWin Transformer for general-purpose vision tasks",
+    "Dynamic stripe width across layers to balance modeling capability and computation cost"
+  ],
+  "key_claims": [
+    {
+      "claim": "CSWin Transformer is an efficient and effective Transformer-based backbone for general-purpose vision tasks, using cross-shaped window self-attention and LePE to enlarge receptive field while limiting computation cost.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CSWin-B achieves 85.4% Top-1 accuracy on ImageNet-1K without any extra training data or label, 53.9 box AP and 46.4 mask AP on COCO, and 52.2 mIOU on ADE20K, surpassing previous state-of-the-art Swin Transformer backbone by +1.2, +2.0, +1.4, and +2.0 respectively under similar FLOPs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "By further pretraining on ImageNet-21K, CSWin achieves 87.5% Top-1 accuracy on ImageNet-1K and 55.7 mIoU on ADE20K.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CSWin self-attention splits multi-heads into parallel groups and applies horizontal and vertical stripe attention simultaneously, which enlarges the attention area of each token within one Transformer block efficiently.",
+      "evidence_section": "3.2. Cross-Shaped Window Self-Attention",
+      "page": null
+    },
+    {
+      "claim": "LePE adds positional information directly onto the linearly projected values as a parallel module, and is designed to support varying input resolutions.",
+      "evidence_section": "3.2. Locally-Enhanced Positional Encoding",
+      "page": null
+    },
+    {
+      "claim": "CSWin-T, CSWin-S, and CSWin-B outperform previous state-of-the-art vision Transformers on ImageNet-1K classification, COCO detection, and ADE20K segmentation under similar FLOPs and model size.",
+      "evidence_section": "4. Experiments",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that the parallel multi-head grouping strategy is more efficient and effective than sequential attention variants, especially on downstream tasks.",
+      "evidence_section": "4.5. Ablation Study",
+      "page": null
+    }
+  ]
+}

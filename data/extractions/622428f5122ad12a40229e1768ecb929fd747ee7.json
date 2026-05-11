@@ -1,0 +1,224 @@
+{
+  "paper_id": "622428f5122ad12a40229e1768ecb929fd747ee7",
+  "architecture_summary": "This paper is a comprehensive survey of Transformer techniques for multimodal learning. It reviews Vanilla Transformer, Vision Transformer, and multimodal Transformers from a geometrically topological perspective, and organizes multimodal Transformer methods by application scenarios and by technical challenges.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Cooking312K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LAIT",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "e-SNLI-VE",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ARCH",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Adversarial VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "OTT-QA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MULTIMODALQA (MMQA)",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VALUE",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Fashion IQ",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LRS2-BBC",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ActivityNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VisDial",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Product1M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Conceptual 12M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "RUC-CAS-WenLan",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "HowToVQA69M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "HowTo100M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ALT200M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LAION-400M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Pano-AVQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "YouTube-360 (YT-360)",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "AIST++",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Artemis",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MultiBench",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head self-attention",
+    "masked self-attention",
+    "position embedding",
+    "patch embedding",
+    "tokenization",
+    "early summation",
+    "early concatenation",
+    "hierarchical attention",
+    "cross-attention",
+    "contrastive learning",
+    "masked language modelling",
+    "masked image region prediction",
+    "masked acoustic modelling",
+    "image-text matching",
+    "video-subtitle matching",
+    "knowledge distillation",
+    "adversarial training",
+    "prompt engineering"
+  ],
+  "novel_contributions": [
+    "the first comprehensive review of the state of Transformer based multimodal machine learning",
+    "a geometrically topological perspective on Transformers in a multimodal context",
+    "a two-tier structured taxonomy based on the application and challenge dimensions",
+    "a systematic review of Vanilla Transformer, Vision Transformer, and multimodal Transformers",
+    "a review of multimodal Transformer applications via multimodal pretraining and specific multimodal tasks",
+    "a summary of common challenges and designs shared by multimodal Transformer models and applications"
+  ],
+  "key_claims": [
+    {
+      "claim": "This survey presents a comprehensive review of Transformer techniques oriented at multimodal data, covering background, model taxonomy, applications, shared challenges, and open problems.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper claims to be the first comprehensive review of the state of Transformer based multimodal machine learning.",
+      "evidence_section": "Features",
+      "page": null
+    },
+    {
+      "claim": "Transformers can work in a modality-agnostic way and self-attention can be understood as graph style modelling in a multimodal context.",
+      "evidence_section": "Features",
+      "page": null
+    },
+    {
+      "claim": "The survey contributes a two-tier taxonomy based on application and challenge dimensions for Transformer based MML.",
+      "evidence_section": "Contributions",
+      "page": null
+    },
+    {
+      "claim": "Transformer-based multimodal pretraining models pretrained on large-scale multimodal corpora clearly outperform other competitors in a wide range of multimodal down-stream tasks and can achieve zero-shot generalization ability.",
+      "evidence_section": "4.1 Transformers for Multimodal Pretraining",
+      "page": null
+    },
+    {
+      "claim": "The paper argues that multimodal Transformers face bottlenecks in generative tasks, fine-grained tasks, efficiency, robustness, universality, and interpretability.",
+      "evidence_section": "5 CHALLENGES AND DESIGNS",
+      "page": null
+    },
+    {
+      "claim": "The survey highlights that cross-modal interactions in multimodal Transformers are implemented through self-attention and its variants, including early summation, early concatenation, hierarchical attention, and cross-attention.",
+      "evidence_section": "3.3.2 Self-Attention Variants in Multimodal Context",
+      "page": null
+    }
+  ]
+}

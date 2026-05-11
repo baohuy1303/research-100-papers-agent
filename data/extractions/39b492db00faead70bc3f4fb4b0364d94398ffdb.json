@@ -1,0 +1,152 @@
+{
+  "paper_id": "39b492db00faead70bc3f4fb4b0364d94398ffdb",
+  "architecture_summary": "The paper analyzes and compares the internal representations of Vision Transformers and convolutional neural networks using CKA, attention-distance analysis, effective receptive fields, skip-connection interventions, spatial localization tests, and linear probes. It studies representative models including ResNet50x1, ResNet152x2, ViT-B/32, ViT-B/16, ViT-L/16 and ViT-H/14, mostly trained on JFT-300M, and also examines ImageNet-trained and GAP-trained ViTs.",
+  "model_variants": [
+    {
+      "name": "ResNet50x1",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ResNet152x2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-B/32",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-L/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-H/14",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet ILSVRC 2012",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet 2012 validation set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet 2012 training set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Diabetic Retinopathy detection",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RESISC45",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "oxford_pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "oxford_flowers",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "residual connections",
+    "skip connections",
+    "CKA (Centered Kernel Alignment)",
+    "representation similarity",
+    "attention heads",
+    "effective receptive fields",
+    "global average pooling (GAP)",
+    "linear probes",
+    "closed-form few-shot linear regression",
+    "minibatch CKA"
+  ],
+  "novel_contributions": [
+    "We investigate the internal representation structure of ViTs and CNNs, finding striking differences between the two models, such as ViT having more uniform representations, with greater similarity between lower and higher layers.",
+    "Analyzing how local/global spatial information is utilised, we find ViT incorporates more global information than ResNet at lower layers, leading to quantitatively different features.",
+    "Nevertheless, we find that incorporating local information at lower layers remains vital, with large-scale pre-training data helping early attention layers learn to do this",
+    "We study the uniform internal structure of ViT, finding that skip connections in ViT are even more influential than in ResNets, having strong effects on performance and representation similarity.",
+    "Motivated by potential future uses in object detection, we examine how well input spatial information is preserved, finding connections between spatial localization and methods of classification.",
+    "We study the effects of dataset scale on transfer learning, with a linear probes study revealing its importance for high quality intermediate representations."
+  ],
+  "key_claims": [
+    {
+      "claim": "ViTs show a much more uniform internal similarity structure than ResNets, with greater similarity between lower and higher layers.",
+      "evidence_section": "4 Representation Structure of ViTs and Convolutional Networks",
+      "page": null
+    },
+    {
+      "claim": "Lower ViT layers incorporate more global information than lower ResNet layers, and higher ViT layers are globally attending across heads.",
+      "evidence_section": "5 Local and Global Information in Layer Representations",
+      "page": null
+    },
+    {
+      "claim": "With less training data, lower ViT attention layers do not learn to attend locally, suggesting scale is important for learning local features.",
+      "evidence_section": "5 Local and Global Information in Layer Representations",
+      "page": null
+    },
+    {
+      "claim": "Skip connections are highly influential in ViT and help propagate representations across layers, with a phase transition from CLS-token dominance to spatial-token dominance.",
+      "evidence_section": "6 Representation Propagation through Skip Connections",
+      "page": null
+    },
+    {
+      "claim": "ViT tokens preserve spatial location information more faithfully than ResNet features, especially when trained with a CLS token.",
+      "evidence_section": "7 Spatial Information and Localization",
+      "page": null
+    },
+    {
+      "claim": "Larger pretraining datasets produce higher-quality intermediate representations, especially for larger ViT models.",
+      "evidence_section": "8 Effects of Scale on Transfer Learning",
+      "page": null
+    },
+    {
+      "claim": "The paper’s analyses suggest MLP-Mixer representations also resemble ViT more than ResNet.",
+      "evidence_section": "H Preliminary Results on MLP-Mixer",
+      "page": null
+    }
+  ]
+}

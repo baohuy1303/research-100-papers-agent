@@ -1,0 +1,599 @@
+{
+  "paper_id": "367f7f64ded5d18528c1013db9dfa01b075db484",
+  "architecture_summary": "Medical Transformer (MedT) uses a gated position-sensitive axial attention mechanism as its basic building block and a Local-Global (LoGo) training strategy with a global branch on the full image and a local branch on patches. The model is designed for medical image segmentation and does not require pre-training on large-scale datasets.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "Brain anatomy segmentation (ultrasound)",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Gland segmentation (microscopic)",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MoNuSeg (microscopic)",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Brain US",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GLAS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MoNuSeg",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "82.79",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "75.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "66.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "50.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "28.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "FCN [1]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "28.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "85.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "79.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "77.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "65.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "79.43",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "65.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "86.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "79.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "78.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "65.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "79.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net++ [31]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "66.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "87.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "79.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "78.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "65.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "79.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "66.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "87.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "80.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "76.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "63.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "76.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Axial Attention U-Net",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "62.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "88.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "79.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "67.85",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "76.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "Gated Axial Attn.",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "62.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "88.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "80.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "79.68",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "67.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "79.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "66.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1",
+      "value_surface": "88.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "Brain US",
+      "metric_surface": "IoU",
+      "value_surface": "81.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "GlaS",
+      "metric_surface": "F1",
+      "value_surface": "81.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "GlaS",
+      "metric_surface": "IoU",
+      "value_surface": "69.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "F1",
+      "value_surface": "79.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "MoNuSeg",
+      "metric_surface": "IoU",
+      "value_surface": "66.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison of the proposed methods with convolutional and transformer based baselines in terms of F1 and IoU scores."
+    },
+    {
+      "model": "U-Net [17]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "85.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "Res-UNet [27]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "Axial UNet [24]",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "87.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "Gated Axial UNet",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "88.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "Global only",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "87.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "Local only",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "77.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "LoGo",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "88.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    },
+    {
+      "model": "MedT",
+      "dataset_surface": "Brain US",
+      "metric_surface": "F1 Score",
+      "value_surface": "88.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "Nvidia Quadro 8000 GPU",
+    "batch_size": 4,
+    "epochs": 400
+  },
+  "methods_used": [
+    "gated axial-attention",
+    "axial attention",
+    "relative positional encodings",
+    "self-attention",
+    "multi-head attention",
+    "Local-Global (LoGo) training",
+    "patch-based training",
+    "convolutional layers",
+    "batch normalization",
+    "ReLU activation",
+    "skip connections",
+    "Adam optimizer"
+  ],
+  "novel_contributions": [
+    "a gated position-sensitive axial attention mechanism that works well even on smaller datasets",
+    "Local-Global (LoGo) training methodology for transformers which is effective",
+    "Medical Transformer (MedT) which is built upon the above two concepts proposed specifically for medical image segmentation"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes a gated position-sensitive axial attention mechanism that introduces four learnable gates to control the influence of positional embeddings on key, query, and value, making the attention module more suitable for small medical datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed Local-Global (LoGo) training strategy combines a shallow global branch on the full image with a deep local branch on patches to improve segmentation performance.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MedT achieves better performance than convolutional and other related transformer-based architectures on three medical image segmentation datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MedT does not require pre-training on large-scale datasets.",
+      "evidence_section": "Conclusion",
+      "page": null
+    },
+    {
+      "claim": "On Brain US, GlaS, and MoNuSeg, MedT obtains the best F1 and IoU scores among the compared methods in Table 1.",
+      "evidence_section": "3.3 Results",
+      "page": null
+    },
+    {
+      "claim": "The supplementary material reports that MedT has 1.4 M parameters and that the gated axial attention block adds only 4 more learnable parameters to the layer.",
+      "evidence_section": "4.2 Number of Parameters",
+      "page": null
+    }
+  ]
+}

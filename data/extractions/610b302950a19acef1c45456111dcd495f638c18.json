@@ -1,0 +1,514 @@
+{
+  "paper_id": "610b302950a19acef1c45456111dcd495f638c18",
+  "architecture_summary": "ConViT is a Vision Transformer variant that replaces some self-attention layers with gated positional self-attention (GPSA) layers, initialized to mimic convolutional locality and then allowed to shift toward content-based attention through a learned gating parameter.",
+  "model_variants": [
+    {
+      "name": "ConViT-Ti",
+      "param_count_surface": "6M",
+      "page": null
+    },
+    {
+      "name": "ConViT-Ti+",
+      "param_count_surface": "10M",
+      "page": null
+    },
+    {
+      "name": "ConViT-S",
+      "param_count_surface": "27M",
+      "page": null
+    },
+    {
+      "name": "ConViT-S+",
+      "param_count_surface": "48M",
+      "page": null
+    },
+    {
+      "name": "ConViT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "ConViT-B+",
+      "param_count_surface": "152M",
+      "page": null
+    },
+    {
+      "name": "DeiT-Ti",
+      "param_count_surface": "6M",
+      "page": null
+    },
+    {
+      "name": "DeiT-Ti+",
+      "param_count_surface": "10M",
+      "page": null
+    },
+    {
+      "name": "DeiT-S",
+      "param_count_surface": "22M",
+      "page": null
+    },
+    {
+      "name": "DeiT-S+",
+      "param_count_surface": "48M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "DeiT-B+",
+      "param_count_surface": "152M",
+      "page": null
+    },
+    {
+      "name": "RegNetY-16GF",
+      "param_count_surface": "84M parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR100",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ConViT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "outperforms",
+      "value_surface": "DeiT",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "91.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-Ti+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-Ti+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "93.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "95.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-S+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-S+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "95.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-B",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "82.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-B",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "95.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-B+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-B+",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "95.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the models considered, trained from scratch on ImageNet."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "70.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "59.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "73.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "90.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "93.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-1",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "Top-5",
+      "value_surface": "95.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The convolutional inductive bias strongly improves sample efficiency."
+    },
+    {
+      "model": "ConViT-S+",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracies of the ConViT-S+ compared to the DeiT-S and DeiT-B, both trained for 300 epochs on ImageNet."
+    },
+    {
+      "model": "ConViT-S+",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-1 accuracies of the ConViT-S+ compared to the DeiT-S and DeiT-B, both trained for 300 epochs on ImageNet."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on ImageNet with the positional embeddings masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "67.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on ImageNet with the positional embeddings masked off at test time."
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on ImageNet with the positional embeddings masked off at test time."
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "38.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on ImageNet with the positional embeddings masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "62.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "63.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "35.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "53.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "1.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "46.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    },
+    {
+      "model": "ConViT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of ConViT-Ti on ImageNet with positional or content attention masked off at test time."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 GPUs",
+    "batch_size": 512,
+    "epochs": 300
+  },
+  "methods_used": [
+    "gated positional self-attention",
+    "self-attention",
+    "relative positional encodings",
+    "convolutional initialization",
+    "gating parameter",
+    "class token",
+    "feedforward network",
+    "GELU activation",
+    "knowledge distillation",
+    "hard distillation",
+    "data augmentation",
+    "regularization"
+  ],
+  "novel_contributions": [
+    "gated positional self-attention (GPSA), a self-attention layer that can be initialized as a convolutional layer and then learn to escape locality",
+    "ConViT, a Vision Transformer variant that replaces early self-attention layers with GPSA layers",
+    "an adaptive attention span design that keeps relative positional encodings fixed and trains only the positional embeddings",
+    "an analysis of locality in vanilla self-attention and how GPSA layers evolve away from convolutional initialization",
+    "evidence that soft inductive biases improve sample efficiency and can complement distillation"
+  ],
+  "key_claims": [
+    {
+      "claim": "ConViT outperforms the DeiT on ImageNet while offering much improved sample efficiency.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces gated positional self-attention (GPSA), which can be initialized to mimic convolutional locality and then learn to escape it via a gating parameter.",
+      "evidence_section": "Abstract / 3. Approach",
+      "page": null
+    },
+    {
+      "claim": "ConViT-S reaches 81.3 Top-1 on ImageNet-1k, and ConViT-B+ reaches 82.5 Top-1 in the main comparison table.",
+      "evidence_section": "3. Approach / Table 1",
+      "page": null
+    },
+    {
+      "claim": "On subsampled ImageNet-1k, ConViT-S achieves substantially higher Top-1 and Top-5 accuracy than DeiT-S across all training fractions.",
+      "evidence_section": "3. Approach / Table 2",
+      "page": null
+    },
+    {
+      "claim": "Hard distillation improves ConViT-S+ to 82.9 Top-1 on ImageNet, showing compatibility between soft inductive biases and distillation.",
+      "evidence_section": "B. The effect of distillation / Table 4",
+      "page": null
+    },
+    {
+      "claim": "The gating parameter decreases during training in later layers, indicating that GPSA layers progressively rely less on positional information.",
+      "evidence_section": "4. Investigating the role of locality",
+      "page": null
+    },
+    {
+      "claim": "The convolutional initialization is especially beneficial in the low-data regime and during early training.",
+      "evidence_section": "4. Investigating the role of locality / Figure 8",
+      "page": null
+    },
+    {
+      "claim": "Masking positional embeddings has a much smaller effect on ConViT-Ti than on DeiT-Ti.",
+      "evidence_section": "F. Further ablations / Table 5",
+      "page": null
+    }
+  ]
+}

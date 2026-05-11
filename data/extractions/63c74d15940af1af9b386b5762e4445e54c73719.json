@@ -1,0 +1,987 @@
+{
+  "paper_id": "63c74d15940af1af9b386b5762e4445e54c73719",
+  "architecture_summary": "VinVL improves the object-detection-based visual representation used in vision-language models by pre-training a larger X152-C4 object-attribute detector on four public OD datasets, then feeding its region features into OSCAR/OSCAR+ for downstream VL pre-training and fine-tuning.",
+  "model_variants": [
+    {
+      "name": "X152-C4",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "OSCAR+B",
+      "param_count_surface": "BERT base",
+      "page": null
+    },
+    {
+      "name": "OSCAR+L",
+      "param_count_surface": "large",
+      "page": null
+    },
+    {
+      "name": "VINVL_B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VINVL_L",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "OpenImages",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Objects365",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "flicker30k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "GQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VG-QAs",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "OpenImagesV5",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA v2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO image captioning dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NoCaps",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO test set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLVR2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Ours",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-dev",
+      "value_surface": "75.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-std",
+      "value_surface": "76.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "GQA",
+      "metric_surface": "test-dev",
+      "value_surface": "65.05",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "GQA",
+      "metric_surface": "test-std",
+      "value_surface": "64.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "B@4",
+      "value_surface": "40.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "M",
+      "value_surface": "30.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "C",
+      "value_surface": "140.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "S",
+      "value_surface": "25.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "C",
+      "value_surface": "92.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "S",
+      "value_surface": "13.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "58.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "90.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "74.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "92.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "NLQ2",
+      "metric_surface": "dev",
+      "value_surface": "82.05",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "NLQ2",
+      "metric_surface": "test-P",
+      "value_surface": "83.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Uniform improvements on seven VL tasks by replacing visual features from Anderson et al. [2] with ours."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "VQA",
+      "metric_surface": "test",
+      "value_surface": "75.95",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-std",
+      "value_surface": "76.12",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "GQA",
+      "metric_surface": "test",
+      "value_surface": "65.05",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "GQA",
+      "metric_surface": "test-std",
+      "value_surface": "64.65",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "B@4",
+      "value_surface": "40.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "M",
+      "value_surface": "30.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "C",
+      "value_surface": "140.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "S",
+      "value_surface": "25.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "C",
+      "value_surface": "92.46",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "S",
+      "value_surface": "13.07",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "58.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "83.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "90.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "74.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "92.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "96.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "dev",
+      "value_surface": "82.05",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL B",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "test-P",
+      "value_surface": "83.08",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "VQA",
+      "metric_surface": "test",
+      "value_surface": "76.52",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "VQA",
+      "metric_surface": "test-std",
+      "value_surface": "76.60",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "B@4",
+      "value_surface": "41.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "M",
+      "value_surface": "31.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "C",
+      "value_surface": "140.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Captioning",
+      "metric_surface": "S",
+      "value_surface": "25.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "58.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "83.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Image Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "90.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@1",
+      "value_surface": "75.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@5",
+      "value_surface": "92.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "Text Retrieval",
+      "metric_surface": "R@10",
+      "value_surface": "96.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "dev",
+      "value_surface": "82.67",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "VINVL L",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "test-P",
+      "value_surface": "83.98",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "An overall comparison with SoTAs on seven tasks."
+    },
+    {
+      "model": "OSCAR+B w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "B@4",
+      "value_surface": "38.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+B w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "M",
+      "value_surface": "30.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+B w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "C",
+      "value_surface": "129.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+B w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "S",
+      "value_surface": "23.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+L w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "B@4",
+      "value_surface": "38.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+L w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "M",
+      "value_surface": "30.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+L w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "C",
+      "value_surface": "130.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+L w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "S",
+      "value_surface": "23.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image captioning evaluation results (single model) on COCO “Karpathy” test split."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@1 c5",
+      "value_surface": "81.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@1 c40",
+      "value_surface": "96.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@2 c5",
+      "value_surface": "66.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@2 c40",
+      "value_surface": "92.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@3 c5",
+      "value_surface": "52.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@3 c40",
+      "value_surface": "84.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@4 c5",
+      "value_surface": "40.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "BLEU@4 c40",
+      "value_surface": "74.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "METEOR c5",
+      "value_surface": "30.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "METEOR c40",
+      "value_surface": "40.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "ROUGE-L c5",
+      "value_surface": "60.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "ROUGE-L c40",
+      "value_surface": "76.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "CIDEr-D c5",
+      "value_surface": "134.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO",
+      "metric_surface": "CIDEr-D c40",
+      "value_surface": "138.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Leaderboard of the state-of-the-art image captioning models on the COCO online testing."
+    },
+    {
+      "model": "VinVL+VIVO",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "CIDEr",
+      "value_surface": "94.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "NoCaps evaluation results."
+    },
+    {
+      "model": "VinVL+VIVO",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "SPICE",
+      "value_surface": "13.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "NoCaps evaluation results."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Text Retrieval R@1",
+      "value_surface": "89.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Text Retrieval R@5",
+      "value_surface": "98.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Text Retrieval R@10",
+      "value_surface": "99.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Image Retrieval R@1",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Image Retrieval R@5",
+      "value_surface": "95.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 1K test sets",
+      "metric_surface": "Image Retrieval R@10",
+      "value_surface": "98.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Text Retrieval R@1",
+      "value_surface": "74.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Text Retrieval R@5",
+      "value_surface": "92.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Text Retrieval R@10",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Image Retrieval R@1",
+      "value_surface": "58.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Image Retrieval R@5",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "COCO 5K test sets",
+      "metric_surface": "Image Retrieval R@10",
+      "value_surface": "90.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Text and Image retrieval evaluation on the COCO 1K and 5K test sets."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Dev",
+      "value_surface": "82.05",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Evaluation results on NLQv2."
+    },
+    {
+      "model": "OSCAR+ w/ VINVL",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-P",
+      "value_surface": "83.08",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Evaluation results on NLQv2."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 25
+  },
+  "methods_used": [
+    "object detection",
+    "object-attribute detection",
+    "ResNeXt-152 C4",
+    "C4 architecture",
+    "class-aware sampling",
+    "multi-scale training",
+    "horizontal flipping",
+    "attribute branch",
+    "class-agnostic NMS",
+    "masked token loss",
+    "3-way contrastive loss",
+    "Transformer",
+    "BERT-base",
+    "BERT-large",
+    "seq2seq objective",
+    "beam search",
+    "constrained beam search",
+    "self-training",
+    "image tags as anchors",
+    "fine-tuning"
+  ],
+  "novel_contributions": [
+    "a new object detection model that can produce better visual features of images than the classical OD model [2]",
+    "a comprehensive empirical study to demonstrate that visual features matter in VL models",
+    "an improved approach OSCAR+ to pre-train the VL model and fine-tune it on a wide range of downstream VL tasks",
+    "a detailed ablation study of the pre-trained object detection model to investigate the relative contribution of different design choices"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper argues that improving the object-centric visual representation, not just the fusion model, substantially improves vision-language performance.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Replacing the classical bottom-up and top-down visual features with the new detector improves performance across all VL tasks and creates new state-of-the-art results on seven public benchmarks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The new OD model is pre-trained on much larger training corpora that combine multiple public annotated object detection datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "OSCAR+ uses image tags as anchors for image-text alignment and a novel 3-way contrastive loss.",
+      "evidence_section": "3 OSCAR+ Pre-training",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that VINVL outperforms previous SoTA models on all seven tasks, often by a significantly large margin.",
+      "evidence_section": "5.1 Main Results",
+      "page": null
+    },
+    {
+      "claim": "The paper claims the improvement on VQA from OSCAR_B with R101-C4 features to OSCAR_B+ with X152-C4 features is mostly due to vision pre-training rather than VL pre-training.",
+      "evidence_section": "5.2 Ablation Analysis",
+      "page": null
+    },
+    {
+      "claim": "The paper states that class-agnostic NMS and removing dilation in conv layers make region feature extraction much faster without accuracy drop on VL downstream tasks.",
+      "evidence_section": "2.3 Efficient region feature extractor for VL tasks",
+      "page": null
+    }
+  ]
+}

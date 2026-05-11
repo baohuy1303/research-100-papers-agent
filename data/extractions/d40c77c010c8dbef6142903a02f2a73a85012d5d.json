@@ -1,0 +1,272 @@
+{
+  "paper_id": "d40c77c010c8dbef6142903a02f2a73a85012d5d",
+  "architecture_summary": "This is a survey paper that reviews vision transformer models by categorizing them into backbone networks, high/mid-level vision, low-level vision, video processing, multimodality, and efficient transformer methods. It also summarizes the standard transformer formulation and self-attention mechanism, and discusses challenges and future directions for vision transformers.",
+  "model_variants": [
+    {
+      "name": "ViT",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "DeiT-B",
+      "param_count_surface": "86 million parameters",
+      "page": null
+    },
+    {
+      "name": "TNT",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin Transformer",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Twins",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VOLO",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "CLIP",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "DALL-E",
+      "param_count_surface": "12 billion model parameters",
+      "page": null
+    },
+    {
+      "name": "GPT-3",
+      "param_count_surface": "175 billion parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VTAB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 2012 val set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017 val set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PASCAL VOC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "BookCorpus",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "English Wikipedia",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "400 million (image, text) pairs collected from the Internet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "3.3 million text-image pairs",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "88.36%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "ViT",
+      "dataset_surface": "VTAB suite of 19 tasks",
+      "metric_surface": "accuracy",
+      "value_surface": "77.16%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.40%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "CLIP",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "76.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "TransTrack",
+      "dataset_surface": "MOT17",
+      "metric_surface": "MOTA",
+      "value_surface": "74.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "TransTrack",
+      "dataset_surface": "MOT20",
+      "metric_surface": "MOTA",
+      "value_surface": "64.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head attention",
+    "patch embedding",
+    "positional encoding",
+    "shifted window attention",
+    "window-based self-attention",
+    "masked image modeling",
+    "contrastive self-supervised learning",
+    "knowledge distillation",
+    "deformable attention",
+    "Hungarian loss",
+    "bipartite matching",
+    "encoder-decoder architecture",
+    "CNN backbone",
+    "transformer encoder",
+    "transformer decoder",
+    "data augmentation",
+    "relative position encoding",
+    "layer normalization",
+    "residual connection",
+    "quantization",
+    "pruning",
+    "low-rank decomposition",
+    "neural architecture search"
+  ],
+  "novel_contributions": [
+    "A comprehensive overview of recent advances in vision transformers across backbone, high/mid-level vision, low-level vision, video processing, multimodality, and efficient transformer methods.",
+    "A categorization of transformer models by application scenarios, including backbone network, high/mid-level vision, low-level vision, and video processing.",
+    "A brief review of self-attention mechanisms in computer vision as the base component of transformer.",
+    "A discussion of challenges and future research directions for vision transformers."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper surveys vision transformer models and organizes them into major application categories, including backbone network, high/mid-level vision, low-level vision, video processing, multimodality, and efficient transformer methods.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "Vision transformer models perform similar to or better than convolutional and recurrent neural networks on a variety of visual benchmarks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViT is described as having achieved state-of-the-art performance on multiple image recognition benchmarks.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "DeiT-B achieves top-1 accuracy of 83.1% on ImageNet with no external data, and 84.40% with token-based distillation.",
+      "evidence_section": "3.1.1 Pure Transformer",
+      "page": null
+    },
+    {
+      "claim": "CLIP achieves 76.2% top-1 accuracy on ImageNet-1K in zero-shot transfer without using any ImageNet training labels.",
+      "evidence_section": "3.5 Multi-Modal Tasks",
+      "page": null
+    },
+    {
+      "claim": "Deformable DETR achieves better performance than DETR with 10× less training cost and 1.6× faster inference speed.",
+      "evidence_section": "3.2.1 Generic Object Detection",
+      "page": null
+    },
+    {
+      "claim": "IPT achieves state-of-the-art performance in several image processing tasks, including super-resolution, denoising, and deraining.",
+      "evidence_section": "3.3.2 Image Processing",
+      "page": null
+    },
+    {
+      "claim": "TransTrack achieves 74.5% and 64.5% MOTA on MOT17 and MOT20 benchmark.",
+      "evidence_section": "3.4.1 High-level Video Processing",
+      "page": null
+    }
+  ]
+}

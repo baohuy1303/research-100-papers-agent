@@ -1,0 +1,536 @@
+{
+  "paper_id": "3f5b31c4f7350dc88002c121aecbdc82f86eb5bb",
+  "architecture_summary": "BLIP-2 bootstraps vision-language pre-training from frozen pre-trained image encoders and frozen large language models using a lightweight Querying Transformer (Q-Former) trained in two stages to bridge the modality gap.",
+  "model_variants": [
+    {
+      "name": "Q-Former",
+      "param_count_surface": "188M parameters",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-L OPT 2.7B",
+      "param_count_surface": "104M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-g OPT 2.7B",
+      "param_count_surface": "107M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-g OPT 6.7B",
+      "param_count_surface": "108M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-L FlanT5 XL",
+      "param_count_surface": "103M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-g FlanT5 XL",
+      "param_count_surface": "107M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-g FlanT5 XXL",
+      "param_count_surface": "108M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-L",
+      "param_count_surface": "474M",
+      "page": null
+    },
+    {
+      "name": "BLIP-2 ViT-g",
+      "param_count_surface": "1.2B",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CC3M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CC12M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LAION400M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQAv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NoCaps",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OK-VQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "BLIP-2",
+      "dataset_surface": "VQAv2 (test-dev)",
+      "metric_surface": "VQA acc.",
+      "value_surface": "65.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overview of BLIP-2 results on various zero-shot vision-language tasks"
+    },
+    {
+      "model": "BLIP-2",
+      "dataset_surface": "NoCaps (val)",
+      "metric_surface": "CIDEr",
+      "value_surface": "121.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overview of BLIP-2 results on various zero-shot vision-language tasks"
+    },
+    {
+      "model": "BLIP-2",
+      "dataset_surface": "NoCaps (val)",
+      "metric_surface": "SPICE",
+      "value_surface": "15.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overview of BLIP-2 results on various zero-shot vision-language tasks"
+    },
+    {
+      "model": "BLIP-2",
+      "dataset_surface": "Flickr (test)",
+      "metric_surface": "TR@1",
+      "value_surface": "97.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overview of BLIP-2 results on various zero-shot vision-language tasks"
+    },
+    {
+      "model": "BLIP-2",
+      "dataset_surface": "Flickr (test)",
+      "metric_surface": "IR@1",
+      "value_surface": "89.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overview of BLIP-2 results on various zero-shot vision-language tasks"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XXL",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "val",
+      "value_surface": "65.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on zero-shot visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XXL",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "test-dev",
+      "value_surface": "65.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on zero-shot visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XXL",
+      "dataset_surface": "OK-VQA",
+      "metric_surface": "test",
+      "value_surface": "45.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on zero-shot visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XXL",
+      "dataset_surface": "GQA",
+      "metric_surface": "test-dev",
+      "value_surface": "44.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art methods on zero-shot visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Image → Text R@1",
+      "value_surface": "97.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Text → Image R@1",
+      "value_surface": "89.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Image → Text R@1",
+      "value_surface": "85.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Text → Image R@1",
+      "value_surface": "68.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 6.7B",
+      "dataset_surface": "VQAv2 test-dev",
+      "metric_surface": "VQA acc.",
+      "value_surface": "82.30",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 6.7B",
+      "dataset_surface": "VQAv2 test-std",
+      "metric_surface": "VQA acc.",
+      "value_surface": "82.30",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "VQAv2 test-dev",
+      "metric_surface": "VQA acc.",
+      "value_surface": "81.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "VQAv2 test-std",
+      "metric_surface": "VQA acc.",
+      "value_surface": "81.66",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "VQAv2 test-dev",
+      "metric_surface": "VQA acc.",
+      "value_surface": "81.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "VQAv2 test-std",
+      "metric_surface": "VQA acc.",
+      "value_surface": "81.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art models fine-tuned for visual question answering"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "NoCaps Zero-shot (validation set)",
+      "metric_surface": "C",
+      "value_surface": "121.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "NoCaps Zero-shot (validation set)",
+      "metric_surface": "S",
+      "value_surface": "15.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "COCO Fine-tuned",
+      "metric_surface": "B@4",
+      "value_surface": "42.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g FlanT5 XL",
+      "dataset_surface": "COCO Fine-tuned",
+      "metric_surface": "C",
+      "value_surface": "144.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "NoCaps Zero-shot (validation set)",
+      "metric_surface": "C",
+      "value_surface": "123.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "NoCaps Zero-shot (validation set)",
+      "metric_surface": "S",
+      "value_surface": "15.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "COCO Fine-tuned",
+      "metric_surface": "B@4",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g OPT 2.7B",
+      "dataset_surface": "COCO Fine-tuned",
+      "metric_surface": "C",
+      "value_surface": "145.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image captioning methods on NoCaps and COCO Caption"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Image → Text R@5",
+      "value_surface": "100.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Image → Text R@10",
+      "value_surface": "100.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Text → Image R@5",
+      "value_surface": "98.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "Flickr30K Zero-shot (1K test set)",
+      "metric_surface": "Text → Image R@10",
+      "value_surface": "98.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Image → Text R@5",
+      "value_surface": "100.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Image → Text R@10",
+      "value_surface": "100.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Text → Image R@5",
+      "value_surface": "87.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "BLIP-2 ViT-g",
+      "dataset_surface": "COCO Fine-tuned (5K test set)",
+      "metric_surface": "Text → Image R@10",
+      "value_surface": "92.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state-of-the-art image-text retrieval methods, finetuned on COCO and zero-shot transferred to Flickr30K"
+    },
+    {
+      "model": "ITC + ITM",
+      "dataset_surface": "COCO finetuning objectives",
+      "metric_surface": "Image → Text R@1",
+      "value_surface": "84.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The image-grounded text generation (ITG) loss improves image-text retrieval performance by enforcing the queries to extract language-relevant visual features"
+    },
+    {
+      "model": "ITC + ITM",
+      "dataset_surface": "COCO finetuning objectives",
+      "metric_surface": "Text → Image R@1",
+      "value_surface": "67.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The image-grounded text generation (ITG) loss improves image-text retrieval performance by enforcing the queries to extract language-relevant visual features"
+    },
+    {
+      "model": "ITC + ITM + ITG",
+      "dataset_surface": "COCO finetuning objectives",
+      "metric_surface": "Image → Text R@1",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The image-grounded text generation (ITG) loss improves image-text retrieval performance by enforcing the queries to extract language-relevant visual features"
+    },
+    {
+      "model": "ITC + ITM + ITG",
+      "dataset_surface": "COCO finetuning objectives",
+      "metric_surface": "Text → Image R@1",
+      "value_surface": "68.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The image-grounded text generation (ITG) loss improves image-text retrieval performance by enforcing the queries to extract language-relevant visual features"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "using a single 16-A100(40G) machine, our largest model with ViT-g and FlanT5-XXL requires less than 6 days for the first stage and less than 3 days for the second stage",
+    "batch_size": 2320,
+    "epochs": null
+  },
+  "methods_used": [
+    "frozen image encoders",
+    "frozen large language models",
+    "Querying Transformer",
+    "cross-attention",
+    "self-attention",
+    "image-text contrastive learning",
+    "image-grounded text generation",
+    "image-text matching",
+    "hard negative mining",
+    "language modeling loss",
+    "prefix language modeling loss",
+    "AdamW",
+    "random resized cropping",
+    "horizontal flipping",
+    "beam search"
+  ],
+  "novel_contributions": [
+    "a generic and efficient pre-training strategy that bootstraps vision-language pre-training from off-the-shelf frozen pre-trained image encoders and frozen large language models",
+    "a lightweight Querying Transformer (Q-Former) pre-trained in two stages to bridge the modality gap",
+    "state-of-the-art performance on various vision-language tasks despite having significantly fewer trainable parameters than existing methods",
+    "zero-shot image-to-text generation that can follow natural language instructions"
+  ],
+  "key_claims": [
+    {
+      "claim": "BLIP-2 is a generic and compute-efficient vision-language pre-training method that uses frozen pre-trained image encoders and frozen large language models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model bridges the modality gap with a lightweight Querying Transformer pre-trained in two stages: representation learning and generative learning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BLIP-2 achieves state-of-the-art performance on various vision-language tasks while using significantly fewer trainable parameters than existing methods.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BLIP-2 outperforms Flamingo80B by 8.7% on zero-shot VQAv2 with 54x fewer trainable parameters.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "A stronger image encoder or a stronger LLM both lead to better performance, supporting BLIP-2 as a generic method.",
+      "evidence_section": "4.1. Instructed Zero-shot Image-to-Text Generation",
+      "page": null
+    },
+    {
+      "claim": "The first-stage representation learning is important; without it, the Q-Former fails to bridge the modality gap and zero-shot VQA performance drops substantially.",
+      "evidence_section": "4.1. Instructed Zero-shot Image-to-Text Generation",
+      "page": null
+    },
+    {
+      "claim": "BLIP-2 achieves state-of-the-art performance on image captioning and image-text retrieval, and strong zero-shot VQA results.",
+      "evidence_section": "4.2. Image Captioning; 4.4. Image-Text Retrieval; 4.3. Visual Question Answering",
+      "page": null
+    }
+  ]
+}

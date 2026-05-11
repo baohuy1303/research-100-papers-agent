@@ -1,0 +1,665 @@
+{
+  "paper_id": "2bc1c8bd00bbf7401afcb5460277840fd8bab029",
+  "architecture_summary": "Unicoder-VL is a universal encoder based on a multi-layer Transformer that jointly encodes visual regions and textual tokens for cross-modal pre-training. It uses three pre-training tasks—Masked Language Modeling (MLM), Masked Object Classification (MOC) and Visual-linguistic Matching (VLM)—and transfers to downstream vision-language tasks with a simple additional output layer.",
+  "model_variants": [
+    {
+      "name": "Unicoder-VL",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Unicoder-VL (6-layer)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Unicoder-VL (12-layer)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Unicoder-VL (24-layer)",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MSCOCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VCR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "other",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@5",
+      "value_surface": "97.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@10",
+      "value_surface": "99.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "69.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@5",
+      "value_surface": "93.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@10",
+      "value_surface": "97.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "86.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "99.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "71.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "94.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "62.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@5",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@10",
+      "value_surface": "92.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@1",
+      "value_surface": "46.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@5",
+      "value_surface": "76.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "R@10",
+      "value_surface": "85.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation results on MSCOCO and Flickr30k test set"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "val",
+      "value_surface": "72.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "test",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "val",
+      "value_surface": "74.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "test",
+      "value_surface": "74.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "val",
+      "value_surface": "54.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL",
+      "dataset_surface": "VCR",
+      "metric_surface": "test",
+      "value_surface": "54.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results compared to the state-of-the-art methods with single model on VCR dataset by the time of submission"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "93.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "58.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (6-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "90.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "86.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "99.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "71.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (12-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "94.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "86.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "97.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "99.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "73.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "92.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (24-layer)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "95.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of Unicoder-VL with respect to the number of Transformer encoder layers"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "73.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "89.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "94.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "57.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (0)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "88.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "95.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "97.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "68.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "90.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (3M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "94.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "86.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "96.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "99.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@1",
+      "value_surface": "71.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@5",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    },
+    {
+      "model": "Unicoder-VL (4M)",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "R@10",
+      "value_surface": "94.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the Flickr30k retrieval results of Unicoder-VL with respect to the pre-training dataset size"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "4 NVIDIA Tesla V100 GPU",
+    "batch_size": 192,
+    "epochs": 10
+  },
+  "methods_used": [
+    "multi-layer Transformer",
+    "self-attention",
+    "Masked Language Modeling (MLM)",
+    "Masked Object Classification (MOC)",
+    "Visual-linguistic Matching (VLM)",
+    "Faster R-CNN",
+    "WordPiece",
+    "layer normalization",
+    "fully-connected (FC) layer",
+    "Adam optimizer",
+    "gradient accumulation",
+    "float16 operations",
+    "triplet loss",
+    "hardest negatives",
+    "cross-entropy loss"
+  ],
+  "novel_contributions": [
+    "Unicoder-VL, a universal encoder for vision and language based on a multi-layer Transformer",
+    "Three cross-modal pre-training tasks: Masked Language Modeling (MLM), Masked Object Classification (MOC) and Visual-linguistic Matching (VLM)",
+    "Pre-training on large-scale image-caption pairs for downstream image-text retrieval and visual commonsense reasoning",
+    "A simple fine-tuning transfer setup with just one additional output layer for downstream tasks"
+  ],
+  "key_claims": [
+    {
+      "claim": "Unicoder-VL is a universal encoder that learns joint representations of vision and language through cross-modal pre-training.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model uses three pre-trained tasks: MLM, MOC and VLM.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "After pretraining on large-scale image-caption pairs, Unicoder-VL transfers to caption-based image-text retrieval and visual commonsense reasoning with just one additional output layer.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Unicoder-VL achieves state-of-the-art or comparable results on image-text retrieval and visual commonsense reasoning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model is pretrained on 3.8M image-caption pairs and trained for 10 epochs on 4 NVIDIA Tesla V100 GPU with batch size 192.",
+      "evidence_section": "Experiments / Pre-training Unicoder-VL",
+      "page": null
+    },
+    {
+      "claim": "Unicoder-VL achieves new state-of-the-art performance on Flickr30k retrieval, including 86.2% R@1 for sentence retrieval and 71.5% R@1 for image retrieval.",
+      "evidence_section": "Results and Analysis / Evaluation Results",
+      "page": null
+    },
+    {
+      "claim": "On VCR, Unicoder-VL achieves comparable performance with state-of-the-art methods.",
+      "evidence_section": "Results and Analysis / Evaluation Results",
+      "page": null
+    }
+  ]
+}

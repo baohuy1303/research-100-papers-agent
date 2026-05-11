@@ -1,0 +1,376 @@
+{
+  "paper_id": "67040b931c1a384426c44ae73f9553e97f08cf6a",
+  "architecture_summary": "PVT v2 improves the original Pyramid Vision Transformer (PVT v1) with three designs: a linear complexity attention layer, an overlapping patch embedding, and a convolutional feed-forward network. These changes reduce computational complexity to linearity and improve classification, detection, and segmentation performance.",
+  "model_variants": [
+    {
+      "name": "PVT v2-B0",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B1",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B2-Li",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B3",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B4",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "PVT v2-B5",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017 train",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017 val",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "PVT v2-B0",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B1",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B2-Li",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B3",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B4",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B5",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet classification performance on the ImageNet validation set. #Param = millions of parameters. GFLOPs is calculated for input of size 224 × 224 . * = performance of the method trained under the strategy of its original paper. Acc = top-1 accuracy. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B0",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "37.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B1",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "41.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B2-Li",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "43.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B2",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "44.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B3",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "45.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B4",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "46.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B5",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "46.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation on COCO 2017 val. #P = millions of parameters. APb = bounding box AP. APm = mask AP. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B0",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "37.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B1",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B2",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "45.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B3",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "47.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B4",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B5",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "48.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results for different backbones across the ADE20K validation set. #P = millions of parameters. #G = GFLOPs with input size 512 × 512. -Li = PVT v2 with linear SRA"
+    },
+    {
+      "model": "PVT v2-B0",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "37.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments on PVT v2. OPE, CFN, and LSRA represent overlapping patch embedding, convolutional feed-forward network (PVT v2-B2), and linear SRA (PVT v2-B2-Li), respectively. #P = millions of parameters. #G = GFLOPs. Acc = top-1 accuracy"
+    },
+    {
+      "model": "PVT v2-B1",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "41.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments on PVT v2. OPE, CFN, and LSRA represent overlapping patch embedding, convolutional feed-forward network (PVT v2-B2), and linear SRA (PVT v2-B2-Li), respectively. #P = millions of parameters. #G = GFLOPs. Acc = top-1 accuracy"
+    },
+    {
+      "model": "PVT v2-B2-Li",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "43.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments on PVT v2. OPE, CFN, and LSRA represent overlapping patch embedding, convolutional feed-forward network (PVT v2-B2), and linear SRA (PVT v2-B2-Li), respectively. #P = millions of parameters. #G = GFLOPs. Acc = top-1 accuracy"
+    },
+    {
+      "model": "PVT v2-B2",
+      "dataset_surface": "COCO 2017 val",
+      "metric_surface": "AP",
+      "value_surface": "44.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments on PVT v2. OPE, CFN, and LSRA represent overlapping patch embedding, convolutional feed-forward network (PVT v2-B2), and linear SRA (PVT v2-B2-Li), respectively. #P = millions of parameters. #G = GFLOPs. Acc = top-1 accuracy"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 V100 GPUs",
+    "batch_size": 128,
+    "epochs": 300
+  },
+  "methods_used": [
+    "linear spatial reduction attention",
+    "average pooling",
+    "overlapping patch embedding",
+    "convolutional feed-forward network",
+    "zero-padding convolution",
+    "AdamW",
+    "random cropping",
+    "random horizontal flipping",
+    "label-smoothing regularization",
+    "mixup",
+    "random erasing",
+    "cosine schedule",
+    "Xavier",
+    "Semantic FPN",
+    "RetinaNet",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN",
+    "ATSS",
+    "GFL",
+    "Sparse R-CNN"
+  ],
+  "novel_contributions": [
+    "a linear complexity attention layer",
+    "an overlapping patch embedding",
+    "a convolutional feed-forward network",
+    "PVT v2, an improved framework over PVT v1 with 6 different size variants, from B0 to B5"
+  ],
+  "key_claims": [
+    {
+      "claim": "PVT v2 improves the original PVT v1 with three orthogonal designs: linear complexity attention, overlapping patch embedding, and a convolutional feed-forward network.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "PVT v2 reduces the computational complexity of PVT v1 to linearity and provides significant improvements on classification, detection, and segmentation.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "PVT v2-B5 yields an 83.8% top-1 error on ImageNet, better than Swin-B and Twins-SVT-L while using fewer parameters and fewer GFLOPs.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "GFL with PVT-B2 archives 50.2 AP on COCO 2017 val, 2.6 AP higher than Swin-T and 5.7 AP higher than ResNet50.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "All classification models were trained for 300 epochs from scratch on 8 V100 GPUs with batch size 128.",
+      "evidence_section": "4.1.1 Setting",
+      "page": null
+    },
+    {
+      "claim": "PVT v2-B4 achieves 46.1 AP with RetinaNet and 47.5 AP^b with Mask R-CNN on COCO 2017 val.",
+      "evidence_section": "4.2.2 Results",
+      "page": null
+    },
+    {
+      "claim": "PVT v2 consistently outperforms PVT v1 and other counterparts on ADE20K semantic segmentation.",
+      "evidence_section": "4.3.2 Results",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,375 @@
+{
+  "paper_id": "2f4d8f3c016ec53380b376ae7ac516f9c0f07a0d",
+  "architecture_summary": "BiFormer is a hierarchical vision transformer built around Bi-level Routing Attention (BRA), which first prunes attention at a coarse region level with top-k routing and then applies fine-grained token-to-token attention over the union of routed regions. It uses overlapped patch embedding, patch merging, depthwise convolution, and an MLP in a four-stage pyramid backbone.",
+  "model_variants": [
+    {
+      "name": "BiFormer-T",
+      "param_count_surface": "13M",
+      "page": null
+    },
+    {
+      "name": "BiFormer-S",
+      "param_count_surface": "26M",
+      "page": null
+    },
+    {
+      "name": "BiFormer-B",
+      "param_count_surface": "57M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "BiFormer-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different backbones on ImageNet-1K. All models are trained and evaluated on images of resolution 224 × 224. “*” indicates that the model is trained with token labeling [23]. Methods are grouped by the amount of computations."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "83.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison of different backbones on ImageNet-1K. All models are trained and evaluated on images of resolution 224 × 224. “*” indicates that the model is trained with token labeling [23]. Methods are grouped by the amount of computations."
+    },
+    {
+      "model": "BiFormer-S*",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different backbones on ImageNet-1K. All models are trained and evaluated on images of resolution 224 × 224. “*” indicates that the model is trained with token labeling [23]. Methods are grouped by the amount of computations."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different backbones on ImageNet-1K. All models are trained and evaluated on images of resolution 224 × 224. “*” indicates that the model is trained with token labeling [23]. Methods are grouped by the amount of computations."
+    },
+    {
+      "model": "BiFormer-B*",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different backbones on ImageNet-1K. All models are trained and evaluated on images of resolution 224 × 224. “*” indicates that the model is trained with token labeling [23]. Methods are grouped by the amount of computations."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "mAP",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{50}^b",
+      "value_surface": "69.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{75}^b",
+      "value_surface": "52.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "mAP^m",
+      "value_surface": "43.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{50}^m",
+      "value_surface": "66.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{75}^m",
+      "value_surface": "46.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "mAP",
+      "value_surface": "48.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{50}^b",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{75}^b",
+      "value_surface": "53.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "mAP^m",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{50}^m",
+      "value_surface": "67.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "COCO 2017",
+      "metric_surface": "AP_{75}^m",
+      "value_surface": "47.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on the object detection (left group) and instance segmentation (right group) tasks, on the COCO 2017 dataset."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "S-FPN mIoU(%)",
+      "value_surface": "48.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "Upernet mIoU(%)",
+      "value_surface": "49.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "MS mIoU(%)",
+      "value_surface": "50.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "S-FPN mIoU(%)",
+      "value_surface": "49.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "Upernet mIoU(%)",
+      "value_surface": "51.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "MS mIoU(%)",
+      "value_surface": "51.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison based on semantic segmentation with two segmentation heads (Semantic FPN and UpperNet), on ADE20K."
+    },
+    {
+      "model": "BiFormer-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN1K Top1 (%)",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation path from Swin-T [29] layout architecture to BiFormer-S. Note that the modifications are applied sequentially."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN1K Top1 (%)",
+      "value_surface": "83.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation path from Swin-T [29] layout architecture to BiFormer-S. Note that the modifications are applied sequentially."
+    },
+    {
+      "model": "BiFormer-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "IN1K Top1 (%)",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation path from Swin-T [29] layout architecture to BiFormer-S. Note that the modifications are applied sequentially."
+    },
+    {
+      "model": "BRA",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU(%)",
+      "value_surface": "45.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Adapting pretrained ViT [15] with BRA for semantic segmentation on ADE20K. For decoder, we use the Simple Feature Pyramid [26] followed by with Upernet [49] head."
+    },
+    {
+      "model": "BRA + 4 global prop. blks.",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU(%)",
+      "value_surface": "46.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Adapting pretrained ViT [15] with BRA for semantic segmentation on ADE20K. For decoder, we use the Simple Feature Pyramid [26] followed by with Upernet [49] head."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "Bi-level Routing Attention",
+    "top-k routing",
+    "region partition",
+    "gather",
+    "token-to-token attention",
+    "depthwise convolution",
+    "overlapped patch embedding",
+    "patch merging",
+    "MLP",
+    "AdamW",
+    "RandAugment",
+    "MixUp",
+    "CutMix",
+    "Random Erasing",
+    "stochastic depth",
+    "token labeling",
+    "local context enhancement",
+    "multi-head self-attention"
+  ],
+  "novel_contributions": [
+    "We propose a novel dynamic sparse attention via bi-level routing to enable a more flexible allocation of computations with content awareness.",
+    "We provide a simple yet effective implementation of the proposed bi-level routing attention, which utilizes the sparsity to save both computation and memory while involving only GPU-friendly dense matrix multiplications.",
+    "Built with the proposed bi-level routing attention, a new general vision transformer, named BiFormer, is then presented.",
+    "We show that BiFormer achieves a better computation-performance trade-off and strong results on image classification, object detection, instance segmentation, and semantic segmentation."
+  ],
+  "key_claims": [
+    {
+      "claim": "BiFormer uses a query-adaptive bi-level routing attention mechanism that first filters irrelevant key-value pairs at a coarse region level and then applies fine-grained token-to-token attention in routed regions.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BiFormer-T achieves 83.8% top-1 accuracy on ImageNet-1K with 4.6G FLOPs, which the paper says is the best under similar computation budgets without external data or distillation.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "BiFormer-S achieves 83.8% top-1 accuracy on ImageNet-1K and BiFormer-B achieves 84.3% top-1 accuracy, outperforming other methods in their FLOPs groups.",
+      "evidence_section": "4.1. Image Classification on ImageNet-1K",
+      "page": null
+    },
+    {
+      "claim": "On COCO 2017, BiFormer-S and BiFormer-B show strong object detection and instance segmentation results, with BiFormer-B reaching 48.6 mAP and 43.7 mAP^m.",
+      "evidence_section": "4.2. Object Detection and Instance Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K, BiFormer-S and BiFormer-B achieve 49.8 and 51.0 Upernet mIoU(%), respectively, with similar gains under Semantic FPN.",
+      "evidence_section": "4.3. Semantic Segmentation on ADE20K",
+      "page": null
+    },
+    {
+      "claim": "BRA has significantly better performance than existing sparse attention mechanisms in the ablation study, for both image classification and semantic segmentation.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    },
+    {
+      "claim": "The paper analyzes BRA and states that it achieves O((HW)^{3/2}) complexity with a proper region partition size.",
+      "evidence_section": "3.3. Complexity Analysis of BRA",
+      "page": null
+    }
+  ]
+}

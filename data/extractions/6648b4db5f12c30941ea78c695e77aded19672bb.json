@@ -1,0 +1,730 @@
+{
+  "paper_id": "6648b4db5f12c30941ea78c695e77aded19672bb",
+  "architecture_summary": "The paper proposes a unified Vision-Language Pre-training (VLP) model that uses a shared multi-layer Transformer network for both encoding and decoding, and is pre-trained with bidirectional and sequence-to-sequence masked vision-language prediction objectives controlled by self-attention masks.",
+  "model_variants": [
+    {
+      "name": "w/o VLP pre-training (baseline)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "seq2seq pre-training only",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "bidirectional pre-training only",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Unified VLP",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO Captions",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VQA 2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "other",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "w/o VLP pre-training (baseline)",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "35.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "w/o VLP pre-training (baseline)",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "w/o VLP pre-training (baseline)",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "114.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "w/o VLP pre-training (baseline)",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "36.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "117.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Overall",
+      "value_surface": "70.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Yes/No",
+      "value_surface": "86.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Number",
+      "value_surface": "52.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Other",
+      "value_surface": "59.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "B@4",
+      "value_surface": "31.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "M",
+      "value_surface": "23.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "C",
+      "value_surface": "68.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "seq2seq pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "S",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "36.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "116.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Overall",
+      "value_surface": "71.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Yes/No",
+      "value_surface": "87.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Number",
+      "value_surface": "53.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Other",
+      "value_surface": "61.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "B@4",
+      "value_surface": "30.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "M",
+      "value_surface": "22.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "C",
+      "value_surface": "63.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "bidirectional pre-training only",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "S",
+      "value_surface": "16.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "36.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "116.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Overall",
+      "value_surface": "70.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Yes/No",
+      "value_surface": "87.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Number",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Other",
+      "value_surface": "60.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "B@4",
+      "value_surface": "30.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "M",
+      "value_surface": "23.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "C",
+      "value_surface": "67.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "S",
+      "value_surface": "17.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with cross-entropy optimization only, all single models), VQA 2.0 Test-Standard set and Flickr30k test set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "39.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with CIDEr optimization, all single models)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "29.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with CIDEr optimization, all single models)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "129.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with CIDEr optimization, all single models)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "23.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Results on COCO Captions test set (with CIDEr optimization, all single models)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "36.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "116.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Overall",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Yes/No",
+      "value_surface": "87.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Number",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Other",
+      "value_surface": "60.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "B@4",
+      "value_surface": "30.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "M",
+      "value_surface": "23.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "C",
+      "value_surface": "67.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "S",
+      "value_surface": "17.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of different levels of pre-training on downstream tasks. All results are on the test set (Test-Dev for VQA 2.0)."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "B@4",
+      "value_surface": "35.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "M",
+      "value_surface": "28.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "C",
+      "value_surface": "118.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "S",
+      "value_surface": "21.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Overall",
+      "value_surface": "67.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Yes/No",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Number",
+      "value_surface": "50.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Other",
+      "value_surface": "58.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "B@4",
+      "value_surface": "29.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "M",
+      "value_surface": "23.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "C",
+      "value_surface": "69.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    },
+    {
+      "model": "Unified VLP",
+      "dataset_surface": "Flickr30k",
+      "metric_surface": "S",
+      "value_surface": "17.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on COCO Captions, VQA 2.0, and Flickr30k validation set."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8x V100",
+    "batch_size": 64,
+    "epochs": 30
+  },
+  "methods_used": [
+    "shared multi-layer Transformer network",
+    "self-attention masks",
+    "masked language modeling",
+    "bidirectional prediction",
+    "sequence-to-sequence prediction",
+    "beam search",
+    "greedy search",
+    "Faster R-CNN",
+    "ResNeXt-101 FPN",
+    "cross-entropy loss",
+    "Self-Critical Sequence Training",
+    "multi-label classification",
+    "Linear+ReLU+Linear+Sigmoid"
+  ],
+  "novel_contributions": [
+    "a unified Vision-Language Pre-training (VLP) model that can be fine-tuned for both vision-language generation and understanding tasks",
+    "a shared multi-layer Transformer network for both encoding and decoding",
+    "two unsupervised vision-language prediction tasks: bidirectional and sequence-to-sequence (seq2seq) masked vision-language prediction",
+    "the first reported model that achieves state-of-the-art results on both vision-language generation and understanding tasks across COCO Captions, Flickr30k Captions, and VQA 2.0"
+  ],
+  "key_claims": [
+    {
+      "claim": "VLP is a unified model that can be fine-tuned for both vision-language generation tasks such as image captioning and understanding tasks such as VQA.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model uses a shared multi-layer Transformer network for both encoding and decoding, unlike methods that use separate encoder and decoder models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VLP is pre-trained on large amounts of image-text pairs with bidirectional and seq2seq masked vision-language prediction objectives.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper explicitly claims VLP is the first reported model to achieve state-of-the-art results on both vision-language generation and understanding tasks across COCO Captions, Flickr30k Captions, and VQA 2.0.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On COCO Captions test set with CIDEr optimization, Unified VLP achieves 39.5 B@4, 29.3 M, 129.3 C, and 23.2 S.",
+      "evidence_section": "Table 3",
+      "page": null
+    },
+    {
+      "claim": "The unified model significantly speeds up downstream learning and improves accuracy compared to random initialization or language-only pre-training.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that seq2seq pre-training helps captioning tasks, while bidirectional pre-training benefits VQA.",
+      "evidence_section": "Boost from pre-training",
+      "page": null
+    }
+  ]
+}

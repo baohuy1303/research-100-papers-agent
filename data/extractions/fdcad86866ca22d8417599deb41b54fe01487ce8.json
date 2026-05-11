@@ -1,0 +1,444 @@
+{
+  "paper_id": "fdcad86866ca22d8417599deb41b54fe01487ce8",
+  "architecture_summary": "ViTPose employs plain and non-hierarchical vision transformers as backbones to extract features for a given person instance and a lightweight decoder for pose estimation. It uses masked image modeling pre-training, lightweight deconvolution/bilinear decoders, and supports scalable backbones, flexible attention types, multi-dataset training, and knowledge-token transfer.",
+  "model_variants": [
+    {
+      "name": "ViTPose-B",
+      "param_count_surface": "86",
+      "page": null
+    },
+    {
+      "name": "ViTPose-L",
+      "param_count_surface": "307",
+      "page": null
+    },
+    {
+      "name": "ViTPose-H",
+      "param_count_surface": "632",
+      "page": null
+    },
+    {
+      "name": "ViTPose-G",
+      "param_count_surface": "1B parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "MS COCO Keypoint",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MS COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MS COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AI Challenger",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "AI Challenger",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MPII",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OCHuman",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CrowdPose",
+      "purpose": "other",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Ablation study of the structure simplicity of ViTPose on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Ablation study of the structure simplicity of ViTPose on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Ablation study of the structure simplicity of ViTPose on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: The performance of ViTPose-B using different data for pre-training on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "77.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4: The performance of ViTPose-B with different input resolutions on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: The performance of ViTPose-B with 1/8 feature size on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: The performance of ViTPose-B under the partially finetuning on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: The performance of ViTPose-B under the multi-dataset training setting on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "76.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 8: The performance of transferability from ViTPose-L to ViTPose-B on MS COCO val set."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose-B*",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose-L*",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "78.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose-H*",
+      "dataset_surface": "MS COCO val",
+      "metric_surface": "AP",
+      "value_surface": "79.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 9: Comparison of ViTPose and SOTA methods on MS COCO val set. * denotes the models are trained under the multi-dataset setting."
+    },
+    {
+      "model": "ViTPose",
+      "dataset_surface": "MS COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "80.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 10: Comparison with SOTA methods on MS COCO test-dev set. “+” means model ensemble. “†”, “‡”, and “*” denote the champions of the 2018, 2019, and 2020 COCO Keypoint Challenge."
+    },
+    {
+      "model": "ViTPose",
+      "dataset_surface": "MS COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "81.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 10: Comparison with SOTA methods on MS COCO test-dev set. “+” means model ensemble. “†”, “‡”, and “*” denote the champions of the 2018, 2019, and 2020 COCO Keypoint Challenge."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "OCHuman val",
+      "metric_surface": "AP",
+      "value_surface": "88.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "OCHuman val",
+      "metric_surface": "AP",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "OCHuman val",
+      "metric_surface": "AP",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-G",
+      "dataset_surface": "OCHuman val",
+      "metric_surface": "AP",
+      "value_surface": "92.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "OCHuman test",
+      "metric_surface": "AP",
+      "value_surface": "87.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "OCHuman test",
+      "metric_surface": "AP",
+      "value_surface": "90.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "OCHuman test",
+      "metric_surface": "AP",
+      "value_surface": "90.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-G",
+      "dataset_surface": "OCHuman test",
+      "metric_surface": "AP",
+      "value_surface": "93.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 11: Comparison of ViTPose and SOTA methods on OCHuman [54] val and test set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "MPII val",
+      "metric_surface": "Mean",
+      "value_surface": "93.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 12: Comparison of ViTPose and SOTA methods on MPII [3] val set with ground truth bounding boxes. PCKh is adopted as the evaluation metric."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "MPII val",
+      "metric_surface": "Mean",
+      "value_surface": "94.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 12: Comparison of ViTPose and SOTA methods on MPII [3] val set with ground truth bounding boxes. PCKh is adopted as the evaluation metric."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "MPII val",
+      "metric_surface": "Mean",
+      "value_surface": "94.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 12: Comparison of ViTPose and SOTA methods on MPII [3] val set with ground truth bounding boxes. PCKh is adopted as the evaluation metric."
+    },
+    {
+      "model": "ViTPose-G",
+      "dataset_surface": "MPII val",
+      "metric_surface": "Mean",
+      "value_surface": "94.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 12: Comparison of ViTPose and SOTA methods on MPII [3] val set with ground truth bounding boxes. PCKh is adopted as the evaluation metric."
+    },
+    {
+      "model": "ViTPose-B",
+      "dataset_surface": "AI Challenger val",
+      "metric_surface": "AP",
+      "value_surface": "32.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 13: Comparison of ViTPose and SOTA methods on AI Challenger [41] val set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-L",
+      "dataset_surface": "AI Challenger val",
+      "metric_surface": "AP",
+      "value_surface": "34.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 13: Comparison of ViTPose and SOTA methods on AI Challenger [41] val set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-H",
+      "dataset_surface": "AI Challenger val",
+      "metric_surface": "AP",
+      "value_surface": "35.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 13: Comparison of ViTPose and SOTA methods on AI Challenger [41] val set with ground truth bounding boxes."
+    },
+    {
+      "model": "ViTPose-G",
+      "dataset_surface": "AI Challenger val",
+      "metric_surface": "AP",
+      "value_surface": "43.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 13: Comparison of ViTPose and SOTA methods on AI Challenger [41] val set with ground truth bounding boxes."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 A100 GPUs",
+    "batch_size": 512,
+    "epochs": 210
+  },
+  "methods_used": [
+    "plain vision transformers",
+    "non-hierarchical vision transformers",
+    "patch embedding",
+    "multi-head self-attention",
+    "feed-forward network",
+    "deconvolution layers",
+    "batch normalization",
+    "ReLU",
+    "bilinear interpolation",
+    "masked image modeling",
+    "MAE",
+    "shift-window mechanism",
+    "pooling window",
+    "AdamW",
+    "layer-wise learning rate decay",
+    "stochastic drop path",
+    "knowledge distillation",
+    "knowledge token",
+    "multi-dataset training",
+    "partial finetuning",
+    "output distillation"
+  ],
+  "novel_contributions": [
+    "a simple yet effective baseline model named ViTPose for human pose estimation",
+    "ViTPose can be scaled up from 100M to 1B parameters",
+    "ViTPose is very flexible regarding the attention type, input resolution, pre-training and finetuning strategy, as well as dealing with multiple pose tasks",
+    "the knowledge of large ViTPose models can be easily transferred to small ones via a simple knowledge token",
+    "a single ViTPose model with a big backbone ViTAE-G obtains the best 80.9 AP on the MS COCO test-dev set"
+  ],
+  "key_claims": [
+    {
+      "claim": "ViTPose is a simple baseline using plain vision transformers and a lightweight decoder for human pose estimation, without elaborate structural designs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViTPose can be scaled up from 100M to 1B parameters and sets a new Pareto front between throughput and performance.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model is flexible with respect to attention type, input resolution, pre-training and finetuning strategy, and multiple pose tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Large ViTPose models can transfer knowledge to smaller ones via a simple knowledge token.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViTPose achieves state-of-the-art 80.9 AP on the MS COCO test-dev set, and the paper explicitly notes the largest model sets a new state-of-the-art.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Using the simple decoder causes only marginal performance drops for ViT-B, ViT-L, and ViT-H, unlike the large drops seen for ResNet backbones.",
+      "evidence_section": "4.2 Ablation study and analysis",
+      "page": null
+    },
+    {
+      "claim": "With multi-dataset training and a ViTAE-G backbone, ViTPose reaches 80.9 AP on MS COCO test-dev and 81.1 AP with ensembling three models.",
+      "evidence_section": "4.3 Comparison with SOTA methods",
+      "page": null
+    }
+  ]
+}

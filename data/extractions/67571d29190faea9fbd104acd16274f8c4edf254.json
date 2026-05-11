@@ -1,0 +1,523 @@
+{
+  "paper_id": "67571d29190faea9fbd104acd16274f8c4edf254",
+  "architecture_summary": "MLP-Mixer is an architecture based exclusively on multi-layer perceptrons (MLPs), with token-mixing MLPs applied across patches and channel-mixing MLPs applied independently within each patch. It uses per-patch linear embeddings, repeated Mixer layers with skip-connections and layer normalization, and a global average pooling classifier head, without convolutions or self-attention.",
+  "model_variants": [
+    {
+      "name": "Mixer-S/32",
+      "param_count_surface": "19",
+      "page": null
+    },
+    {
+      "name": "Mixer-S/16",
+      "param_count_surface": "18",
+      "page": null
+    },
+    {
+      "name": "Mixer-B/32",
+      "param_count_surface": "60",
+      "page": null
+    },
+    {
+      "name": "Mixer-B/16",
+      "param_count_surface": "59",
+      "page": null
+    },
+    {
+      "name": "Mixer-L/32",
+      "param_count_surface": "206",
+      "page": null
+    },
+    {
+      "name": "Mixer-L/16",
+      "param_count_surface": "207",
+      "page": null
+    },
+    {
+      "name": "Mixer-H/14",
+      "param_count_surface": "431",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ILSVRC2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIIT Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford Flowers-102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ILSVRC2021 ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "IFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ReaL",
+      "metric_surface": "top-1",
+      "value_surface": "87.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "Avg 5",
+      "metric_surface": "top-1",
+      "value_surface": "93.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "19 tasks",
+      "value_surface": "74.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "HaloNet",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "85.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "ViT-L/16 [14]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "85.30",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "BiT-R152x4 [22]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "85.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "NFNet-F4+ [7]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "89.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "Mixer-H/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "87.94",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "BiT-R152x4 [22]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "87.54",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "ViT-H/14 [14]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "88.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "MPL [34]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "90.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "ALIGN [21]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "88.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer performance, inference throughput, and training cost"
+    },
+    {
+      "model": "Mixer-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "76.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-B/16 (☞)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "79.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "71.76",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-L/16 (☞)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "76.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "80.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-B/16 (☞)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "82.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-L/16 (☞)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "83.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-B/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "68.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-B/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "75.53",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-S/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "73.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Bit-R50x1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "73.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "80.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "80.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Bit-R152x1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "79.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Bit-R50x2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "78.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Bit-R152x2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "83.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.05",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "85.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-H/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "86.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Bit-R200x3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "84.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "Mixer-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "86.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "86.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    },
+    {
+      "model": "ViT-L/16 [14]",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "87.76",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Mixer and other models from the literature across various model and pre-training dataset scales"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "TPU-v3 accelerators",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "multi-layer perceptrons",
+    "token-mixing MLPs",
+    "channel-mixing MLPs",
+    "per-patch linear embeddings",
+    "skip-connections",
+    "layer normalization",
+    "global average pooling",
+    "Adam",
+    "momentum SGD",
+    "RandAugment",
+    "mixup",
+    "dropout",
+    "stochastic depth",
+    "weight decay",
+    "gradient clipping",
+    "linear learning rate warmup",
+    "linear decay"
+  ],
+  "novel_contributions": [
+    "An architecture based exclusively on multi-layer perceptrons (MLPs) for vision, without convolutions or self-attention.",
+    "A separation of token-mixing and channel-mixing MLP layers to mix information across spatial locations and feature channels.",
+    "Competitive image classification performance with pre-training and inference cost comparable to state-of-the-art models.",
+    "Evidence that Mixer can be competitive on large-scale pre-training and that its performance improves with larger datasets."
+  ],
+  "key_claims": [
+    {
+      "claim": "MLP-Mixer is an architecture based exclusively on MLPs, and does not use convolutions or self-attention.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "When trained on large datasets, or with modern regularization schemes, MLP-Mixer attains competitive scores on image classification benchmarks with pre-training and inference cost comparable to state-of-the-art models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Mixer-H/14 achieves 87.94% top-1 accuracy on ImageNet and is 0.5% better than BiT-ResNet152x4 and only 0.5% lower than ViT-H/14.",
+      "evidence_section": "3.1 Main results",
+      "page": null
+    },
+    {
+      "claim": "Mixer-B/16 attains 76.44% top-1 accuracy when trained from scratch on ImageNet, but tends to overfit and is behind state-of-the-art CNNs/hybrids in the from-scratch setting.",
+      "evidence_section": "3.2 The role of the model scale",
+      "page": null
+    },
+    {
+      "claim": "Mixer benefits strongly from larger pre-training datasets, and the performance gap between Mixer-L/16 and ViT-L/16 shrinks with data scale.",
+      "evidence_section": "3.3 The role of the pre-training dataset size",
+      "page": null
+    },
+    {
+      "claim": "Mixer is invariant to the order of patches and pixels within patches, and its performance drops much less than ResNet50x1 under global pixel shuffling.",
+      "evidence_section": "3.4 Invariance to input permutations",
+      "page": null
+    },
+    {
+      "claim": "The learned token-mixing units show global communication and some features operate on the entire image, while deeper layers appear to have no clearly identifiable structure.",
+      "evidence_section": "3.5 Visualization",
+      "page": null
+    }
+  ]
+}

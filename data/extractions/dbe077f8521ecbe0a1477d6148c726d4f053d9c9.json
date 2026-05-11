@@ -1,0 +1,625 @@
+{
+  "paper_id": "dbe077f8521ecbe0a1477d6148c726d4f053d9c9",
+  "architecture_summary": "The paper proposes Tokens-to-Token Vision Transformer (T2T-ViT), which progressively tokenizes images with a layer-wise Tokens-to-Token (T2T) transformation that aggregates neighboring tokens to model local structure, and uses a deep-narrow Transformer backbone for efficient classification.",
+  "model_variants": [
+    {
+      "name": "ViT-S/16",
+      "param_count_surface": "48.6M",
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": "86.8M",
+      "page": null
+    },
+    {
+      "name": "ViT-L/16",
+      "param_count_surface": "304.3M",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT-14",
+      "param_count_surface": "21.5",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT-19",
+      "param_count_surface": "39.2",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT-24",
+      "param_count_surface": "64.1",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT_T-14",
+      "param_count_surface": "21.5",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT-7",
+      "param_count_surface": "4.2",
+      "page": null
+    },
+    {
+      "name": "T2T-ViT-12",
+      "param_count_surface": "6.8",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR100",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "T2T-ViT_r-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between T2T-ViT and ViT by training from scratch on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-14†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "83.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between T2T-ViT and ViT by training from scratch on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-24",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between T2T-ViT and ViT by training from scratch on ImageNet."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "76.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "ResNet50*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "ResNet101*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-19",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-19",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "ResNet152",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "ResNet152*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-24",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "T2T-ViT_r-24",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our T2T-ViT with ResNets on ImageNet."
+    },
+    {
+      "model": "MobileNetV1 1.0x*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "70.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "T2T-ViT-7",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "71.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "T2T-ViT-7-Distilled",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "73.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "MobileNetV2 1.0x*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "72.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "MobileNetV2 1.4x*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "75.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "MobileNetV3 (Searched)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "75.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "T2T-ViT-12",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "T2T-ViT-12-Distilled",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison between our lite T2T-ViT with MobileNets."
+    },
+    {
+      "model": "ViT/S-16",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "CIFAR10",
+      "value_surface": "97.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "CIFAR10",
+      "value_surface": "97.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "T2T-ViT-19",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "CIFAR10",
+      "value_surface": "98.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "ViT/S-16",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "CIFAR100",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "CIFAR100",
+      "value_surface": "88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "T2T-ViT-19",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "CIFAR100",
+      "value_surface": "89.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The results of fine-tuning the pretrained T2T-ViT to downstream datasets: CIFAR10 and CIFAR100."
+    },
+    {
+      "model": "Wide-ResNet18x1.5*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.0 (-1.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "DenseNet201*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "77.5 (-1.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "SENet50*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "80.3 (+1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ResNeXt50*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.9 (+0.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ResNet50-Ghost*",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "76.2 (-2.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-S/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-DN",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.0 (+0.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-SW",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "69.9 (-8.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-Dense",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "76.8 (-1.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-SE",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.4 (+0.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-ResNeXt",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.0 (-0.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "ViT-Ghost",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "73.7 (-4.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-Wide",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "77.9 (-3.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-Dense",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "80.6 (-1.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-SE",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.6 (+0.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-ResNeXt",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5 (+0.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-Ghost",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.5 (-2.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer of some common designs in CNN to ViT&T2T-ViT, including DenseNet, Wide-ResNet, SE module, ResNeXt, Ghost operation."
+    },
+    {
+      "model": "T2T-ViT-14 w/o T2T",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "79.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5 (+2.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    },
+    {
+      "model": "T2T-ViT_c-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.7 (+2.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    },
+    {
+      "model": "T2T-ViT_c-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "80.8 (+1.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    },
+    {
+      "model": "T2T-ViT-d768-4",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1-Acc (%)",
+      "value_surface": "78.8 (-2.7)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study results on T2T module, Deep-Narrow(DN) structure."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 NVIDIA GPUs",
+    "batch_size": 512,
+    "epochs": 310
+  },
+  "methods_used": [
+    "self-attention",
+    "Tokens-to-Token (T2T) transformation",
+    "soft split",
+    "re-structurization",
+    "deep-narrow structure",
+    "Sinusoidal Position Embedding",
+    "AdamW",
+    "cosine learning rate decay",
+    "mixup",
+    "cutmix",
+    "knowledge distillation",
+    "Performer"
+  ],
+  "novel_contributions": [
+    "a new Tokens-to-Token Vision Transformer (T2T-ViT)",
+    "a layer-wise Tokens-to-Token (T2T) transformation to progressively structurize the image to tokens by recursively aggregating neighboring Tokens into one Token",
+    "an efficient backbone with a deep-narrow structure for vision transformer motivated by CNN architecture design",
+    "T2T-ViT reduces the parameter count and MACs of vanilla ViT by half",
+    "T2T-ViT can be trained from scratch on ImageNet without pre-training on JFT-300M"
+  ],
+  "key_claims": [
+    {
+      "claim": "T2T-ViT reduces the parameter count and MACs of vanilla ViT by half while achieving more than 3.0% improvement when trained from scratch on ImageNet.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "T2T-ViT with comparable size to ResNet50 (21.5M parameters) can achieve 83.3% top1 accuracy in image resolution 384 × 384 on ImageNet.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed T2T-ViT outperforms ResNets and achieves comparable performance with MobileNets by directly training on ImageNet.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The T2T module improves model performance by 2.0%-2.2% on ImageNet compared with the same backbone without T2T.",
+      "evidence_section": "4.3. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "Deep-narrow structure is crucial for T2T-ViT; changing to a shallow-wide structure decreases top-1 accuracy by 2.7%.",
+      "evidence_section": "4.3. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "The paper finds that deep-narrow architecture design works best for ViT among the CNN-inspired backbone variants tested.",
+      "evidence_section": "4.2. From CNN to ViT",
+      "page": null
+    }
+  ]
+}

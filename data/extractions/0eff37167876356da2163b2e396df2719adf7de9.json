@@ -1,0 +1,1022 @@
+{
+  "paper_id": "0eff37167876356da2163b2e396df2719adf7de9",
+  "architecture_summary": "CrossViT is a dual-branch vision transformer that processes small-patch and large-patch tokens in separate branches and fuses them multiple times with a cross-attention module based on CLS tokens to learn multi-scale feature representations efficiently.",
+  "model_variants": [
+    {
+      "name": "CrossViT-Ti",
+      "param_count_surface": "6.9M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-S",
+      "param_count_surface": "26.7M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-B",
+      "param_count_surface": "104.7M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-9",
+      "param_count_surface": "8.6M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-15",
+      "param_count_surface": "27.4M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-18",
+      "param_count_surface": "43.3M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-9†",
+      "param_count_surface": "8.8M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-15†",
+      "param_count_surface": "28.2M",
+      "page": null
+    },
+    {
+      "name": "CrossViT-18†",
+      "param_count_surface": "44.3M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet21K",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "JFT300M",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "CIFAR10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CropDiseases",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ChestXRay8",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-Ti",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "73.4 (+1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-9",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "73.9 (+0.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-9†",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "77.1 (+3.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-S",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.0 (+1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.5 (+0.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-15†",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.3 (+0.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-B",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.2 (+0.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.5 (+0.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "CrossViT-18†",
+      "dataset_surface": "ImageNetK",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.8 (+0.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with DeiT baseline on ImageNetK"
+    },
+    {
+      "model": "PeeWee",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "76.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "CentroidViT-S",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "PVT-S",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "PVT-M",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "T2T-ViT-14",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "TNT-S",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "ViT-B@384",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "PVT-L",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "T2T-ViT-19",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "T2T-ViT-24",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "TNT-B",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with recent transformer-based models on ImageNet1K"
+    },
+    {
+      "model": "ResNet-101",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "ResNet-152",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "77.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "ResNeXt-101-32×4d",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "ResNeXt-101-64×4d",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "79.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "SEResNet-101",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "SEResNet-152",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "78.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "SENet-154",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "ECA-Net101",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "78.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "ECA-Net152",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "78.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "RegNetY-8GF",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "RegNetY-12GF",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "RegNetY-16GF",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "RegNetY-32GF",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "EfficientNet-B4@380",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "EfficientNet-B5@456",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "EfficientNet-B6@528",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "EfficientNet-B7@600",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15†@384",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18†@384",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "83.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18†@480",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with CNN models on ImageNet1K"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "90.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "Pet",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "94.93",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "CropDiseases",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ChestXRay8",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "55.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.10",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "90.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "Pet",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "94.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "CropDiseases",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ChestXRay8",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "55.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "90.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "Pet",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "94.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "CropDiseases",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "ChestXRay8",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "55.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "CIFAR10",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "91.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "Pet",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "95.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "CropDiseases",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "99.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "ChestXRay8",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "55.94",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer learning performance"
+    },
+    {
+      "model": "None",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different fusions on ImageNet1K"
+    },
+    {
+      "model": "All-Attention",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different fusions on ImageNet1K"
+    },
+    {
+      "model": "Class Token",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different fusions on ImageNet1K"
+    },
+    {
+      "model": "Pairwise",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different fusions on ImageNet1K"
+    },
+    {
+      "model": "Cross-Attention",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different fusions on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-S",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "A",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "B",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "C",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "D",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "E",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study with different architecture parameters on ImageNet1K"
+    },
+    {
+      "model": "DeiT-9",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-9",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "73.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "DeiT-9†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "75.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-9†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "DeiT-15",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "DeiT-15†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-15†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "DeiT-18",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "DeiT-18†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "81.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    },
+    {
+      "model": "CrossViT-18†",
+      "dataset_surface": "ImageNet1K",
+      "metric_surface": "Top-1 Acc. (%)",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons with various baselines on ImageNet1K"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "32 GPUs",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "dual-branch transformer",
+    "cross-attention",
+    "CLS token",
+    "patch embedding",
+    "multi-head self-attention",
+    "RandAugment",
+    "mixup",
+    "CutMix",
+    "random erasing",
+    "drop path",
+    "instance repetition",
+    "bicubic interpolation",
+    "SGD",
+    "AdamW"
+  ],
+  "novel_contributions": [
+    "A novel dual-branch vision transformer to extract multi-scale feature representations for image classification.",
+    "A simple yet effective token fusion scheme based on cross-attention, which is linear in both computation and memory.",
+    "The model performs better than or on par with several concurrent works based on ViT, and demonstrates comparable results with EfficientNet with regards to accuracy, throughput and model parameters."
+  ],
+  "key_claims": [
+    {
+      "claim": "CrossViT proposes a dual-branch vision transformer that combines small-patch and large-patch tokens to learn multi-scale feature representations for image classification.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed cross-attention fusion uses CLS tokens as queries and is linear in both computational and memory complexity instead of quadratic time.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet1K, CrossViT outperforms DeiT by a large margin of 2% with a small to moderate increase in FLOPs and model parameters.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CrossViT-18† achieves 82.8 on ImageNet1K and is described as performing as well as TNT-B while using fewer FLOPs and parameters.",
+      "evidence_section": "4.2. Main Results",
+      "page": null
+    },
+    {
+      "claim": "CrossViT-15† is competitive with EfficientNet on ImageNet1K in accuracy, throughput and parameters at higher resolution.",
+      "evidence_section": "4.2. Main Results",
+      "page": null
+    },
+    {
+      "claim": "Cross-attention fusion achieves the best accuracy among the compared fusion schemes on ImageNet1K.",
+      "evidence_section": "4.3. Ablation Studies",
+      "page": null
+    },
+    {
+      "claim": "The model is trained on ImageNet1K from scratch for 300 epochs with batch size 4,096 using RandAugment, mixup, CutMix, random erasing, and drop path.",
+      "evidence_section": "4.1. Experimental Setup",
+      "page": null
+    }
+  ]
+}

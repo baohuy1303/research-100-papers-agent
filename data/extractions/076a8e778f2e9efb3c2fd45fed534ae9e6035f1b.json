@@ -1,0 +1,256 @@
+{
+  "paper_id": "076a8e778f2e9efb3c2fd45fed534ae9e6035f1b",
+  "architecture_summary": "The paper proposes Swin UNETR, a 3D transformer-based architecture with a Swin Transformer encoder that directly uses 3D patches and a CNN-based decoder with skip connections. The encoder is self-supervised pre-trained with masked volume inpainting, 3D rotation prediction, and contrastive learning on 5,050 CT scans, then fine-tuned for segmentation.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "5 public CT datasets",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "BTCV",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Medical Segmentation Decathlon (MSD)",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LUNA16",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TCIA Covid19",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LiDC",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "HNSCC",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TCIA Colon",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.976",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.958",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.956",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.893",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.875",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.985",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.953",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.949",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.904",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.899",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.898",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.846",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BTCV",
+      "metric_surface": "Dice",
+      "value_surface": "0.918",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Leaderboard Dice results of BTCV challenge on multi-organ segmentation"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "MSD",
+      "metric_surface": "Average Accuracy Dice ↑",
+      "value_surface": "78.68",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Overall performance of top-ranking methods on all 10 segmentation tasks in the MSD public test leaderboard"
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "MSD",
+      "metric_surface": "Average Accuracy NSD ↑",
+      "value_surface": "89.28",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Overall performance of top-ranking methods on all 10 segmentation tasks in the MSD public test leaderboard"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "approximately 6 GPU days",
+    "batch_size": 4,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-supervised learning",
+    "Swin Transformer",
+    "hierarchical encoder",
+    "patch partition",
+    "shifted windows",
+    "skip connections",
+    "CNN-based decoder",
+    "masked volume inpainting",
+    "contrastive learning",
+    "rotation prediction",
+    "random rotation",
+    "cutout",
+    "AdamW",
+    "warm-up cosine scheduler",
+    "data augmentation",
+    "instance normalization",
+    "deconvolutional layer"
+  ],
+  "novel_contributions": [
+    "a novel self-supervised learning framework with tailored proxy tasks for pre-training on CT image datasets",
+    "a novel 3D transformer-based architecture, dubbed as Swin UNETR, consisting of an encoder that extracts feature representations at multiple resolutions and is utilized for pre-training",
+    "successful pre-training on a cohort of 5,050 publicly available CT images from various applications",
+    "state-of-the-art on the test leaderboards of both MSD and BTCV datasets"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper introduces Swin UNETR, a new 3D transformer-based architecture with a hierarchical Swin Transformer encoder for self-supervised pre-training on CT images.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed framework uses masked volume inpainting, contrastive learning, and 3D rotation prediction as proxy tasks for learning anatomical representations.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model is successfully pre-trained on 5,050 publicly available CT images from various body organs.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper claims the model is currently the state-of-the-art on the public test leaderboards of both MSD and BTCV datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Swin UNETR achieves the best performance on the BTCV leaderboard and is reported as state-of-the-art Dice of 0.908.",
+      "evidence_section": "5.4.1 BTCV Multi-organ Segmentation Challenge",
+      "page": null
+    },
+    {
+      "claim": "Swin UNETR achieves the best average Dice of 78.68% across all ten MSD tasks and the top ranking in the MSD leaderboard.",
+      "evidence_section": "5.4.2 Segmentation Results on MSD",
+      "page": null
+    },
+    {
+      "claim": "Using all three self-supervised objectives gives the best BTCV fine-tuning result in the ablation study, with Dice 84.72 and HD 20.03.",
+      "evidence_section": "5.5.4 Efficacy of Self-Supervised Objectives",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that self-supervised pre-training can reduce annotation effort by at least 40% for BTCV.",
+      "evidence_section": "5.5.2 Reduce Manual Labeling Efforts",
+      "page": null
+    }
+  ]
+}

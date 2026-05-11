@@ -1,0 +1,713 @@
+{
+  "paper_id": "5aec474c31a2f4b74703c6f786c0a8ff85c450da",
+  "architecture_summary": "VisualBERT is a BERT-based Transformer that jointly processes text tokens and image region features as input embeddings, using self-attention to implicitly align words and bounding regions. It is pre-trained on COCO captions with masked language modeling and sentence-image prediction, then task-specifically pre-trained and fine-tuned for vision-and-language tasks.",
+  "model_variants": [
+    {
+      "name": "VisualBERT",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VisualBERT w/o Early Fusion",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VisualBERT w/o COCO Pre-training",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VisualBERT w/o Grounded Pre-training",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "VisualBERT w/o Objective 2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "C1 VisualBERT w/o Grounded Pre-training",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "C2 VisualBERT w/o Early Fusion",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "C3 VisualBERT w/o BERT Initialization",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "C4 VisualBERT w/o Objective 2",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO image caption dataset",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQA 2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VCR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLVR2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K Entities",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "Karpathy train split",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "70.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Std",
+      "value_surface": "71.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "68.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "70.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "Pythia v0.1",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "68.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "Pythia v0.3",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "68.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "Pythia v0.1 + VG + Other Data Augmentation",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "70.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "MCAN + VG",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "70.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "MCAN + VG + Multiple Detectors",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "72.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "MCAN + VG + Multiple Detectors + BERT",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "72.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "MCAN + VG + Multiple Detectors + BERT + Ensemble",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Dev",
+      "value_surface": "75.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "MCAN + VG + Multiple Detectors + BERT + Ensemble",
+      "dataset_surface": "VQA 2.0",
+      "metric_surface": "Test-Std",
+      "value_surface": "75.23",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VQA"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Dev",
+      "value_surface": "63.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Test",
+      "value_surface": "65.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Dev",
+      "value_surface": "67.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Test",
+      "value_surface": "67.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Dev",
+      "value_surface": "43.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "R2C",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Test",
+      "value_surface": "44.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "B2T2",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Test",
+      "value_surface": "72.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "B2T2",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Test",
+      "value_surface": "75.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "B2T2",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Test",
+      "value_surface": "55.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Dev",
+      "value_surface": "70.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Dev",
+      "value_surface": "71.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Dev",
+      "value_surface": "50.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Dev",
+      "value_surface": "67.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Dev",
+      "value_surface": "69.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Dev",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Dev",
+      "value_surface": "70.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → A Test",
+      "value_surface": "71.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Dev",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "QA → R Test",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Dev",
+      "value_surface": "52.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "VCR",
+      "metric_surface": "Q → AR Test",
+      "value_surface": "52.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on VCR"
+    },
+    {
+      "model": "MaxEnt",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Dev",
+      "value_surface": "54.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "MaxEnt",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-P",
+      "value_surface": "54.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "MaxEnt",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-U",
+      "value_surface": "53.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "MaxEnt",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-U (Cons)",
+      "value_surface": "12.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Dev",
+      "value_surface": "64.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Dev",
+      "value_surface": "63.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Dev",
+      "value_surface": "67.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-P",
+      "value_surface": "67.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-U",
+      "value_surface": "67.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "NLVR2",
+      "metric_surface": "Test-U (Cons)",
+      "value_surface": "26.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on NLVR2"
+    },
+    {
+      "model": "BAN",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1 Test",
+      "value_surface": "69.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "BAN",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5 Test",
+      "value_surface": "84.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "BAN",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10 Test",
+      "value_surface": "86.35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "BAN",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "Upper Bound Test",
+      "value_surface": "87.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1 Dev",
+      "value_surface": "70.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5 Dev",
+      "value_surface": "84.53",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o Early Fusion",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10 Dev",
+      "value_surface": "86.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1 Dev",
+      "value_surface": "68.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5 Dev",
+      "value_surface": "83.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10 Dev",
+      "value_surface": "86.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "Upper Bound Dev",
+      "value_surface": "86.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT w/o COCO Pre-training",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "Upper Bound Test",
+      "value_surface": "87.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1 Dev",
+      "value_surface": "70.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@1 Test",
+      "value_surface": "71.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5 Dev",
+      "value_surface": "84.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@5 Test",
+      "value_surface": "84.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10 Dev",
+      "value_surface": "86.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    },
+    {
+      "model": "VisualBERT",
+      "dataset_surface": "Flickr30K",
+      "metric_surface": "R@10 Test",
+      "value_surface": "86.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art model on the Flickr30K"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "at most 4 Tesla V100s each with 16GBs of GPU memory",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer layers",
+    "self-attention",
+    "BERT",
+    "pretrained object proposals systems",
+    "Faster-RCNN",
+    "masked language modeling",
+    "sentence-image prediction",
+    "SGD with Adam",
+    "task-agnostic pre-training",
+    "task-specific pre-training",
+    "fine-tuning",
+    "early fusion",
+    "visual embeddings",
+    "object detector",
+    "ResNeXt-based Faster RCNN",
+    "ResNet50",
+    "Detectron",
+    "additional self-attention block"
+  ],
+  "novel_contributions": [
+    "A simple and flexible framework for modeling a broad range of vision-and-language tasks.",
+    "A joint Transformer-based model that implicitly aligns text and image regions with self-attention.",
+    "Two visually-grounded language model objectives for pre-training on image caption data.",
+    "Task-specific pre-training on downstream data before fine-tuning.",
+    "Analysis showing the model can ground language to image regions without explicit supervision and capture syntactic relationships."
+  ],
+  "key_claims": [
+    {
+      "claim": "VisualBERT is a simple and flexible framework for modeling a broad range of vision-and-language tasks, using self-attention to implicitly align text and image regions.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "Two visually-grounded language model objectives are used to pre-train VisualBERT on image caption data.",
+      "evidence_section": "ABSTRACT / 3.3 TRAINING VISUALBERT",
+      "page": null
+    },
+    {
+      "claim": "VisualBERT outperforms or rivals state-of-the-art models on VQA, VCR, NLVR2, and Flickr30K.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "Task-agnostic pre-training on COCO captions is important for learning transferable text and visual representations.",
+      "evidence_section": "3.3 TRAINING VISUALBERT / 5.1 ABLATION STUDY",
+      "page": null
+    },
+    {
+      "claim": "VisualBERT can ground elements of language to image regions without any explicit supervision and is sensitive to syntactic relationships.",
+      "evidence_section": "ABSTRACT / 5.2 DISSECTING ATTENTION WEIGHTS",
+      "page": null
+    },
+    {
+      "claim": "The model uses the attention mechanism to capture information in an interpretable way.",
+      "evidence_section": "6 CONCLUSION AND FUTURE WORK",
+      "page": null
+    }
+  ]
+}

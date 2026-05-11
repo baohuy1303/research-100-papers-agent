@@ -1,0 +1,463 @@
+{
+  "paper_id": "e3a3e85c5a32af29e13b3561f6cf070de70651de",
+  "architecture_summary": "The paper proposes gMLP, an MLP-based alternative to Transformers that removes self-attention and instead uses channel projections plus a Spatial Gating Unit for spatial interactions. It also introduces a tiny self-attention hybrid, aMLP, to improve finetuning on tasks that need cross-sentence alignment.",
+  "model_variants": [
+    {
+      "name": "gMLP-Ti",
+      "param_count_surface": "5.9",
+      "page": null
+    },
+    {
+      "name": "gMLP-S",
+      "param_count_surface": "19.5",
+      "page": null
+    },
+    {
+      "name": "gMLP-B",
+      "param_count_surface": "73.4",
+      "page": null
+    },
+    {
+      "name": "gMLP_base",
+      "param_count_surface": "130",
+      "page": null
+    },
+    {
+      "name": "aMLP_base",
+      "param_count_surface": "109",
+      "page": null
+    },
+    {
+      "name": "gMLP_large",
+      "param_count_surface": "365",
+      "page": null
+    },
+    {
+      "name": "aMLP_large",
+      "param_count_surface": "316",
+      "page": null
+    },
+    {
+      "name": "gMLP_xlarge",
+      "param_count_surface": "941",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "C4",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "RealNews-like subset of C4",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "C4/RealNews",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "C4/English",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "GLUE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SST-2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MNLI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MNLI-m",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SQuAD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SQuAD v1.1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SQuAD v2.0",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "gMLP-Ti",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet Top-1 (%)",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K results without extra data"
+    },
+    {
+      "model": "gMLP-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet Top-1 (%)",
+      "value_surface": "79.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K results without extra data"
+    },
+    {
+      "model": "gMLP-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet Top-1 (%)",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1K results without extra data"
+    },
+    {
+      "model": "BERT base",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "4.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP base",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "4.28",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP base",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "3.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT large",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "3.35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP large",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "3.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP large",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "3.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP xlarge",
+      "dataset_surface": "C4/English",
+      "metric_surface": "Perplexity",
+      "value_surface": "2.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT base",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "93.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP base",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "94.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP base",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "93.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT large",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "94.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP large",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "94.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP large",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "94.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP xlarge",
+      "dataset_surface": "SST-2",
+      "metric_surface": "SST-2",
+      "value_surface": "95.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT base",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "85.6/85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP base",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "83.7/84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP base",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "85.9/85.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT large",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "87.0/87.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP large",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "86.2/86.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP large",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "88.4/88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP xlarge",
+      "dataset_surface": "MNLI",
+      "metric_surface": "MNLI (m/mm)",
+      "value_surface": "87.7/87.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT base",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "90.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP base",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "86.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP base",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "90.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "BERT large",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "92.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP large",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "89.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "aMLP large",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "92.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    },
+    {
+      "model": "gMLP xlarge",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "SQuAD",
+      "value_surface": "90.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Pretraining perplexities and dev-set results for finetuning"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "TPUv2 with 128 cores",
+    "batch_size": 256,
+    "epochs": 300
+  },
+  "methods_used": [
+    "gating",
+    "channel projections",
+    "spatial projections",
+    "Spatial Gating Unit",
+    "linear gating",
+    "split operation",
+    "normalization",
+    "GELU",
+    "stochastic depth",
+    "AutoAugment",
+    "Cutmix",
+    "Mixup",
+    "label smoothing",
+    "AdamW",
+    "masked language modeling",
+    "tiny self-attention",
+    "relative positional biases",
+    "Toeplitz matrix"
+  ],
+  "novel_contributions": [
+    "a simple network architecture, gMLP, based on MLPs with gating",
+    "an MLP-based alternative to Transformers without self-attention",
+    "the Spatial Gating Unit (SGU) for spatial interactions across tokens",
+    "a tiny self-attention hybrid, aMLP, that improves finetuning on tasks requiring cross-sentence alignment",
+    "evidence that gMLP can scale as well as Transformers over increased data and compute"
+  ],
+  "key_claims": [
+    {
+      "claim": "gMLP can perform as well as Transformers in key language and vision applications, despite removing self-attention.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "For Vision Transformers, self-attention is not critical because gMLP can achieve the same accuracy.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "gMLP achieves parity with Transformers on BERT pretraining perplexity and is better on some downstream NLP tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "A large gMLP model achieves 87.7% accuracy on MNLI and 82.1% F1 on SQuAD v2.0 with a standard 256-batch size × 1M-step training setup.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "A tiny single-head self-attention with size up to 128 is sufficient to make gMLPs outperform Transformers on all NLP tasks evaluated.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "All ImageNet models are trained using TPUv2 with 128 cores and each run takes 1-4 hours to complete.",
+      "evidence_section": "A.1 Image Classification",
+      "page": null
+    },
+    {
+      "claim": "For MLM pretraining, models in the full BERT setup are trained using TPUv2 with 128 cores and each run takes 1-5 days to complete.",
+      "evidence_section": "A.2 Masked Language Modeling",
+      "page": null
+    }
+  ]
+}

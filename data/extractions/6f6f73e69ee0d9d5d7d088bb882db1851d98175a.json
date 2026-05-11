@@ -1,0 +1,244 @@
+{
+  "paper_id": "6f6f73e69ee0d9d5d7d088bb882db1851d98175a",
+  "architecture_summary": "IPT is a pre-trained image processing transformer with multiple task-specific heads and tails around a shared transformer encoder-decoder body. It is trained on synthesized corrupted ImageNet images for super-resolution, denoising, and deraining, and uses contrastive learning to improve generalization to unseen image processing tasks.",
+  "model_variants": [
+    {
+      "name": "IPT",
+      "param_count_surface": "114M parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set5",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set14",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "B100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Urban100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BSD68",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Rain100L",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GoPro",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image super-resolution"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "34.43",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image super-resolution"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "B100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image super-resolution"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "33.76",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image super-resolution"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "BSD68",
+      "metric_surface": "PSNR",
+      "value_surface": "30.75",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on color image denoising"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "BSD68",
+      "metric_surface": "PSNR",
+      "value_surface": "28.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on color image denoising"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on color image denoising"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "29.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on color image denoising"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Rain100L",
+      "metric_surface": "PSNR",
+      "value_surface": "41.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results of image deraining on the Rain100L dataset"
+    },
+    {
+      "model": "IPT (ours)",
+      "dataset_surface": "Rain100L",
+      "metric_surface": "SSIM",
+      "value_surface": "0.9880",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results of image deraining on the Rain100L dataset"
+    },
+    {
+      "model": "IPT (Ours)",
+      "dataset_surface": "GoPro",
+      "metric_surface": "PSNR",
+      "value_surface": "32.58",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image deblurring"
+    },
+    {
+      "model": "IPT + (Ours)",
+      "dataset_surface": "GoPro",
+      "metric_surface": "PSNR",
+      "value_surface": "32.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on image deblurring"
+    },
+    {
+      "model": "IPT",
+      "dataset_surface": "Set4",
+      "metric_surface": "PSNR",
+      "value_surface": "38.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Impact of λ for contrastive learning"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "32 Nvidia NVIDIA Tesla V100 cards",
+    "batch_size": 256,
+    "epochs": 300
+  },
+  "methods_used": [
+    "transformer encoder-decoder",
+    "multi-head",
+    "multi-tail",
+    "patch embedding",
+    "position encodings",
+    "task-specific embedding",
+    "multi-head self-attention",
+    "feed forward network",
+    "contrastive learning",
+    "L1 loss",
+    "Adam optimizer"
+  ],
+  "novel_contributions": [
+    "a new pre-trained model for image processing, namely, image processing transformer (IPT)",
+    "a multi-head and multi-tail transformer architecture with a single shared body for different image processing tasks",
+    "using ImageNet to generate a large amount of corrupted image pairs for pre-training",
+    "introducing contrastive learning for well adapting to different image processing tasks",
+    "one pre-trained model that outperforms the current state-of-the-art methods on various low-level benchmarks"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes IPT, a pre-trained transformer model for low-level image processing tasks such as super-resolution, denoising, and deraining.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "IPT uses multiple task-specific heads and tails with a shared transformer body, and adds contrastive learning to improve adaptation across tasks.",
+      "evidence_section": "Abstract; 3. Image Processing Transformer",
+      "page": null
+    },
+    {
+      "claim": "The model is trained on synthesized corrupted ImageNet images, with over 10M training patches generated from ImageNet.",
+      "evidence_section": "3.2. Pre-training on ImageNet; 4. Experiments",
+      "page": null
+    },
+    {
+      "claim": "IPT outperforms the current state-of-the-art methods on various low-level benchmarks after fine-tuning.",
+      "evidence_section": "Abstract; 4. Experiments",
+      "page": null
+    },
+    {
+      "claim": "On Urban100, IPT achieves 33.76dB PSNR for ×2 super-resolution and 32.00/29.71 PSNR for color image denoising at noise levels 30/50.",
+      "evidence_section": "4.1. Super-resolution; 4.2. Denoising",
+      "page": null
+    },
+    {
+      "claim": "On Rain100L, IPT achieves 41.62dB PSNR and 0.9880 SSIM for image deraining.",
+      "evidence_section": "4.3. Deraining",
+      "page": null
+    },
+    {
+      "claim": "The whole IPT has 114M parameters and 33G FLOPs.",
+      "evidence_section": "B. Architecture of IPT",
+      "page": null
+    },
+    {
+      "claim": "Using contrastive learning improves the ×2 super-resolution PSNR on Set4 from 38.27 to 38.37 when λ=0.1.",
+      "evidence_section": "4.5. Ablation Study",
+      "page": null
+    }
+  ]
+}

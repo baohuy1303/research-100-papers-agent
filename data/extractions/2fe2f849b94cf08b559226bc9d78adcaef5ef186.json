@@ -1,0 +1,938 @@
+{
+  "paper_id": "2fe2f849b94cf08b559226bc9d78adcaef5ef186",
+  "architecture_summary": "AdaptFormer is a plug-and-play fine-tuning framework for Vision Transformers that replaces the original MLP block with an AdaptMLP bottleneck module consisting of down-projection, ReLU, up-projection, and a scaling factor in parallel with the frozen original MLP. It fine-tunes only the newly added parameters while keeping the pre-trained backbone frozen, aiming for efficient adaptation across image and video recognition tasks.",
+  "model_variants": [
+    {
+      "name": "AdaptFormer-1",
+      "param_count_surface": "0.10 (0.12%)",
+      "page": null
+    },
+    {
+      "name": "AdaptFormer-4",
+      "param_count_surface": "0.15 (0.17%)",
+      "page": null
+    },
+    {
+      "name": "AdaptFormer-64",
+      "param_count_surface": "1.26 (1.46%)",
+      "page": null
+    },
+    {
+      "name": "AdaptFormer-Swin",
+      "param_count_surface": "1.25 (1.43%)",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MAE",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VideoMAE",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SVHN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Food-101",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Something-Something V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HMDB51",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NUS-WIDE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-400",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "69.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.52",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "97.67 $\u0003f$",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "66.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "94.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "93.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "96.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "96.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.09 $\u0003f$",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "69.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "82.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.42",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "87.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "53.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "29.23",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "43.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "50.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "54.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "59.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "46.41",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "49.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "52.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "51.68",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "51.81",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "55.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with self-supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "61.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "51.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "57.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "57.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "58.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "NUS-WIDE",
+      "metric_surface": "mAP",
+      "value_surface": "59.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AdaptFormer for multi-label classification"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "46.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning on video data with image pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "41.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning on video data with image pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "6.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning on video data with image pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "16.94",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning on video data with image pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "95.41",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "55.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "92.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "97.29",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.16",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.89",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "53.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "35.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "55.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "Something-Something V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "60.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "59.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "VPT [51]",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "71.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "73.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with supervised pre-trained model"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptFormer-Swin",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.88",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "97.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "69.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptFormer-Swin",
+      "dataset_surface": "SVHN",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "97.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.43",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptFormer-Swin",
+      "dataset_surface": "Food-101",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "91.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "52.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "28.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptFormer-Swin",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "54.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Full-tuning",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "Linear",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "74.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptFormer-Swin",
+      "dataset_surface": "HMDB51",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "74.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with Swin Transformer"
+    },
+    {
+      "model": "AdaptMLP",
+      "dataset_surface": "SSv2",
+      "metric_surface": "top-1",
+      "value_surface": "59.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with different adapter modules"
+    },
+    {
+      "model": "AdaptConv",
+      "dataset_surface": "SSv2",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "58.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with different adapter modules"
+    },
+    {
+      "model": "AdaptDepthwise-Conv",
+      "dataset_surface": "SSv2",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "58.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with different adapter modules"
+    },
+    {
+      "model": "AdaptLayerNorm-In",
+      "dataset_surface": "SSv2",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "57.85",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with different adapter modules"
+    },
+    {
+      "model": "Full Fine-tuning",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "82.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "Liner",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "80.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "VPT",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "81.68",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "AdaptFormer-1",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "82.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "AdaptFormer-4",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "82.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "AdaptFormer-16",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "82.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    },
+    {
+      "model": "AdaptFormer-64",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top1 (%)",
+      "value_surface": "81.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Fine-tuning with AdaatFormer on ImageNet-1k dataset"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8×8 GPUs for video experiments and 1×8 GPUs for image experiments",
+    "batch_size": 1024,
+    "epochs": 100
+  },
+  "methods_used": [
+    "patch embedding",
+    "multi-head self-attention",
+    "MLP",
+    "LayerNorm",
+    "ReLU",
+    "residual connection",
+    "bottleneck module",
+    "parameter-efficient fine-tuning",
+    "self-supervised pre-training",
+    "supervised pre-training",
+    "prompt tuning",
+    "linear probing",
+    "full fine-tuning",
+    "SGD",
+    "cosine decay",
+    "RandomResizedCrop",
+    "MultiScaleCrop",
+    "BatchNorm"
+  ],
+  "novel_contributions": [
+    "We propose a simple yet effective framework, namely AdaptFormer, for adapting vision transformers to a large variety of downstream visual recognition tasks and avoiding catastrophic interference with each other.",
+    "This is the first work that explores efficient fine-tuning in video action recognition.",
+    "AdaptFormer introduces lightweight modules that only add less than 2% extra parameters to a ViT while keeping the original pre-trained parameters frozen.",
+    "AdaptFormer is plug-and-play in different Transformers and scalable to many visual tasks.",
+    "Extensive experiments on five image and video datasets show that AdaptFormer largely improves ViTs in the target domains."
+  ],
+  "key_claims": [
+    {
+      "claim": "AdaptFormer introduces lightweight modules that add less than 2% extra parameters to a ViT and can increase transferability without updating the original pre-trained parameters.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "AdaptFormer significantly outperforms existing 100% fully fine-tuned models on action recognition benchmarks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "With just 1.5% extra parameters, AdaptFormer achieves about 10% and 19% relative improvement compared to fully fine-tuned models on Something-Something v2 and HMDB51, respectively.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "AdaptFormer-64 outperforms VPT on CIFAR-100, SVHN, and Food-101, and also improves over full-tuning on Something-Something V2 in the self-supervised setting.",
+      "evidence_section": "4.2 Main Properties and Analysis",
+      "page": null
+    },
+    {
+      "claim": "AdaptFormer remains stable as tunable parameters scale up, unlike VPT which degrades sharply when the number of tokens becomes too large.",
+      "evidence_section": "4.3 Scaling Tunable Parameters Up",
+      "page": null
+    },
+    {
+      "claim": "AdaptFormer achieves 46.06% top-1 accuracy on SSv2 when fine-tuning an ImageNet-21K pre-trained model, exceeding full-tuning by +4.56%.",
+      "evidence_section": "4.6 Towards Visual Recognition Generalist Agent",
+      "page": null
+    },
+    {
+      "claim": "AdaptFormer-Swin transfers well to hierarchical vision transformers and can outperform full-tuning on CIFAR-100, SVHN, Food-101, and SSv2 with only 1.43% parameters.",
+      "evidence_section": "A.2.2 AdaptFormer on Swin Transformer",
+      "page": null
+    }
+  ]
+}

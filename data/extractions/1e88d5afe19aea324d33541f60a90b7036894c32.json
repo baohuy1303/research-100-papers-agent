@@ -1,0 +1,527 @@
+{
+  "paper_id": "1e88d5afe19aea324d33541f60a90b7036894c32",
+  "architecture_summary": "Restormer is an efficient encoder-decoder Transformer for high-resolution image restoration. It uses multi-Dconv head transposed attention (MDTA) to apply self-attention across channels with local context mixing, and a gated-Dconv feed-forward network (GDFN) with depth-wise convolutions and progressive learning.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "GoPro [56]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HIDE [67]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealBlur-R [65]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealBlur-J [65]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DPDd dataset [3]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set12 [101]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BSD68 [52]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Urban100 [29]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kodak24 [20]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "McMaster [104]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SIDD [1]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DND [60]",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Restormer",
+      "dataset_surface": "Test100 [97]",
+      "metric_surface": "PSNR",
+      "value_surface": "32.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Rain100H [86]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Rain100L [86]",
+      "metric_surface": "PSNR",
+      "value_surface": "38.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Test2800 [22]",
+      "metric_surface": "PSNR",
+      "value_surface": "34.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Test1200 [96]",
+      "metric_surface": "PSNR",
+      "value_surface": "33.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Average",
+      "metric_surface": "PSNR",
+      "value_surface": "33.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image deraining results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "GoPro [56]",
+      "metric_surface": "PSNR",
+      "value_surface": "32.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Single-image motion deblurring results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "HIDE [67]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Single-image motion deblurring results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "RealBlur-R [65]",
+      "metric_surface": "PSNR",
+      "value_surface": "36.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Single-image motion deblurring results"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "RealBlur-J [65]",
+      "metric_surface": "PSNR",
+      "value_surface": "28.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Single-image motion deblurring results"
+    },
+    {
+      "model": "Restormer_S",
+      "dataset_surface": "Indoor Scenes",
+      "metric_surface": "PSNR",
+      "value_surface": "28.87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer_S",
+      "dataset_surface": "Outdoor Scenes",
+      "metric_surface": "PSNR",
+      "value_surface": "23.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer_S",
+      "dataset_surface": "Combined",
+      "metric_surface": "PSNR",
+      "value_surface": "25.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer_D",
+      "dataset_surface": "Indoor Scenes",
+      "metric_surface": "PSNR",
+      "value_surface": "29.48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer_D",
+      "dataset_surface": "Outdoor Scenes",
+      "metric_surface": "PSNR",
+      "value_surface": "23.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer_D",
+      "dataset_surface": "Combined",
+      "metric_surface": "PSNR",
+      "value_surface": "26.66",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Defocus deblurring comparisons on the DPDd testset [3]"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Set12 [101]",
+      "metric_surface": "PSNR",
+      "value_surface": "33.35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Set12 [101]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Set12 [101]",
+      "metric_surface": "PSNR",
+      "value_surface": "28.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "BSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "BSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "29.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "BSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "26.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "33.67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "28.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian grayscale image denoising comparisons for two categories of methods"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "CBSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "34.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "CBSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "31.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "CBSD68 [52]",
+      "metric_surface": "PSNR",
+      "value_surface": "28.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Kodak24 [20]",
+      "metric_surface": "PSNR",
+      "value_surface": "35.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Kodak24 [20]",
+      "metric_surface": "PSNR",
+      "value_surface": "33.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Kodak24 [20]",
+      "metric_surface": "PSNR",
+      "value_surface": "30.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "McMaster [104]",
+      "metric_surface": "PSNR",
+      "value_surface": "35.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "McMaster [104]",
+      "metric_surface": "PSNR",
+      "value_surface": "33.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "McMaster [104]",
+      "metric_surface": "PSNR",
+      "value_surface": "30.29",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "35.06",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "32.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "30.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Gaussian color image denoising"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "SIDD [1]",
+      "metric_surface": "PSNR",
+      "value_surface": "40.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Real image denoising on SIDD [1] and DND [60] datasets"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "SIDD [1]",
+      "metric_surface": "SSIM",
+      "value_surface": "0.960",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Real image denoising on SIDD [1] and DND [60] datasets"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "DND [60]",
+      "metric_surface": "PSNR",
+      "value_surface": "40.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Real image denoising on SIDD [1] and DND [60] datasets"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "DND [60]",
+      "metric_surface": "SSIM",
+      "value_surface": "0.956",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Real image denoising on SIDD [1] and DND [60] datasets"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "34.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments for the Transformer block"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "32.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments for the Transformer block"
+    },
+    {
+      "model": "Restormer",
+      "dataset_surface": "Urban100 [29]",
+      "metric_surface": "PSNR",
+      "value_surface": "29.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation experiments for the Transformer block"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 64,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head attention",
+    "depth-wise convolutions",
+    "pixel-unshuffle",
+    "pixel-shuffle",
+    "skip connections",
+    "Layer Normalization",
+    "GELU",
+    "gating mechanism",
+    "AdamW",
+    "cosine annealing",
+    "progressive learning",
+    "horizontal and vertical flips"
+  ],
+  "novel_contributions": [
+    "We propose Restormer, an encoder-decoder Transformer for multi-scale local-global representation learning on high-resolution images without disintegrating them into local windows, thereby exploiting distant image context.",
+    "We propose a multi-Dconv head transposed attention (MDTA) module that is capable of aggregating local and non-local pixel interactions, and is efficient enough to process high-resolution images.",
+    "A new gated-Dconv feed-forward network (GDFN) that performs controlled feature transformation, i.e., suppressing less informative features, and allowing only the useful information to pass further through the network hierarchy."
+  ],
+  "key_claims": [
+    {
+      "claim": "Restormer achieves state-of-the-art results on several image restoration tasks, including image deraining, single-image motion deblurring, defocus deblurring, and image denoising.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Restormer uses MDTA to replace vanilla multi-head self-attention with a linear-complexity attention mechanism across channels rather than spatial positions.",
+      "evidence_section": "3.1. Multi-Deconv Head Transposed Attention",
+      "page": null
+    },
+    {
+      "claim": "Restormer uses GDFN with gating and depth-wise convolutions to improve information flow and emphasize local context.",
+      "evidence_section": "3.2. Gated-Dconv Feed-Forward Network",
+      "page": null
+    },
+    {
+      "claim": "Progressive learning trains on smaller patches early and larger patches later, improving test-time performance on images of different resolutions.",
+      "evidence_section": "3.3. Progressive Learning",
+      "page": null
+    },
+    {
+      "claim": "On image deraining, Restormer achieves 33.96 PSNR average across five datasets and advances state-of-the-art by 1.05 dB.",
+      "evidence_section": "4.1. Image Deraining Results",
+      "page": null
+    },
+    {
+      "claim": "On single-image motion deblurring, Restormer outperforms prior methods on GoPro, HIDE, RealBlur-R, and RealBlur-J.",
+      "evidence_section": "4.2. Single-image Motion Deblurring Results",
+      "page": null
+    },
+    {
+      "claim": "On real image denoising, Restormer is the only method surpassing 40 dB PSNR on both SIDD and DND.",
+      "evidence_section": "4.4. Image Denoising Results",
+      "page": null
+    }
+  ]
+}

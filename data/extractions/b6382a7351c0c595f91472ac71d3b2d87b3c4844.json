@@ -1,0 +1,410 @@
+{
+  "paper_id": "b6382a7351c0c595f91472ac71d3b2d87b3c4844",
+  "architecture_summary": "ViViT is a pure-transformer architecture for video classification that extracts spatio-temporal tokens from video and encodes them with transformer layers. It proposes several efficient variants that factorise spatial and temporal processing, and it leverages pretrained image models plus regularisation to train effectively on smaller video datasets.",
+  "model_variants": [
+    {
+      "name": "ViViT-B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-L",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-H",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-B/16x2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-L/16x2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-H/14x2",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-L/16x2 FE",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-L/16x2 FE (FFT)",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViViT-H/14x2 (FFT)",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Kinetics 400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics 600",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Epic Kitchens-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Moments in Time",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Something-Something v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Epic Kitchens",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SSv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MiT",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "K400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "K600",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Uniform frame sampling",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "78.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of input encoding methods using ViViT-B and spatio-temporal attention on Kinetics. Further details in text."
+    },
+    {
+      "model": "Random initialisation [25]",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of input encoding methods using ViViT-B and spatio-temporal attention on Kinetics. Further details in text."
+    },
+    {
+      "model": "Filter inflation [8]",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of input encoding methods using ViViT-B and spatio-temporal attention on Kinetics. Further details in text."
+    },
+    {
+      "model": "Central frame",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "79.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of input encoding methods using ViViT-B and spatio-temporal attention on Kinetics. Further details in text."
+    },
+    {
+      "model": "Model 1: Spatio-temporal",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "80.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 1: Spatio-temporal",
+      "dataset_surface": "Epic Kitchens",
+      "metric_surface": "action accuracy",
+      "value_surface": "43.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 2: Fact. encoder",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 2: Fact. encoder",
+      "dataset_surface": "Epic Kitchens",
+      "metric_surface": "action accuracy",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 3: Fact. self-attention",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 3: Fact. self-attention",
+      "dataset_surface": "Epic Kitchens",
+      "metric_surface": "action accuracy",
+      "value_surface": "39.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 4: Fact. dot product",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "76.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 4: Fact. dot product",
+      "dataset_surface": "Epic Kitchens",
+      "metric_surface": "action accuracy",
+      "value_surface": "39.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 2: Ave. pool baseline",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "Model 2: Ave. pool baseline",
+      "dataset_surface": "Epic Kitchens",
+      "metric_surface": "action accuracy",
+      "value_surface": "38.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of model architectures using ViViT-B as the backbone, and tubelet size of 16 × 2 . We report Top-1 accuracy on Kinetics 400 (K400) and action accuracy on Epic Kitchens (EK). Runtime is during inference on a TPU-v3."
+    },
+    {
+      "model": "ViViT-L/16x2 FE",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE (FFT)",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-H/14x2 (FFT)",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "Top-1",
+      "value_surface": "84.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE",
+      "dataset_surface": "Kinetics 600",
+      "metric_surface": "Top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE (FFT)",
+      "dataset_surface": "Kinetics 600",
+      "metric_surface": "Top-1",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-H/14x2 (FFT)",
+      "dataset_surface": "Kinetics 600",
+      "metric_surface": "Top-1",
+      "value_surface": "85.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "Top 1",
+      "value_surface": "38.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE (FFT)",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "Top 1",
+      "value_surface": "38.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE",
+      "dataset_surface": "Epic Kitchens 100",
+      "metric_surface": "Action",
+      "value_surface": "65.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    },
+    {
+      "model": "ViViT-L/16x2 FE",
+      "dataset_surface": "Something-Something v2",
+      "metric_surface": "Top 1",
+      "value_surface": "65.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons to state-of-the-art across multiple datasets. For “views”, x × y denotes x temporal crops and y spatial crops. We report the TFLOPs to process all spatio-temporal views. “FE” denotes our Factorised Encoder model."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "TPU-v3",
+    "batch_size": 64,
+    "epochs": null
+  },
+  "methods_used": [
+    "pure-transformer",
+    "spatio-temporal tokens",
+    "self-attention",
+    "factorised encoder",
+    "factorised self-attention",
+    "factorised dot-product attention",
+    "tubelet embedding",
+    "uniform frame sampling",
+    "positional embeddings",
+    "pretrained image models",
+    "stochastic depth",
+    "Rand augment",
+    "label smoothing",
+    "Mixup",
+    "synchronous SGD",
+    "momentum",
+    "cosine learning rate schedule",
+    "linear warmup"
+  ],
+  "novel_contributions": [
+    "pure-transformer models for video classification",
+    "several efficient variants of the model which factorise the spatial- and temporal-dimensions of the input",
+    "effective regularisation during training and leveraging pretrained image models to train on comparatively small datasets",
+    "thorough ablation studies on tokenisation strategies, model architecture and regularisation methods",
+    "state-of-the-art results on multiple video classification benchmarks including Kinetics 400 and 600, Epic Kitchens, Something-Something v2 and Moments in Time"
+  ],
+  "key_claims": [
+    {
+      "claim": "ViViT presents pure-transformer based models for video classification that extract spatio-temporal tokens and encode them with transformer layers.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper proposes efficient variants that factorise the spatial- and temporal-dimensions of the input video to handle long token sequences.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model can be effectively regularised and initialised from pretrained image models to train on comparatively small datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViViT achieves state-of-the-art results on multiple video classification benchmarks including Kinetics 400 and 600, Epic Kitchens, Something-Something v2 and Moments in Time.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The factorised encoder and factorised dot-product variants substantially reduce FLOPs compared with the unfactorised spatio-temporal model.",
+      "evidence_section": "4.2. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "Using tubelet embedding with central frame initialisation outperforms uniform frame sampling and filter inflation on Kinetics.",
+      "evidence_section": "4.2. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "Additional regularisation improves Epic Kitchens and SSv2 performance, with a substantial overall improvement of 5.3% on Epic Kitchens.",
+      "evidence_section": "4.2. Ablation study",
+      "page": null
+    },
+    {
+      "claim": "The best reported results use a ViViT-H backbone pretrained on JFT, reaching 84.9% on Kinetics 400 and 85.8% on Kinetics 600.",
+      "evidence_section": "4.3. Comparison to state-of-the-art",
+      "page": null
+    }
+  ]
+}

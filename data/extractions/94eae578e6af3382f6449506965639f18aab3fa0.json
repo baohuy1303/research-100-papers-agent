@@ -1,0 +1,416 @@
+{
+  "paper_id": "94eae578e6af3382f6449506965639f18aab3fa0",
+  "architecture_summary": "Video Swin Transformer is a pure-transformer video backbone that adapts Swin Transformer to the spatiotemporal domain by using 3D patch partitioning, 3D shifted window self-attention, and 3D relative position bias. It keeps the hierarchical four-stage Swin structure and leverages pre-trained image models such as ImageNet-21K initialization.",
+  "model_variants": [
+    {
+      "name": "Swin-T",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin-S",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin-B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Swin-L",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Kinetics-400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Something-Something V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SSv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-400",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-600",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Swin-T",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "80.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "80.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-L (384↑)",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "84.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-L (384↑)",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "Top-1",
+      "value_surface": "84.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-400"
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "Top-1",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-600"
+    },
+    {
+      "model": "Swin-L (384 † )",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "Top-1",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-600"
+    },
+    {
+      "model": "Swin-L (384 † )",
+      "dataset_surface": "Kinetics-600",
+      "metric_surface": "Top-1",
+      "value_surface": "86.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Kinetics-600"
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "Something-Something v2",
+      "metric_surface": "Top-1",
+      "value_surface": "69.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to state-of-the-art on Something-Something v2"
+    },
+    {
+      "model": "joint",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on different designs for spatiotemporal attention with Swin-T on K400"
+    },
+    {
+      "model": "split",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "76.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on different designs for spatiotemporal attention with Swin-T on K400"
+    },
+    {
+      "model": "factorized",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on different designs for spatiotemporal attention with Swin-T on K400"
+    },
+    {
+      "model": "16",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "8",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "4",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "16",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "16",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "16",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on temporal dimension of 3D tokens and temporal window size with Swin-T on K400"
+    },
+    {
+      "model": "w. 3D shifting",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the 3D shifted window approach with Swin-T on K400"
+    },
+    {
+      "model": "w/o temporal shifting",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the 3D shifted window approach with Swin-T on K400"
+    },
+    {
+      "model": "w/o 3D shifting",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "78.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the 3D shifted window approach with Swin-T on K400"
+    },
+    {
+      "model": "0.1×",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "80.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the ratio of backbone lr and head lr with Swin-B on K400"
+    },
+    {
+      "model": "1.0×",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "80.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the ratio of backbone lr and head lr with Swin-B on K400"
+    },
+    {
+      "model": "0.1×",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the ratio of backbone lr and head lr with Swin-B on K400"
+    },
+    {
+      "model": "1.0×",
+      "dataset_surface": "K400",
+      "metric_surface": "Top-1",
+      "value_surface": "82.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the ratio of backbone lr and head lr with Swin-B on K400"
+    },
+    {
+      "model": "Inflate",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the two initialization methods of linear embedding layer with Swin-T on K400"
+    },
+    {
+      "model": "Center",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the two initialization methods of linear embedding layer with Swin-T on K400"
+    },
+    {
+      "model": "Duplicate",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the two initialization methods of 3D relative position bias matrix with Swin-T on K400"
+    },
+    {
+      "model": "Center",
+      "dataset_surface": "K400",
+      "metric_surface": "Top 1",
+      "value_surface": "78.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the two initialization methods of 3D relative position bias matrix with Swin-T on K400"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 64,
+    "epochs": 60
+  },
+  "methods_used": [
+    "3D Patch Partition",
+    "Linear Embedding",
+    "patch merging",
+    "3D shifted window based multi-head self-attention",
+    "feed-forward network",
+    "GELU",
+    "Layer Normalization",
+    "residual connection",
+    "3D relative position bias",
+    "AdamW",
+    "cosine decay learning rate scheduler",
+    "linear warm-up",
+    "stochastic depth",
+    "weight decay",
+    "label smoothing",
+    "RandAugment",
+    "random erasing"
+  ],
+  "novel_contributions": [
+    "a pure-transformer backbone architecture for video recognition that is based on spatiotemporal locality inductive bias",
+    "a spatiotemporal adaptation of Swin Transformer that extends local attention from the spatial domain to the spatiotemporal domain",
+    "a 3D shifted window mechanism for video input",
+    "an initialization strategy that leverages pre-trained image models, including ImageNet-21K pre-training"
+  ],
+  "key_claims": [
+    {
+      "claim": "The proposed Video Swin Transformer achieves state-of-the-art accuracy on Kinetics-400, Kinetics-600 and Something-Something v2.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model reaches 84.9 top-1 accuracy on Kinetics-400 and 86.1 top-1 accuracy on Kinetics-600 with about 20× less pre-training data and about 3× smaller model size than previous approaches.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The approach obtains 69.6 top-1 accuracy on Something-Something v2, improving over previous state-of-the-art by +0.9 points.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Video Swin Transformer uses locality in spatiotemporal self-attention to improve the speed-accuracy trade-off compared to global self-attention video Transformers.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The architecture is a hierarchical four-stage Swin-style backbone with 3D shifted windows and 3D relative position bias.",
+      "evidence_section": "3 Video Swin Transformer",
+      "page": null
+    },
+    {
+      "claim": "For Kinetics-400 and Kinetics-600, the paper uses AdamW for 30 epochs with batch size 64 and a smaller backbone learning rate than the head.",
+      "evidence_section": "4.1 Setup",
+      "page": null
+    },
+    {
+      "claim": "For Something-Something v2, the paper uses longer training of 60 epochs and stronger augmentation including label smoothing, RandAugment, and random erasing.",
+      "evidence_section": "4.1 Setup",
+      "page": null
+    }
+  ]
+}

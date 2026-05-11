@@ -1,0 +1,294 @@
+{
+  "paper_id": "ba637c4f1a170f1e2dadeadb71a63cf2b9a46de2",
+  "architecture_summary": "The paper proposes large kernel attention (LKA), a novel linear attention mechanism that decomposes a large-kernel convolution into depth-wise convolution, depth-wise dilation convolution, and 1×1 convolution. Based on LKA, it builds Visual Attention Network (VAN), a simple hierarchical vision backbone with four stages and seven variants from VAN-B0 to VAN-B6.",
+  "model_variants": [
+    {
+      "name": "VAN-B0",
+      "param_count_surface": "4.1",
+      "page": null
+    },
+    {
+      "name": "VAN-B1",
+      "param_count_surface": "13.9",
+      "page": null
+    },
+    {
+      "name": "VAN-B2",
+      "param_count_surface": "26.6",
+      "page": null
+    },
+    {
+      "name": "VAN-B3",
+      "param_count_surface": "44.8",
+      "page": null
+    },
+    {
+      "name": "VAN-B4",
+      "param_count_surface": "60.3",
+      "page": null
+    },
+    {
+      "name": "VAN-B5",
+      "param_count_surface": "90.0",
+      "page": null
+    },
+    {
+      "name": "VAN-B6",
+      "param_count_surface": "200",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017 benchmark",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO panoptic segmentation dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO human pose estimation dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CUB-200 dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DUTS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DUT-O",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PASCAL-S",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "VAN-B6",
+      "dataset_surface": "ImageNet benchmark",
+      "metric_surface": "accuracy",
+      "value_surface": "87.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "ADE20K benchmark",
+      "metric_surface": "mIoU",
+      "value_surface": "50.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ADE20K benchmark",
+      "metric_surface": "mIoU",
+      "value_surface": "46.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "COCO dataset",
+      "metric_surface": "AP",
+      "value_surface": "48.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO dataset",
+      "metric_surface": "AP",
+      "value_surface": "46.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null
+    },
+    {
+      "model": "VAN-B6",
+      "dataset_surface": "COCO panoptic segmentation",
+      "metric_surface": "PQ",
+      "value_surface": "58.2%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Experimental results on COCO panoptic segmentation. * means that model is pretrained on ImageNet-22K dataset. All methods are based on Mask2Former [120]. PQ means panoptic quality"
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "COCO panoptic segmentation",
+      "metric_surface": "PQ",
+      "value_surface": "54.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results on COCO panoptic segmentation. * means that model is pretrained on ImageNet-22K dataset. All methods are based on Mask2Former [120]. PQ means panoptic quality"
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "COCO benchmark for pose estimation",
+      "metric_surface": "AP",
+      "value_surface": "74.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art vision backbones on COCO benchmark for pose estimation. Models are based on SimpleBaseline [121]"
+    },
+    {
+      "model": "VAN-B2 [15]",
+      "dataset_surface": "COCO benchmark for pose estimation",
+      "metric_surface": "AP",
+      "value_surface": "76.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state-of-the-art vision backbones on COCO benchmark for pose estimation. Models are based on SimpleBaseline [121]"
+    },
+    {
+      "model": "VAN-B4",
+      "dataset_surface": "CUB-200 dataset",
+      "metric_surface": "Top-1 accuracy",
+      "value_surface": "91.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results on CUB-200 fine-grain classification dataset. * means that model is pretrained on ImageNet-22K dataset"
+    },
+    {
+      "model": "VAN-B1",
+      "dataset_surface": "DUTS-TE",
+      "metric_surface": "Fmax",
+      "value_surface": "0.912",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing with different backbones on saliency detection task"
+    },
+    {
+      "model": "VAN-B1",
+      "dataset_surface": "DUTS-TE",
+      "metric_surface": "MAE",
+      "value_surface": "0.030",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing with different backbones on saliency detection task"
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "DUTS-TE",
+      "metric_surface": "Fmax",
+      "value_surface": "0.919",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing with different backbones on saliency detection task"
+    },
+    {
+      "model": "VAN-B2",
+      "dataset_surface": "DUTS-TE",
+      "metric_surface": "MAE",
+      "value_surface": "0.028",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing with different backbones on saliency detection task"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "large kernel attention (LKA)",
+    "depth-wise convolution",
+    "depth-wise dilation convolution",
+    "1 × 1 convolution",
+    "batch normalization",
+    "GELU activation",
+    "feed-forward network (FFN)",
+    "LayerScale",
+    "Exponential moving average (EMA)",
+    "random clipping",
+    "random horizontal flipping",
+    "label-smoothing",
+    "mixup",
+    "cutmix",
+    "random erasing",
+    "AdamW",
+    "cosine schedule",
+    "warm-up strategy",
+    "Grad-CAM"
+  ],
+  "novel_contributions": [
+    "We design a novel linear attention mechanism named LKA for computer vision, which considers the pros of both convolution and self-attention, while avoiding their cons.",
+    "Based on LKA, we further introduce a simple vision backbone called VAN.",
+    "We show that VANs achieve comparable results with similar level CNNs and ViTs in extensive experiments on various tasks, including image classification, object detection, semantic segmentation, instance segmentation, pose estimation, etc."
+  ],
+  "key_claims": [
+    {
+      "claim": "LKA is a novel linear attention mechanism tailored for visual tasks that combines local structure information, long-range dependence, and adaptability while avoiding the shortcomings of standard self-attention.",
+      "evidence_section": "3.1 Large kernel attention (LKA)",
+      "page": null
+    },
+    {
+      "claim": "VAN is a simple hierarchical vision backbone built from LKA and four stages with decreasing output spatial resolution.",
+      "evidence_section": "3.2 Visual attention network (VAN)",
+      "page": null
+    },
+    {
+      "claim": "VAN-B6 achieves 87.8% accuracy on ImageNet benchmark and VAN-B6 sets new state-of-the-art performance for panoptic segmentation with 58.2% PQ.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VAN-B2 surpasses Swin-T by 4% mIoU on ADE20K and by 2.6% AP on COCO in the abstract.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1K, VAN-B2 outperforms Swin-T and ConvNeXt-T in the comparison discussed in Section 4.1.1.",
+      "evidence_section": "4.1.1 ImageNet-1K experiments",
+      "page": null
+    },
+    {
+      "claim": "On COCO panoptic segmentation, VAN-B6* achieves 58.2% PQ and is explicitly described as new state-of-the-art.",
+      "evidence_section": "4.4 Panoptic segmentation",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K, VAN-B5 and VAN-B6 achieve 53.9% and 54.7% mIoU respectively under ImageNet-22K pretraining.",
+      "evidence_section": "4.3 Semantic segmentation",
+      "page": null
+    }
+  ]
+}

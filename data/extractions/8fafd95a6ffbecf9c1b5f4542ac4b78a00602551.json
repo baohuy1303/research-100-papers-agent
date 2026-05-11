@@ -1,0 +1,332 @@
+{
+  "paper_id": "8fafd95a6ffbecf9c1b5f4542ac4b78a00602551",
+  "architecture_summary": "PIXART-α is a Transformer-based text-to-image diffusion model built on Diffusion Transformer (DiT), with cross-attention modules for text conditioning, an adaLN-single re-parameterization for time conditioning, and a three-stage training strategy that decomposes pixel dependency learning, text-image alignment learning, and high-aesthetic high-resolution generation.",
+  "model_variants": [
+    {
+      "name": "PIXART-α",
+      "param_count_surface": "0.6B",
+      "page": null
+    },
+    {
+      "name": "DiT-XL/2",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LAION",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SAM",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JourneyDB",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MSCOCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "T2I-CompBench",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "7.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "DALL-E",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "27.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "GLIDE",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "12.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "LDM",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "12.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "DALL-E 2",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "10.39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "SDv1.5",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "9.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "GigaGAN",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "9.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "Imagen",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "7.27",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "RAPHAEL",
+      "dataset_surface": "MSCOCO",
+      "metric_surface": "FID-30K↓",
+      "value_surface": "6.61",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: We thoroughly compare the PIXART-α with recent T2I models, considering several essential factors: model size, the total volume of training images, COCO FID-30K scores (zero-shot), and the computational cost (GPU days3)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.6886",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Shape↑",
+      "value_surface": "0.5582",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Texture↑",
+      "value_surface": "0.7044",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Spatial↑",
+      "value_surface": "0.2082",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Non-Spatial↑",
+      "value_surface": "0.3179",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "PIXART-α",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Complex†",
+      "value_surface": "0.4117",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Stable v1.4",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.3765",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Stable v2",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.5065",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Composable v2",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.4063",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Structured v2",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.4990",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Attn-Exact v2",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.6400",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "GORS",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.6603",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "Dalle-2",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.5750",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    },
+    {
+      "model": "SDXL",
+      "dataset_surface": "T2I-CompBench",
+      "metric_surface": "Color ↑",
+      "value_surface": "0.6369",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Alignment evaluation on T2I-CompBench. PIXART-α demonstrated exceptional performance in attribute binding, object relationships, and complex compositions, indicating our method achieves superior compositional generation ability. We highlight the best value in blue, and the second-best value in green. The baseline data are sourced from Huang et al. (2023)."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "64 V100 for approximately 26 days",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer-based diffusion model",
+    "Diffusion Transformer (DiT)",
+    "cross-attention",
+    "adaLN-single",
+    "re-parameterization",
+    "multi-head self-attention",
+    "feed-forward layer",
+    "T5 large language model",
+    "VAE",
+    "multi-aspect augmentation",
+    "AdamW",
+    "LLaVA",
+    "SAM",
+    "JourneyDB",
+    "DreamBooth",
+    "ControlNet",
+    "DPM-Solver",
+    "iD-DPM",
+    "SA-Solver"
+  ],
+  "novel_contributions": [
+    "PIXART-α, a Transformer-based T2I diffusion model with competitive image generation quality and low training cost",
+    "Training strategy decomposition into pixel dependency learning, text-image alignment learning, and high-aesthetic high-resolution generation",
+    "Efficient T2I Transformer design with cross-attention modules and adaLN-single re-parameterization",
+    "High-informative data construction using LLaVA auto-labeling on SAM and other datasets",
+    "Near-commercial application standards with substantially reduced training time, cost, and CO2 emissions"
+  ],
+  "key_claims": [
+    {
+      "claim": "PIXART-α is competitive with state-of-the-art image generators and supports high-resolution image synthesis up to 1024 × 1024 with low training cost.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "PIXART-α only takes 12% of Stable Diffusion v1.5's training time (∼ 753 vs. ∼ 6,250 A100 GPU days), saving nearly $300,000 and reducing 90% CO2 emissions.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "Compared to RAPHAEL, PIXART-α's training cost is merely 1%.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "PIXART-α achieves a FID score of 7.32 on MSCOCO zero-shot evaluation while using 753 A100 GPU days and 25M images.",
+      "evidence_section": "3.2 PERFORMANCE COMPARISONS AND ANALYSIS",
+      "page": null
+    },
+    {
+      "claim": "PIXART-α exhibited outstanding performance across nearly all (5/6) evaluation metrics on T2I-CompBench.",
+      "evidence_section": "3.2 PERFORMANCE COMPARISONS AND ANALYSIS",
+      "page": null
+    },
+    {
+      "claim": "The model is trained in three stages that separately optimize pixel dependency, text-image alignment, and high-resolution aesthetic generation.",
+      "evidence_section": "2.2 TRAINING STRATEGY DECOMPOSITION",
+      "page": null
+    },
+    {
+      "claim": "The final model is trained on 64 V100 for approximately 26 days.",
+      "evidence_section": "3.1 IMPLEMENTATION DETAILS",
+      "page": null
+    },
+    {
+      "claim": "The paper claims PIXART-α can be combined with DreamBooth and ControlNet for customized extension.",
+      "evidence_section": "A.9 CUSTOMIZED EXTENSION",
+      "page": null
+    }
+  ]
+}

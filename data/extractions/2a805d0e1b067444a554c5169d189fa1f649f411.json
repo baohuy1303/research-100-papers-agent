@@ -1,0 +1,260 @@
+{
+  "paper_id": "2a805d0e1b067444a554c5169d189fa1f649f411",
+  "architecture_summary": "The paper studies scaling laws for Vision Transformers, refining ViT training and architecture with decoupled head/body weight decay, removing the [class] token in favor of GAP/MAP pooling, using memory-efficient optimizers, and a reciprocal square-root learning-rate schedule. It scales ViT models and data up to ViT-G/14 with nearly two billion parameters and reports improved transfer and state-of-the-art ImageNet performance.",
+  "model_variants": [
+    {
+      "name": "s/28",
+      "param_count_surface": "5.4",
+      "page": null
+    },
+    {
+      "name": "s/16",
+      "param_count_surface": "5.0",
+      "page": null
+    },
+    {
+      "name": "S/32",
+      "param_count_surface": "22",
+      "page": null
+    },
+    {
+      "name": "Ti/16",
+      "param_count_surface": "5.5",
+      "page": null
+    },
+    {
+      "name": "B/32",
+      "param_count_surface": "87",
+      "page": null
+    },
+    {
+      "name": "S/16",
+      "param_count_surface": "22",
+      "page": null
+    },
+    {
+      "name": "B/28",
+      "param_count_surface": "87",
+      "page": null
+    },
+    {
+      "name": "B/16",
+      "param_count_surface": "86",
+      "page": null
+    },
+    {
+      "name": "L/16",
+      "param_count_surface": "303",
+      "page": null
+    },
+    {
+      "name": "g/14",
+      "param_count_surface": "1011",
+      "page": null
+    },
+    {
+      "name": "G/14",
+      "param_count_surface": "1843",
+      "page": null
+    },
+    {
+      "name": "ViT-G/14",
+      "param_count_surface": "nearly two billion parameters",
+      "page": null
+    },
+    {
+      "name": "ViT-g/14",
+      "param_count_surface": "nearly two billion parameters",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ObjectNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford IIIT Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Caltech-UCSD Birds",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Our ViT-G/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.45% ± 0.03",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1. The results for ViT-G/14, compared to the previous state-of-the-art models."
+    },
+    {
+      "model": "Our ViT-G/14",
+      "dataset_surface": "ImageNet-v2",
+      "metric_surface": "accuracy",
+      "value_surface": "83.33% ± 0.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. The results for ViT-G/14, compared to the previous state-of-the-art models."
+    },
+    {
+      "model": "Our ViT-G/14",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "accuracy",
+      "value_surface": "90.81 ± 0.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. The results for ViT-G/14, compared to the previous state-of-the-art models."
+    },
+    {
+      "model": "Our ViT-G/14",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "accuracy",
+      "value_surface": "70.53 ± 0.52",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. The results for ViT-G/14, compared to the previous state-of-the-art models."
+    },
+    {
+      "model": "Our ViT-G/14",
+      "dataset_surface": "VTAB (light)",
+      "metric_surface": "accuracy",
+      "value_surface": "78.29 ± 0.53",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. The results for ViT-G/14, compared to the previous state-of-the-art models."
+    },
+    {
+      "model": "ViT-G/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "84.86%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1. Few-shot transfer results. Our ViT-G model reaches 84.86% top-1 accuracy on ImageNet with 10-shot linear evaluation."
+    },
+    {
+      "model": "ViT-G/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "69.52%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "In addition, with just a single example per class on the ImageNet dataset (which has 1 000 classes), our best model achieves 69.52% accuracy; and with 10 examples per class it attains 84.86%."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "beyond 10 000 core-days",
+    "batch_size": 32768,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "patch embedding",
+    "global average pooling (GAP)",
+    "multihed attention pooling (MAP)",
+    "decoupled weight decay",
+    "AdaFactor optimizer",
+    "Adam with half-precision momentum",
+    "reciprocal square-root schedule",
+    "linear learning rate warmup",
+    "cooldown phase",
+    "inception crop",
+    "random horizontal flip",
+    "sigmoid cross-entropy loss",
+    "l_2-regularized linear regression",
+    "SGD optimizer with momentum",
+    "Polyak averaging"
+  ],
+  "novel_contributions": [
+    "We scale ViT models and data, both up and down, and characterize the relationships between error rate, data, and compute.",
+    "We refine the architecture and training of ViT, reducing memory consumption and increasing accuracy of the resulting models.",
+    "We discover that very strong L2 regularization, applied to the final linear prediction layer only, results in a learned visual representation that has very strong few-shot transfer capabilities.",
+    "We substantially reduce the memory footprint of the original ViT model proposed in [16].",
+    "We train a model with two billion parameters and attain a new state-of-the-art 90.45% accuracy on ImageNet."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper characterizes scaling laws for Vision Transformers across model size, dataset size, and compute, and finds a saturating power-law frontier.",
+      "evidence_section": "Abstract; 2.2. Double-saturating power law",
+      "page": null
+    },
+    {
+      "claim": "Scaling up compute, model, and data together improves representation quality, but small models and small datasets saturate and fall off the frontier.",
+      "evidence_section": "2.1. Scaling up compute, model and data together",
+      "page": null
+    },
+    {
+      "claim": "Bigger models are more sample efficient, needing fewer seen images to reach the same error rate.",
+      "evidence_section": "2.3. Big models are more sample efficient",
+      "page": null
+    },
+    {
+      "claim": "The improved training recipe yields very strong few-shot transfer, including 69.52% with one example per class and 84.86% with 10 examples per class on ImageNet.",
+      "evidence_section": "Introduction; 2.5. ViT-G/14 results",
+      "page": null
+    },
+    {
+      "claim": "ViT-G/14 achieves 90.45% top-1 accuracy on ImageNet and is presented as a new state-of-the-art result.",
+      "evidence_section": "2.5. ViT-G/14 results",
+      "page": null
+    },
+    {
+      "claim": "The paper reduces ViT memory usage by removing the [class] token and using GAP/MAP pooling, with MAP selected as the final head.",
+      "evidence_section": "3.2. Saving memory by removing [class] token",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces memory-efficient optimizer modifications, including half-precision momentum and a modified AdaFactor, enabling training of very large ViT models.",
+      "evidence_section": "3.4. Memory-efficient optimizers",
+      "page": null
+    }
+  ]
+}

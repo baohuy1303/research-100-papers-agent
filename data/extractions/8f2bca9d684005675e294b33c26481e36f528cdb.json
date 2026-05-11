@@ -1,0 +1,463 @@
+{
+  "paper_id": "8f2bca9d684005675e294b33c26481e36f528cdb",
+  "architecture_summary": "data2vec is a general self-supervised learning framework that uses the same masked-prediction learning objective across speech, vision, and language. It predicts contextualized latent representations of the full input from a masked view using a standard Transformer in teacher/student mode with an EMA teacher and layer-averaged targets.",
+  "model_variants": [
+    {
+      "name": "data2vec Base",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "data2vec Large",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Librispeech",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Libri-light",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Libri-light",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AudioSet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "AudioSet",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Books Corpus",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "English Wikipedia",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "GLUE",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "data2vec",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 validation accuracy",
+      "value_surface": "84.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Computer vision: top-1 validation accuracy on ImageNet-1K with ViT-B and ViT-L models"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 validation accuracy",
+      "value_surface": "86.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Computer vision: top-1 validation accuracy on ImageNet-1K with ViT-B and ViT-L models"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "word error rate",
+      "value_surface": "12.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech test-other when fine-tuning pre-trained models on the Libri-light low-resource labeled data setups (Kahn et al., 2020) of 10 min, 1 hour, 10 hours, the clean 100h subset of Librispeech and the full 960h of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "word error rate",
+      "value_surface": "9.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech test-other when fine-tuning pre-trained models on the Libri-light low-resource labeled data setups (Kahn et al., 2020) of 10 min, 1 hour, 10 hours, the clean 100h subset of Librispeech and the full 960h of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "word error rate",
+      "value_surface": "8.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech test-other when fine-tuning pre-trained models on the Libri-light low-resource labeled data setups (Kahn et al., 2020) of 10 min, 1 hour, 10 hours, the clean 100h subset of Librispeech and the full 960h of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "word error rate",
+      "value_surface": "6.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech test-other when fine-tuning pre-trained models on the Libri-light low-resource labeled data setups (Kahn et al., 2020) of 10 min, 1 hour, 10 hours, the clean 100h subset of Librispeech and the full 960h of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "word error rate",
+      "value_surface": "5.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech test-other when fine-tuning pre-trained models on the Libri-light low-resource labeled data setups (Kahn et al., 2020) of 10 min, 1 hour, 10 hours, the clean 100h subset of Librispeech and the full 960h of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "34.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Audio event classification: mean average precision (mAP) on the eval set of AudioSet when pre-training on all of AudioSet (AS) and/or Librispeech (LS) and fine-tuning on the 20K subset"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "GLUE",
+      "metric_surface": "Avg.",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Natural language processing: GLUE results on the development set for single-task fine-tuning of individual models"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "7.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "11.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "7.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "12.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "4.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "8.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "4.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "9.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "3.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "7.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "8.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "2.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "6.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "2.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "6.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Speech processing: word error rate on the Librispeech dev/test sets when training on the Libri-light low-resource labeled data setups of 10 min, 1 hour, 10 hours and the clean 100h subset of Librispeech"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "16.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "16.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different pre-training losses on Librispeech dev-other (no language model)"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of speech masking parameters. Results are on Librispeech dev-other without a language model"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of speech masking parameters. Results are on Librispeech dev-other without a language model"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "17.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of speech masking parameters. Results are on Librispeech dev-other without a language model"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "22.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of speech masking parameters. Results are on Librispeech dev-other without a language model"
+    },
+    {
+      "model": "data2vec",
+      "dataset_surface": "Librispeech",
+      "metric_surface": "WER",
+      "value_surface": "18.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of speech masking parameters. Results are on Librispeech dev-other without a language model"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer architecture",
+    "masked prediction",
+    "self-distillation",
+    "exponentially moving average (EMA) teacher",
+    "masked image modeling",
+    "block-wise masking",
+    "random resized image crops",
+    "horizontal flipping",
+    "color jittering",
+    "Adam",
+    "cosine schedule",
+    "stochastic depth",
+    "1-D convolutional neural network",
+    "BERT masking strategy",
+    "byte-pair encoding",
+    "instance normalization",
+    "layer normalization",
+    "Smooth L1 loss",
+    "L2 loss",
+    "linear softmax pooling",
+    "mixup",
+    "DeepNorm"
+  ],
+  "novel_contributions": [
+    "A general self-supervised learning framework that uses the same learning method for speech, NLP and computer vision.",
+    "Predicts contextualized latent representations of the full input rather than modality-specific discrete targets such as words, visual tokens or speech units.",
+    "Uses the average of multiple teacher network layers as training targets and shows this is more effective than predicting only the top layer.",
+    "Shows that contextualized latent targets and the same learning objective work across images, speech and text.",
+    "Reports a new state of the art for ViT-B and ViT-L on ImageNet-1K, improved speech recognition results, and better GLUE performance than a RoBERTa baseline."
+  ],
+  "key_claims": [
+    {
+      "claim": "data2vec uses the same learning method for speech, NLP and computer vision by predicting latent representations of the full input from a masked view in a self-distillation setup.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The method predicts contextualized latent representations instead of modality-specific targets such as words, visual tokens or speech units.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Experiments on speech recognition, image classification, and natural language understanding show a new state of the art or competitive performance to predominant approaches.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "data2vec outperforms prior work with ViT-B and ViT-L in the single-model ImageNet-1K setting, and all prior work for ViT-L.",
+      "evidence_section": "5.1. Computer Vision",
+      "page": null
+    },
+    {
+      "claim": "For speech, data2vec improves over wav2vec 2.0 and HuBERT on low-resource Libri-light setups, with the largest gains at 10 minutes of labeled data.",
+      "evidence_section": "5.2. Speech and Audio Processing",
+      "page": null
+    },
+    {
+      "claim": "For GLUE, data2vec outperforms the RoBERTa baseline and improves further with wav2vec 2.0 style masking of spans of four BPE tokens.",
+      "evidence_section": "5.3. Natural Language Processing",
+      "page": null
+    },
+    {
+      "claim": "Averaging multiple teacher layers is more robust than predicting only the top layer, and using all layers is generally a good choice.",
+      "evidence_section": "5.4. Ablations",
+      "page": null
+    },
+    {
+      "claim": "Contextualized target representations improve accuracy, with the best performance when the entire input sample is visible to the teacher.",
+      "evidence_section": "5.4. Ablations",
+      "page": null
+    }
+  ]
+}

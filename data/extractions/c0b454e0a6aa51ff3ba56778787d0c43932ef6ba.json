@@ -1,0 +1,566 @@
+{
+  "paper_id": "c0b454e0a6aa51ff3ba56778787d0c43932ef6ba",
+  "architecture_summary": "Yi uses a modified decoder-only Transformer architecture based on LLaMA’s implementation, with Grouped-Query Attention (GQA), SwiGLU, and RoPE with an adjusted base frequency (RoPE ABF). The paper extends the base 6B and 34B language models into chat models, 200K long-context models, depth-upscaled models, and vision-language models.",
+  "model_variants": [
+    {
+      "name": "Yi-6B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-34B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-6B-Chat",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-34B-Chat",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-34B-200K",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-VL-6B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-VL-34B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-9B",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "Yi-9B Init",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Common Crawl",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "3.1 trillion tokens of English and Chinese corpora",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LAION-400M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MMLU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LMSys ELO Rating",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AlpacaEval",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Chatbot Arena",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GSM8K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MATH",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HumanEval",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MBPP",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "C-Eval",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CMMLU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Gaokao-Bench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BigBench Hard (BBH)",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SQuAD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "QuAC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BoolQ",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PIQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SIQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HellaSwag",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Winogrande",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ARC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OpenBookQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CommonsenseQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TruthfulQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SuperClue",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMMU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VizWiz VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TextCaps",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "OCR-VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ShareGPT4V",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "GPT-4",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "83.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance on grouped academic benchmarks compared to open-source base models"
+    },
+    {
+      "model": "GPT-3.5",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "69.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance on grouped academic benchmarks compared to open-source base models"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "76.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance on grouped academic benchmarks compared to open-source base models"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "63.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance on grouped academic benchmarks compared to open-source base models"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "67.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of models on GSM8k, MATH, Human-Eval, and MBPP"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "GSM8k",
+      "metric_surface": "GSM8k",
+      "value_surface": "32.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of models on GSM8k, MATH, Human-Eval, and MBPP"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "MATH",
+      "metric_surface": "MATH",
+      "value_surface": "4.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of models on GSM8k, MATH, Human-Eval, and MBPP"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "Human-Eval pass@1",
+      "metric_surface": "Human-Eval pass@1",
+      "value_surface": "15.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of models on GSM8k, MATH, Human-Eval, and MBPP"
+    },
+    {
+      "model": "Yi",
+      "dataset_surface": "MBPP pass@1",
+      "metric_surface": "MBPP pass@1",
+      "value_surface": "26.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of models on GSM8k, MATH, Human-Eval, and MBPP"
+    },
+    {
+      "model": "Yi-Chat",
+      "dataset_surface": "AlpacaEval",
+      "metric_surface": "AlpacaEval",
+      "value_surface": "94.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Human evaluation comparison with other open-source chat models"
+    },
+    {
+      "model": "Yi-Chat",
+      "dataset_surface": "LMSys Chatbot Arena",
+      "metric_surface": "LMSys Chatbot Arena",
+      "value_surface": "1110",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Human evaluation comparison with other open-source chat models"
+    },
+    {
+      "model": "Yi-Chat",
+      "dataset_surface": "SuperClue",
+      "metric_surface": "SuperClue",
+      "value_surface": "71.87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Human evaluation comparison with other open-source chat models"
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "Arc-C",
+      "metric_surface": "Arc-C",
+      "value_surface": "55.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "HellaSwag",
+      "metric_surface": "HellaSwag",
+      "value_surface": "76.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "68.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "Winogrande",
+      "metric_surface": "Winogrande",
+      "value_surface": "73.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "GSM8K",
+      "metric_surface": "GSM8K",
+      "value_surface": "52.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "MATH",
+      "metric_surface": "MATH",
+      "value_surface": "15.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "HumanEval",
+      "metric_surface": "HumanEval",
+      "value_surface": "39.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-34B",
+      "dataset_surface": "MBPP",
+      "metric_surface": "MBPP",
+      "value_surface": "54.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "Arc-C",
+      "metric_surface": "Arc-C",
+      "value_surface": "50.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "HellaSwag",
+      "metric_surface": "HellaSwag",
+      "value_surface": "74.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "MMLU",
+      "metric_surface": "MMLU",
+      "value_surface": "63.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "Winogrande",
+      "metric_surface": "Winogrande",
+      "value_surface": "71.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "GSM8K",
+      "metric_surface": "GSM8K",
+      "value_surface": "32.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "MATH",
+      "metric_surface": "MATH",
+      "value_surface": "4.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "HumanEval",
+      "metric_surface": "HumanEval",
+      "value_surface": "15.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    },
+    {
+      "model": "Yi-6B",
+      "dataset_surface": "MBPP",
+      "metric_surface": "MBPP",
+      "value_surface": "26.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance between Yi-6B and Yi-9B: Arc Challenge (25-shot), HellaSwag (10-shot) MMLU (5-shot), Winogrande (5-shot), GSM8K (5-shot), MATH (4-shot), HumanEval pass@1, MBPP pass@1(3-shot). Yi-9B Init is just depthwise upscaling from Yi-6B by duplicating layers 12-28 without further training."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "128 NVIDIA A100 GPUs",
+    "batch_size": 64,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer architecture",
+    "Grouped-Query Attention (GQA)",
+    "SwiGLU",
+    "RoPE",
+    "RoPE ABF",
+    "cascaded data deduplication",
+    "quality filtering",
+    "heuristic rule filters",
+    "perplexity scorer",
+    "quality scorer",
+    "safety scorer",
+    "document coherence scorer",
+    "semantic clustering",
+    "MinHash deduplication",
+    "exact-match deduplication",
+    "byte-pair encoding (BPE)",
+    "SentencePiece",
+    "AdamW optimizer",
+    "NEFTune",
+    "quantization",
+    "dynamic batching",
+    "PagedAttention",
+    "sequence parallelism",
+    "distributed attention",
+    "continual pretraining",
+    "instruction tuning",
+    "ChatML-style format",
+    "Direct Preference Optimization (DPO)",
+    "vision transformer encoder",
+    "projection module",
+    "multi-stage training",
+    "depth up-scaling"
+  ],
+  "novel_contributions": [
+    "A series of language and multimodal models based on 6B and 34B pretrained language models, extended to chat models, 200K long context models, depth-upscaled models, and vision-language models.",
+    "A cascaded data deduplication and quality filtering pipeline for constructing 3.1 trillion tokens of English and Chinese corpora.",
+    "A small scale (less than 10K) instruction dataset polished over multiple iterations such that every single instance has been verified directly by machine learning engineers.",
+    "A lightweight continual pretraining approach to extend context length to 200K and demonstrate strong needle-in-a-haystack retrieval performance.",
+    "A depth-upscaling approach that expands Yi-6B into Yi-9B by duplicating middle layers and continuing pretraining.",
+    "A three-stage vision-language training method built on Yi-6B-Chat and Yi-34B-Chat with a CLIP ViT-H/14 initialized vision encoder."
+  ],
+  "key_claims": [
+    {
+      "claim": "The Yi model family is based on 6B and 34B pretrained language models and is extended to chat models, 200K long context models, depth-upscaled models, and vision-language models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Yi attributes its performance primarily to data quality from data-engineering efforts, including 3.1 trillion tokens of English and Chinese corpora for pretraining and a small, manually verified instruction dataset for finetuning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Yi-34B generally achieves scores on par with GPT-3.5 on benchmarks like MMLU and LMSys ELO Rating.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The base model uses a modified decoder-only Transformer with GQA, SwiGLU, and RoPE ABF.",
+      "evidence_section": "2.3 Model Architecture",
+      "page": null
+    },
+    {
+      "claim": "The finetuning stage uses less than 10K instruction-response pairs, with next-word prediction loss computed only on responses.",
+      "evidence_section": "3 Finetuning",
+      "page": null
+    },
+    {
+      "claim": "The paper extends context length to 200K through lightweight continual pretraining and reports strong needle-in-a-haystack retrieval performance.",
+      "evidence_section": "7.1 Long Context Modeling",
+      "page": null
+    },
+    {
+      "claim": "Yi-VL uses a ViT initialized with CLIP ViT-H/14, a two-layer MLP projection module, and a Yi-Chat language model in a three-stage training process.",
+      "evidence_section": "7.2 Vision-Language",
+      "page": null
+    },
+    {
+      "claim": "Depth upscaling from Yi-6B to Yi-9B by duplicating layers 12-28 improves performance across Arc-C, HellaSwag, MMLU, Winogrande, GSM8K, MATH, HumanEval, and MBPP.",
+      "evidence_section": "7.3 Depth Upscaling",
+      "page": null
+    }
+  ]
+}

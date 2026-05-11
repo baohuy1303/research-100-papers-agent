@@ -1,0 +1,944 @@
+{
+  "paper_id": "63812f583caac3ac32bbfb64f66ba69e57c1e90a",
+  "architecture_summary": "The paper proposes conditional positional encodings (CPE) for vision Transformers, implemented with a simple Position Encoding Generator (PEG) that conditions on local neighborhoods and can be plugged into standard Transformer frameworks. Built on PEG, CPVT replaces fixed or learnable absolute positional encodings and can optionally use global average pooling (GAP) instead of a class token.",
+  "model_variants": [
+    {
+      "name": "CPVT-Ti",
+      "param_count_surface": "6M",
+      "page": null
+    },
+    {
+      "name": "CPVT-S",
+      "param_count_surface": "22M",
+      "page": null
+    },
+    {
+      "name": "CPVT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "CPVT-Ti-GAP",
+      "param_count_surface": "6M",
+      "page": null
+    },
+    {
+      "name": "CPVT-S-GAP",
+      "param_count_surface": "23M",
+      "page": null
+    },
+    {
+      "name": "CPVT-B-GAP",
+      "param_count_surface": "88M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ILSVRC-2012 ImageNet dataset",
+      "purpose": "train",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "ImageNet Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding (PE) strategies tested on ImageNet validation set in terms of the top-1 accuracy. Removing the positional encodings greatly damages the performance. The relative positional encodings have inferior performance to the absolute ones"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding (PE) strategies tested on ImageNet validation set in terms of the top-1 accuracy. Removing the positional encodings greatly damages the performance. The relative positional encodings have inferior performance to the absolute ones"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding (PE) strategies tested on ImageNet validation set in terms of the top-1 accuracy. Removing the positional encodings greatly damages the performance. The relative positional encodings have inferior performance to the absolute ones"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding (PE) strategies tested on ImageNet validation set in terms of the top-1 accuracy. Removing the positional encodings greatly damages the performance. The relative positional encodings have inferior performance to the absolute ones"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "73.4(+1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "74.2(+3.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224 x 224 . A simple PEG of a single layer of 3 x 3 depth-wise convolution is used here"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "74.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "DeiT-small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "DeiT-small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "80.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "CPVT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "80.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "CPVT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance comparison of Class Token (CLT) and global average pooling (GAP) on ImageNet. CPVT’s can be further boosted with GAP"
+    },
+    {
+      "model": "ResNet-50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "76.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ResNet-50",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ResNet-101",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ResNet-101",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ResNet-152",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ResNet-152",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "RegNetY-4GF",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "80.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "RegNetY-4GF",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "86.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B0",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B0",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B1",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "84.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B2",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B3",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B4",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "EfficientNet-B4",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "88.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny w/o PE",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "68.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet Real",
+      "metric_surface": "Real top-1 %",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-Ti-GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "74.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "74.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "75.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "80.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-S-GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "81.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "DeiT-base",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-B-GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1 %",
+      "value_surface": "82.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with ConvNets and Transformers on ImageNet and ImageNet Real (Beyer et al., 2020). CPVT have much better performance compared with prior Transformers"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positional encoding rather than added parameters gives the most improvement"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 (%)",
+      "value_surface": "71.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positional encoding rather than added parameters gives the most improvement"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 (%)",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positional encoding rather than added parameters gives the most improvement"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 (%)",
+      "value_surface": "68.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positional encoding rather than added parameters gives the most improvement"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet validation set",
+      "metric_surface": "top-1 (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positional encoding rather than added parameters gives the most improvement"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different plugin positions (left) and kernels (right) using DeiT-tiny"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different plugin positions (left) and kernels (right) using DeiT-tiny"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "DeiT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "70.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of various positional encoding strategies. LE: learnable positional encoding. RPE: relative positional encoding"
+    },
+    {
+      "model": "DeiT-tiny (LE+RPE)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (LE+RPE)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (LE+RPE)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "68.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (LE+RPE)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "65.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (LE+RPE)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "65.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (PEG at Pos 0)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (PEG at Pos 0)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (PEG at Pos 0)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "71.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "DeiT-tiny (PEG at Pos 0)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Direct evaluation on other resolutions without fine-tuning. The models are trained on 224×224. CPE outperforms LE+RPE combination on untrained resolutions"
+    },
+    {
+      "model": "ResNet-18",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "69.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "75.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-tiny+PEG",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "77.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-tiny+GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "75.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-tiny+PEG+GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "78.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-small+PEG+GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "81.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-Medium",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "81.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "PVT-Medium+PEG+GAP",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 (%)",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Our method boosts the performance of PVT on ImageNet classification, ADE20K segmentation and COCO detection"
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Acc (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Other forms of PEG. The simple form of a single depth-wise 3 × 3 is good enough."
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Acc (%)",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Other forms of PEG. The simple form of a single depth-wise 3 × 3 is good enough."
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Acc (%)",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Other forms of PEG. The simple form of a single depth-wise 3 × 3 is good enough."
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Acc (%)",
+      "value_surface": "72.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Other forms of PEG. The simple form of a single depth-wise 3 × 3 is good enough."
+    },
+    {
+      "model": "CPVT-Ti",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Acc (%)",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Other forms of PEG. The simple form of a single depth-wise 3 × 3 is good enough."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "1.3 days on a single node with 8 V100 GPU cards",
+    "batch_size": 2048,
+    "epochs": 300
+  },
+  "methods_used": [
+    "conditional positional encoding",
+    "Position Encoding Generator (PEG)",
+    "depth-wise convolution",
+    "zero paddings",
+    "global average pooling (GAP)",
+    "AdamW optimizer",
+    "LAMB",
+    "Rand Augment",
+    "Mixup",
+    "Cutmix",
+    "Random Erasing",
+    "hard distillation",
+    "self-attention"
+  ],
+  "novel_contributions": [
+    "We propose a novel positional encoding (PE) scheme, termed conditional position encodings (CPE).",
+    "CPE is dynamically generated with Positional Encoding Generators (PEG) and requires no changes to the current Transformer APIs.",
+    "CPE provides a stronger explicit bias towards translation equivalence.",
+    "CPVT achieves better performance than previous vision transformers.",
+    "CPE can generalize to arbitrary input resolutions and boosts segmentation and detection performance for pyramid transformers like PVT and Swin."
+  ],
+  "key_claims": [
+    {
+      "claim": "CPE is dynamically generated from local neighborhoods and can generalize to input sequences longer than those seen during training.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "CPVT built on CPE delivers outperforming results and visually similar attention maps compared with learned positional encodings.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "Removing positional encodings or interpolating them hurts DeiT-tiny on ImageNet, while CPVT-Ti improves at higher resolutions without fine-tuning.",
+      "evidence_section": "3.1 MOTIVATION / 4.2 GENERALIZATION TO HIGHER RESOLUTIONS",
+      "page": null
+    },
+    {
+      "claim": "Using GAP with CPVT boosts ImageNet top-1 accuracy, and CPVT-Ti-GAP reaches 74.9% top-1 accuracy.",
+      "evidence_section": "4.3 CPVT WITH GLOBAL AVERAGE POOLING",
+      "page": null
+    },
+    {
+      "claim": "CPVT-S-GAP is reported as a new state-of-the-art for vision Transformers.",
+      "evidence_section": "4.5 PERFORMANCE COMPARISON",
+      "page": null
+    },
+    {
+      "claim": "PEG improves PVT and Swin on ImageNet, ADE20K, and COCO when inserted into pyramid transformer architectures.",
+      "evidence_section": "4.6 PEG ON PYRAMID TRANSFORMER ARCHITECTURES / B.6 EVALUATION ON SEGMENTATION AND DETECTION",
+      "page": null
+    },
+    {
+      "claim": "The improvement from PEG is attributed mainly to positional encoding rather than added parameters.",
+      "evidence_section": "5.1 POSITIONAL ENCODING OR MERELY A HYBRID?",
+      "page": null
+    }
+  ]
+}

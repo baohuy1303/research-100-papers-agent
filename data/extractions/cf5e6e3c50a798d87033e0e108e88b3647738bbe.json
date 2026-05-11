@@ -1,0 +1,815 @@
+{
+  "paper_id": "cf5e6e3c50a798d87033e0e108e88b3647738bbe",
+  "architecture_summary": "The paper studies Vision Transformer pre-training and transfer learning under a unified setup, focusing on how data size, augmentation, regularization, model size, and compute budget interact. It uses ViT variants and ResNet+ViT hybrids, with dropout, stochastic depth, Mixup, RandAugment, Adam pre-training, and SGD fine-tuning.",
+  "model_variants": [
+    {
+      "name": "ViT-Ti",
+      "param_count_surface": "5.8M",
+      "page": null
+    },
+    {
+      "name": "ViT-S",
+      "param_count_surface": "22.2M",
+      "page": null
+    },
+    {
+      "name": "ViT-B",
+      "param_count_surface": "86M",
+      "page": null
+    },
+    {
+      "name": "ViT-L",
+      "param_count_surface": "307M",
+      "page": null
+    },
+    {
+      "name": "R+Ti/16",
+      "param_count_surface": "6.4M",
+      "page": null
+    },
+    {
+      "name": "R26+S/32",
+      "param_count_surface": "36.6M",
+      "page": null
+    },
+    {
+      "name": "R50+L/32",
+      "param_count_surface": "330.0M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ILSVRC-2012",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNetV2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford IIIT Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pets37",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Resisc45",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "KITTI-distance",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB benchmark",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CC12M",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "74.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "83.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "85.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "87.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "78.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "83.96",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "85.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "86.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "77.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "80.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "83.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "83.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "74.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "82.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "85.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "86.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "71.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "79.13",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "78.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "83.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "69.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "73.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "75.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "80.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "67.30",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "69.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "71.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1",
+      "value_surface": "75.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "77.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "84.48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "85.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "87.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "81.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "85.49",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "86.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "80.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "80.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "76.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "85.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "86.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "76.60",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "78.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "83.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "79.58",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "80.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "73.48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "71.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: ImageNet-1k transfer."
+    },
+    {
+      "model": "R+Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "73.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "B/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "74.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "Ti/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "R26+S/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "77.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "S/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "R50+L/32",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "76.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "B/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "79.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "L/16",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Detailed VTAB results, including the “Mean” accuracy shown in Figure 3. We show datasets under ● NATURAL, ● SPECIALIZED, ● STRUCTURED groups, following (45)."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "I21k Val",
+      "value_surface": "47.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "I1k 0shot",
+      "value_surface": "60.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "Coco",
+      "metric_surface": "I2T",
+      "value_surface": "41.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "Coco",
+      "metric_surface": "T2I",
+      "value_surface": "25.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "Flickr",
+      "metric_surface": "I2T",
+      "value_surface": "65.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    },
+    {
+      "model": "Recommended",
+      "dataset_surface": "Flickr",
+      "metric_surface": "T2I",
+      "value_surface": "46.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Comparing our “recommended” (see Section 4.5) B/32 checkpoint with models that apply too little or too much AugReg."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "roughly the same amount of compute",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "dropout",
+    "stochastic depth",
+    "Mixup",
+    "RandAugment",
+    "Adam",
+    "SGD",
+    "cosine learning rate schedule",
+    "linear warmup",
+    "gradient clipping",
+    "Inception-style cropping",
+    "random horizontal flipping",
+    "fine-tuning",
+    "transfer learning",
+    "ResNet backbone",
+    "self-attention"
+  ],
+  "novel_contributions": [
+    "A systematic empirical study of the interplay between training data size, AugReg, model size and compute budget in Vision Transformers.",
+    "A unified experimental setup with consistent training and evaluation across a large collection of ViT and hybrid models.",
+    "Evidence that carefully selected regularization and augmentations can roughly correspond to a 10x increase in training data size.",
+    "Evidence that transferring a pre-trained model is generally more cost-efficient and yields better results than training from scratch for practical datasets.",
+    "A recommendation to select upstream checkpoints by upstream validation performance, with ImageNetV2 used for ImageNet-1k transfer selection when ImageNet-21k pre-training causes validation leakage."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper conducts the first systematic, large scale study of the interplay between regularization, data augmentation, model size, and training data size when pre-training Vision Transformers.",
+      "evidence_section": "8 Conclusion",
+      "page": null
+    },
+    {
+      "claim": "Carefully selected regularization and augmentations can make a model trained on a given dataset perform similarly to one trained on about 10x more data.",
+      "evidence_section": "4.1 Scaling datasets with AugReg and compute",
+      "page": null
+    },
+    {
+      "claim": "For most practical purposes, transferring a pre-trained model is both more cost-efficient and leads to better results than training from scratch.",
+      "evidence_section": "4.2 Transfer is the better option",
+      "page": null
+    },
+    {
+      "claim": "More data yields more generic models on VTAB, and ImageNet-21k pre-training transfers better than ImageNet-1k pre-training across the evaluated task categories.",
+      "evidence_section": "4.3 More data yields more generic models",
+      "page": null
+    },
+    {
+      "claim": "Augmentation is generally more helpful than regularization, and regularization can hurt when compute is fixed or when models are too small.",
+      "evidence_section": "4.4 Prefer augmentation to regularization",
+      "page": null
+    },
+    {
+      "claim": "Selecting a single pre-trained model based on upstream validation performance is usually a cost-effective strategy for transfer learning.",
+      "evidence_section": "4.5 Choosing which pre-trained model to transfer",
+      "page": null
+    },
+    {
+      "claim": "For ImageNet-21k to ImageNet-1k transfer, ImageNetV2 should be used as the validation split because ImageNet-1k minival can be biased by overlap with ImageNet-21k.",
+      "evidence_section": "4.5 Choosing which pre-trained model to transfer",
+      "page": null
+    },
+    {
+      "claim": "Increasing patch-size can be preferable to shrinking model size when comparing models with similar inference throughput.",
+      "evidence_section": "4.6 Prefer increasing patch-size to shrinking model-size",
+      "page": null
+    }
+  ]
+}

@@ -92,7 +92,14 @@ async def extract_one(
                 ],
                 response_format=ExtractedPaper,
                 temperature=0,
-                max_completion_tokens=4096,
+                max_completion_tokens=16384,
+                # Prompt caching: same key across all 100 calls routes them to the
+                # same cached prefix (the frozen ~4k-token system prompt).
+                # Keep RPM per key < 15 — our default concurrency of 10 is safe.
+                extra_body={
+                    "prompt_cache_key": "research-extraction-v1",
+                    "prompt_cache_retention": "in_memory",
+                },
             )
 
             result: ExtractedPaper = response.choices[0].message.parsed

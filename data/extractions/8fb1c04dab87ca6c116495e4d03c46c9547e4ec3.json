@@ -1,0 +1,789 @@
+{
+  "paper_id": "8fb1c04dab87ca6c116495e4d03c46c9547e4ec3",
+  "architecture_summary": "Pyramid Vision Transformer (PVT) is a pure Transformer backbone without convolutions that introduces a progressive shrinking pyramid to produce multi-scale feature maps and a spatial-reduction attention (SRA) layer to reduce computation on high-resolution features.",
+  "model_variants": [
+    {
+      "name": "PVT-Tiny",
+      "param_count_surface": "13.2",
+      "page": null
+    },
+    {
+      "name": "PVT-Small",
+      "param_count_surface": "24.5",
+      "page": null
+    },
+    {
+      "name": "PVT-Medium",
+      "param_count_surface": "44.2",
+      "page": null
+    },
+    {
+      "name": "PVT-Large",
+      "param_count_surface": "61.4",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet 2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO train2017",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "COCO val2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ResNet18",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "30.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet18",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "31.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "DeiT-Tiny/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "27.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "PVT-Tiny (ours)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "24.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "23.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "21.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt50-32x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "22.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt50-32x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "20.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "T2T-ViT r -14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "19.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "TNT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "DeiT-Small/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "20.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "20.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "22.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "20.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt101-32x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "21.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt101-32x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "19.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "T2T-ViT r -19",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ViT-Small/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "19.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "PVT-Medium (ours)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt101-64x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "20.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNeXt101-64x4d",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ViT-Base/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "T2T-ViT r -24",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "17.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "TNT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "17.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "DeiT-Base/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "PVT-Large (ours)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 Err (%)",
+      "value_surface": "18.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Image classification performance on the ImageNet validation set."
+    },
+    {
+      "model": "ResNet18",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "31.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Tiny (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "36.7(+4.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "36.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "40.4(+4.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "38.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "ResNeXt101-32x4d",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "39.9(+1.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Medium (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "41.9(+3.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "ResNeXt101-64x4d",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "41.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Large (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "42.6(+1.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017."
+    },
+    {
+      "model": "ResNet18",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "31.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Tiny (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "35.1(+3.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "34.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "37.8(+3.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "36.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "ResNeXt101-32x4d",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "37.5(+1.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Medium (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "39.0(+2.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "ResNeXt101-64x4d",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "38.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "PVT-Large (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "39.5(+1.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection and instance segmentation performance on COCO val2017."
+    },
+    {
+      "model": "ResNet18",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "32.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "PVT-Tiny (ours)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "35.7(+2.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "36.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "39.8(+3.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "ResNet101",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "38.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "ResNeXt101-32x4d",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "39.7(+0.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "PVT-Medium (ours)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "41.6(+2.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "ResNeXt101-64x4d",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "40.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "PVT-Large (ours)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.1(+1.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "PVT-Large* (ours)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "44.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation performance of different backbones on the ADE20K validation set."
+    },
+    {
+      "model": "ResNet50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "32.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer object detection pipeline."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "34.7(+2.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer object detection pipeline."
+    },
+    {
+      "model": "ResNet50-d8+DeepLabV3+",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "41.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer semantic segmentation pipeline."
+    },
+    {
+      "model": "ResNet50-d16+DeepLabV3+",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "40.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer semantic segmentation pipeline."
+    },
+    {
+      "model": "ResNet50-d16+Trans2Seg",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "39.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer semantic segmentation pipeline."
+    },
+    {
+      "model": "PVT-Small+Trans2Seg",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU (%)",
+      "value_surface": "42.6(+2.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of the pure Transformer semantic segmentation pipeline."
+    },
+    {
+      "model": "ViT-Small/32",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "31.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison between ViT and our PVT using RetinaNet for object detection."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "40.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance comparison between ViT and our PVT using RetinaNet for object detection."
+    },
+    {
+      "model": "PVT-Small w/ pre-train 1x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "40.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "PVT-Small w/ pre-train 3x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "42.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "PVT-Small w/o pre-train 1x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "26.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "PVT-Small w/o pre-train 3x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "33.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "ResNet50 1x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "36.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "ResNet50 3x",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP (%)",
+      "value_surface": "39.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "AP curves of RetinaNet on COCO val2017 under different backbone settings."
+    },
+    {
+      "model": "Wider PVT-Small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "19.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Deeper vs. Wider."
+    },
+    {
+      "model": "Wider PVT-Small",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "40.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Deeper vs. Wider."
+    },
+    {
+      "model": "Deeper PVT-Small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1",
+      "value_surface": "18.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Deeper vs. Wider."
+    },
+    {
+      "model": "Deeper PVT-Small",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP",
+      "value_surface": "41.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Deeper vs. Wider."
+    },
+    {
+      "model": "ResNet50+GC r4",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "36.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "PVT vs. CNN w/ non-local."
+    },
+    {
+      "model": "PVT-Small (ours)",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^m",
+      "value_surface": "37.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "PVT vs. CNN w/ non-local."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 V100 GPUs",
+    "batch_size": 128,
+    "epochs": 300
+  },
+  "methods_used": [
+    "patch embedding",
+    "progressive shrinking pyramid",
+    "spatial-reduction attention",
+    "multi-head attention",
+    "layer normalization",
+    "AdamW",
+    "random cropping",
+    "random horizontal flipping",
+    "label-smoothing regularization",
+    "mixup",
+    "CutMix",
+    "random erasing",
+    "FPN",
+    "RetinaNet",
+    "Mask R-CNN",
+    "Semantic FPN",
+    "DETR",
+    "Trans2Seg"
+  ],
+  "novel_contributions": [
+    "We propose Pyramid Vision Transformer (PVT), which is the first pure Transformer backbone designed for various pixel-level dense prediction tasks.",
+    "We overcome many difficulties when porting Transformer to dense predictions, by designing a progressive shrinking pyramid and a spatial-reduction attention (SRA).",
+    "We build a convolution-free pipeline by combining our PVT with DETR for end-to-end object detection without convolutions and handcrafted components such as dense anchors and non-maximum suppression (NMS).",
+    "We evaluate PVT on image classification, object detection, instance segmentation, and semantic segmentation, and show improved performance over ResNet and ResNeXt backbones under comparable parameter scales."
+  ],
+  "key_claims": [
+    {
+      "claim": "PVT is a pure Transformer backbone without convolutions that is designed for dense prediction tasks and can serve as a direct replacement for CNN backbones.",
+      "evidence_section": "Abstract; 1. Introduction; 3. Pyramid Vision Transformer (PVT)",
+      "page": null
+    },
+    {
+      "claim": "PVT introduces a progressive shrinking pyramid and spatial-reduction attention (SRA) to generate multi-scale, high-resolution feature maps while reducing computational and memory cost.",
+      "evidence_section": "Abstract; 3.2. Feature Pyramid for Transformer; 3.3. Transformer Encoder",
+      "page": null
+    },
+    {
+      "claim": "With comparable parameters, PVT+RetinaNet achieves 40.4 AP on COCO and surpasses ResNet50+RetinaNet by 4.1 AP.",
+      "evidence_section": "Abstract; 5.2. Object Detection",
+      "page": null
+    },
+    {
+      "claim": "PVT-Small achieves 40.4 AP on COCO val2017 with RetinaNet 1x, and PVT-Large achieves 43.4 AP with RetinaNet 3x + MS.",
+      "evidence_section": "5.2. Object Detection",
+      "page": null
+    },
+    {
+      "claim": "PVT-Large achieves 44.8 mIoU on ADE20K with longer training and multi-scale flip testing, which is very close to the state-of-the-art performance of the ADE20K benchmark.",
+      "evidence_section": "5.3. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "A pure Transformer detector built by combining PVT and DETR achieves 34.7 AP on COCO val2017, outperforming the original ResNet50-based DETR by 2.4 points.",
+      "evidence_section": "5.4. Pure Transformer Detection & Segmentation",
+      "page": null
+    },
+    {
+      "claim": "PVT-Small+Trans2Seg achieves 42.6 mIoU on ADE20K and outperforms ResNet50-based Trans2Seg and DeepLabV3+ baselines with lower GFLOPs.",
+      "evidence_section": "5.4. Pure Transformer Detection & Segmentation",
+      "page": null
+    }
+  ]
+}

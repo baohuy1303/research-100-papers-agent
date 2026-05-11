@@ -1,0 +1,233 @@
+{
+  "paper_id": "ed4087f6e8d77452810979f58246c5b2ad846cf8",
+  "architecture_summary": "This paper is a survey that systematically reviews Transformer schemes for time series modeling from two perspectives: network modifications and application domains. It also presents empirical analyses on robustness, model size, and seasonal-trend decomposition for time series Transformers.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "ETTm2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Transformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.557",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in robustness experiment of forecasting 96 steps for ETTm2 dataset with prolonging input length."
+    },
+    {
+      "model": "Autoformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.239",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in robustness experiment of forecasting 96 steps for ETTm2 dataset with prolonging input length."
+    },
+    {
+      "model": "Informer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.428",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in robustness experiment of forecasting 96 steps for ETTm2 dataset with prolonging input length."
+    },
+    {
+      "model": "Reformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.615",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in robustness experiment of forecasting 96 steps for ETTm2 dataset with prolonging input length."
+    },
+    {
+      "model": "LogFormer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.667",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in robustness experiment of forecasting 96 steps for ETTm2 dataset with prolonging input length."
+    },
+    {
+      "model": "Transformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.557",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in model size experiment of forecasting 96 steps for ETTm2 dataset with different number of layers."
+    },
+    {
+      "model": "Informer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.234",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in model size experiment of forecasting 96 steps for ETTm2 dataset with different number of layers."
+    },
+    {
+      "model": "Reformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.428",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in model size experiment of forecasting 96 steps for ETTm2 dataset with different number of layers."
+    },
+    {
+      "model": "LogFormer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.597",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in model size experiment of forecasting 96 steps for ETTm2 dataset with different number of layers."
+    },
+    {
+      "model": "Transformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.667",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in model size experiment of forecasting 96 steps for ETTm2 dataset with different number of layers."
+    },
+    {
+      "model": "FEDformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.457",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    },
+    {
+      "model": "Autoformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.203",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    },
+    {
+      "model": "Informer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.581",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    },
+    {
+      "model": "LogTrans",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.365",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    },
+    {
+      "model": "Reformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.768",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    },
+    {
+      "model": "Transformer",
+      "dataset_surface": "ETTm2",
+      "metric_surface": "MSE",
+      "value_surface": "0.658",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The MSE comparisons in ablation experiments of seasonal-trend decomposition analysis. 'Ori' means the original version without the decomposition. 'Decomp' means with decomposition. The experiment is performed on ETTm2 dataset with prolonging output length."
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "multi-head self-attention",
+    "positional encoding",
+    "relative positional encoding",
+    "learnable positional embeddings",
+    "timestamp encoding",
+    "layer normalization",
+    "residual connection",
+    "sparsity bias",
+    "low-rank approximation",
+    "hierarchical architecture",
+    "Fourier transform",
+    "wavelet transform",
+    "quaternion transformer",
+    "state space models",
+    "variational inference",
+    "graph neural network",
+    "graph convolution",
+    "GANs",
+    "VAEs",
+    "channel-independent attention",
+    "patch design",
+    "seasonal-trend decomposition",
+    "auto-correlation mechanism",
+    "self-supervised pre-training",
+    "unsupervised pre-trained framework"
+  ],
+  "novel_contributions": [
+    "A comprehensive and systematic survey of Transformers for time series modeling.",
+    "A new taxonomy of time series Transformers from the perspectives of network modifications and application domains.",
+    "Extensive empirical studies on robustness analysis, model size analysis, and seasonal-trend decomposition analysis.",
+    "A discussion of future research directions for time series Transformers."
+  ],
+  "key_claims": [
+    {
+      "claim": "This is the first work to comprehensively and systematically review the key developments of Transformers for modeling time series data.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper proposes a new taxonomy for time series Transformers based on network modifications and application domains.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "The survey categorizes time series Transformers into forecasting, anomaly detection, and classification, and further discusses network-level and architecture-level modifications.",
+      "evidence_section": "3 Taxonomy of Transformers in Time Series",
+      "page": null
+    },
+    {
+      "claim": "The paper conducts empirical studies on robustness, model size, and seasonal-trend decomposition to examine how Transformers perform in time series.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The robustness experiment shows that various Transformer-based models deteriorate quickly when the input sequence length is prolonged.",
+      "evidence_section": "6 Experimental Evaluation and Discussion",
+      "page": null
+    },
+    {
+      "claim": "The model size experiment suggests that Transformers with 3 to 6 layers often achieve better results than deeper variants on ETTm2.",
+      "evidence_section": "6 Experimental Evaluation and Discussion",
+      "page": null
+    },
+    {
+      "claim": "The seasonal-trend decomposition analysis shows that a simple decomposition block can significantly boost performance by 50 % to 80%.",
+      "evidence_section": "6 Experimental Evaluation and Discussion",
+      "page": null
+    }
+  ]
+}

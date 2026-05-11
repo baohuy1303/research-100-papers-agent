@@ -1,0 +1,419 @@
+{
+  "paper_id": "c431408780586268e8bcf2483b01a80728d10960",
+  "architecture_summary": "ViT-Adapter is a pre-training-free adapter added to a plain ViT backbone to inject image-related inductive biases for dense prediction tasks. It uses a spatial prior module, a spatial feature injector, and a multi-scale feature extractor to turn single-scale ViT features into a feature pyramid for detection and segmentation.",
+  "model_variants": [
+    {
+      "name": "ViT-T",
+      "param_count_surface": "2.5M",
+      "page": null
+    },
+    {
+      "name": "ViT-S",
+      "param_count_surface": "5.8M",
+      "page": null
+    },
+    {
+      "name": "ViT-B",
+      "param_count_surface": "14.0M",
+      "page": null
+    },
+    {
+      "name": "ViT-L",
+      "param_count_surface": "23.7M",
+      "page": null
+    },
+    {
+      "name": "ViT-Adapter-T",
+      "param_count_surface": "2.5M",
+      "page": null
+    },
+    {
+      "name": "ViT-Adapter-S",
+      "param_count_surface": "5.8M",
+      "page": null
+    },
+    {
+      "name": "ViT-Adapter-B",
+      "param_count_surface": "14.0M",
+      "page": null
+    },
+    {
+      "name": "ViT-Adapter-L",
+      "param_count_surface": "23.7M",
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO val2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO test-dev",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Objects365",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO-Stuff",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViT-Adapter-T",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "46.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-S",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "48.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "49.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-B*",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "51.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-T",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "46.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-S",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "48.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "49.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection performance on COCO val2017 using Mask R-CNN"
+    },
+    {
+      "model": "ViT-Adapter-S",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "49.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection with different frameworks on COCO val2017"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "52.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object detection with different frameworks on COCO val2017"
+    },
+    {
+      "model": "ViT-Adapter-T",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "AP",
+      "value_surface": "41.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-T",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "42.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-S",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "46.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-S",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "46.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "48.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-B",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "50.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "52.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO val2017",
+      "metric_surface": "mIoU",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation on the ADE20K val"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "60.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous SOTA"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "53.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous SOTA"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "ADE20K val",
+      "metric_surface": "mIoU",
+      "value_surface": "61.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous SOTA"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "ADE20K val",
+      "metric_surface": "mIoU",
+      "value_surface": "61.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous SOTA"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "60.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons with the leading results on the COCO val2017 and test-dev sets"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "AP",
+      "value_surface": "53.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparisons with the leading results on the COCO val2017 and test-dev sets"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "ADE20K val",
+      "metric_surface": "mIoU",
+      "value_surface": "61.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous state-of-the-art results on the ADE20K validation set"
+    },
+    {
+      "model": "ViT-Adapter-L",
+      "dataset_surface": "ADE20K val",
+      "metric_surface": "mIoU",
+      "value_surface": "61.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous state-of-the-art results on the ADE20K validation set"
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 16,
+    "epochs": 36
+  },
+  "methods_used": [
+    "patch embedding",
+    "transformer encoder layers",
+    "spatial prior module",
+    "convolutional stem",
+    "cross-attention",
+    "deformable attention",
+    "sparse attention",
+    "multi-scale feature extractor",
+    "feature pyramid",
+    "window attention",
+    "AdamW",
+    "Layer-wise learning rate decay",
+    "drop path",
+    "Instaboost",
+    "Soft-NMS",
+    "multi-scale testing",
+    "multi-scale training"
+  ],
+  "novel_contributions": [
+    "A pre-training-free adapter for plain ViT that injects image-related inductive biases for dense prediction tasks.",
+    "A spatial prior module plus spatial feature injector and multi-scale feature extractor to adapt ViT without modifying its original architecture.",
+    "A new paradigm that preserves ViT flexibility and can benefit from multi-modal pre-training.",
+    "State-of-the-art results on COCO test-dev without extra detection data and strong results on ADE20K."
+  ],
+  "key_claims": [
+    {
+      "claim": "ViT-Adapter is a pre-training-free adapter that lets plain ViT achieve comparable performance to vision-specific transformers on dense prediction tasks.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "The method uses three tailored modules: a spatial prior module, a spatial feature injector, and a multi-scale feature extractor.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "With only ImageNet-1K pre-training, ViT-Adapter-B reports 49.6 box AP on COCO val and outperforms Swin-B by 1.0 points.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "ViT-Adapter-L yields state-of-the-art 60.9 box AP and 53.0 mask AP on COCO test-dev without extra detection data.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K, ViT-Adapter-L reaches 61.5 mIoU and is reported as a new record in the comparison table.",
+      "evidence_section": "4.3 COMPARISONS WITH STATE-OF-THE-ARTS",
+      "page": null
+    },
+    {
+      "claim": "The adapter can benefit from advanced multi-modal pre-training, improving results over ImageNet-22K pre-training.",
+      "evidence_section": "4.1 OBJECT DETECTION AND INSTANCE SEGMENTATION",
+      "page": null
+    },
+    {
+      "claim": "Ablations show the proposed components collectively bring 4.5 APb and 2.8 APm gains, and the best number of interactions is N = 4.",
+      "evidence_section": "4.4 ABLATION STUDY",
+      "page": null
+    }
+  ]
+}

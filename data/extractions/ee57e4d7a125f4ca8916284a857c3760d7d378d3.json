@@ -1,0 +1,530 @@
+{
+  "paper_id": "ee57e4d7a125f4ca8916284a857c3760d7d378d3",
+  "architecture_summary": "I-JEPA is a non-generative self-supervised method that uses a Vision Transformer context encoder, a target encoder updated by exponential moving average, and a narrow ViT predictor to predict target-block representations from a single context block in the same image. It relies on multi-block masking and computes the loss in representation space rather than pixel space.",
+  "model_variants": [
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-L/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-H/14",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-H/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-G/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-H/16 448",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-H/14 448",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "ViT-L/7",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1%",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "IN1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "IN22k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CIFAR100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Places205",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNat18",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist18",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Clevr",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Clevr/Count",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Clevr/Dist",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "81.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "77.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "73.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "79.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "81.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "77.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "73.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet. Linear-evaluation on ImageNet-1k (the ViT-H/16448 is pretrained at a resolution of 448 × 448)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "77.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1%. Semi-supervised evaluation on ImageNet-1K using only 1% of the available labels."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "73.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1%. Semi-supervised evaluation on ImageNet-1K using only 1% of the available labels."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "81.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet-1%. Semi-supervised evaluation on ImageNet-1K using only 1% of the available labels."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "67.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating masking output of target encoder. Linear evaluation on ImageNet-1K using only 1% of the available labels; ablating the effect of masking the target-encoder output during I-JEPA pretraining of a ViT-H/16 for 300 epochs."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "66.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating the predictor depth. Linear evaluation on ImageNet-1K using only 1% of the available labels; ablating the effect of masking the predictor depth for a ViT-L/16 pretrained for 500 epochs."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating masking strategy. Linear evaluation on ImageNet-1K using only 1% of the available labels after I-JEPA pretraining of a ViT-B/16 for 300 epochs. Comparison of proposed multi-block masking strategy."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Finetuning on the full ImageNet dataset. I-JEPA achieves competitive performance."
+    },
+    {
+      "model": "MAE [36]",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "87.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Finetuning on the full ImageNet dataset. I-JEPA achieves competitive performance."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1",
+      "value_surface": "87.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear-probe transfer for image classification. Linear-evaluation on downstream image classification tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Places205",
+      "metric_surface": "Top-1",
+      "value_surface": "58.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear-probe transfer for image classification. Linear-evaluation on downstream image classification tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "iNat18",
+      "metric_surface": "Top-1",
+      "value_surface": "47.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear-probe transfer for image classification. Linear-evaluation on downstream image classification tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Count",
+      "metric_surface": "Top-1",
+      "value_surface": "86.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear-probe transfer for low-level tasks. Linear-evaluation on downstream low-level tasks consisting of object counting (Clevr/Count) and depth prediction (Clevr/Dist)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Dist",
+      "metric_surface": "Top-1",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Linear-probe transfer for low-level tasks. Linear-evaluation on downstream low-level tasks consisting of object counting (Clevr/Count) and depth prediction (Clevr/Dist)."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1",
+      "value_surface": "89.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Places205",
+      "metric_surface": "Top-1",
+      "value_surface": "57.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "iNat18",
+      "metric_surface": "Top-1",
+      "value_surface": "50.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Count",
+      "metric_surface": "Top-1",
+      "value_surface": "88.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Dist",
+      "metric_surface": "Top-1",
+      "value_surface": "75.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "CIFAR100",
+      "metric_surface": "Top-1",
+      "value_surface": "89.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Places205",
+      "metric_surface": "Top-1",
+      "value_surface": "59.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "iNat18",
+      "metric_surface": "Top-1",
+      "value_surface": "55.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Count",
+      "metric_surface": "Top-1",
+      "value_surface": "86.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "Clevr/Dist",
+      "metric_surface": "Top-1",
+      "value_surface": "73.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating dataset and model size. Evaluating impact of pre-training dataset size and model size on transfer tasks."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of the target block size for multi-block masking. Linear evaluation on 1% ImageNet-1K (using only 1% of the available labels); ablating the multi-block target size during I-JEPA pretraining of a ViT-B/16 for 300 epochs."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of the context size for multi-block masking. Linear evaluation on 1% ImageNet-1K (using only 1% of the available labels); ablating the multi-block target size during I-JEPA pretraining of a ViT-B/16 for 300 epochs."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of the targets number for multi-block masking. Linear evaluation on 1% ImageNet-1K (using only 1% of the available labels); ablating the multi-block number of targets during I-JEPA pretraining of a ViT-B/16 for 300 epochs."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "77.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating the pretraining weight-decay. We compare our default pretraining weight decay strategy where we linearly increase the weight-decay from 0.04 to 0.4 to using a fix weight decay of 0.05."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "76.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating the pretraining weight-decay. We compare our default pretraining weight decay strategy where we linearly increase the weight-decay from 0.04 to 0.4 to using a fix weight decay of 0.05."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "70.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating the pretraining weight-decay. We compare our default pretraining weight decay strategy where we linearly increase the weight-decay from 0.04 to 0.4 to using a fix weight decay of 0.05."
+    },
+    {
+      "model": "I-JEPA",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1",
+      "value_surface": "68.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablating the predictor width. We reports results on ImageNet-1K 1% using fine-tuning."
+    }
+  ],
+  "training_details": {
+    "compute_surface": "16 A100 GPUs in under 72 hours",
+    "batch_size": 2048,
+    "epochs": 300
+  },
+  "methods_used": [
+    "Vision Transformer",
+    "self-attention",
+    "MLP",
+    "joint-embedding predictive architecture",
+    "exponential moving average",
+    "multi-block masking",
+    "mask tokens",
+    "AdamW",
+    "cosine learning rate schedule",
+    "weight decay",
+    "linear probing",
+    "fine-tuning",
+    "RandAugment",
+    "mixup",
+    "cutmix",
+    "drop path",
+    "LARS"
+  ],
+  "novel_contributions": [
+    "We introduce the Image-based Joint-Embedding Predictive Architecture (I-JEPA), a non-generative approach for self-supervised learning from images.",
+    "I-JEPA predicts representations of target blocks from a single context block in representation space rather than reconstructing pixels or tokens.",
+    "The paper proposes a multi-block masking strategy with sufficiently large target blocks and an informative spatially distributed context block.",
+    "I-JEPA is designed to learn semantic image representations without relying on hand-crafted data-augmentations.",
+    "The method is scalable and efficient, training a ViT-Huge/14 on ImageNet using 16 A100 GPUs in under 72 hours."
+  ],
+  "key_claims": [
+    {
+      "claim": "I-JEPA learns strong off-the-shelf representations without the use of hand-crafted view augmentations and outperforms pixel-reconstruction methods such as MAE on ImageNet-1K linear probing, semi-supervised 1% ImageNet-1K, and semantic transfer tasks.",
+      "evidence_section": "Abstract; 1. Introduction; 5. Image Classification",
+      "page": null
+    },
+    {
+      "claim": "I-JEPA is competitive with view-invariant pretraining approaches on semantic tasks and achieves better performance on low-level vision tasks such as object counting and depth prediction.",
+      "evidence_section": "1. Introduction; 6. Local Prediction Tasks",
+      "page": null
+    },
+    {
+      "claim": "I-JEPA is scalable and efficient, with pretraining a ViT-H/14 on ImageNet requiring less than 1200 GPU hours and being over 2.5× faster than a ViT-S/16 pretrained with iBOT and over 10× more efficient than a ViT-H/14 pretrained with MAE.",
+      "evidence_section": "1. Introduction; 7. Scalability",
+      "page": null
+    },
+    {
+      "claim": "The method uses a single context block to predict multiple target block representations in the same image, with the target encoder updated by exponential moving average.",
+      "evidence_section": "3. Method",
+      "page": null
+    },
+    {
+      "claim": "Predicting in representation space is crucial: applying the loss in pixel space significantly degrades linear probing performance.",
+      "evidence_section": "9. Ablations; C. Additional Ablations",
+      "page": null
+    },
+    {
+      "claim": "The proposed multi-block masking strategy is important for learning semantic representations, and larger target blocks with a sufficiently informative context improve low-shot accuracy.",
+      "evidence_section": "3. Method; 9. Ablations; C. Additional Ablations",
+      "page": null
+    },
+    {
+      "claim": "I-JEPA achieves 87.1 top-1 accuracy when fine-tuned on the full ImageNet dataset, remaining within 1% of the best MAE model despite using far fewer pretraining epochs.",
+      "evidence_section": "D. Finetuning on the full ImageNet",
+      "page": null
+    }
+  ]
+}

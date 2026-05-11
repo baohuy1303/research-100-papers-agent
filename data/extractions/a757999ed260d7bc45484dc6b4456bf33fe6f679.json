@@ -1,0 +1,404 @@
+{
+  "paper_id": "a757999ed260d7bc45484dc6b4456bf33fe6f679",
+  "architecture_summary": "LLaMA-Adapter freezes the entire LLaMA model and fine-tunes only lightweight learnable adaption prompts plus a zero-initialized attention mechanism with learnable gating. It is extended to multi-modal instruction following by adding a frozen image encoder and a learnable projection network, and the same zero-initialized attention idea is also applied to ViT, RoBERTa, and CLIP.",
+  "model_variants": [
+    {
+      "name": "LLaMA-Adapter",
+      "param_count_surface": "1.2M parameters",
+      "page": null
+    },
+    {
+      "name": "LLaMA-Adapter_T",
+      "param_count_surface": "1.2M",
+      "page": null
+    },
+    {
+      "name": "LLaMA-Adapter-7B",
+      "param_count_surface": "7B",
+      "page": null
+    },
+    {
+      "name": "LLaMA-Adapter",
+      "param_count_surface": "1.8M",
+      "page": null
+    },
+    {
+      "name": "LLaMA",
+      "param_count_surface": "7B parameters",
+      "page": null
+    },
+    {
+      "name": "LLaMA-I",
+      "param_count_surface": "65B model",
+      "page": null
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": null,
+      "page": null
+    },
+    {
+      "name": "RoBERTa_large",
+      "param_count_surface": null,
+      "page": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "52K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ScienceQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MME",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LVLM-eHub",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LAION-400M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VTAB-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SQuAD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Caltech101",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flowers102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "C-VQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "POPE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VQAv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CoNLL03",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CoNLL04",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CoNLL12",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CoNLL05",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Open LLM benchmark",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ARC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HellaSwag",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMLU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TruthfulQA",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "ScienceQA",
+      "metric_surface": "Avg",
+      "value_surface": "85.19",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual Question Answering on ScienceQA (Lu et al., 2022) Benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter_T",
+      "dataset_surface": "ScienceQA",
+      "metric_surface": "Avg",
+      "value_surface": "78.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual Question Answering on ScienceQA (Lu et al., 2022) Benchmark"
+    },
+    {
+      "model": "MM-COT",
+      "dataset_surface": "ScienceQA",
+      "metric_surface": "Avg",
+      "value_surface": "84.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual Question Answering on ScienceQA (Lu et al., 2022) Benchmark"
+    },
+    {
+      "model": "GPT4 CoT",
+      "dataset_surface": "ScienceQA",
+      "metric_surface": "Avg",
+      "value_surface": "83.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual Question Answering on ScienceQA (Lu et al., 2022) Benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "MME",
+      "metric_surface": "All",
+      "value_surface": "973",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Multi-modal Evaluation on MME (Fu et al., 2023), MMBench (Liu et al., 2023c) and LVLM-eHub (Xu et al., 2023) benchmarks"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "MMBench",
+      "metric_surface": "LR",
+      "value_surface": "13.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Multi-modal Evaluation on MME (Fu et al., 2023), MMBench (Liu et al., 2023c) and LVLM-eHub (Xu et al., 2023) benchmarks"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "LVLM-eHub",
+      "metric_surface": "CP",
+      "value_surface": "50.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Zero-shot Multi-modal Evaluation on MME (Fu et al., 2023), MMBench (Liu et al., 2023c) and LVLM-eHub (Xu et al., 2023) benchmarks"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "Natural",
+      "value_surface": "81.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Vision Model Fine-tuning with ViT on VTAB-1k benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "EM",
+      "value_surface": "88.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Language Model Fine-tuning with RoBERTa on SQuAD benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "SQuAD",
+      "metric_surface": "F1",
+      "value_surface": "94.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Language Model Fine-tuning with RoBERTa on SQuAD benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Base",
+      "value_surface": "76.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Vision-Language Model Fine-tuning with ViT-B/16 CLIP on base-to-novel generalization benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "Caltech101",
+      "metric_surface": "Base",
+      "value_surface": "98.10",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Vision-Language Model Fine-tuning with ViT-B/16 CLIP on base-to-novel generalization benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "Flowers102",
+      "metric_surface": "Base",
+      "value_surface": "96.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Vision-Language Model Fine-tuning with ViT-B/16 CLIP on base-to-novel generalization benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Base",
+      "value_surface": "76.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Vision-Language Model Fine-tuning with ViT-B/16 CLIP on base-to-novel generalization benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "C-VQA",
+      "metric_surface": "Numerical direct↑ (Loss↓)",
+      "value_surface": "30.1 (5.8↓)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Counterfactual Reasoning Evaluation on C-VQA (Zhang et al., 2023b) Benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter-7B",
+      "dataset_surface": "C-VQA",
+      "metric_surface": "Numerical indirect↑ (Loss↓)",
+      "value_surface": "34.3 (5.6↓)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Counterfactual Reasoning Evaluation on C-VQA (Zhang et al., 2023b) Benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter-7B",
+      "dataset_surface": "POPE",
+      "metric_surface": "Random",
+      "value_surface": "75.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object Hallucination Evaluation on POPE (Li et al., 2023d) Benchmark"
+    },
+    {
+      "model": "LLaMA-Adapter",
+      "dataset_surface": "Open LLM benchmark",
+      "metric_surface": "Avg",
+      "value_surface": "52.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Evaluation on Open LLM Benchmark (Beeching et al., 2023)"
+    },
+    {
+      "model": "Alpaca",
+      "dataset_surface": "Open LLM benchmark",
+      "metric_surface": "Avg",
+      "value_surface": "49.23",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Evaluation on Open LLM Benchmark (Beeching et al., 2023)"
+    },
+    {
+      "model": "Alpaca-LoRA",
+      "dataset_surface": "Open LLM benchmark",
+      "metric_surface": "Avg",
+      "value_surface": "50.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Evaluation on Open LLM Benchmark (Beeching et al., 2023)"
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 A100 GPUs",
+    "batch_size": 64,
+    "epochs": 5
+  },
+  "methods_used": [
+    "learnable adaption prompts",
+    "zero-initialized attention",
+    "learnable gating factor",
+    "self-attention",
+    "frozen LLaMA",
+    "image encoder",
+    "projection network",
+    "multi-modal instruction tuning",
+    "chain of thought",
+    "prompt tuning",
+    "LoRA",
+    "adapter",
+    "contrastive pre-training"
+  ],
+  "novel_contributions": [
+    "a lightweight adaption method for efficient instruction tuning of LLaMA",
+    "a zero-initialized attention mechanism with a learnable gating factor",
+    "a multi-modal extension for image-conditioned instruction following",
+    "generalization of zero-initialized attention to ViT, RoBERTa, and CLIP",
+    "plug-and-play expert adapters for different scenarios"
+  ],
+  "key_claims": [
+    {
+      "claim": "LLaMA-Adapter introduces only 1.2M learnable parameters on top of frozen LLaMA 7B and costs less than one hour for fine-tuning.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "The proposed zero-initialized attention mechanism stabilizes training by progressively injecting instructional cues while preserving pre-trained knowledge.",
+      "evidence_section": "3.2 ZERO-INITIALIZED ATTENTION",
+      "page": null
+    },
+    {
+      "claim": "LLaMA-Adapter can be extended to a Multi-modal LLM and achieves superior multi-modal reasoning capacity on MME, MMBench, and LVLM-eHub.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "On ScienceQA, LLaMA-Adapter improves from 78.31% for LLaMA-Adapter_T to 85.19% for the multi-modal model.",
+      "evidence_section": "4.2 MULTI-MODAL EVALUATION",
+      "page": null
+    },
+    {
+      "claim": "The method generalizes to traditional vision, language, and vision-language fine-tuning, outperforming or matching strong baselines on VTAB-1k, SQuAD, and base-to-novel CLIP evaluation.",
+      "evidence_section": "4.4 ZERO-INITIALIZED ATTENTION FOR OTHER LARGE MODELS",
+      "page": null
+    },
+    {
+      "claim": "LLaMA-Adapter achieves better average performance than Alpaca and Alpaca-LoRA on the Open LLM benchmark.",
+      "evidence_section": "E.4 MORE QUANTITATIVE COMPARISON WITH ALPACA-LoRA",
+      "page": null
+    }
+  ]
+}
