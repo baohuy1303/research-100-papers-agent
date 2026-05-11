@@ -1,0 +1,6 @@
+*.env
+__pycache__/
+.venv
+*.pkl
+
+Good At Numbers - Take home - MD.md
