@@ -200,3 +200,6 @@
 {"ts": 1778542927.3736882, "label": "extract_paper", "usd": 0.008864400000000001, "budget_level": "$5", "paper_id": "8fafd95a6ffbecf9c1b5f4542ac4b78a00602551", "model": "gpt-5.4-mini", "input_tokens": 33777, "cached_tokens": 33536, "output_tokens": 3384}
 {"ts": 1778542940.6748986, "label": "extract_paper", "usd": 0.013558400000000002, "budget_level": "$5", "paper_id": "65a9c7b0800c86a196bc14e7621ff895cc6ab287", "model": "gpt-5.4-mini", "input_tokens": 19012, "cached_tokens": 18176, "output_tokens": 7129}
 {"ts": 1778542944.5030093, "label": "extract_paper", "usd": 0.014970800000000001, "budget_level": "$5", "paper_id": "63812f583caac3ac32bbfb64f66ba69e57c1e90a", "model": "gpt-5.4-mini", "input_tokens": 25879, "cached_tokens": 25344, "output_tokens": 7639}
+{"ts": 1778555405.826665, "label": "normalize_entities", "usd": 0.004228599999999999, "budget_level": "$5", "embed_tokens": 6230, "llm_cost": 0.004103999999999999}
+{"ts": 1778555916.775598, "label": "normalize_entities", "usd": 0.0352926, "budget_level": "$5", "embed_tokens": 6230, "llm_cost": 0.035168}
+{"ts": 1778558934.5722446, "label": "normalize_entities", "usd": 0.03976865999999999, "budget_level": "$5", "embed_tokens": 7408, "llm_cost": 0.03962049999999999}

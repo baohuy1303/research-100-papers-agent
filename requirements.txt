@@ -14,13 +14,15 @@ anthropic
 openai
 
 # Embeddings & retrieval (Phase 4, 5)
-#chromadb
+chromadb
 #sentence-transformers
 #FlagEmbedding   # BGE reranker
 
 # Graph & normalization (Phase 3, 4)
-#networkx
+networkx
 #pint
+rapidfuzz
+numpy
 
 # Utilities
 #tiktoken

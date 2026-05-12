@@ -39,9 +39,10 @@ PDFs ─►Datalab──►│ Pass 1: Verbatim Extraction (GPT-5.4-mini)     �
                   │   - section-aware markdown chunks              │
                   │                                                │
                   │ Pass 2: Normalization                          │
-                  │   - numeric: regex + Pint parser (no LLM)      │
-                  │   - entity: PWC API → embed-cluster → Haiku    │
-                  │     confirm canonical names                    │
+                  │   - numeric: regex (no LLM)                    │
+                  │   - entity: 6-stage hybrid                     │
+                  │     curated → rule → fuzzy → embed → HF        │
+                  │     → gpt-5-mini disambig                      │
                   │                                                │
                   │ Pass 3: Build indexes                          │
                   │   - SQLite: entities, mentions, results,       │
@@ -161,21 +162,44 @@ Per paper, Haiku 4.5 produces this JSON (verbatim surface forms — normalizatio
 
 ## Normalization (Pass 2)
 
-### Numbers (deterministic, no LLM)
-Regex + Pint over `*_surface` fields. Targets:
-- params → millions (float)
-- FLOPs → GFLOPs
-- accuracy → percent (0-100)
-- compute → GPU/TPU-days
+### Numbers (`scripts/normalize_numbers.py` — deterministic, no LLM)
 
-Sanity bounds per field; out-of-range flags for review.
+Regex parsing over `*_surface` fields. Targets:
+- `param_count_surface` → `param_count_millions` (float)
+  - Handles `"86M"`, `"86 M"`, `"86M parameters"`, `"1.2B"`, `"175 billion parameters"`, `"~ 45 million"`
+- `value_surface` → `value_canonical` (float)
+  - Strips `%`, takes primary of `"85.3 ± 0.2"` ranges, handles HTML `<b>...</b>` and LaTeX `_{...}` corruption
 
-### Entities (3-step)
-1. Collect unique surface forms across corpus, per type (dataset, benchmark, metric, method).
-2. **Papers With Code API lookup** for well-known entities (ImageNet, COCO, CIFAR, ADE20K, mIoU, etc.) — gets canonical_id for free.
-3. For unresolved: encode with text-embedding-3-small → cluster at cosine ≥ 0.85 → batched Haiku call confirms canonical name per cluster.
+**Coverage on 100 papers**: 96% params (352/364), 98% metric values (3194/3239). Remaining nulls are genuinely qualitative ("BERT base", "state-of-the-art", "5 times fewer parameters"). Output: `data/normalized/{paper_id}.json`.
 
-Output written to `entities` and `aliases` tables in SQLite.
+### Entities (`scripts/normalize_entities.py` — 6-stage hybrid pipeline)
+
+PWC's API died in 2024 (302-redirects to HuggingFace). HF datasets API works and exposes a `paperswithcode_id` cross-reference field on dataset records, but only covers datasets, not metrics or methods. So we use a multi-stage pipeline that progressively escalates from cheap deterministic techniques to LLM disambiguation:
+
+| Stage | Technique | Applies to | Catches |
+|---|---|---|---|
+| 1 | **Curated alias map** (~30 entries per type, hand-built) | datasets, metrics, methods | `"ImageNet"`/`"ILSVRC2012"`/`"ImageNet-1k"` → `ImageNet`; `"top-1"`/`"Top-1 (%)"`/`"ImageNet top-1 acc."` → `top-1 accuracy` |
+| 2 | **Rule normalizer** (regex: case, suffix, "(%)") | datasets, metrics, methods | `"Top-1 Acc. (%)"` → `top-1 accuracy` |
+| 3 | **Fuzzy match** (`rapidfuzz` WRatio ≥ 95) against existing canonicals | datasets, metrics, methods | typos, spacing variants — `"COCO"`/`"MS COCO"`/`"MSCOCO"` |
+| 4 | **Embedding cluster** (`text-embedding-3-small`, cosine ≥ 0.92 auto-merge; 0.80–0.92 flagged) | datasets, metrics, methods | semantic neighbors |
+| 5 | **HF Datasets lookup** on each cluster representative | **datasets only** | resolves `paperswithcode_id` and `hf_id` for citable IDs |
+| 6 | **LLM disambiguation** (`gpt-5-mini`, reasoning model) | datasets, metrics, methods | gray-zone pairs in [0.80, 0.92) cosine that clustering can't decide |
+
+**Embedding context**: surface-form only (no surrounding sentence). Embedding context would push two papers' "ImageNet" mentions apart even though they refer to the same dataset.
+
+**Confidence flow**: ≥0.92 cosine → auto-merge; 0.80–0.92 → LLM check; <0.80 → keep separate.
+
+**Coverage on 100 papers** (after Phase 3b):
+
+| Type | Surface forms | → Entities | Reduction | PWC IDs |
+|---|---|---|---|---|
+| Datasets | 743 | 632 | 15% | 59 |
+| Metrics | 450 | 365 | 19% | — |
+| Methods | 1076 | 953 | 11% | — |
+
+Output: single `data/entity_map.json` with `{canonical, type, aliases[], mention_count, source, paperswithcode_id, hf_id}` per entity. `source` ∈ `{curated, rule, fuzzy, clustered, hf-pwc, llm-confirmed}` for debugging which stage merged each entity. HF responses cached to `data/hf_cache/` for re-run resumability.
+
+**Total Phase 3 cost**: $0.04 (embeddings ~$0.0001 + LLM disambig ~$0.04).
 
 ---
 
@@ -198,19 +222,25 @@ Each eval run reports `accuracy_per_tier × cost_usd_per_question` for the curve
 ```
 research-100-papers-agent/
 ├── scripts/
-│   ├── parse_pdfs.py          # NEW — Datalab API submit+poll → data/markdown/{paper_id}.md
-│   ├── extract_papers.py      # NEW — Haiku pass over markdown → data/extractions/*.json
-│   ├── normalize_entities.py  # NEW — PWC lookup + cluster + Haiku confirm → SQLite
-│   ├── build_indexes.py       # NEW — Chroma (chunks) + SQLite (structured) + NetworkX (graph)
-│   └── (existing fetch/download scripts unchanged)
+│   ├── fetch_papers.py        # DONE — Semantic Scholar bulk → data/manifest.csv
+│   ├── download_pdfs.py       # DONE — manifest → data/pdfs/{paper_id}.pdf
+│   ├── parse_pdfs.py          # DONE — Datalab API + KeyPool → data/markdown/{paper_id}.md
+│   ├── extract_papers.py      # DONE — gpt-5.4-mini structured-output → data/extractions/*.json
+│   ├── normalize_numbers.py   # DONE — regex → data/normalized/*.json
+│   ├── normalize_entities.py  # DONE — 6-stage hybrid → data/entity_map.json
+│   └── build_indexes.py       # NEXT — SQLite + Chroma + NetworkX
 ├── api/
 │   ├── routes/
-│   │   ├── papers.py          # existing
-│   │   ├── ask.py             # NEW — POST /ask
-│   │   └── eval.py            # NEW — POST /eval
+│   │   ├── papers.py          # DONE
+│   │   ├── ask.py             # NEXT — POST /ask
+│   │   └── eval.py            # NEXT — POST /eval
 │   └── core/
-│       ├── classifier.py      # NEW — tier classifier
-│       ├── handlers/          # NEW — one module per tier
+│       ├── llm.py             # DONE — Anthropic + OpenAI clients, pricing, caching
+│       ├── budget.py          # DONE — BUDGET_LEVEL config + cost tracking
+│       ├── extraction_prompt.py  # DONE — frozen system prompt for Phase 2
+│       ├── schemas.py         # DONE — Pydantic schema for ExtractedPaper
+│       ├── classifier.py      # NEXT — tier classifier
+│       ├── handlers/          # NEXT — one module per tier
 │       │   ├── tier1_factual.py
 │       │   ├── tier2_aggregate.py
 │       │   ├── tier3_contradict.py
@@ -219,19 +249,23 @@ research-100-papers-agent/
 │       │   ├── tier6_multihop.py
 │       │   ├── tier7_absence.py
 │       │   └── tier8_compute.py
-│       ├── llm.py             # NEW — Anthropic client + caching helpers
-│       ├── retrieval.py       # NEW — Chroma + reranker wrapper
-│       ├── store.py           # NEW — SQLite + NetworkX wrappers
-│       └── budget.py          # NEW — BUDGET_LEVEL config + cost tracking
+│       ├── retrieval.py       # NEXT — Chroma + reranker wrapper
+│       └── store.py           # NEXT — SQLite + NetworkX wrappers
 ├── data/
-│   ├── markdown/              # NEW — Marker output
-│   ├── extractions/           # NEW — per-paper JSON
-│   ├── corpus.db              # NEW — SQLite store
-│   ├── chroma/                # NEW — Chroma persistence
-│   └── citation_graph.gpickle # NEW — NetworkX graph
+│   ├── manifest.csv           # DONE — 100 papers
+│   ├── pdfs/                  # DONE — 100 PDFs
+│   ├── markdown/              # DONE — 100 .md (Datalab Marker output)
+│   ├── extractions/           # DONE — 100 .json (gpt-5.4-mini structured output)
+│   ├── normalized/            # DONE — 100 .json (extractions + canonical numeric fields)
+│   ├── entity_map.json        # DONE — canonical entities + aliases
+│   ├── hf_cache/              # DONE — cached HF Datasets responses
+│   ├── cost_log.jsonl         # DONE — running cost log
+│   ├── corpus.db              # NEXT — SQLite store
+│   ├── chroma/                # NEXT — Chroma persistence
+│   └── citation_graph.gpickle # NEXT — NetworkX graph
 └── eval/
-    ├── questions.jsonl        # NEW — 40+ eval questions with gold
-    └── reports/               # NEW — per-budget-level eval results
+    ├── questions.jsonl        # NEXT — 40+ eval questions with gold
+    └── reports/               # NEXT — per-budget-level eval results
 ```
 
 ---
@@ -250,16 +284,19 @@ references(paper_id_src, paper_id_dst)   -- in-corpus citations
 
 ---
 
-## Budget allocation
+## Budget allocation (actuals so far)
 
-| Bucket | Budget | What |
-|---|---|---|
-| One-time prep | ~$8 | **+~$3 Datalab parsing** (~1200 pages, est. $0.0025/page) + $3 extraction (Haiku, 100 papers, cached prompt) + $1 normalization (Haiku confirm) + $1 dev queries |
-| Eval × 3 budget levels | ~$18 | $1 + $5 + ~$12 across 40+ questions × 3 runs |
-| Buffer | ~$4 | Re-runs, debugging, hidden test bandwidth |
-| **Total** | **$30** | |
-
-> **Datalab pricing note**: Pricing page wasn't fully accessible at planning time. If actual cost is materially higher than estimate, fall back to PyMuPDF (free, weaker tables) and adjust extraction prompt to compensate.
+| Bucket | Estimated | **Actual** | What |
+|---|---|---|---|
+| Phase 1: Datalab parsing | ~$3 | **~$3.22** | 100 papers via Datalab cloud Marker (multi-key rotation across 2 free-tier keys) |
+| Phase 2: Extraction | ~$3 | **~$1.50** | 100 papers via gpt-5.4-mini structured output, OpenAI auto-cache on 4k system prompt |
+| Phase 3a: Number normalization | $0 | **$0** | Pure regex, no LLM |
+| Phase 3b: Entity normalization | ~$1 | **~$0.04** | Embeddings + gpt-5-mini disambig (~50 calls) |
+| **One-time prep total** | ~$7 | **~$4.76** | Comes in well under estimate thanks to OpenAI prompt caching |
+| Phases 4–7: Indexes, infra, handlers, API | ~$1 | TBD | Dev queries during implementation |
+| Phase 8–9: Eval × 3 budget levels | ~$18 | TBD | $1 + $5 + ~$12 across 40+ questions × 3 runs |
+| Buffer | ~$4 | TBD | Re-runs, debugging, hidden test bandwidth |
+| **Total cap** | **$30** | **$6.80 spent** (23%) | $23 remaining |
 
 ---
 

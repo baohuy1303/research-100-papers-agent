@@ -39,8 +39,9 @@ MODEL_HAIKU = "claude-haiku-4-5"
 MODEL_SONNET = "claude-sonnet-4-6"
 
 # ── OpenAI model IDs ──────────────────────────────────────────────────────────
-# gpt-4.5-mini — update if your account has access to a newer model ID.
+# gpt-5.4-mini — extraction default. gpt-5-mini — cheap fallback / disambiguation.
 MODEL_GPT_MINI = "gpt-5.4-mini"
+MODEL_GPT_5_MINI = "gpt-5-mini"
 
 # ── Pricing tables (USD per token) ───────────────────────────────────────────
 
@@ -67,6 +68,11 @@ _OAI_PRICING: dict[str, dict[str, float]] = {
         "input": 0.40 / 1_000_000,
         "cache_read": 0.10 / 1_000_000,   # auto-cached prefix tokens
         "output": 1.60 / 1_000_000,
+    },
+    MODEL_GPT_5_MINI: {
+        "input": 0.25 / 1_000_000,
+        "cache_read": 0.025 / 1_000_000,
+        "output": 2.00 / 1_000_000,
     },
 }
 
