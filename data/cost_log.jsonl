@@ -205,3 +205,11 @@
 {"ts": 1778558934.5722446, "label": "normalize_entities", "usd": 0.03976865999999999, "budget_level": "$5", "embed_tokens": 7408, "llm_cost": 0.03962049999999999}
 {"ts": 1778566218.7111344, "label": "normalize_entities", "usd": 0.040853579999999994, "budget_level": "$5", "embed_tokens": 8029, "llm_cost": 0.04069299999999999}
 {"ts": 1778566599.8212981, "label": "chroma_embed", "usd": 0.0529178, "budget_level": "$5", "model": "text-embedding-3-small", "total_tokens": 2645890, "n_chunks": 3768}
+{"ts": 1778568024.8344367, "label": "tier_classifier", "usd": 0.0004672, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 916, "output_tokens": 63}
+{"ts": 1778568026.0638256, "label": "tier_classifier", "usd": 0.00046120000000000004, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 917, "output_tokens": 59}
+{"ts": 1778568027.3063374, "label": "tier_classifier", "usd": 0.0004888000000000001, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 922, "output_tokens": 75}
+{"ts": 1778568028.3657494, "label": "tier_classifier", "usd": 0.0004732, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 923, "output_tokens": 65}
+{"ts": 1778568029.693501, "label": "tier_classifier", "usd": 0.00047760000000000006, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 69}
+{"ts": 1778568030.8433564, "label": "tier_classifier", "usd": 0.00048560000000000004, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 922, "output_tokens": 73}
+{"ts": 1778568031.6810448, "label": "tier_classifier", "usd": 0.0004648, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 922, "output_tokens": 60}
+{"ts": 1778568033.0207214, "label": "tier_classifier", "usd": 0.00045720000000000005, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 919, "output_tokens": 56}
