@@ -269,6 +269,20 @@ ALIAS_MAPS = {
 
 def rule_normalize_dataset(s: str) -> str:
     s = s.strip()
+    # Strip bracketed citations like "[8]", "[12]"
+    s = re.sub(r"\s*\[\d+\]\s*", " ", s).strip()
+    # Strip eval-split qualifiers — "ImageNet val", "ImageNet val. set",
+    # "ImageNet 2012 validation set" should all collapse to ImageNet.
+    # Apply BEFORE the -1k/-21k normalization so we don't accidentally drop them.
+    s = re.sub(r"\s+(val\.?|validation|valid|test|train(ing)?)(\s+set)?$",
+               "", s, flags=re.IGNORECASE).strip()
+    s = re.sub(r"\s+set$", "", s, flags=re.IGNORECASE).strip()
+    # Strip year qualifiers: "ImageNet 2012" → "ImageNet"
+    # (only when at the end, otherwise might break dataset names with years)
+    s = re.sub(r"\s+(19|20)\d{2}$", "", s).strip()
+    # Strip resolution qualifiers like "256x256", "512×512"
+    s = re.sub(r"\s+\d+\s*[x×]\s*\d+\s*$", "", s).strip()
+    # Normalize *-1K / *-21K / *-22K size suffixes (must come AFTER stripping)
     s = re.sub(r"-1[Kk]\b", "-1k", s)
     s = re.sub(r"-21[Kk]\b", "-21k", s)
     s = re.sub(r"-22[Kk]\b", "-22k", s)
@@ -480,22 +494,40 @@ async def normalize_type(
           f"{len(unresolved)} remaining")
 
     # ── Stage 2: rule normalization ──
+    # Build reverse map of existing canonicals (from Stage 1) so we can also
+    # merge into them when their rule-normalized form matches a new bucket.
+    norm_to_existing: dict[str, str] = {}
+    for canonical in entities:
+        norm_to_existing.setdefault(rule_fn(canonical), canonical)
+        # Also index aliases — important when curated map points multiple
+        # surface forms at one canonical (e.g. "ilsvrc2012" -> "ImageNet")
+        for alias in entities[canonical]["aliases"]:
+            norm_to_existing.setdefault(rule_fn(alias), canonical)
+
     by_norm: dict[str, list[str]] = defaultdict(list)
     for surface in unresolved:
         by_norm[rule_fn(surface)].append(surface)
-    # Within each rule-bucket, all surfaces share a canonical (first by mention count)
+
     rule_assigned = 0
     still_unresolved: list[str] = []
     for norm_key, surfaces in by_norm.items():
-        if len(surfaces) > 1:
+        existing_canonical = norm_to_existing.get(norm_key)
+        if existing_canonical is not None:
+            # Merge into the existing entity from Stage 1
+            for s in surfaces:
+                _add(existing_canonical, s, "rule")
+                rule_assigned += 1
+        elif len(surfaces) > 1:
+            # New bucket with multiple surfaces — pick most frequent as canonical
             canonical = max(surfaces, key=lambda s: counter[s])
             for s in surfaces:
                 _add(canonical, s, "rule")
                 rule_assigned += 1
+            norm_to_existing[norm_key] = canonical  # so later iterations can find it
         else:
             still_unresolved.append(surfaces[0])
     unresolved = still_unresolved
-    print(f"  stage 2 (rule):     {rule_assigned} merged into existing buckets, "
+    print(f"  stage 2 (rule):     {rule_assigned} merged, "
           f"{len(unresolved)} singletons remaining")
 
     # ── Stage 3: fuzzy match against existing canonicals ──
