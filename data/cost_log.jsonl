@@ -230,3 +230,56 @@
 {"ts": 1778572337.4791148, "label": "tier_classifier", "usd": 0.0004888000000000001, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 922, "output_tokens": 75}
 {"ts": 1778572338.4086251, "label": "tier_classifier", "usd": 0.00046320000000000004, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 60}
 {"ts": 1778572341.0537047, "label": "tier_classifier", "usd": 0.00045840000000000003, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 57}
+{"ts": 1778574958.9517012, "label": "tier_classifier", "usd": 0.0004672, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 916, "output_tokens": 63}
+{"ts": 1778574960.3443987, "label": "tier_classifier", "usd": 0.00046120000000000004, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 917, "output_tokens": 59}
+{"ts": 1778574961.978845, "label": "tier_classifier", "usd": 0.00047920000000000005, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 922, "output_tokens": 69}
+{"ts": 1778574963.6397774, "label": "tier_classifier", "usd": 0.00046960000000000003, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 64}
+{"ts": 1778574964.9938233, "label": "tier_classifier", "usd": 0.00046, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 58}
+{"ts": 1778574966.2340276, "label": "tier1_resolve", "usd": 8.360000000000001e-05, "budget_level": "$5"}
+{"ts": 1778574968.9237294, "label": "handler_synthesize", "usd": 0.0013532000000000001, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 2923, "output_tokens": 115}
+{"ts": 1778574970.588409, "label": "tier2_nl2sql", "usd": 0.0003304, "budget_level": "$5"}
+{"ts": 1778574971.7923608, "label": "handler_synthesize", "usd": 0.0001764, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 333, "output_tokens": 27}
+{"ts": 1778574973.5148964, "label": "tier4_plan", "usd": 0.00043080000000000006, "budget_level": "$5"}
+{"ts": 1778574974.9155746, "label": "handler_synthesize", "usd": 0.00038760000000000004, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 509, "output_tokens": 115}
+{"ts": 1778574976.231491, "label": "tier5_plan", "usd": 0.000152, "budget_level": "$5", "model": "gpt-5.4-mini"}
+{"ts": 1778574977.5577536, "label": "handler_synthesize", "usd": 0.0002524, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 303, "output_tokens": 82}
+{"ts": 1778574979.5736, "label": "tier7_plan", "usd": 0.0003216, "budget_level": "$5"}
+{"ts": 1778574981.0957668, "label": "handler_synthesize", "usd": 0.00034320000000000005, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 454, "output_tokens": 101}
+{"ts": 1778575034.6819549, "label": "tier3_plan", "usd": 0.0001508, "budget_level": "$5"}
+{"ts": 1778575037.4487324, "label": "handler_synthesize", "usd": 0.0010552, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 1802, "output_tokens": 209}
+{"ts": 1778575039.5901823, "label": "tier6_step0", "usd": 0.0005780000000000001, "budget_level": "$5"}
+{"ts": 1778575041.0293708, "label": "tier6_step1", "usd": 0.0004988, "budget_level": "$5"}
+{"ts": 1778575043.3390858, "label": "tier6_step2", "usd": 0.0010316000000000001, "budget_level": "$5"}
+{"ts": 1778575044.828777, "label": "tier6_step3", "usd": 0.0005288000000000001, "budget_level": "$5"}
+{"ts": 1778575046.303419, "label": "tier6_step4", "usd": 0.0005448000000000001, "budget_level": "$5"}
+{"ts": 1778575048.1699715, "label": "tier8_plan", "usd": 0.00029120000000000003, "budget_level": "$5"}
+{"ts": 1778575049.705784, "label": "handler_synthesize", "usd": 0.00018360000000000002, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 315, "output_tokens": 36}
+{"ts": 1778575096.3673396, "label": "tier6_step0", "usd": 0.00043680000000000005, "budget_level": "$5"}
+{"ts": 1778575097.204187, "label": "tier6_step1", "usd": 0.0005012, "budget_level": "$5"}
+{"ts": 1778575103.3758543, "label": "tier6_step2", "usd": 0.0033604000000000004, "budget_level": "$5"}
+{"ts": 1778575109.5956929, "label": "tier6_step3", "usd": 0.0022028000000000004, "budget_level": "$5"}
+{"ts": 1778575112.0610545, "label": "tier6_step4", "usd": 0.0008964000000000001, "budget_level": "$5"}
+{"ts": 1778575213.1237197, "label": "tier6_step0", "usd": 0.0004828, "budget_level": "$5"}
+{"ts": 1778575214.3042262, "label": "tier6_step1", "usd": 0.0006852000000000001, "budget_level": "$5"}
+{"ts": 1778575216.1008494, "label": "tier6_step2", "usd": 0.0018228000000000003, "budget_level": "$5"}
+{"ts": 1778575217.5410998, "label": "tier6_step3", "usd": 0.0007376, "budget_level": "$5"}
+{"ts": 1778575224.9470797, "label": "tier6_step4", "usd": 0.000924, "budget_level": "$5"}
+{"ts": 1778575366.79332, "label": "tier6_step0", "usd": 0.0005020000000000001, "budget_level": "$5"}
+{"ts": 1778575368.5243247, "label": "tier6_step1", "usd": 0.0006280000000000001, "budget_level": "$5"}
+{"ts": 1778575371.1794724, "label": "tier6_step2", "usd": 0.0019576000000000003, "budget_level": "$5"}
+{"ts": 1778575372.7783866, "label": "tier6_step3", "usd": 0.0010284, "budget_level": "$5"}
+{"ts": 1778576505.2666316, "label": "tier_classifier", "usd": 0.00046160000000000005, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 918, "output_tokens": 59}
+{"ts": 1778576506.242628, "label": "tier5_plan", "usd": 0.000152, "budget_level": "$5", "model": "gpt-5.4-mini"}
+{"ts": 1778576508.0206757, "label": "handler_synthesize", "usd": 0.0002508, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 303, "output_tokens": 81}
+{"ts": 1778576510.0796452, "label": "tier_classifier", "usd": 0.00046240000000000007, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 920, "output_tokens": 59}
+{"ts": 1778576511.6950042, "label": "tier2_nl2sql", "usd": 0.0003352, "budget_level": "$5"}
+{"ts": 1778576513.0860713, "label": "handler_synthesize", "usd": 0.00017760000000000003, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 336, "output_tokens": 27}
+{"ts": 1778576967.1001263, "label": "tier_classifier", "usd": 0.00046240000000000007, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 920, "output_tokens": 59}
+{"ts": 1778576968.4389205, "label": "tier2_nl2sql", "usd": 0.00034160000000000006, "budget_level": "$5"}
+{"ts": 1778576969.6722896, "label": "handler_synthesize", "usd": 0.00017680000000000001, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 334, "output_tokens": 27}
+{"ts": 1778576970.8383784, "label": "tier_classifier", "usd": 0.00047960000000000006, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 919, "output_tokens": 70}
+{"ts": 1778576973.5098822, "label": "tier5_plan", "usd": 0.000154, "budget_level": "$5", "model": "gpt-5.4-mini"}
+{"ts": 1778576974.8481297, "label": "handler_synthesize", "usd": 0.0002528, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 308, "output_tokens": 81}
+{"ts": 1778576976.443471, "label": "tier_classifier", "usd": 0.0004672, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 916, "output_tokens": 63}
+{"ts": 1778576977.5478666, "label": "tier1_resolve", "usd": 8.560000000000001e-05, "budget_level": "$5"}
+{"ts": 1778576980.560938, "label": "handler_synthesize", "usd": 0.0012996000000000001, "budget_level": "$5", "model": "gpt-5.4-mini", "input_tokens": 2781, "output_tokens": 117}

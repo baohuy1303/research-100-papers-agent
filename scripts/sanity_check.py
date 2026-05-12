@@ -204,6 +204,35 @@ async def check_retrieval():
           f"${res['cost_usd']:.6f}")
 
 
+async def check_handlers():
+    header("Phase 6: tier handlers")
+    from api.core.handlers import get_handler
+    from api.core.retrieval import Retriever
+    from api.core.store import CorpusStore
+    store = CorpusStore()
+    retriever = Retriever()
+
+    cases = [
+        (1, "What architecture does ViT use?"),
+        (2, "How many papers in the corpus benchmark on ImageNet?"),
+        (4, "How did the maximum top-1 accuracy on ImageNet change over years?"),
+        (5, "Which paper is the most cited within this corpus?"),
+        (7, "Which standard ViT benchmarks are NOT used by any paper in this corpus?"),
+    ]
+    total_cost = 0.0
+    for tier, q in cases:
+        try:
+            handle = get_handler(tier)
+            result = await handle(q, store, retriever)
+            ok = bool(result.answer) and len(result.answer) > 10
+            total_cost += result.cost_usd
+            check(f"T{tier}: {q[:50]}", ok,
+                  f"answer: {result.answer[:80]} | cost=${result.cost_usd:.4f}")
+        except Exception as e:
+            check(f"T{tier}: {q[:50]}", False, f"{type(e).__name__}: {e}")
+    print(f"\n  total handler cost: ${total_cost:.4f}")
+
+
 async def check_classifier():
     header("Phase 5: classifier.py")
     from api.core.classifier import TierClassifier
@@ -244,6 +273,7 @@ async def amain():
     await check_retrieval()
     if not args.skip_llm:
         await check_classifier()
+        await check_handlers()
 
     # Summary
     n_total = len(results)

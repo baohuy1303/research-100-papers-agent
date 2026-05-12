@@ -1,0 +1,83 @@
+{
+  "timestamp": "20260512_040925",
+  "budget_level": "$5",
+  "total_questions": 3,
+  "passed": 3,
+  "pass_rate": 1.0,
+  "total_cost_usd": 0.0037,
+  "total_latency_seconds": 15.0,
+  "budget_at_start_usd": 7.0563,
+  "budget_at_end_usd": 7.06,
+  "aborted": false,
+  "abort_reason": null,
+  "per_tier": {
+    "1": {
+      "n": 1,
+      "passed": 1,
+      "avg_cost": 0.0019,
+      "avg_latency": 5.71,
+      "avg_confidence": 0.99
+    },
+    "2": {
+      "n": 1,
+      "passed": 1,
+      "avg_cost": 0.001,
+      "avg_latency": 4.09,
+      "avg_confidence": 0.99
+    },
+    "5": {
+      "n": 1,
+      "passed": 1,
+      "avg_cost": 0.0009,
+      "avg_latency": 5.18,
+      "avg_confidence": 0.98
+    }
+  },
+  "questions": [
+    {
+      "id": "sample-T2-001",
+      "tier": 2,
+      "actual_tier": 2,
+      "tier_confidence": 0.99,
+      "question": "How many papers in the corpus benchmark on COCO?",
+      "gold_answer": "37",
+      "system_answer": "37 papers in the corpus benchmark on COCO.",
+      "match_strategy": "substring",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.0009808,
+      "elapsed_seconds": 4.09,
+      "error": null
+    },
+    {
+      "id": "sample-T5-001",
+      "tier": 5,
+      "actual_tier": 5,
+      "tier_confidence": 0.98,
+      "question": "Which paper is the most cited within this corpus?",
+      "gold_answer": "Image is Worth 16x16 Words",
+      "system_answer": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale has the highest number of citations from other papers in this corpus, with 83 in-corpus citations.",
+      "match_strategy": "substring",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.0008864000000000001,
+      "elapsed_seconds": 5.18,
+      "error": null
+    },
+    {
+      "id": "sample-T1-001",
+      "tier": 1,
+      "actual_tier": 1,
+      "tier_confidence": 0.99,
+      "question": "What architecture does ViT use?",
+      "gold_answer": "Transformer",
+      "system_answer": "ViT uses a pure Transformer encoder architecture: it splits an image into fixed-size patches, linearly embeds the patches, adds positional embeddings and a learnable [class] token, and then feeds the sequence into a standard Transformer encoder for classification. The evidence also notes a hybrid variant that uses CNN feature maps as input, but the core ViT is transformer-only.",
+      "match_strategy": "substring",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.0018526400000000002,
+      "elapsed_seconds": 5.71,
+      "error": null
+    }
+  ]
+}
