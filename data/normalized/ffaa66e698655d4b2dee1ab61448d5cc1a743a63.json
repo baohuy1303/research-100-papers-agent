@@ -1,0 +1,232 @@
+{
+  "paper_id": "ffaa66e698655d4b2dee1ab61448d5cc1a743a63",
+  "architecture_summary": "VM-UNet is a pure SSM-based U-shape architecture for medical image segmentation that uses VSS blocks from VMamba as the core module, with a patch embedding encoder, patch merging/expanding, additive skip connections, and an asymmetric encoder-decoder design. It is initialized with pretrained Vmamba-S weights and uses simple BCE/Dice or CE/Dice losses for segmentation.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "ISIC17",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ISIC18",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Synapse",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC17",
+      "metric_surface": "mIoU(%)",
+      "value_surface": "80.23",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 80.23
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC17",
+      "metric_surface": "DSC(%)",
+      "value_surface": "89.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 89.03
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC17",
+      "metric_surface": "Acc(%)",
+      "value_surface": "96.29",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 96.29
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC17",
+      "metric_surface": "Spe(%)",
+      "value_surface": "97.58",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 97.58
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC17",
+      "metric_surface": "Sen(%)",
+      "value_surface": "89.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 89.9
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC18",
+      "metric_surface": "mIoU(%)",
+      "value_surface": "81.35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 81.35
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC18",
+      "metric_surface": "DSC(%)",
+      "value_surface": "89.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 89.71
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC18",
+      "metric_surface": "Acc(%)",
+      "value_surface": "94.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 94.91
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC18",
+      "metric_surface": "Spe(%)",
+      "value_surface": "96.13",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 96.13
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "ISIC18",
+      "metric_surface": "Sen(%)",
+      "value_surface": "91.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the ISIC17 and ISIC18 dataset",
+      "value_canonical": 91.12
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "Synapse",
+      "metric_surface": "DSC",
+      "value_surface": "81.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the Synapse dataset",
+      "value_canonical": 81.08
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "Synapse",
+      "metric_surface": "HD95",
+      "value_surface": "19.21",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the Synapse dataset",
+      "value_canonical": 19.21
+    },
+    {
+      "model": "VM-UNet",
+      "dataset_surface": "Synapse",
+      "metric_surface": "DSC",
+      "value_surface": "81.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparative experimental results on the Synapse dataset",
+      "value_canonical": 81.4
+    }
+  ],
+  "training_details": {
+    "compute_surface": "All experiments are conducted on a single NVIDIA RTX A6000 GPU.",
+    "batch_size": 32,
+    "epochs": 300
+  },
+  "methods_used": [
+    "state space models",
+    "Mamba",
+    "VSS blocks",
+    "patch embedding",
+    "patch merging",
+    "patch expanding",
+    "additive skip connections",
+    "depthwise separable convolution",
+    "2D-Selective-Scan (SS2D)",
+    "S6 block",
+    "Layer Normalization",
+    "SiLU",
+    "AdamW",
+    "CosineAnnealingLR",
+    "random flip",
+    "random rotation",
+    "Dropout",
+    "BceDice loss",
+    "CeDice loss"
+  ],
+  "novel_contributions": [
+    "We propose VM-UNet, marking the first occasion of exploring the potential applications of purely SSM-based models in medical image segmentation.",
+    "We establish a baseline for pure SSM-based models in medical image segmentation tasks, providing valuable insights that pave the way for the development of more efficient and effective SSM-based methods in medical image.",
+    "Comprehensive experiments are conducted on three datasets, with results indicating that VM-UNet exhibits considerable competitiveness."
+  ],
+  "key_claims": [
+    {
+      "claim": "VM-UNet is presented as the first pure SSM-based model for medical image segmentation.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VM-UNet uses VSS blocks as the foundation block and an asymmetrical encoder-decoder structure with fewer convolution layers to save calculation cost.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper reports competitive performance on ISIC17, ISIC18, and Synapse.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VM-UNet achieves the best results in four metrics on ISIC17 and three metrics on ISIC18 in Table I.",
+      "evidence_section": "IV. EXPERIMENTS / C. Comparison to the State-of-the-art Models",
+      "page": null
+    },
+    {
+      "claim": "On Synapse, VM-UNet achieves 81.08 DSC and 19.21 HD95, and the text states it improves over Swin-UNet by 1.95% and 2.34mm in DSC and HD95.",
+      "evidence_section": "IV. EXPERIMENTS / C. Comparison to the State-of-the-art Models",
+      "page": null
+    },
+    {
+      "claim": "Initializing VM-UNet with VMamba-S pretrained weights improves downstream performance compared with no pretrained weights or VMamba-T.",
+      "evidence_section": "IV. EXPERIMENTS / D. Ablation Studies",
+      "page": null
+    },
+    {
+      "claim": "The asymmetric architecture {2,2,2,2-2,2,2,1} is chosen because symmetric or larger variants increase parameters/FLOPs and reduce performance.",
+      "evidence_section": "IV. EXPERIMENTS / D. Ablation Studies",
+      "page": null
+    },
+    {
+      "claim": "The paper uses simple BCE/Dice or CE/Dice losses, random flip and random rotation augmentation, and trains for 300 epochs with batch size 32.",
+      "evidence_section": "III. METHODS / D. Loss Function; IV. EXPERIMENTS / B. Implementation Details",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "paper_id": "f1902f99c53781601061d794d957f77982753352",
+  "architecture_summary": "MBT is a transformer-based audiovisual fusion architecture that uses fusion bottleneck tokens to restrict cross-modal attention flow through a small latent set, and can also place fusion only in later layers via early, mid, and late fusion variants.",
+  "model_variants": [
+    {
+      "name": "ViT-Base",
+      "param_count_surface": "d = 3072",
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-Small",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-Base",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-Large",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "MBT",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "AudioSet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Epic-Kitchens-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VGGSound",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Moments in Time",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Audioset-mini",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AS-500K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-Sound",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "MBT",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "49.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to SOTA on AudioSet [24]",
+      "value_canonical": 49.6
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "43.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to SOTA on AudioSet [24]",
+      "value_canonical": 43.9
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "EpicKitchens-100",
+      "metric_surface": "Action",
+      "value_surface": "43.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to SOTA on EpicKitchens-100 [14]",
+      "value_canonical": 43.4
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "VGGSound",
+      "metric_surface": "Top-1 Acc",
+      "value_surface": "64.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on VGGSound [12]",
+      "value_canonical": 64.1
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "VGGSound",
+      "metric_surface": "Top-5 Acc",
+      "value_surface": "85.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on VGGSound [12]",
+      "value_canonical": 85.6
+    },
+    {
+      "model": "MBT (AV)",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "Top-1 classification accuracy",
+      "value_surface": "37.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state of the art on Moments in Time [47]",
+      "value_canonical": 37.26
+    },
+    {
+      "model": "MBT (AV)",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-1",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state of the art on Kinetics [35] and Kinetics Sound [4]",
+      "value_canonical": 80.8
+    },
+    {
+      "model": "MBT (AV)",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Top-5",
+      "value_surface": "94.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state of the art on Kinetics [35] and Kinetics Sound [4]",
+      "value_canonical": 94.6
+    },
+    {
+      "model": "MBT (AV)",
+      "dataset_surface": "Kinetics-Sound",
+      "metric_surface": "Top-1",
+      "value_surface": "85.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state of the art on Kinetics [35] and Kinetics Sound [4]",
+      "value_canonical": 85.0
+    },
+    {
+      "model": "MBT (AV)",
+      "dataset_surface": "Kinetics-Sound",
+      "metric_surface": "Top-5",
+      "value_surface": "96.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to state of the art on Kinetics [35] and Kinetics Sound [4]",
+      "value_canonical": 96.8
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "mini-Audioset",
+      "metric_surface": "Late Fusion",
+      "value_surface": "43.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 43.92
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "Epic-Kitchens",
+      "metric_surface": "Late Fusion",
+      "value_surface": "43.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 43.4
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "VGGSound",
+      "metric_surface": "Late Fusion",
+      "value_surface": "64.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 64.1
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "Late Fusion",
+      "value_surface": "37.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 37.26
+    },
+    {
+      "model": "MBT",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Late Fusion",
+      "value_surface": "80.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 80.8
+    },
+    {
+      "model": "Late Fusion",
+      "dataset_surface": "mini-Audioset",
+      "metric_surface": "Late Fusion",
+      "value_surface": "41.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 41.8
+    },
+    {
+      "model": "Late Fusion",
+      "dataset_surface": "Epic-Kitchens",
+      "metric_surface": "Late Fusion",
+      "value_surface": "37.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 37.9
+    },
+    {
+      "model": "Late Fusion",
+      "dataset_surface": "VGGSound",
+      "metric_surface": "Late Fusion",
+      "value_surface": "63.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 63.3
+    },
+    {
+      "model": "Late Fusion",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "Late Fusion",
+      "value_surface": "36.48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 36.48
+    },
+    {
+      "model": "Late Fusion",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "Late Fusion",
+      "value_surface": "77.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MBT vs late Fusion for different datasets",
+      "value_canonical": 77.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": "trained on TPU accelerators using the Scenic library",
+    "batch_size": 64,
+    "epochs": 50
+  },
+  "methods_used": [
+    "transformer",
+    "self-attention",
+    "cross-attention",
+    "fusion bottlenecks",
+    "patch embedding",
+    "Mixup",
+    "stochastic depth regularisation",
+    "SpecAugment",
+    "random crop",
+    "flip",
+    "colour jitter",
+    "cosine learning rate schedule",
+    "warmup",
+    "synchronous SGD with momentum of 0.9",
+    "Attention Rollout"
+  ],
+  "novel_contributions": [
+    "We propose a new architecture (MBT) for audiovisual fusion.",
+    "We restrict the flow of cross-modal information between latent units through tight fusion ‘bottlenecks’.",
+    "We apply MBT to image and spectrogram patches and explore ablations related to the fusion layer, the sampling of inputs and data size.",
+    "We set the new state-of-the-art for video classification across a number of popular audio-visual benchmarks, including AudioSet, Epic-Kitchens100 and VGGSound."
+  ],
+  "key_claims": [
+    {
+      "claim": "MBT introduces fusion bottlenecks that force cross-modal information to pass through a small number of latent units, reducing quadratic attention cost while improving or matching performance.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "The paper claims state-of-the-art results on multiple audio-visual benchmarks, including AudioSet, Epic-Kitchens100 and VGGSound.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On AudioSet, MBT outperforms the current state of the art by 5.9 mAP.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "Mid fusion outperforms both early fusion and late fusion, and the best bottleneck model uses fusion layer L_f = 8.",
+      "evidence_section": "4.3.1 Fusion strategies",
+      "page": null
+    },
+    {
+      "claim": "Using bottleneck tokens adds negligible extra computation over late fusion, and early-fusion bottleneck fusion outperforms vanilla cross-attention by over 2 mAP with less than half the computational cost.",
+      "evidence_section": "4.3.1 Fusion strategies",
+      "page": null
+    },
+    {
+      "claim": "Multimodal fusion outperforms the higher-performing single modality baseline on AudioSet, Epic-Kitchens and VGGSound.",
+      "evidence_section": "4.4 Results",
+      "page": null
+    },
+    {
+      "claim": "MBT achieves 49.6 mAP on AudioSet, 43.4 action accuracy on Epic-Kitchens-100, and 64.1 Top-1 / 85.6 Top-5 on VGGSound.",
+      "evidence_section": "4.4 Results",
+      "page": null
+    }
+  ]
+}

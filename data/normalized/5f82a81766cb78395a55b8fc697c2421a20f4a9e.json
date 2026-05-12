@@ -1,0 +1,418 @@
+{
+  "paper_id": "5f82a81766cb78395a55b8fc697c2421a20f4a9e",
+  "architecture_summary": "DUS3R/DUST3R is a transformer-based dense 3D reconstruction method that regresses pairwise pointmaps from two RGB images without requiring prior camera intrinsics or poses, then optionally globally aligns multiple pairwise pointmaps into a common 3D frame. The model uses a shared ViT encoder, transformer decoders with cross-attention, and confidence-aware 3D regression to unify monocular reconstruction, multi-view reconstruction, depth estimation, pixel matching, and pose estimation.",
+  "model_variants": [
+    {
+      "name": "DUS3R 224-NoCroCo",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DUS3R 224",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DUS3R 512",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Habitat",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MegaDepth",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ARKitScenes",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Static Scenes 3D",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Blended MVS",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ScanNet++",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CO3D-v2",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Waymo",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "7Scenes",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cambridge Landmarks",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CO3Dv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealEstate10k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DDAD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "KITTI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NYUv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BONN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TUM",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETH3D",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Tanks and Temples",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ScanNet",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "7Scenes",
+      "metric_surface": "median translation and rotation errors",
+      "value_surface": "11/0.20",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Absolute camera pose on 7Scenes [114] and Cambridge-Landmarks [49] datasets. We report the median translation and rotation errors ( cm/^\u0000b0 ) to feature matching (FM) based and end-to-end (E2E) learning-base methods. The best results at each category are in bold.",
+      "value_canonical": 11.0
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "Cambridge-Landmarks",
+      "metric_surface": "median translation and rotation errors",
+      "value_surface": "7/0.24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Absolute camera pose on 7Scenes [114] and Cambridge-Landmarks [49] datasets. We report the median translation and rotation errors ( cm/^\u0000b0 ) to feature matching (FM) based and end-to-end (E2E) learning-base methods. The best results at each category are in bold.",
+      "value_canonical": 7.0
+    },
+    {
+      "model": "DUS3R 512 (w/ PnP)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "RRA@15",
+      "value_surface": "94.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 94.3
+    },
+    {
+      "model": "DUS3R 512 (w/ PnP)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "RTA@15",
+      "value_surface": "88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 88.4
+    },
+    {
+      "model": "DUS3R 512 (w/ PnP)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "mAA(30)",
+      "value_surface": "77.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 77.2
+    },
+    {
+      "model": "DUS3R 512 (w/ GA)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "RRA@15",
+      "value_surface": "96.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 96.2
+    },
+    {
+      "model": "DUS3R 512 (w/ GA)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "RTA@15",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 86.8
+    },
+    {
+      "model": "DUS3R 512 (w/ GA)",
+      "dataset_surface": "Co3Dv2",
+      "metric_surface": "mAA(30)",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 76.7
+    },
+    {
+      "model": "DUS3R 512 (w/ PnP)",
+      "dataset_surface": "RealEstate10K",
+      "metric_surface": "mAA(30)",
+      "value_surface": "61.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 61.2
+    },
+    {
+      "model": "DUS3R 512 (w/ GA)",
+      "dataset_surface": "RealEstate10K",
+      "metric_surface": "mAA(30)",
+      "value_surface": "67.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 67.7
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "KITTI",
+      "metric_surface": "rel",
+      "value_surface": "13.88",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 13.88
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "KITTI",
+      "metric_surface": "\u0003b4_{1.25}",
+      "value_surface": "81.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 81.17
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "BONN",
+      "metric_surface": "rel",
+      "value_surface": "10.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 10.74
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "BONN",
+      "metric_surface": "\u0003b4_{1.25}",
+      "value_surface": "<b>10.74</b>",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 10.74
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "rel",
+      "value_surface": "86.60",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 86.6
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "\u0003b4_{1.25}",
+      "value_surface": "<b>86.60</b>",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 86.6
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "TUM",
+      "metric_surface": "rel",
+      "value_surface": "8.88",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 8.88
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "TUM",
+      "metric_surface": "\u0003b4_{1.25}",
+      "value_surface": "93.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Monocular depth estimation on multiple benchmarks. D-Supervised, SS-Self-supervised, T-transfer (zero-shot). (Parentheses refers to training on the same set. Right: Multi-view pose regression on the Co3Dv2 [94] and RealEst10K [186] with 10 random frames.",
+      "value_canonical": 93.56
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "DTU",
+      "metric_surface": "acc.",
+      "value_surface": "2.677",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MVS results on the DTU dataset, in mm. Traditional handcrafted methods (a) have been overcome by learning-based approaches (b) that train on this specific domain.",
+      "value_canonical": 2.677
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "DTU",
+      "metric_surface": "Comp.",
+      "value_surface": "0.805",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MVS results on the DTU dataset, in mm. Traditional handcrafted methods (a) have been overcome by learning-based approaches (b) that train on this specific domain.",
+      "value_canonical": 0.805
+    },
+    {
+      "model": "DUS3R 512",
+      "dataset_surface": "DTU",
+      "metric_surface": "Overall",
+      "value_surface": "1.741",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "MVS results on the DTU dataset, in mm. Traditional handcrafted methods (a) have been overcome by learning-based approaches (b) that train on this specific domain.",
+      "value_canonical": 1.741
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 64,
+    "epochs": 100
+  },
+  "methods_used": [
+    "Transformer encoders and decoders",
+    "ViT encoder",
+    "cross-attention",
+    "self-attention",
+    "MLP",
+    "regression loss",
+    "confidence-aware loss",
+    "pointmaps",
+    "global alignment",
+    "bundle adjustment",
+    "nearest neighbor search",
+    "Procrustes alignment",
+    "RANSAC",
+    "PnP-RANSAC",
+    "data augmentation",
+    "random color jittering",
+    "random center crops",
+    "CroCo pretraining",
+    "DPT head",
+    "AdamW"
+  ],
+  "novel_contributions": [
+    "the first holistic end-to-end 3D reconstruction pipeline from un-calibrated and un-posed images, that unifies monocular and binocular 3D reconstruction",
+    "the pointmap representation for MVS applications, that enables the network to predict the 3D shape in a canonical frame, while preserving the implicit relationship between pixels and the scene",
+    "an optimization procedure to globally align pointmaps in the context of multi-view 3D reconstruction",
+    "an all-in-one model that achieves state-of-the-art results on monocular and multi-view depth benchmarks, as well as multi-view camera pose estimation"
+  ],
+  "key_claims": [
+    {
+      "claim": "DUS3R introduces a radically novel paradigm for dense and unconstrained stereo 3D reconstruction that operates without prior information about camera calibration nor viewpoint poses.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The formulation unifies the monocular and binocular reconstruction cases and can recover pixel matches, relative and absolute cameras from pointmaps.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The network architecture is based on standard Transformer encoders and decoders and leverages powerful pretrained models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The proposed method sets new SoTAs on monocular/multi-view depth estimation as well as relative pose estimation.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DUS3R uses a shared ViT encoder, cross-attention decoders, and confidence-aware 3D regression to predict aligned pointmaps from image pairs.",
+      "evidence_section": "3.1. Overview / 3.2. Training Objective",
+      "page": null
+    },
+    {
+      "claim": "Global alignment extends pairwise pointmaps to multi-view reconstruction by optimizing 3D alignment rather than reprojection error.",
+      "evidence_section": "3.4. Global Alignment",
+      "page": null
+    },
+    {
+      "claim": "The model is trained on a mixture of eight datasets and 8.5M pairs, with CroCo v2 initialization and standard data augmentation.",
+      "evidence_section": "4. Experiments with DUST3R / F. Training details",
+      "page": null
+    },
+    {
+      "claim": "DUS3R achieves strong zero-shot performance on monocular depth, multi-view pose estimation, and multi-view depth, including state-of-the-art accuracy on ETH-3D.",
+      "evidence_section": "4.3. Monocular Depth / 4.4. Multi-view Depth / 4.2. Multi-view Pose Estimation",
+      "page": null
+    }
+  ]
+}

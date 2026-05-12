@@ -1,0 +1,503 @@
+{
+  "paper_id": "a09cbcaac305884f043810afc4fa4053099b5970",
+  "architecture_summary": "The paper explores a plain, non-hierarchical Vision Transformer backbone for object detection, using a simple feature pyramid built from the last feature map and window attention with a few cross-window propagation blocks during fine-tuning. The detector, ViTDet, keeps pre-training unchanged and adapts only at fine-tuning time.",
+  "model_variants": [
+    {
+      "name": "ViT-B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-L",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-H",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViTDet, ViT-B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViTDet, ViT-L",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViTDet, ViT-H",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "LVIS",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "61.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 61.3
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "53.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 53.1
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 48.1
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask_rare",
+      "value_surface": "36.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 36.9
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^box",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 53.4
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "51.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on feature pyramid design with plain ViT backbones, using Mask R-CNN evaluated on COCO",
+      "value_canonical": 51.2
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "45.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on feature pyramid design with plain ViT backbones, using Mask R-CNN evaluated on COCO",
+      "value_canonical": 45.5
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "54.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on feature pyramid design with plain ViT backbones, using Mask R-CNN evaluated on COCO",
+      "value_canonical": 54.6
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on feature pyramid design with plain ViT backbones, using Mask R-CNN evaluated on COCO",
+      "value_canonical": 48.6
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "54.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on backbone adaptation strategies using a plain ViT backbone and Mask R-CNN evaluated on COCO",
+      "value_canonical": 54.8
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on backbone adaptation strategies using a plain ViT backbone and Mask R-CNN evaluated on COCO",
+      "value_canonical": 48.8
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "55.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on backbone adaptation strategies using a plain ViT backbone and Mask R-CNN evaluated on COCO",
+      "value_canonical": 55.1
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on backbone adaptation strategies using a plain ViT backbone and Mask R-CNN evaluated on COCO",
+      "value_canonical": 48.9
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "51.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 51.6
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "45.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 45.9
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "55.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 55.6
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "49.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 49.2
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "56.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 56.7
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "50.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparisons of plain vs. hierarchical backbones using Mask R-CNN and Cascade Mask R-CNN on COCO",
+      "value_canonical": 50.1
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "56.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 56.0
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 48.0
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "57.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 57.3
+    },
+    {
+      "model": "ViTDet, ViT-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "49.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 49.4
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "59.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 59.6
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "51.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 51.1
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "60.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 60.4
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "52.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 52.2
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "60.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 60.4
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "52.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 52.0
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^box",
+      "value_surface": "61.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 61.3
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^mask",
+      "value_surface": "53.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on COCO",
+      "value_canonical": 53.1
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask",
+      "value_surface": "46.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 46.0
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask_rare",
+      "value_surface": "34.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 34.3
+    },
+    {
+      "model": "ViTDet, ViT-L",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^box",
+      "value_surface": "51.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 51.2
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask",
+      "value_surface": "48.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 48.1
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^mask_rare",
+      "value_surface": "36.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 36.9
+    },
+    {
+      "model": "ViTDet, ViT-H",
+      "dataset_surface": "LVIS",
+      "metric_surface": "AP^box",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "System-level comparisons with the leading results on LVIS",
+      "value_canonical": 53.4
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 64,
+    "epochs": 100
+  },
+  "methods_used": [
+    "plain, non-hierarchical Vision Transformer",
+    "simple feature pyramid",
+    "window attention",
+    "cross-window propagation blocks",
+    "global self-attention",
+    "convolutional propagation",
+    "Masked Autoencoders (MAE)",
+    "Mask R-CNN",
+    "Cascade Mask R-CNN",
+    "RetinaNet",
+    "large-scale jittering",
+    "AdamW",
+    "soft-nms",
+    "relative position biases",
+    "repeat factor sampling",
+    "federated loss"
+  ],
+  "novel_contributions": [
+    "We explore the plain, non-hierarchical Vision Transformer (ViT) as a backbone network for object detection.",
+    "We build a simple feature pyramid from only the last feature map of a plain ViT backbone, without the common FPN design.",
+    "We use non-overlapping window attention without shifting, aided with very few cross-window propagation blocks.",
+    "ViTDet can compete with previous leading hierarchical-backbone methods, reaching up to 61.3 AP^box on COCO using only ImageNet-1K pre-training.",
+    "The paper demonstrates competitive results on the long-tailed LVIS detection dataset."
+  ],
+  "key_claims": [
+    {
+      "claim": "A plain, non-hierarchical ViT backbone can be adapted for object detection with minimal changes during fine-tuning, without redesigning pre-training.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "A simple feature pyramid built from a single-scale feature map is sufficient, and the common FPN design is not necessary for a plain ViT backbone.",
+      "evidence_section": "Abstract; 3 Method",
+      "page": null
+    },
+    {
+      "claim": "Window attention without shifting works well when information is propagated across windows by only a few cross-window blocks.",
+      "evidence_section": "Abstract; 3 Method",
+      "page": null
+    },
+    {
+      "claim": "With MAE pre-training on ImageNet-1K, ViTDet can compete with leading hierarchical-backbone detectors and reaches up to 61.3 AP^box on COCO.",
+      "evidence_section": "Abstract; 4.3 Comparisons with Previous Systems",
+      "page": null
+    },
+    {
+      "claim": "ViTDet shows competitive results on LVIS as well, despite the long-tailed distribution.",
+      "evidence_section": "Abstract; 4.3 Comparisons with Previous Systems",
+      "page": null
+    },
+    {
+      "claim": "MAE pre-training on IN-1K gives large gains over supervised pre-training for plain ViT backbones on COCO.",
+      "evidence_section": "4 Experiments",
+      "page": null
+    }
+  ]
+}

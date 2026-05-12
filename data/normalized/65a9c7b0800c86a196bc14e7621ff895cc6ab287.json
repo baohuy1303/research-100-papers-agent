@@ -1,0 +1,738 @@
+{
+  "paper_id": "65a9c7b0800c86a196bc14e7621ff895cc6ab287",
+  "architecture_summary": "ViLBERT extends BERT to a multi-modal two-stream model that processes visual and textual inputs in separate streams and lets them interact through co-attentional transformer layers. It pretrains on Conceptual Captions with masked multi-modal modelling and multi-modal alignment prediction, then transfers to vision-and-language tasks with only minor task-specific heads.",
+  "model_variants": [
+    {
+      "name": "BERT_BASE",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViLBERT",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Single-Stream",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViBERT†",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViLBERT (2-layer)",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViLBERT (4-layer)",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViLBERT (6-layer)",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViLBERT (8-layer)",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "BookCorpus",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "English Wikipedia",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "VQA 2.0",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "VCR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RefCOCO+",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30k",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "VQA [3]",
+      "metric_surface": "test-dev",
+      "value_surface": "70.55 (70.92)",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 70.55
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→A",
+      "value_surface": "72.42 (73.3)",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 72.42
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "QA→R",
+      "value_surface": "74.47 (74.6)",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 74.47
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→AR",
+      "value_surface": "74.47 (74.6)",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 74.47
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ReCOCO+ [32]",
+      "metric_surface": "val",
+      "value_surface": "54.04 (54.8)",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 54.04
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ReCOCO+ [32]",
+      "metric_surface": "testA",
+      "value_surface": "72.34",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 72.34
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ReCOCO+ [32]",
+      "metric_surface": "testB",
+      "value_surface": "78.52",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 78.52
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "62.61",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 62.61
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "58.20",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 58.2
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "84.90",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 84.9
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "91.52",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 91.52
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "31.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": 31.86
+    },
+    {
+      "model": "ViLBERT",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "61.12 72.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Transfer task results for our ViLBERT model compared with existing state-of-the-art and sensible architectural ablations. † indicates models without pretraining on Conceptual Captions. For VCR and VQA which have private test sets, we report test results (in parentheses) only for our full model. Our full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "value_canonical": null
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "VQA [3]",
+      "metric_surface": "test-dev",
+      "value_surface": "69.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 69.92
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "VQA [3]",
+      "metric_surface": "test-dev",
+      "value_surface": "70.22",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 70.22
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "VQA [3]",
+      "metric_surface": "test-dev",
+      "value_surface": "70.55",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 70.55
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "VQA [3]",
+      "metric_surface": "test-dev",
+      "value_surface": "70.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 70.47
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→A",
+      "value_surface": "72.44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.44
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→A",
+      "value_surface": "72.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.45
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→A",
+      "value_surface": "72.42",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.42
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→A",
+      "value_surface": "72.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.33
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "QA→R",
+      "value_surface": "74.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 74.8
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "QA→R",
+      "value_surface": "74.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 74.0
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "QA→R",
+      "value_surface": "74.47",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 74.47
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "QA→R",
+      "value_surface": "74.15",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 74.15
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→AR",
+      "value_surface": "54.40",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 54.4
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→AR",
+      "value_surface": "53.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 53.82
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→AR",
+      "value_surface": "54.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 54.04
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "VCR [25]",
+      "metric_surface": "Q→AR",
+      "value_surface": "53.79",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 53.79
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "RefCOCO+ [32]",
+      "metric_surface": "val",
+      "value_surface": "71.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 71.74
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "RefCOCO+ [32]",
+      "metric_surface": "val",
+      "value_surface": "72.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.07
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "RefCOCO+ [32]",
+      "metric_surface": "val",
+      "value_surface": "72.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.34
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "RefCOCO+ [32]",
+      "metric_surface": "val",
+      "value_surface": "71.66",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 71.66
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "55.68",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 55.68
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "55.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 55.38
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "58.20",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 58.2
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "58.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 58.78
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "84.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 84.26
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "84.10",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 84.1
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "84.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 84.9
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "85.60",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 85.6
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "90.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 90.56
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "90.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 90.62
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "91.52",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 91.52
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "91.42",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 91.42
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "26.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 26.14
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "26.28",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 26.28
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "31.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 31.86
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R1",
+      "value_surface": "32.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 32.8
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "56.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 56.04
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "54.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 54.34
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "61.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 61.12
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R5",
+      "value_surface": "63.38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 63.38
+    },
+    {
+      "model": "ViLBERT (2-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "68.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 68.8
+    },
+    {
+      "model": "ViLBERT (4-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "66.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 66.08
+    },
+    {
+      "model": "ViLBERT (6-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "72.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 72.8
+    },
+    {
+      "model": "ViLBERT (8-layer)",
+      "dataset_surface": "ZS Image Retrieval [26]",
+      "metric_surface": "R10",
+      "value_surface": "74.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study of the depth of our model with respect to the number of CO-TRM→TRM blocks (shown in a dashed box in Fig. 1). We find that different tasks perform better at different network depths – implying they may need more or less context aggregation.",
+      "value_canonical": 74.62
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 TitanX GPUs",
+    "batch_size": 512,
+    "epochs": 10
+  },
+  "methods_used": [
+    "BERT",
+    "two-stream architecture",
+    "co-attentional transformer layers",
+    "masked multi-modal modelling",
+    "multi-modal alignment prediction",
+    "Faster R-CNN",
+    "ResNet-101",
+    "Adam optimizer",
+    "linear decay learning rate schedule with warm up",
+    "binary cross-entropy loss",
+    "cross-entropy loss",
+    "KL divergence",
+    "element-wise product",
+    "multi-label classification",
+    "softmax"
+  ],
+  "novel_contributions": [
+    "a multi-modal two-stream extension of BERT for vision-and-language",
+    "novel co-attentional transformer layers for cross-modal interaction",
+    "pretraining on Conceptual Captions with masked multi-modal modelling and multi-modal alignment prediction",
+    "a simple transfer setup that achieves state-of-the-art on four established vision-and-language tasks"
+  ],
+  "key_claims": [
+    {
+      "claim": "ViLBERT extends BERT to a two-stream vision-and-language model with co-attentional transformer layers that enable sparse interaction between modalities.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model is pretrained on Conceptual Captions using two proxy tasks: masked multi-modal modelling and multi-modal alignment prediction.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViLBERT achieves state-of-the-art on all four transferred tasks: visual question answering, visual commonsense reasoning, referring expressions, and caption-based image retrieval.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that the full ViLBERT model outperforms task-specific state-of-the-art models across all tasks.",
+      "evidence_section": "4 Results and Analysis",
+      "page": null
+    },
+    {
+      "claim": "The two-stream architecture improves performance over a single-stream model, and pretraining on Conceptual Captions further improves results.",
+      "evidence_section": "4 Results and Analysis",
+      "page": null
+    },
+    {
+      "claim": "Increasing the depth of the visual stream helps some tasks such as VQA and image retrieval, while other tasks benefit from shallower models.",
+      "evidence_section": "4 Results and Analysis",
+      "page": null
+    },
+    {
+      "claim": "Performance improves monotonically as more of the Conceptual Captions dataset is used during pretraining.",
+      "evidence_section": "4 Results and Analysis",
+      "page": null
+    }
+  ]
+}

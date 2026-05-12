@@ -1,0 +1,382 @@
+{
+  "paper_id": "2bbffec6395d3a8f81f5fe9137f7e078bd0f0336",
+  "architecture_summary": "HAT is a Hybrid Attention Transformer for single image super-resolution that combines channel attention with window-based self-attention, and adds an overlapping cross-attention module to strengthen cross-window interaction. It also uses a same-task pre-training strategy on ImageNet before fine-tuning on SR datasets.",
+  "model_variants": [
+    {
+      "name": "HAT-S",
+      "param_count_surface": "9.6M",
+      "page": null,
+      "param_count_millions": 9.6
+    },
+    {
+      "name": "HAT",
+      "param_count_surface": "20.8M",
+      "page": null,
+      "param_count_millions": 20.8
+    },
+    {
+      "name": "HAT-L",
+      "param_count_surface": "41.0M",
+      "page": null,
+      "param_count_millions": 41.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "DF2K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "DIV2K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Flickr2K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Set5",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set14",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BSD100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Urban100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Manga109",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "HAT-S (ours)",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.58",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 38.58
+    },
+    {
+      "model": "HAT-S (ours)",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "34.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 34.7
+    },
+    {
+      "model": "HAT-S (ours)",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 32.59
+    },
+    {
+      "model": "HAT-S (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "34.31",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 34.31
+    },
+    {
+      "model": "HAT-S (ours)",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "40.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 40.14
+    },
+    {
+      "model": "HAT (ours)",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 38.63
+    },
+    {
+      "model": "HAT (ours)",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "34.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 34.86
+    },
+    {
+      "model": "HAT (ours)",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 32.62
+    },
+    {
+      "model": "HAT (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "34.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 34.45
+    },
+    {
+      "model": "HAT (ours)",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "40.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 40.26
+    },
+    {
+      "model": "HAT† (ours)",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.73",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 38.73
+    },
+    {
+      "model": "HAT† (ours)",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "35.13",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 35.13
+    },
+    {
+      "model": "HAT† (ours)",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 32.69
+    },
+    {
+      "model": "HAT† (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "34.81",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 34.81
+    },
+    {
+      "model": "HAT† (ours)",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "40.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 40.71
+    },
+    {
+      "model": "HAT-L† (ours)",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 38.91
+    },
+    {
+      "model": "HAT-L† (ours)",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "35.29",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 35.29
+    },
+    {
+      "model": "HAT-L† (ours)",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.74",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 32.74
+    },
+    {
+      "model": "HAT-L† (ours)",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "35.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 35.09
+    },
+    {
+      "model": "HAT-L† (ours)",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "41.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art methods on benchmark datasets. The top three results are marked in red, blue and green. “†” indicates that methods adopt pre-training strategy on ImageNet.",
+      "value_canonical": 41.01
+    },
+    {
+      "model": "HAT",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "27.97dB",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the proposed OCAB and CAB.",
+      "value_canonical": null
+    },
+    {
+      "model": "HAT",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "33.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on PSNR(dB) of HAT using two kinds of pre-training strategies on ×4 SR under the same training setting. The full ImageNet dataset is adopted to perform pre-training and DF2K dataset is used for fine-tuning.",
+      "value_canonical": 33.07
+    },
+    {
+      "model": "HAT",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "29.34",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on PSNR(dB) of HAT using two kinds of pre-training strategies on ×4 SR under the same training setting. The full ImageNet dataset is adopted to perform pre-training and DF2K dataset is used for fine-tuning.",
+      "value_canonical": 29.34
+    },
+    {
+      "model": "HAT",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "28.28",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative results on PSNR(dB) of HAT using two kinds of pre-training strategies on ×4 SR under the same training setting. The full ImageNet dataset is adopted to perform pre-training and DF2K dataset is used for fine-tuning.",
+      "value_canonical": 28.28
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 32,
+    "epochs": null
+  },
+  "methods_used": [
+    "channel attention",
+    "window-based self-attention",
+    "shifted window partitioning",
+    "overlapping cross-attention",
+    "pixel-shuffle",
+    "L1 loss",
+    "same-task pre-training",
+    "random rotation",
+    "horizontally flipping",
+    "Adam optimizer",
+    "GELU activation",
+    "LayerNorm",
+    "MLP",
+    "relative position encoding"
+  ],
+  "novel_contributions": [
+    "We propose a novel Hybrid Attention Transformer (HAT) that combines self-attention, channel attention and a new overlapping cross-attention to activate more pixels for better reconstruction.",
+    "We propose an effective same-task pre-training strategy to further exploit the potential of SR Transformer and show the importance of large-scale data pre-training for the task.",
+    "Our method achieves state-of-the-art performance.",
+    "By further scaling up HAT to build a big model, we greatly extend the performance upper bound of the SR task."
+  ],
+  "key_claims": [
+    {
+      "claim": "Transformer-based SR networks can only utilize a limited spatial range of input information according to attribution analysis, motivating HAT.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "HAT combines channel attention and window-based self-attention, and adds overlapping cross-attention to better aggregate cross-window information.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces a same-task pre-training strategy that pre-trains on a large-scale dataset for the same SR task before fine-tuning.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "HAT significantly outperforms state-of-the-art methods by more than 1dB.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Using a larger window size of 16 × 16 improves performance and increases the range of used pixels.",
+      "evidence_section": "4.2. Effects of different window sizes",
+      "page": null
+    },
+    {
+      "claim": "OCAB and CAB each improve Urban100 ×4 SR, and together yield the best DI and SSIM in the ablation study.",
+      "evidence_section": "4.3. Ablation Study",
+      "page": null
+    },
+    {
+      "claim": "HAT outperforms SwinIR and EDT on all benchmark datasets in Table 6, with larger gains on Urban100 and Manga109.",
+      "evidence_section": "4.4. Comparison with State-of-the-Art Methods",
+      "page": null
+    },
+    {
+      "claim": "Same-task pre-training performs better than multi-related-task pre-training for HAT.",
+      "evidence_section": "4.5. Study on the pre-training strategy",
+      "page": null
+    }
+  ]
+}

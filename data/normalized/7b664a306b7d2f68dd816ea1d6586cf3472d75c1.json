@@ -1,0 +1,409 @@
+{
+  "paper_id": "7b664a306b7d2f68dd816ea1d6586cf3472d75c1",
+  "architecture_summary": "The paper replaces ViT’s original patchify stem, implemented as a stride-p p x p convolution, with a lightweight convolutional stem made of stacked stride-two 3 x 3 convolutions plus a final 1 x 1 convolution, while removing one transformer block to keep flops and runtime roughly matched.",
+  "model_variants": [
+    {
+      "name": "ViT_P",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT_C",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT_P-1GF",
+      "param_count_surface": "4.8",
+      "page": null,
+      "param_count_millions": 4.8
+    },
+    {
+      "name": "ViT_C-1GF",
+      "param_count_surface": "4.6",
+      "page": null,
+      "param_count_millions": 4.6
+    },
+    {
+      "name": "ViT_P-4GF",
+      "param_count_surface": "18.5",
+      "page": null,
+      "param_count_millions": 18.5
+    },
+    {
+      "name": "ViT_C-4GF",
+      "param_count_surface": "17.8",
+      "page": null,
+      "param_count_millions": 17.8
+    },
+    {
+      "name": "ViT_P-18GF",
+      "param_count_surface": "86.7",
+      "page": null,
+      "param_count_millions": 86.7
+    },
+    {
+      "name": "ViT_C-18GF",
+      "param_count_surface": "81.6",
+      "page": null,
+      "param_count_millions": 81.6
+    },
+    {
+      "name": "ViT_P-36GF",
+      "param_count_surface": "178.4",
+      "page": null,
+      "param_count_millions": 178.4
+    },
+    {
+      "name": "ViT_C-36GF",
+      "param_count_surface": "167.8",
+      "page": null,
+      "param_count_millions": 167.8
+    },
+    {
+      "name": "ViT_P-16GF",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT_C-16GF",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT_P-72GF",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT_C-72GF",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-V2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ViT_C-1GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "24.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 24.7
+    },
+    {
+      "model": "ViT_P-1GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "27.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 27.7
+    },
+    {
+      "model": "ViT_C-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "18.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 18.6
+    },
+    {
+      "model": "ViT_P-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "19.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 19.6
+    },
+    {
+      "model": "ViT_C-18GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "17.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 17.0
+    },
+    {
+      "model": "ViT_P-18GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "17.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 17.9
+    },
+    {
+      "model": "ViT_C-36GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "16.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 16.8
+    },
+    {
+      "model": "ViT_P-36GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "18.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 18.2
+    },
+    {
+      "model": "ViT_C-1GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "-",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": null
+    },
+    {
+      "model": "ViT_P-1GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "-",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": null
+    },
+    {
+      "model": "ViT_C-4GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "18.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 18.8
+    },
+    {
+      "model": "ViT_P-4GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "20.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 20.6
+    },
+    {
+      "model": "ViT_C-18GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "15.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 15.1
+    },
+    {
+      "model": "ViT_P-18GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "16.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 16.4
+    },
+    {
+      "model": "ViT_C-36GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "14.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 14.2
+    },
+    {
+      "model": "ViT_P-36GF",
+      "dataset_surface": "ImageNet-21k",
+      "metric_surface": "top-1 error",
+      "value_surface": "15.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 15.1
+    },
+    {
+      "model": "ViT_P-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 err.",
+      "value_surface": "23.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Stem normalization and non-linearity",
+      "value_canonical": 23.2
+    },
+    {
+      "model": "ViT_P(bn)-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 err.",
+      "value_surface": "23.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Stem normalization and non-linearity",
+      "value_canonical": 23.3
+    },
+    {
+      "model": "ViT_C-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 err.",
+      "value_surface": "20.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Stem normalization and non-linearity",
+      "value_canonical": 20.9
+    },
+    {
+      "model": "ViT_C(ln)-4GF",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 err.",
+      "value_surface": "21.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Stem normalization and non-linearity",
+      "value_canonical": 21.1
+    },
+    {
+      "model": "ViT_P",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "14.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 14.2
+    },
+    {
+      "model": "ViT_C",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 error",
+      "value_surface": "13.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Peak performance (grouped by model family)",
+      "value_canonical": 13.6
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 32GB Volta GPUs",
+    "batch_size": 2048,
+    "epochs": 400
+  },
+  "methods_used": [
+    "Vision Transformer (ViT)",
+    "multi-headed self-attention",
+    "patchify stem",
+    "convolutional stem",
+    "stride-two 3 x 3 convolutions",
+    "1 x 1 convolution",
+    "AdamW",
+    "SGD",
+    "AutoAugment",
+    "mixup",
+    "CutMix",
+    "label smoothing",
+    "batch norm",
+    "ReLU",
+    "layer norm",
+    "exponential moving average (EMA)",
+    "cosine learning rate decay",
+    "linear learning rate warm-up",
+    "error distribution functions (EDFs)"
+  ],
+  "novel_contributions": [
+    "We conjecture that ViT’s substandard optimizability is primarily caused by the patchify stem.",
+    "We introduce a minimal convolutional stem replacement for ViT that keeps flops and runtime roughly matched by removing one transformer block.",
+    "We show that the convolutional stem dramatically increases optimization stability and improves peak performance by ~1-2% top-1 accuracy on ImageNet-1k.",
+    "We show that the improvement holds across model complexities from 1G to 36G flops and dataset scales from ImageNet-1k to ImageNet-21k.",
+    "We recommend using a standard, lightweight convolutional stem for ViT models in this regime as a more robust architectural choice."
+  ],
+  "key_claims": [
+    {
+      "claim": "Replacing ViT’s patchify stem with a lightweight convolutional stem makes optimization much more stable, faster, and less sensitive to learning rate and weight decay.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The convolutional stem improves peak ImageNet top-1 accuracy by ~1-2% while maintaining flops and runtime.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The improvement is observed across model complexities from 1G to 36G flops and dataset scales from ImageNet-1k to ImageNet-21k.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViT_C enables the use of either AdamW or SGD without a significant accuracy drop, unlike ViT_P.",
+      "evidence_section": "Figure 1",
+      "page": null
+    },
+    {
+      "claim": "ViT_C converges faster than ViT_P on ImageNet-1k across 50 to 400 epoch schedules.",
+      "evidence_section": "5.1 Training Length Stability",
+      "page": null
+    },
+    {
+      "claim": "ViT_C substantially reduces the optimizer gap between AdamW and SGD compared with ViT_P.",
+      "evidence_section": "5.2 Optimizer Stability",
+      "page": null
+    },
+    {
+      "claim": "ViT_C improves learning rate and weight decay stability over ViT_P and matches or exceeds RegNetY in the EDF analysis.",
+      "evidence_section": "5.3 Learning Rate and Weight Decay Stability",
+      "page": null
+    },
+    {
+      "claim": "Under the controlled peak-performance comparison, ViT_C outperforms state-of-the-art CNNs, while ViT_P does not.",
+      "evidence_section": "6 Peak Performance",
+      "page": null
+    }
+  ]
+}

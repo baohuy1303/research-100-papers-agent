@@ -1,0 +1,154 @@
+{
+  "paper_id": "0acd7ff5817d29839b40197f7a4b600b7fba24e4",
+  "architecture_summary": "The paper proposes a novel Transformer relevancy propagation method based on Deep Taylor Decomposition and LRP, then integrates relevance and gradients through attention layers and skip connections to produce class-specific visualizations for self-attention models.",
+  "model_variants": [
+    {
+      "name": "BERT-base",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "ViT-base",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Segmentation",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Movies Reviews",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ERASER",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Ours",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "AUC",
+      "value_surface": "54.16",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positive and Negative perturbation AUC results (percents) for the predicted and target classes, on the ImageNet [31] validation set. For positive perturbation lower is better, and for negative perturbation higher is better.",
+      "value_canonical": 54.16
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "AUC",
+      "value_surface": "17.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Positive and Negative perturbation AUC results (percents) for the predicted and target classes, on the ImageNet [31] validation set. For positive perturbation lower is better, and for negative perturbation higher is better.",
+      "value_canonical": 17.03
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ImageNet-Segmentation",
+      "metric_surface": "pixel accuracy",
+      "value_surface": "79.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation performance on the ImageNet-segmentation [16] dataset (percent). Higher is better.",
+      "value_canonical": 79.7
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ImageNet-Segmentation",
+      "metric_surface": "mAP",
+      "value_surface": "86.03",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation performance on the ImageNet-segmentation [16] dataset (percent). Higher is better.",
+      "value_canonical": 86.03
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ImageNet-Segmentation",
+      "metric_surface": "mIoU",
+      "value_surface": "61.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation performance on the ImageNet-segmentation [16] dataset (percent). Higher is better.",
+      "value_canonical": 61.95
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "Deep Taylor Decomposition",
+    "Layer-wise Relevance Propagation",
+    "attention rollout",
+    "GradCAM",
+    "bilinear interpolation",
+    "Hadamard product",
+    "softmax",
+    "skip connections",
+    "matrix multiplication",
+    "gradient information"
+  ],
+  "novel_contributions": [
+    "a novel way to compute relevancy for Transformer networks",
+    "a relevancy propagation rule applicable to both positive and negative attributions",
+    "a normalization term for non-parametric layers, such as add and matrix multiplication",
+    "a class-specific visualization method for self-attention models",
+    "benchmarking on visual Transformer networks and a text classification problem"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper introduces a new Transformer interpretability method that propagates relevance through attention layers and skip connections while maintaining total relevancy across layers.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The method is class-specific by construction and is presented as the only Transformer visualization method with this property, as far as the authors can ascertain.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "The method is evaluated on ImageNet validation, ImageNet-Segmentation, and the Movie Reviews benchmark from ERASER.",
+      "evidence_section": "4. Experiments",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet perturbation tests, the method achieves the best AUC among the compared explainability methods.",
+      "evidence_section": "4.1. Results",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-Segmentation, the method outperforms all baselines on pixel accuracy, mAP, and mIoU.",
+      "evidence_section": "4.1. Results",
+      "page": null
+    },
+    {
+      "claim": "On the Movie Reviews rationale extraction task, the method consistently outperforms the baselines across top-k token settings.",
+      "evidence_section": "4.1. Results",
+      "page": null
+    },
+    {
+      "claim": "The ablation study shows that combining relevance, gradients, and rollout contributes to the strongest performance.",
+      "evidence_section": "4.1. Results",
+      "page": null
+    }
+  ]
+}

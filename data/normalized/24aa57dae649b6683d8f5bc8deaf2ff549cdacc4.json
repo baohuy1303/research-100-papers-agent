@@ -1,0 +1,515 @@
+{
+  "paper_id": "24aa57dae649b6683d8f5bc8deaf2ff549cdacc4",
+  "architecture_summary": "This is a survey paper that comprehensively reviews applications of Transformers in medical imaging, covering architectural designs, task-specific challenges, recent trends, open problems, and future directions across segmentation, classification, detection, reconstruction, synthesis, registration, and clinical report generation.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "ISIC 2016+PH2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ISIC 2018",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ISIC 2016-2018",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PH2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Tooth Root segmentation dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "KiTS21",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "echo-cardiographs",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2019",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2020",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2021",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cholangiocarcinoma",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PAIP liver histopathological dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Synapse",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ACDC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BTCV",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COVID-19 lungs POCUS dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COVID-19 CXR datasets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COVID-19-CT dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COVID-19-CT-2A",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CheXpert",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CheXpert",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TCGA-NSCLC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TCGA-R",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "APTOS2019",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RFMiD2020",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Messidor-1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Messidor-2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "EyePACS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETIS-LARIB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CVC-ColonDB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Mayo LDCT dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AAPM-Mayo Clinic dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "clinical human brain PET dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "fastMRI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "uiMRI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IXI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MRI brain datasets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NIH-AAPM dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Hamlyn Centre Endoscopic Video Dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DaVinci robotic surgery dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "large-scale infant MRI dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "diabetic retinopathy dataset provided by Hajeb et al.",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "multi-modal pelvic MRI-CT dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IU Chest X-ray dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DAISI dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IU-Xray",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MIMIC-CXR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Open-IU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MIMIC-CXR",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "TransUNet",
+      "dataset_surface": "PAIP liver histopathological dataset",
+      "metric_surface": "average jaccard index",
+      "value_surface": "0.77±0.12",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of Transformer-based semantic segmentation methods for pathological image segmentation in terms of average jaccard index on PAIP liver histopathological dataset [130].",
+      "value_canonical": 0.77
+    },
+    {
+      "model": "Swin Transformer (Base)",
+      "dataset_surface": "PAIP liver histopathological dataset",
+      "metric_surface": "average jaccard index",
+      "value_surface": "0.79±0.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of Transformer-based semantic segmentation methods for pathological image segmentation in terms of average jaccard index on PAIP liver histopathological dataset [130].",
+      "value_canonical": 0.79
+    },
+    {
+      "model": "Segmenter",
+      "dataset_surface": "PAIP liver histopathological dataset",
+      "metric_surface": "average jaccard index",
+      "value_surface": "0.80±0.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation of Transformer-based semantic segmentation methods for pathological image segmentation in terms of average jaccard index on PAIP liver histopathological dataset [130].",
+      "value_canonical": 0.8
+    },
+    {
+      "model": "TransBTS",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "84.99",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 84.99
+    },
+    {
+      "model": "Bitr-UNet",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "86.20",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 86.2
+    },
+    {
+      "model": "UNETR",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "84.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 84.51
+    },
+    {
+      "model": "nnFormer",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "86.56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 86.56
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "88.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 88.97
+    },
+    {
+      "model": "VT-UNET-T",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "86.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 86.82
+    },
+    {
+      "model": "VT-UNET-S",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "87.00",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 87.0
+    },
+    {
+      "model": "VT-UNET-B",
+      "dataset_surface": "BraTS 2021",
+      "metric_surface": "Dice Score (Avg.)",
+      "value_surface": "88.07",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Segmentation results and parameters of various Transformer-based models on 3D Multimodal Brain Tumor BraTS 2021 dataset [140].",
+      "value_canonical": 88.07
+    },
+    {
+      "model": "POCFormer",
+      "dataset_surface": "COVID-19 lungs POCUS dataset",
+      "metric_surface": "classification accuracy",
+      "value_surface": "above 90%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    },
+    {
+      "model": "TransMed",
+      "dataset_surface": "parotid tumor classification dataset",
+      "metric_surface": "competitive results",
+      "value_surface": "competitive results",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    },
+    {
+      "model": "TransMIL",
+      "dataset_surface": "CAMELYON16",
+      "metric_surface": "state-of-the-art performance",
+      "value_surface": "state-of-the-art performance",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    },
+    {
+      "model": "LAT",
+      "dataset_surface": "Messidor-1",
+      "metric_surface": "state-of-the-art",
+      "value_surface": "state-of-the-art",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    },
+    {
+      "model": "LAT",
+      "dataset_surface": "Messidor-2",
+      "metric_surface": "state-of-the-art",
+      "value_surface": "state-of-the-art",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    },
+    {
+      "model": "LAT",
+      "dataset_surface": "EyePACS",
+      "metric_surface": "state-of-the-art",
+      "value_surface": "state-of-the-art",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": null
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "self-attention",
+    "multi-head self-attention",
+    "patch embedding",
+    "positional encoding",
+    "shifted window attention",
+    "cross-attention",
+    "transformer encoder",
+    "transformer decoder",
+    "CNN-Transformer hybrid architectures",
+    "self-supervised learning",
+    "contrastive-learning",
+    "federated learning",
+    "split learning",
+    "reinforcement learning",
+    "Grad-CAM",
+    "saliency map visualizations",
+    "adversarial loss",
+    "multi-task learning",
+    "deep supervision",
+    "test-time augmentation",
+    "conditional generative adversarial network",
+    "multi-scale attention",
+    "graph convolutional layer",
+    "weakly supervised learning",
+    "multiple instance learning"
+  ],
+  "novel_contributions": [
+    "This is the first survey paper that comprehensively covers applications of Transformers in the medical imaging domain, thereby bridging the gap between the vision and medical imaging community in this rapidly evolving area.",
+    "We provide a detailed coverage of the field by categorizing the papers based on their applications in medical imaging, and for each application we develop a taxonomy, highlight task-specific challenges, and provide insights about solving them based on the literature reviewed.",
+    "We provide a critical discussion of the field’s current state as a whole, including identifying key challenges, highlighting open problems, and outlining promising future directions.",
+    "We are also the first since the inception of the original Transformer, about half a decade ago, to extensively cover its language modeling capabilities in the clinical report generation task.",
+    "We intend to regularly update the relevant latest papers and their open-source implementations at <https://github.com/fahadshamshad/awesome-transformers-in-medical-imaging>."
+  ],
+  "key_claims": [
+    {
+      "claim": "The survey comprehensively reviews applications of Transformers in medical imaging across segmentation, classification, detection, reconstruction, synthesis, registration, clinical report generation, and other tasks.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper claims to be the first survey paper that comprehensively covers applications of Transformers in the medical imaging domain.",
+      "evidence_section": "Motivation and Contributions",
+      "page": null
+    },
+    {
+      "claim": "The survey provides taxonomies, task-specific challenges, and insights for each medical imaging application area.",
+      "evidence_section": "Motivation and Contributions",
+      "page": null
+    },
+    {
+      "claim": "The paper highlights that ViT-based architectures have achieved impressive results over benchmark medical datasets, competing with and often improving over CNN-based approaches.",
+      "evidence_section": "3.3 Discussion",
+      "page": null
+    },
+    {
+      "claim": "The survey states that most proposed ViT-based models are pre-trained on ImageNet for downstream medical image segmentation, but this is sub-optimal due to the large domain gap between natural and medical image modalities.",
+      "evidence_section": "3.3 Discussion",
+      "page": null
+    },
+    {
+      "claim": "The paper notes that transformer-based approaches have achieved state-of-the-art performance both in terms of Natural Language Generation (NLG) and Clinical Efficacy (CE) metrics for clinical report generation.",
+      "evidence_section": "9 CLINICAL REPORT GENERATION",
+      "page": null
+    },
+    {
+      "claim": "The survey emphasizes that transformer-based medical image synthesis approaches can generate more realistic images than GAN-based methods.",
+      "evidence_section": "7.3 Discussion",
+      "page": null
+    },
+    {
+      "claim": "The paper concludes that transformer-based registration is still at early stages and that no firm conclusion can yet be drawn.",
+      "evidence_section": "8.1 Discussion",
+      "page": null
+    }
+  ]
+}

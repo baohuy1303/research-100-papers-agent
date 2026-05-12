@@ -1,0 +1,486 @@
+{
+  "paper_id": "4356b46e5dd1a4ebd579b1cd6eb3eeedddd5a65c",
+  "architecture_summary": "VGGT is a large feed-forward transformer with minimal 3D inductive biases that predicts camera parameters, depth maps, point maps, and 3D point tracks from one, a few, or hundreds of input views in a single forward pass. It uses DINOv2 tokenization, alternating frame-wise and global self-attention, a camera head, a DPT-based dense prediction head, and a CoTracker2-based tracking module.",
+  "model_variants": [
+    {
+      "name": "VGGT",
+      "param_count_surface": "approximately 1.2 billion parameters",
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Co3Dv2",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "BlendMVS",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "DL3DV",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MegaDepth",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kubric",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "WildRGB",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ScanNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "HyperSim",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Mapillary",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Habitat",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Replica",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MVS-Synth",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "PointOdyssey",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Virtual KITTI",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Aria Synthetic Environments",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Aria Digital Twin",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Objaverse",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CO3Dv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealEstate10K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETH3D",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ScanNet-1500",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GSO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TAP-Vid",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RGB-S",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DAVIS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IMC",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Ours (Feed-Forward)",
+      "dataset_surface": "RealEstate10K",
+      "metric_surface": "AUC@30 ↑",
+      "value_surface": "85.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on RealEstate10K [161] and CO3Dv2 [88] with 10 random frames",
+      "value_canonical": 85.3
+    },
+    {
+      "model": "Ours (Feed-Forward)",
+      "dataset_surface": "CO3Dv2",
+      "metric_surface": "AUC@30 ↑",
+      "value_surface": "88.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on RealEstate10K [161] and CO3Dv2 [88] with 10 random frames",
+      "value_canonical": 88.2
+    },
+    {
+      "model": "Ours (with BA)",
+      "dataset_surface": "RealEstate10K",
+      "metric_surface": "AUC@30 ↑",
+      "value_surface": "93.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on RealEstate10K [161] and CO3Dv2 [88] with 10 random frames",
+      "value_canonical": 93.5
+    },
+    {
+      "model": "Ours (with BA)",
+      "dataset_surface": "CO3Dv2",
+      "metric_surface": "AUC@30 ↑",
+      "value_surface": "91.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on RealEstate10K [161] and CO3Dv2 [88] with 10 random frames",
+      "value_canonical": 91.8
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "DTU [51] Dataset",
+      "metric_surface": "Overall.↓",
+      "value_surface": "0.382",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dense MVS Estimation on the DTU [51] Dataset",
+      "value_canonical": 0.382
+    },
+    {
+      "model": "Ours (Point)",
+      "dataset_surface": "ETH3D [97]",
+      "metric_surface": "Overall↓",
+      "value_surface": "0.709",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Point Map Estimation on ETH3D [97]",
+      "value_canonical": 0.709
+    },
+    {
+      "model": "Ours (Depth + Cam)",
+      "dataset_surface": "ETH3D [97]",
+      "metric_surface": "Overall↓",
+      "value_surface": "0.677",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Point Map Estimation on ETH3D [97]",
+      "value_canonical": 0.677
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ScanNet-1500 [18, 92]",
+      "metric_surface": "AUC@5 ↑",
+      "value_surface": "33.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Two-View matching comparison on ScanNet-1500 [18, 92]",
+      "value_canonical": 33.9
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ScanNet-1500 [18, 92]",
+      "metric_surface": "AUC@10 ↑",
+      "value_surface": "55.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Two-View matching comparison on ScanNet-1500 [18, 92]",
+      "value_canonical": 55.2
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ScanNet-1500 [18, 92]",
+      "metric_surface": "AUC@20 ↑",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Two-View matching comparison on ScanNet-1500 [18, 92]",
+      "value_canonical": 73.4
+    },
+    {
+      "model": "Ours",
+      "dataset_surface": "ETH3D",
+      "metric_surface": "Overall↓",
+      "value_surface": "0.709",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation Study for Transformer Backbone on ETH3D",
+      "value_canonical": 0.709
+    },
+    {
+      "model": "Ours-NVS*",
+      "dataset_surface": "GSO [28]",
+      "metric_surface": "PSNR ↑",
+      "value_surface": "30.41",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparisons for view synthesis on GSO [28] dataset",
+      "value_canonical": 30.41
+    },
+    {
+      "model": "Ours-NVS*",
+      "dataset_surface": "GSO [28]",
+      "metric_surface": "SSIM ↑",
+      "value_surface": "0.949",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparisons for view synthesis on GSO [28] dataset",
+      "value_canonical": 0.949
+    },
+    {
+      "model": "Ours-NVS*",
+      "dataset_surface": "GSO [28]",
+      "metric_surface": "LPIPS ↓",
+      "value_surface": "0.033",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparisons for view synthesis on GSO [28] dataset",
+      "value_canonical": 0.033
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "AJ",
+      "value_surface": "57.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 57.2
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "$\\delta_{\\text{avg}}^{\\text{vis}}$",
+      "value_surface": "69.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 69.0
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "Kinetics",
+      "metric_surface": "OA",
+      "value_surface": "88.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 88.9
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "RGB-S",
+      "metric_surface": "AJ",
+      "value_surface": "72.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 72.1
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "RGB-S",
+      "metric_surface": "$\\delta_{\\text{avg}}^{\\text{vis}}$",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 84.0
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "RGB-S",
+      "metric_surface": "OA",
+      "value_surface": "91.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 91.6
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "DAVIS",
+      "metric_surface": "AJ",
+      "value_surface": "64.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 64.7
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "DAVIS",
+      "metric_surface": "$\\delta_{\\text{avg}}^{\\text{vis}}$",
+      "value_surface": "77.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 77.5
+    },
+    {
+      "model": "CoTracker + Ours",
+      "dataset_surface": "DAVIS",
+      "metric_surface": "OA",
+      "value_surface": "91.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Dynamic Point Tracking Results on the TAP-Vid benchmarks",
+      "value_canonical": 91.4
+    },
+    {
+      "model": "VGGT + BA (ours)",
+      "dataset_surface": "IMC [54]",
+      "metric_surface": "AUC@3°",
+      "value_surface": "66.37",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on IMC [54]",
+      "value_canonical": 66.37
+    },
+    {
+      "model": "VGGT + BA (ours)",
+      "dataset_surface": "IMC [54]",
+      "metric_surface": "AUC@5°",
+      "value_surface": "75.16",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on IMC [54]",
+      "value_canonical": 75.16
+    },
+    {
+      "model": "VGGT + BA (ours)",
+      "dataset_surface": "IMC [54]",
+      "metric_surface": "AUC@10°",
+      "value_surface": "84.91",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Camera Pose Estimation on IMC [54]",
+      "value_canonical": 84.91
+    }
+  ],
+  "training_details": {
+    "compute_surface": "64 A100 GPUs over nine days",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "DINOv2",
+    "alternating frame-wise and global self-attention",
+    "camera token",
+    "register tokens",
+    "DPT",
+    "CoTracker2",
+    "aleatoric uncertainty",
+    "AdamW",
+    "cosine learning rate scheduler",
+    "color jittering",
+    "Gaussian blur",
+    "grayscale augmentation",
+    "gradient checkpointing",
+    "bfloat16 precision",
+    "Bundle Adjustment"
+  ],
+  "novel_contributions": [
+    "We introduce VGGT, a large feed-forward transformer that predicts all key 3D attributes of a scene from one, a few, or even hundreds of images in seconds.",
+    "We demonstrate that a fairly standard transformer with minimal 3D inductive biases can outperform optimization-based alternatives without further processing.",
+    "We show that jointly predicting cameras, depth maps, point maps, and tracking features improves performance, and that VGGT features transfer well to downstream tasks such as novel view synthesis and dynamic point tracking.",
+    "We show that combining VGGT with BA post-processing yields state-of-the-art results across multiple 3D tasks."
+  ],
+  "key_claims": [
+    {
+      "claim": "VGGT directly infers camera parameters, point maps, depth maps, and 3D point tracks from one, a few, or hundreds of views in a single forward pass.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model is simple and efficient, reconstructing images in under one second and often outperforming alternatives that require post-processing with visual geometry optimization techniques.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VGGT achieves state-of-the-art results in multiple 3D tasks, including camera parameter estimation, multi-view depth estimation, dense point cloud reconstruction, and 3D point tracking.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VGGT uses a standard large transformer with alternating frame-wise and global self-attention and minimal 3D inductive biases.",
+      "evidence_section": "1. Introduction / 3.2. Feature Backbone",
+      "page": null
+    },
+    {
+      "claim": "The model is trained on a large and diverse collection of 3D-annotated datasets and uses DINOv2 tokenization.",
+      "evidence_section": "3.2. Feature Backbone / 3.4. Training",
+      "page": null
+    },
+    {
+      "claim": "On RealEstate10K and CO3Dv2, the feed-forward model reaches 85.3 and 88.2 AUC@30, and with BA reaches 93.5 and 91.8.",
+      "evidence_section": "4.1. Camera Pose Estimation",
+      "page": null
+    },
+    {
+      "claim": "On DTU, VGGT achieves 0.382 Overall.↓ in the feed-forward setting.",
+      "evidence_section": "4.2. Multi-view Depth Estimation",
+      "page": null
+    },
+    {
+      "claim": "On IMC, VGGT + BA achieves 66.37 / 75.16 / 84.91 AUC@3° / AUC@5° / AUC@10° and is claimed to be state-of-the-art.",
+      "evidence_section": "C. Additional Experiments",
+      "page": null
+    }
+  ]
+}

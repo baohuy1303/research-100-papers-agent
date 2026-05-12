@@ -1,0 +1,278 @@
+{
+  "paper_id": "d8d2e574965fe733eb1416e03df2b5c2914fc530",
+  "architecture_summary": "The paper introduces the Banzhaf and Banzhaf-Owen values as novel game-theoretical centrality measures for ranking terrorists in a network, integrating the complete topology of the network together with node weights, edge weights, and an a priori coalitional structure. It applies sampling-based approximation algorithms to the Zerkani network and compares the resulting rankings with those from the Shapley value and the Owen value.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "is_Zerkani_network.csv",
+      "purpose": "other",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Abdelhamid Abaaoud",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "38.326053",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 38.326053
+    },
+    {
+      "model": "Salah Abdeslam",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "35.073561",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 35.073561
+    },
+    {
+      "model": "Khalid Zerkani",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "33.930235",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 33.930235
+    },
+    {
+      "model": "Mohamed Belkaid",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "33.267557",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 33.267557
+    },
+    {
+      "model": "Najim Laachraoui",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "18.774721",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 18.774721
+    },
+    {
+      "model": "Mohamed Bakkali",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "18.307468",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 18.307468
+    },
+    {
+      "model": "Fabien Clain",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "11.891287",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 11.891287
+    },
+    {
+      "model": "Reda Kriket",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "8.316217",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 8.316217
+    },
+    {
+      "model": "Ahmed Dahmani",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "8.129191",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 8.129191
+    },
+    {
+      "model": "Mohamed Abrini",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "Bz",
+      "value_surface": "6.94882",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the estimated Banzhaf value for $(N, v^{muconn})$ and $(N, v^{awconn})$ with $\\ell = 10^6$",
+      "value_canonical": 6.94882
+    },
+    {
+      "model": "Khalid Zerkani",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "39.498143",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 39.498143
+    },
+    {
+      "model": "Abdelhamid Abaaoud",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "35.775328",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 35.775328
+    },
+    {
+      "model": "Salah Abdeslam",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "33.400368",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 33.400368
+    },
+    {
+      "model": "Mohamed Belkaid",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "33.380580",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 33.38058
+    },
+    {
+      "model": "Mohamed Bakkali",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "22.755968",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 22.755968
+    },
+    {
+      "model": "Fabien Clain",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "12.285880",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 12.28588
+    },
+    {
+      "model": "Ahmed Dahmani",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "9.879967",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 9.879967
+    },
+    {
+      "model": "Reda Kriket",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "9.176184",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 9.176184
+    },
+    {
+      "model": "Najim Laachraoui",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "4.701998",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 4.701998
+    },
+    {
+      "model": "Mohamed Abrini",
+      "dataset_surface": "Zerkani network",
+      "metric_surface": "BzO",
+      "value_surface": "4.589148",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top-10 of the ranking of terrorists in the Zerkani network, according to the average of 1000 estimations of the Banzhaf-Owen value for $(N, v^{muconn})$ and $(N, v^{atconn})$ with $\\ell_r = 10^2$ and $\\ell_s = 10$",
+      "value_canonical": 4.589148
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Banzhaf value",
+    "Banzhaf-Owen value",
+    "sampling techniques",
+    "simple random sampling with replacement",
+    "two-stage sampling procedure",
+    "Hoeffding's inequality",
+    "cooperative game theory",
+    "TU-games",
+    "a priori unions",
+    "graph-restricted games",
+    "R software",
+    "igraph",
+    "dplyr"
+  ],
+  "novel_contributions": [
+    "introduces the Banzhaf and Banzhaf-Owen values as novel centrality measures for ranking terrorists in a network",
+    "provides approximation algorithms and the corresponding R-codes for both centrality measures",
+    "applies the Banzhaf and Banzhaf-Owen values to rank the members of the Zerkani network",
+    "compares the rankings obtained with Banzhaf and Banzhaf-Owen against the Shapley value and the Owen value",
+    "uses a partition with ten unions to incorporate coalitional structure into the ranking"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper introduces the Banzhaf and Banzhaf-Owen values as novel centrality measures for ranking terrorists in a network, integrating the complete topology of the network and a coalitional structure on the nodes.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper provides approximation algorithms and the corresponding R-codes for both centrality measures.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The members of the Zerkani network are ranked using the Banzhaf and Banzhaf-Owen values, and the results are compared with rankings obtained from the Shapley value and the Owen value.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The Zerkani network contains 47 members, so approximation methodologies are required for the Banzhaf value and the Banzhaf-Owen value.",
+      "evidence_section": "The Zerkani network analysis",
+      "page": null
+    },
+    {
+      "claim": "The paper states that the main novelty lies in the fact that the Banzhaf-Owen value was never used to analyse a terrorist network.",
+      "evidence_section": "The Zerkani network analysis",
+      "page": null
+    },
+    {
+      "claim": "For the monotonic weighted connectivity TU-game, the top-ranked terrorist under the estimated Banzhaf value is Abdelhamid Abaaoud with 38.326053, while under the estimated Banzhaf-Owen value the top-ranked terrorist is Khalid Zerkani with 39.498143.",
+      "evidence_section": "The Banzhaf value approximation in Zerkani network / The Banzhaf-Owen value approximation in Zerkan network",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that the Owen value and the Banzhaf-Owen value estimations show smaller inequalities between components than the corresponding Shapley and Banzhaf value estimations for $(N, v^{muconn})$.",
+      "evidence_section": "Comparison with the usage of the Shapley value and the Owen value",
+      "page": null
+    }
+  ]
+}

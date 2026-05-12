@@ -1,0 +1,412 @@
+{
+  "paper_id": "61e721334296ebfbbf6443b5ed9eb8c83b708c95",
+  "architecture_summary": "ViT-22B is a Transformer-based encoder model that resembles the original Vision Transformer but adds parallel Attention-MLP blocks, query/key normalization, and omitted biases to improve efficiency and training stability at scale.",
+  "model_variants": [
+    {
+      "name": "ViT-G",
+      "param_count_surface": "1843",
+      "page": null,
+      "param_count_millions": 1843.0
+    },
+    {
+      "name": "ViT-e",
+      "param_count_surface": "3926",
+      "page": null,
+      "param_count_millions": 3926.0
+    },
+    {
+      "name": "ViT-22B",
+      "param_count_surface": "21743",
+      "page": null,
+      "param_count_millions": 21743.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "JFT",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "WebLI",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pascal Context",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pascal VOC",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Waymo Open real-world driving dataset",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics 400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Moments in Time",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CelebA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-C",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Places365",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BAPPS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "22B",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "IN",
+      "value_surface": "89.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Linear evaluation on ImageNet-1k (Deng et al., 2009) with varying scale. All models pre-trained on large datasets. Performances of a few high-resolution fine-tuned models from are provided for reference.",
+      "value_canonical": 89.51
+    },
+    {
+      "model": "22B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "89.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 89.5
+    },
+    {
+      "model": "LiT-22B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IN",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Zero-shot transfer results on ImageNet (variants).",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "LiT-22B",
+      "dataset_surface": "ImageNet-v2",
+      "metric_surface": "IN-v2",
+      "value_surface": "80.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Zero-shot transfer results on ImageNet (variants).",
+      "value_canonical": 80.9
+    },
+    {
+      "model": "LiT-22B",
+      "dataset_surface": "ImageNet-R",
+      "metric_surface": "IN-R",
+      "value_surface": "96.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Zero-shot transfer results on ImageNet (variants).",
+      "value_canonical": 96.0
+    },
+    {
+      "model": "LiT-22B",
+      "dataset_surface": "ImageNet-A",
+      "metric_surface": "IN-A",
+      "value_surface": "90.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Zero-shot transfer results on ImageNet (variants).",
+      "value_canonical": 90.1
+    },
+    {
+      "model": "LiT-22B",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "ObjNet",
+      "value_surface": "87.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Zero-shot transfer results on ImageNet (variants).",
+      "value_canonical": 87.6
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "44.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4: Fewshot semantic segmentation on ADE20k, when only a fraction of the training set is used. We report mean IoU for semantic segmentation on the validation set. Transfer is done with end-to-end fine-tuning and a linear decoder, following Strudel et al. (2021). We average over 3 runs.",
+      "value_canonical": 44.7
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "54.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4: Fewshot semantic segmentation on ADE20k, when only a fraction of the training set is used. We report mean IoU for semantic segmentation on the validation set. Transfer is done with end-to-end fine-tuning and a linear decoder, following Strudel et al. (2021). We average over 3 runs.",
+      "value_canonical": 54.9
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "Waymo Open",
+      "metric_surface": "MSE",
+      "value_surface": "0.021",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Monocular depth estimation from frozen ViT features using different decoders on the Waymo Open dataset.",
+      "value_canonical": 0.021
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "Waymo Open",
+      "metric_surface": "AbsRel",
+      "value_surface": "0.095",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Monocular depth estimation from frozen ViT features using different decoders on the Waymo Open dataset.",
+      "value_canonical": 0.095
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "Waymo Open",
+      "metric_surface": "δ",
+      "value_surface": "0.702",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 5: Monocular depth estimation from frozen ViT features using different decoders on the Waymo Open dataset.",
+      "value_canonical": 0.702
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "Kinetics 400",
+      "metric_surface": "accuracy",
+      "value_surface": "88.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Video classification results. We evaluate the ViT-22B representations by freezing the backbone, and training a small transformer to aggregate frozen, per-frame representations. ViT-22B outperforms the largest previous vision backbone, ViT-e (Chen et al., 2022) which contains 4 billion parameters and is also pretrained on JFT.",
+      "value_canonical": 88.0
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "Moments in Time",
+      "metric_surface": "accuracy",
+      "value_surface": "44.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6: Video classification results. We evaluate the ViT-22B representations by freezing the backbone, and training a small transformer to aggregate frozen, per-frame representations. ViT-22B outperforms the largest previous vision backbone, ViT-e (Chen et al., 2022) which contains 4 billion parameters and is also pretrained on JFT.",
+      "value_canonical": 44.9
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN-C",
+      "metric_surface": "ACC ↑",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN-C",
+      "metric_surface": "NLL ↓",
+      "value_surface": "0.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 0.63
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN-C",
+      "metric_surface": "ECE ↓",
+      "value_surface": "0.01",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 0.01
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN-C",
+      "metric_surface": "OC-AUC ↑",
+      "value_surface": "0.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 0.97
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN vs. Places365",
+      "metric_surface": "AUROC ↑",
+      "value_surface": "0.88",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 0.88
+    },
+    {
+      "model": "ViT-22B",
+      "dataset_surface": "IN vs. Places365",
+      "metric_surface": "AUPRC ↑",
+      "value_surface": "0.98",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7: ViT-22B evaluated on some representative metrics from the Plex reliability benchmark (Tran et al., 2022)*.",
+      "value_canonical": 0.98
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet1k",
+      "metric_surface": "ImageNet1k",
+      "value_surface": "88.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 8: Distillation results, finetuned at 384 resolution.",
+      "value_canonical": 88.6
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet1k",
+      "metric_surface": "ImageNet1k",
+      "value_surface": "89.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 8: Distillation results, finetuned at 384 resolution.",
+      "value_canonical": 89.6
+    }
+  ],
+  "training_details": {
+    "compute_surface": "1024 TPU V4 chips for 177K steps",
+    "batch_size": 65000,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer-based encoder",
+    "parallel layers",
+    "query/key normalization",
+    "omitted biases",
+    "patch extraction",
+    "linear projection",
+    "position embedding",
+    "multi-head attention pooling",
+    "model parallelism",
+    "data parallelism",
+    "jax.xmap",
+    "parameter sharding",
+    "inception crop",
+    "random horizontal flip",
+    "sigmoid cross-entropy loss",
+    "reciprocal square-root learning rate schedule",
+    "linear warmup",
+    "cooldown",
+    "SGD",
+    "locked-image tuning",
+    "contrastive learning",
+    "SentencePiece",
+    "linear probing",
+    "frozen backbone",
+    "end-to-end fine-tuning",
+    "linear decoder",
+    "UperNet",
+    "DPT",
+    "demographic parity",
+    "randomized threshold optimizer",
+    "temperature scaling",
+    "model distillation",
+    "KL divergence"
+  ],
+  "novel_contributions": [
+    "We present ViT-22B, the largest dense ViT model to date.",
+    "We uncover pathological training instabilities which prevent scaling the default recipe, and demonstrate architectural changes which make it possible.",
+    "We carefully engineer the model to enable model-parallel training at unprecedented efficiency.",
+    "ViT-22B demonstrates increasing performance with scale on downstream tasks, often with a lightweight linear model on frozen features.",
+    "We observe improved tradeoff between fairness and performance, state-of-the-art alignment to human visual perception in terms of shape/texture bias, and improved robustness."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper presents ViT-22B, a 22B-parameter ViT and the largest dense ViT model to date.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "ViT-22B requires architectural changes such as parallel layers, QK normalization, and omitted biases to train stably at scale.",
+      "evidence_section": "2 Model Architecture",
+      "page": null
+    },
+    {
+      "claim": "The model is trained on a version of JFT extended to around 4B images, for 177k steps with batch size of 65k.",
+      "evidence_section": "4.1 Training details",
+      "page": null
+    },
+    {
+      "claim": "ViT-22B achieves 89.5% on ImageNet with frozen features, and 85.9% zero-shot ImageNet accuracy with a LiT text tower.",
+      "evidence_section": "Abstract; 4.2.1 Linear probing; 4.2.2 Zero-shot via locked-image tuning",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that ViT-22B sets the new SOTA on ObjectNet in zero-shot transfer.",
+      "evidence_section": "4.2.2 Zero-shot via locked-image tuning",
+      "page": null
+    },
+    {
+      "claim": "ViT-22B transfers better to dense prediction and video classification than smaller ViT backbones in the reported settings.",
+      "evidence_section": "4.3 Transfer to dense prediction; 4.4 Transfer to video classification",
+      "page": null
+    },
+    {
+      "claim": "ViT-22B improves fairness, calibration, robustness, and human alignment, including a previously unseen 87% shape bias.",
+      "evidence_section": "4.5 Beyond accuracy on downstream tasks",
+      "page": null
+    },
+    {
+      "claim": "Distilling ViT-22B into ViT-B/16 and ViT-L/16 yields new SOTA on both sizes.",
+      "evidence_section": "4.5.5 Distillation",
+      "page": null
+    }
+  ]
+}

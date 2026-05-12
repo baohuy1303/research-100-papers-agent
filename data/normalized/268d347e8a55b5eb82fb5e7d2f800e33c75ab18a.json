@@ -1,0 +1,399 @@
+{
+  "paper_id": "268d347e8a55b5eb82fb5e7d2f800e33c75ab18a",
+  "architecture_summary": "Vision Transformer (ViT) splits an image into fixed-size patches, linearly embeds the patches, adds position embeddings and a learnable [class] token, and feeds the resulting sequence to a standard Transformer encoder for classification. The paper also studies a hybrid variant that uses CNN feature maps as input, plus fine-tuning at higher resolution and a preliminary masked patch prediction self-supervision setup.",
+  "model_variants": [
+    {
+      "name": "ViT-Base",
+      "param_count_surface": "86M",
+      "page": null,
+      "param_count_millions": 86.0
+    },
+    {
+      "name": "ViT-Large",
+      "param_count_surface": "307M",
+      "page": null,
+      "param_count_millions": 307.0
+    },
+    {
+      "name": "ViT-Huge",
+      "param_count_surface": "632M",
+      "page": null,
+      "param_count_millions": 632.0
+    },
+    {
+      "name": "ViT-B/16",
+      "param_count_surface": "86M",
+      "page": null,
+      "param_count_millions": 86.0
+    },
+    {
+      "name": "ViT-L/16",
+      "param_count_surface": "307M",
+      "page": null,
+      "param_count_millions": 307.0
+    },
+    {
+      "name": "ViT-H/14",
+      "param_count_surface": "632M",
+      "page": null,
+      "param_count_millions": 632.0
+    },
+    {
+      "name": "ViT-B/32",
+      "param_count_surface": "86M",
+      "page": null,
+      "param_count_millions": 86.0
+    },
+    {
+      "name": "ViT-L/32",
+      "param_count_surface": "307M",
+      "page": null,
+      "param_count_millions": 307.0
+    },
+    {
+      "name": "ViT-b",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "R50x1+ViT-B/32",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "R50x1+ViT-B/16",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "R50x1+ViT-L/32",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "R50x1+ViT-L/16",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "AxialViT-B/32",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "AxialViT-B/16",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "AxialResNet50",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIIT Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford Flowers-102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ObjectNet",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "88.55%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 88.55
+    },
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "ImageNet Real.",
+      "metric_surface": "accuracy",
+      "value_surface": "90.72%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 90.72
+    },
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "accuracy",
+      "value_surface": "99.50%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 99.5
+    },
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "accuracy",
+      "value_surface": "94.55%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 94.55
+    },
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "Oxford-IIIT Pets",
+      "metric_surface": "accuracy",
+      "value_surface": "97.56%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 97.56
+    },
+    {
+      "model": "Ours-JFT",
+      "dataset_surface": "VTAB (19 tasks)",
+      "metric_surface": "accuracy",
+      "value_surface": "77.63%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with state of the art on popular image classification benchmarks",
+      "value_canonical": 77.63
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "88.08",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 88.08
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "ImageNet RealL",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "90.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 90.36
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "CIFAR-10",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "99.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 99.5
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "CIFAR-100",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "94.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 94.71
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "Oxford-IIIT-Pets",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "97.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 97.11
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "Oxford Flowers",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "99.71",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 99.71
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "VTAB (19 tasks)",
+      "metric_surface": "Top1 accuracy",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top1 accuracy (in %) of Vision Transformer on various datasets when pre-trained on ImageNet, ImageNet-21k or JFT300M",
+      "value_canonical": 77.6
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "61.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 61.7
+    },
+    {
+      "model": "ViT-H/14",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "top-5 accuracy",
+      "value_surface": "82.1%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 82.1
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "79.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 79.9
+    }
+  ],
+  "training_details": {
+    "compute_surface": "2.5k",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "patch embedding",
+    "linear projection",
+    "position embeddings",
+    "learnable [class] token",
+    "Transformer encoder",
+    "multi-head self-attention",
+    "MLP blocks",
+    "Layernorm",
+    "residual connections",
+    "GELU",
+    "hybrid architecture",
+    "2D interpolation of position embeddings",
+    "Adam",
+    "SGD with momentum",
+    "Polyak & Juditsky (1992) averaging",
+    "masked patch prediction",
+    "self-supervision",
+    "data augmentation",
+    "label smoothing",
+    "dropout",
+    "weight decay",
+    "gradient clipping"
+  ],
+  "novel_contributions": [
+    "a pure transformer applied directly to sequences of image patches for image recognition",
+    "a simple Vision Transformer architecture with minimal image-specific inductive bias",
+    "showing that large-scale pre-training on ImageNet-21k or JFT-300M makes vanilla transformers competitive with or better than state-of-the-art CNNs",
+    "a preliminary masked patch prediction self-supervision objective for ViT",
+    "a controlled scaling study comparing ViT, ResNet, and hybrid models"
+  ],
+  "key_claims": [
+    {
+      "claim": "A pure transformer applied directly to sequences of image patches can perform very well on image classification tasks when pre-trained on large amounts of data and transferred to smaller benchmarks.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "ViT attains excellent results compared to state-of-the-art convolutional networks while requiring substantially fewer computational resources to train.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "The model splits an image into patches, linearly embeds them, adds position embeddings and a learnable [class] token, and uses a standard Transformer encoder for classification.",
+      "evidence_section": "3 METHOD / 3.1 VISION TRANSFORMER (ViT)",
+      "page": null
+    },
+    {
+      "claim": "When pre-trained on ImageNet-21k or JFT-300M, ViT approaches or beats state of the art on multiple image recognition benchmarks.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "The best model reaches 88.55% on ImageNet, 90.72% on ImageNet-Real, 94.55% on CIFAR-100, and 77.63% on the VTAB suite of 19 tasks.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "Vision Transformers dominate ResNets on the performance/compute trade-off and use approximately 2 - 4× less compute to attain the same performance.",
+      "evidence_section": "4.4 SCALING STUDY",
+      "page": null
+    },
+    {
+      "claim": "With self-supervised masked patch prediction, the smaller ViT-B/16 model achieves 79.9% accuracy on ImageNet, improving by 2% over training from scratch but still 4% behind supervised pre-training.",
+      "evidence_section": "4.6 SELF-SUPERVISION / B.1.2 SELF-SUPERVISION",
+      "page": null
+    }
+  ]
+}

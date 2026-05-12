@@ -1,0 +1,359 @@
+{
+  "paper_id": "7c597874535c1537d7ddff3b3723015b4dc79d30",
+  "architecture_summary": "MaskGIT is a bidirectional transformer decoder for image synthesis that learns Masked Visual Token Modeling (MVTM): during training it predicts randomly masked visual tokens, and at inference it generates all tokens in parallel and refines them iteratively with a decreasing mask ratio.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Places2",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "FID",
+      "value_surface": "6.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 6.18
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "IS",
+      "value_surface": "182.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 182.1
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "Prec",
+      "value_surface": "0.80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 0.8
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "Rec",
+      "value_surface": "0.51",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 0.51
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "CAS $\\times 100$ ↑",
+      "value_surface": "63.14",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 63.14
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "CAS $\\times 100$ ↑",
+      "value_surface": "84.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 84.45
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "FID",
+      "value_surface": "7.32",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 7.32
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "IS",
+      "value_surface": "156.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 156.0
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "Prec",
+      "value_surface": "0.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 0.78
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "Rec",
+      "value_surface": "0.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 0.5
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "CAS $\\times 100$ ↑",
+      "value_surface": "63.43",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 63.43
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 512×512",
+      "metric_surface": "CAS $\\times 100$ ↑",
+      "value_surface": "84.79",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative comparison with state-of-the-art generative models on ImageNet 256×256 and 512×512",
+      "value_canonical": 84.79
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "Places2",
+      "metric_surface": "FID ↓",
+      "value_surface": "6.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Comparisons for Inpainting and Outpainting on Places2",
+      "value_canonical": 6.78
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "Places2",
+      "metric_surface": "IS ↑",
+      "value_surface": "11.69",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Comparisons for Inpainting and Outpainting on Places2",
+      "value_canonical": 11.69
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "Places2",
+      "metric_surface": "FID ↓",
+      "value_surface": "7.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Comparisons for Inpainting and Outpainting on Places2",
+      "value_canonical": 7.92
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "Places2",
+      "metric_surface": "IS ↑",
+      "value_surface": "22.95",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Quantitative Comparisons for Inpainting and Outpainting on Places2",
+      "value_canonical": 22.95
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "4.02",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Class-conditional image synthesis on ImageNet for methods with classifier guidance",
+      "value_canonical": 4.02
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IS",
+      "value_surface": "355.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Class-conditional image synthesis on ImageNet for methods with classifier guidance",
+      "value_canonical": 355.6
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "4.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Class-conditional image synthesis on ImageNet for methods with classifier guidance",
+      "value_canonical": 4.46
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IS",
+      "value_surface": "342.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Class-conditional image synthesis on ImageNet for methods with classifier guidance",
+      "value_canonical": 342.0
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "Prec $\\uparrow$",
+      "value_surface": "0.78",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More quantitative comparison with BigGAN-deep and our baseline VQGAN on ImageNet 256×256",
+      "value_canonical": 0.78
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "Rec $\\uparrow$",
+      "value_surface": "0.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More quantitative comparison with BigGAN-deep and our baseline VQGAN on ImageNet 256×256",
+      "value_canonical": 0.5
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "CAS $\\times 100 \\uparrow$",
+      "value_surface": "58.20",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More quantitative comparison with BigGAN-deep and our baseline VQGAN on ImageNet 256×256",
+      "value_canonical": 58.2
+    },
+    {
+      "model": "MaskGIT (Ours)",
+      "dataset_surface": "ImageNet 256×256",
+      "metric_surface": "CAS $\\times 100 \\uparrow$",
+      "value_surface": "79.65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More quantitative comparison with BigGAN-deep and our baseline VQGAN on ImageNet 256×256",
+      "value_canonical": 79.65
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "6.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More diversity comparisons between BigGAN-deep, VQVAE-2, and our proposed method MaskGIT on ImageNet",
+      "value_canonical": 6.18
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "6.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More diversity comparisons between BigGAN-deep, VQVAE-2, and our proposed method MaskGIT on ImageNet",
+      "value_canonical": 6.18
+    },
+    {
+      "model": "MaskGIT",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "FID",
+      "value_surface": "6.18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "More diversity comparisons between BigGAN-deep, VQVAE-2, and our proposed method MaskGIT on ImageNet",
+      "value_canonical": 6.18
+    }
+  ],
+  "training_details": {
+    "compute_surface": "4x4 TPU devices",
+    "batch_size": 256,
+    "epochs": 300
+  },
+  "methods_used": [
+    "bidirectional transformer decoder",
+    "Masked Visual Token Modeling (MVTM)",
+    "self-attention",
+    "iterative decoding",
+    "mask scheduling",
+    "cosine schedule",
+    "learnable positional embedding",
+    "LayerNorm",
+    "truncated normal initialization",
+    "label smoothing",
+    "dropout",
+    "Adam optimizer",
+    "RandomResizeAndCrop",
+    "classifier-based rejection sampling"
+  ],
+  "novel_contributions": [
+    "a novel image synthesis paradigm using a bidirectional transformer decoder",
+    "Masked Visual Token Modeling (MVTM) for training on randomly masked visual tokens",
+    "a novel non-autoregressive iterative decoding method that generates all tokens simultaneously and refines them over a few iterations",
+    "a new masking strategy / mask scheduling function, with cosine performing best",
+    "extensions to image editing tasks such as inpainting, outpainting, and image manipulation"
+  ],
+  "key_claims": [
+    {
+      "claim": "MaskGIT learns to predict randomly masked tokens during training and generates images by parallel iterative refinement at inference time.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MaskGIT significantly outperforms the state-of-the-art transformer model on the ImageNet dataset and accelerates autoregressive decoding by up to 64x.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MaskGIT is readily extendable to image editing tasks such as inpainting, extrapolation, and image manipulation.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MaskGIT finishes decoding in 8 iterations compared to the 256 rounds the sequential method takes.",
+      "evidence_section": "Figure 2",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet 256×256, MaskGIT significantly outperforms VQGAN in FID and IS without special sampling strategies.",
+      "evidence_section": "4.2. Class-conditional Image Synthesis",
+      "page": null
+    },
+    {
+      "claim": "MaskGIT establishes a new state-of-the-art on CAS on the ImageNet benchmark on both resolutions.",
+      "evidence_section": "4.2. Class-conditional Image Synthesis",
+      "page": null
+    },
+    {
+      "claim": "MaskGIT achieves state-of-the-art FID on 512×512 ImageNet and state-of-the-art FID and IS on outpainting.",
+      "evidence_section": "4.2. Class-conditional Image Synthesis; 4.3. Image Editing Applications",
+      "page": null
+    },
+    {
+      "claim": "Cosine masking schedule works the best in all of the experiments and is used as the default.",
+      "evidence_section": "3.3. Masking Design; 4.4. Ablation Studies",
+      "page": null
+    }
+  ]
+}

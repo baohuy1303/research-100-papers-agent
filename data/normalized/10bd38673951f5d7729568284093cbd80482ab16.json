@@ -1,0 +1,618 @@
+{
+  "paper_id": "10bd38673951f5d7729568284093cbd80482ab16",
+  "architecture_summary": "The paper adds extra learnable input tokens called registers to Vision Transformers so the model can use them to store and process global information, instead of repurposing patch tokens with high-norm outliers. At the output, the register tokens are discarded and only the patch tokens and [CLS] token are used as usual.",
+  "model_variants": [
+    {
+      "name": "DeiT-III",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "OpenCLIP",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DINOv2",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DINOv2 ViT-g",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DINOv2 ViT-L/14",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DINOv2+reg",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DeiT-III+reg",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "OpenCLIP+reg",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Shutterstock",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ADE20k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NYUd",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PASCAL VOC 2007",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VOC 2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 20k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Aircrafts",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IN1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "P205",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Airc.",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CF10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CF100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CUB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cal101",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Cars",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flow.",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Food",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SUN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VOC",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "84.7",
+      "value_surface": "84.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 84.7
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "84.7",
+      "value_surface": "84.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 84.7
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "78.2",
+      "value_surface": "78.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 78.2
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "78.1",
+      "value_surface": "78.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 78.1
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "84.3",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 84.3
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "84.8",
+      "value_surface": "84.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 84.8
+    },
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "38.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 38.9
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "39.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 39.1
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "26.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 26.6
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "26.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 26.7
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "46.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 46.6
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "47.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 47.9
+    },
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.511",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.511
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.512",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.512
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.702",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.702
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.661",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.661
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.378",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.378
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "NYUd",
+      "metric_surface": "rmse ↓",
+      "value_surface": "0.366",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 0.366
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "59.9",
+      "value_surface": "59.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 59.9
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "ImageNet Top-1",
+      "metric_surface": "60.1",
+      "value_surface": "60.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2: Evaluation of downstream performance of the models that we trained, with and without registers. We consider linear probing of frozen features for all three models, and zero-shot evaluation for the OpenCLIP model. We see that using register not only does not degrade performance, but even improves it by a slight margin in some cases.",
+      "value_canonical": 60.1
+    },
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "11.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 11.7
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "27.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 27.1
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "38.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 38.8
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "37.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 37.1
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "35.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 35.3
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "VOC 2007",
+      "metric_surface": "corloc",
+      "value_surface": "55.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 55.4
+    },
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "13.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 13.1
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "32.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 32.7
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "44.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 44.3
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "42.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 42.0
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "40.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 40.2
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "VOC 2012",
+      "metric_surface": "corloc",
+      "value_surface": "60.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 60.0
+    },
+    {
+      "model": "DeiT-III",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "10.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 10.7
+    },
+    {
+      "model": "DeiT-III+reg",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "25.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 25.1
+    },
+    {
+      "model": "OpenCLIP",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "31.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 31.0
+    },
+    {
+      "model": "OpenCLIP+reg",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "27.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 27.9
+    },
+    {
+      "model": "DINOv2",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "26.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 26.9
+    },
+    {
+      "model": "DINOv2+reg",
+      "dataset_surface": "COCO 20k",
+      "metric_surface": "corloc",
+      "value_surface": "42.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3: Unsupervised Object Discovery using LOST (Siméoni et al., 2021) on models with and without registers. We evaluated three types of models trained with various amounts of supervision on VOC 2007, 2012 and COCO. We measure performance using corloc. We observe that adding register tokens makes all models significantly more viable for usage in object discovery.",
+      "value_canonical": 42.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "register tokens",
+    "Vision Transformer",
+    "linear probing",
+    "zero-shot classification",
+    "self-supervised learning",
+    "supervised training",
+    "text-supervised training",
+    "object discovery",
+    "LOST",
+    "attention maps",
+    "patch embedding",
+    "absolute position embeddings",
+    "bicubic interpolation",
+    "antialiasing"
+  ],
+  "novel_contributions": [
+    "We identify and characterize artifacts in feature maps of both supervised and self-supervised ViT networks.",
+    "We propose a simple solution based on providing additional tokens to the input sequence of the Vision Transformer to fill that role.",
+    "We show that this solution fixes that problem entirely for both supervised and self-supervised models.",
+    "We set a new state of the art for self-supervised visual models on dense visual prediction tasks.",
+    "We enable object discovery methods with larger models."
+  ],
+  "key_claims": [
+    {
+      "claim": "High-norm outlier tokens appear in feature maps of modern vision transformers, primarily in low-informative background areas, and can be used to characterize the artifacts.",
+      "evidence_section": "ABSTRACT; 2.1 ARTIFACTS IN THE LOCAL FEATURES OF DINOv2",
+      "page": null
+    },
+    {
+      "claim": "The outlier tokens appear around the middle layers, after a sufficiently long training, and only in sufficiently large models.",
+      "evidence_section": "2.1 ARTIFACTS IN THE LOCAL FEATURES OF DINOv2",
+      "page": null
+    },
+    {
+      "claim": "Appending additional learnable tokens called registers removes the outlier tokens entirely and smooths feature maps and attention maps.",
+      "evidence_section": "2.2 HYPOTHESIS AND REMEDIATION; 3.2 EVALUATION OF THE PROPOSED SOLUTION",
+      "page": null
+    },
+    {
+      "claim": "Using registers does not degrade downstream performance and can slightly improve linear probing and zero-shot results.",
+      "evidence_section": "3.2 EVALUATION OF THE PROPOSED SOLUTION",
+      "page": null
+    },
+    {
+      "claim": "Registers substantially improve unsupervised object discovery with LOST for DeiT-III and DINOv2, and slightly hurt OpenCLIP.",
+      "evidence_section": "3.3 OBJECT DISCOVERY; C ANALYSIS OF LOST PERFORMANCE",
+      "page": null
+    },
+    {
+      "claim": "Register tokens can specialize and attend to different parts of the scene, similar to slot attention.",
+      "evidence_section": "3.4 QUALITATIVE EVALUATION OF REGISTERS",
+      "page": null
+    }
+  ]
+}

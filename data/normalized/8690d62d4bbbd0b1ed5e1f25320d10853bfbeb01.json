@@ -1,0 +1,351 @@
+{
+  "paper_id": "8690d62d4bbbd0b1ed5e1f25320d10853bfbeb01",
+  "architecture_summary": "The paper introduces V-MoE, a sparse variant of the Vision Transformer that replaces a subset of dense feedforward layers with sparse Mixture of Experts layers, where image patches are routed to a subset of MLP experts. It also proposes Batch Prioritized Routing to prioritize important patches and reduce compute at inference and training time.",
+  "model_variants": [
+    {
+      "name": "ViT-S/32",
+      "param_count_surface": "36.5M",
+      "page": null,
+      "param_count_millions": 36.5
+    },
+    {
+      "name": "V-MoE-S/32, Last 2",
+      "param_count_surface": "166.7M",
+      "page": null,
+      "param_count_millions": 166.7
+    },
+    {
+      "name": "V-MoE-S/32, Every 2",
+      "param_count_surface": "296.9M",
+      "page": null,
+      "param_count_millions": 296.9
+    },
+    {
+      "name": "VIT-B/32",
+      "param_count_surface": "102.1M",
+      "page": null,
+      "param_count_millions": 102.1
+    },
+    {
+      "name": "V-MoE-B/32, Last 2",
+      "param_count_surface": "395.0M",
+      "page": null,
+      "param_count_millions": 395.0
+    },
+    {
+      "name": "V-MoE-B/32, Every 2",
+      "param_count_surface": "980.6M",
+      "page": null,
+      "param_count_millions": 980.6
+    },
+    {
+      "name": "VIT-L/32",
+      "param_count_surface": "325.3M",
+      "page": null,
+      "param_count_millions": 325.3
+    },
+    {
+      "name": "V-MoE-L/32, Last 2",
+      "param_count_surface": "845.8M",
+      "page": null,
+      "param_count_millions": 845.8
+    },
+    {
+      "name": "VIT-B/16",
+      "param_count_surface": "100.5M",
+      "page": null,
+      "param_count_millions": 100.5
+    },
+    {
+      "name": "V-MoE-B/16, Last 2",
+      "param_count_surface": "393.3M",
+      "page": null,
+      "param_count_millions": 393.3
+    },
+    {
+      "name": "V-MoE-L/32, Every 2",
+      "param_count_surface": "3448.2M",
+      "page": null,
+      "param_count_millions": 3448.2
+    },
+    {
+      "name": "V-MoE-B/16, Every 2",
+      "param_count_surface": "979.0M",
+      "page": null,
+      "param_count_millions": 979.0
+    },
+    {
+      "name": "VIT-L/16",
+      "param_count_surface": "323.1M",
+      "page": null,
+      "param_count_millions": 323.1
+    },
+    {
+      "name": "V-MoE-L/16, Last 2",
+      "param_count_surface": "843.6M",
+      "page": null,
+      "param_count_millions": 843.6
+    },
+    {
+      "name": "V-MoE-L/16, Every 2",
+      "param_count_surface": "3446.0M",
+      "page": null,
+      "param_count_millions": 3446.0
+    },
+    {
+      "name": "VIT-H/14",
+      "param_count_surface": "655.8M",
+      "page": null,
+      "param_count_millions": 655.8
+    },
+    {
+      "name": "V-MoE-H/14, Last 5",
+      "param_count_surface": "2688.6M",
+      "page": null,
+      "param_count_millions": 2688.6
+    },
+    {
+      "name": "V-MoE-H/14, Every 2",
+      "param_count_surface": "7160.8M",
+      "page": null,
+      "param_count_millions": 7160.8
+    },
+    {
+      "name": "V-MoE-15B",
+      "param_count_surface": "14705.1M",
+      "page": null,
+      "param_count_millions": 14705.1
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ILSVRC2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR10",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford Flowers 102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford-IIT Pet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "V-MoE-H/14, Every-2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "test accuracy",
+      "value_surface": "90.35%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Main V-MoE & ViT models; Table 8 shows results for additional models and datasets.",
+      "value_canonical": 90.35
+    },
+    {
+      "model": "V-MoE-15B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "test accuracy",
+      "value_surface": "90.35%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Main V-MoE & ViT models; Table 8 shows results for additional models and datasets.",
+      "value_canonical": 90.35
+    },
+    {
+      "model": "V-MoE-H/14, Every-2",
+      "dataset_surface": "VTAB",
+      "metric_surface": "score",
+      "value_surface": "77.8_{\u0000b1 0.4}",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "VTAB. Scores and 95% confidence intervals for ViT and V-MoE.",
+      "value_canonical": 77.8
+    },
+    {
+      "model": "V-MoE-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "77.87%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Time and FLOPs unmatched inference results for JFT prec@1 and ImageNet 5shot.",
+      "value_canonical": 77.87
+    },
+    {
+      "model": "V-MoE-H/14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "accuracy",
+      "value_surface": "78.05%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Time and FLOPs matched inference results with Batch Prioritized Routing, lower C, and reduced  $k$ .",
+      "value_canonical": 78.05
+    },
+    {
+      "model": "V-MoE-H/14",
+      "dataset_surface": "JFT",
+      "metric_surface": "prec@1",
+      "value_surface": "59.42",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Time and FLOPs matched inference results with Batch Prioritized Routing, lower C, and reduced  $k$ .",
+      "value_canonical": 59.42
+    },
+    {
+      "model": "V-MoE-L/16",
+      "dataset_surface": "JFT",
+      "metric_surface": "prec@1",
+      "value_surface": "57.64",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Time and FLOPs unmatched inference results for JFT prec@1 and ImageNet 5shot.",
+      "value_canonical": 57.64
+    },
+    {
+      "model": "V-MoE-S/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IN/1shot",
+      "value_surface": "38.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of ImageNet deduplication on the training data for fewshot with V-MoE-S/32.",
+      "value_canonical": 38.77
+    },
+    {
+      "model": "V-MoE-S/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IN/5shot",
+      "value_surface": "53.09",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of ImageNet deduplication on the training data for fewshot with V-MoE-S/32.",
+      "value_canonical": 53.09
+    },
+    {
+      "model": "V-MoE-S/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IN/10shot",
+      "value_surface": "56.50",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of ImageNet deduplication on the training data for fewshot with V-MoE-S/32.",
+      "value_canonical": 56.5
+    },
+    {
+      "model": "V-MoE-S/32",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "IN/25shot",
+      "value_surface": "58.84",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of ImageNet deduplication on the training data for fewshot with V-MoE-S/32.",
+      "value_canonical": 58.84
+    }
+  ],
+  "training_details": {
+    "compute_surface": "16.8k TPUv3-core-days",
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Vision Transformer",
+    "Mixture of Experts",
+    "sparse MoE layers",
+    "top-k gating",
+    "softmax",
+    "auxiliary losses",
+    "load balancing losses",
+    "Batch Prioritized Routing",
+    "self-attention",
+    "MLP experts",
+    "RandAugment",
+    "dropout",
+    "Adam",
+    "Adafactor",
+    "bfloat16",
+    "inverse square root schedule"
+  ],
+  "novel_contributions": [
+    "We present the Vision Mixture of Experts (V-MoE), a distributed sparsely-activated Transformer model for vision.",
+    "We propose Batch Prioritized Routing, a priority-based routing algorithm that allows V-MoEs to discard the least useful tokens.",
+    "We show that V-MoE models can be stably trained, seamlessly used for transfer, and successfully fine-tuned with as few as 1 000 datapoints.",
+    "We train a 15B parameter model that attains 90.35% on ImageNet.",
+    "We demonstrate that V-MoE can match the performance of state-of-the-art dense models while requiring as little as half of the compute at inference time."
+  ],
+  "key_claims": [
+    {
+      "claim": "V-MoE is a sparse variant of ViT that replaces a subset of dense feedforward layers with sparse MoE layers and routes image patches to MLP experts.",
+      "evidence_section": "Abstract; 2 The Vision Mixture of Experts",
+      "page": null
+    },
+    {
+      "claim": "The paper claims V-MoE matches state-of-the-art networks on image recognition while requiring as little as half of the compute at inference time.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Batch Prioritized Routing can prioritize subsets of each input across the entire batch, enabling adaptive per-image compute and smooth performance/compute trade-offs at test time.",
+      "evidence_section": "Abstract; 4 Skipping Tokens with Batch Prioritized Routing",
+      "page": null
+    },
+    {
+      "claim": "The largest model, V-MoE-15B, has 14.7B parameters and attains 90.35% on ImageNet when fully fine-tuned.",
+      "evidence_section": "3.6 Scaling up V-MoE; Table 2",
+      "page": null
+    },
+    {
+      "claim": "V-MoE models outperform dense ViT counterparts on upstream, few-shot, and full fine-tuning metrics in absolute terms.",
+      "evidence_section": "3 Transfer Learning",
+      "page": null
+    },
+    {
+      "claim": "Batch Prioritized Routing can save around 20% of the total training FLOPs while matching dense performance.",
+      "evidence_section": "4 Skipping Tokens with Batch Prioritized Routing; 7 Conclusions",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that V-MoE models can be fine-tuned successfully with as few as 1 000 datapoints.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    }
+  ]
+}

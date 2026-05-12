@@ -1,0 +1,652 @@
+{
+  "paper_id": "c8b25fab5608c3e033d34b4483ec47e68ba109b7",
+  "architecture_summary": "Swin Transformer is a hierarchical vision Transformer that computes self-attention within non-overlapping local windows and alternates with shifted window partitioning to enable cross-window connections. It builds multi-scale feature maps through patch merging, giving linear computational complexity with respect to image size and making it suitable as a general-purpose backbone for vision tasks.",
+  "model_variants": [
+    {
+      "name": "Swin-T",
+      "param_count_surface": "29M",
+      "page": null,
+      "param_count_millions": 29.0
+    },
+    {
+      "name": "Swin-S",
+      "param_count_surface": "50M",
+      "page": null,
+      "param_count_millions": 50.0
+    },
+    {
+      "name": "Swin-B",
+      "param_count_surface": "88M",
+      "page": null,
+      "param_count_millions": 88.0
+    },
+    {
+      "name": "Swin-L",
+      "param_count_surface": "197M",
+      "page": null,
+      "param_count_millions": 197.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 81.3
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.0%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 83.0
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "83.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 83.5
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 84.5
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "85.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 85.2
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.4%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 86.4
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "87.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Comparison of different backbones on ImageNet-1K classification.",
+      "value_canonical": 87.3
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "50.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 50.5
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 50",
+      "value_surface": "69.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 69.3
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 75",
+      "value_surface": "54.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 54.9
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 50",
+      "value_surface": "66.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 66.6
+    },
+    {
+      "model": "Mask R-CNN",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 75",
+      "value_surface": "47.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 47.1
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "47.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 47.2
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 50",
+      "value_surface": "66.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 66.5
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 75",
+      "value_surface": "51.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 51.3
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 50",
+      "value_surface": "66.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 66.6
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 75",
+      "value_surface": "47.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 47.1
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "51.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 51.8
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 50",
+      "value_surface": "70.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 70.4
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 75",
+      "value_surface": "56.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 56.3
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "44.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 44.7
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 50",
+      "value_surface": "67.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 67.9
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 75",
+      "value_surface": "48.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 48.5
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "51.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 51.9
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 50",
+      "value_surface": "70.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 70.9
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box 75",
+      "value_surface": "56.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 56.5
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "45.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 45.0
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 50",
+      "value_surface": "68.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 68.4
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask 75",
+      "value_surface": "48.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 48.7
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "58.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 58.0
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "58.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 58.7
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "50.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 50.4
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "51.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2. Results on COCO object detection and instance segmentation.",
+      "value_canonical": 51.1
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "46.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Results of semantic segmentation on the ADE20K val and test set.",
+      "value_canonical": 46.1
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "49.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Results of semantic segmentation on the ADE20K val and test set.",
+      "value_canonical": 49.3
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "51.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Results of semantic segmentation on the ADE20K val and test set.",
+      "value_canonical": 51.6
+    },
+    {
+      "model": "Swin-L",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "53.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3. Results of semantic segmentation on the ADE20K val and test set.",
+      "value_canonical": 53.5
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.",
+      "value_canonical": 81.3
+    },
+    {
+      "model": "Performer [14]",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1",
+      "value_surface": "79.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.",
+      "value_canonical": 79.0
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP bbox",
+      "value_surface": "50.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.",
+      "value_canonical": 50.5
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP mask",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "46.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Accuracy of Swin Transformer using different methods for self-attention computation on three benchmarks.",
+      "value_canonical": 46.1
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 acc",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 8. Swin Transformers with different input image size on ImageNet-1K classification.",
+      "value_canonical": 81.6
+    },
+    {
+      "model": "Swin-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 acc",
+      "value_surface": "83.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 8. Swin Transformers with different input image size on ImageNet-1K classification.",
+      "value_canonical": 83.9
+    },
+    {
+      "model": "Swin-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "top-1 acc",
+      "value_surface": "84.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 8. Swin Transformers with different input image size on ImageNet-1K classification.",
+      "value_canonical": 84.5
+    },
+    {
+      "model": "Swin-Mixer-T/D24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "79.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 10. Performance of Swin MLP-Mixer on ImageNet-1K classification.",
+      "value_canonical": 79.4
+    },
+    {
+      "model": "Swin-Mixer-T/D12",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "79.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 10. Performance of Swin MLP-Mixer on ImageNet-1K classification.",
+      "value_canonical": 79.6
+    },
+    {
+      "model": "Swin-Mixer-T/D6",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "79.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 10. Performance of Swin MLP-Mixer on ImageNet-1K classification.",
+      "value_canonical": 79.7
+    },
+    {
+      "model": "Swin-Mixer-B/D24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 10. Performance of Swin MLP-Mixer on ImageNet-1K classification.",
+      "value_canonical": 80.3
+    },
+    {
+      "model": "Swin-Mixer-B/D24",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 10. Performance of Swin MLP-Mixer on ImageNet-1K classification.",
+      "value_canonical": 81.3
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "hierarchical Transformer",
+    "shifted windows",
+    "window-based multi-head self-attention",
+    "patch splitting",
+    "patch merging",
+    "linear embedding",
+    "LayerNorm",
+    "MLP",
+    "GELU",
+    "relative position bias",
+    "cyclic shift",
+    "masked MSA",
+    "AdamW",
+    "RandAugment",
+    "Mixup",
+    "Cutmix",
+    "random erasing",
+    "stochastic depth",
+    "feature pyramid networks",
+    "U-Net",
+    "multi-scale training",
+    "soft-NMS",
+    "instaboost"
+  ],
+  "novel_contributions": [
+    "We propose a hierarchical Transformer whose representation is computed with Shifted windows.",
+    "The shifted windowing scheme brings greater efficiency by limiting self-attention computation to non-overlapping local windows while also allowing for cross-window connection.",
+    "The hierarchical architecture has linear computational complexity with respect to image size.",
+    "The hierarchical design and the shifted window approach also prove beneficial for all-MLP architectures."
+  ],
+  "key_claims": [
+    {
+      "claim": "Swin Transformer is a general-purpose backbone for computer vision with hierarchical feature maps and linear computational complexity with respect to image size.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model achieves 87.3 top-1 accuracy on ImageNet-1K, 58.7 box AP and 51.1 mask AP on COCO test-dev, and 53.5 mIoU on ADE20K val.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Its performance surpasses the previous state-of-the-art by +2.7 box AP and +2.6 mask AP on COCO, and +3.2 mIoU on ADE20K.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Shifted windows provide cross-window connections and are more efficient than sliding-window self-attention while maintaining similar modeling power.",
+      "evidence_section": "3.2. Shifted Window based Self-Attention",
+      "page": null
+    },
+    {
+      "claim": "Relative position bias improves performance, while absolute position embedding slightly hurts dense prediction tasks.",
+      "evidence_section": "3.2. Shifted Window based Self-Attention",
+      "page": null
+    },
+    {
+      "claim": "Swin-T with shifted windows outperforms the non-shifted variant by +1.1% top-1 on ImageNet-1K, +2.8 box AP/+2.2 mask AP on COCO, and +2.8 mIoU on ADE20K.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    },
+    {
+      "claim": "Swin-L (HTC++)* achieves 58.7 box AP and 51.1 mask AP on COCO test-dev, surpassing Copy-paste and DetectoRS.",
+      "evidence_section": "4.2. Object Detection on COCO",
+      "page": null
+    },
+    {
+      "claim": "Swin-L with ImageNet-22K pre-training achieves 53.5 mIoU on ADE20K val, surpassing the previous best model by +3.2 mIoU.",
+      "evidence_section": "4.3. Semantic Segmentation on ADE20K",
+      "page": null
+    }
+  ]
+}

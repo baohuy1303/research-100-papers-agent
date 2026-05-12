@@ -1,0 +1,597 @@
+{
+  "paper_id": "16f2d2f2b8103ed0c4a4e6f339a21247e58c5e78",
+  "architecture_summary": "BoTNet replaces the final three spatial 3 × 3 convolutions in a ResNet with Multi-Head Self-Attention (MHSA) layers over low-resolution featuremaps, while keeping the rest of the backbone unchanged. The paper also introduces BoTNet-S1 for image classification by using stride 1 in the final MHSA layers and scaling the model family to larger image sizes and capacities.",
+  "model_variants": [
+    {
+      "name": "BoTNet-50",
+      "param_count_surface": "20.8×10 6",
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "BoTNet-S1-50",
+      "param_count_surface": "20.8M",
+      "page": null,
+      "param_count_millions": 20.8
+    },
+    {
+      "name": "BoT101",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "BoT152",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "BoT200",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO train",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "COCO val",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO mini val",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet classification",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet validation set",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "BoTNet",
+      "dataset_surface": "COCO Instance Segmentation benchmark",
+      "metric_surface": "Mask AP",
+      "value_surface": "44.4%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 44.4
+    },
+    {
+      "model": "BoTNet",
+      "dataset_surface": "COCO Instance Segmentation benchmark",
+      "metric_surface": "Box AP",
+      "value_surface": "49.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 49.7
+    },
+    {
+      "model": "BoTNet",
+      "dataset_surface": "ImageNet benchmark",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.7%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 84.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "39.4 (+ 0.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 39.4
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "35.3 (+ 0.3)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 35.3
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "42.8 (+ 1.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 42.8
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.0 (+ 1.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 38.0
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.6 (+ 1.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 43.6
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.9 (+ 1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 38.9
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.7 (+ 0.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.7 (+ 0.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under the 1x (12 epochs), 3x (36 epochs) and 6x (72 epochs) settings, trained with image resolution 1024 × 1024 and multi-scale jitter of [0.8, 1.25].",
+      "value_canonical": 38.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.7 (+ 0.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.7 (+ 0.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 38.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "45.3 (+ 1.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 45.3
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "40.5 (+ 1.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 40.5
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "45.9 (+ 2.1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 45.9
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "40.7 (+ 1.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50 and BoT50 under three settings of multi-scale jitter, all trained with image resolution 1024 × 1024 for 72 epochs (6x training schedule).",
+      "value_canonical": 40.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "42.7 (+ 0.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 42.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.3 (+ 0.6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 38.3
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.1 (+ 1.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 43.1
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.4 (+ 0.7)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 38.4
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.6 (+ 1.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 43.6
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.9 (+ 1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 38.9
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "42.5 (+ 0.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 42.5
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.1 (+ 0.4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation for Relative Position Encoding: Gains from the two types of interactions in the MHSA layers, content-content (qk^T) and content-position (qr^T).",
+      "value_canonical": 38.1
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "43.6 (+ 1.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 43.6
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "38.9 (+ 1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 38.9
+    },
+    {
+      "model": "BoT101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "45.5 (+ 2.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 45.5
+    },
+    {
+      "model": "BoT101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "40.4 (+ 2.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 40.4
+    },
+    {
+      "model": "BoT152",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "46.0 (+ 1.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 46.0
+    },
+    {
+      "model": "BoT152",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "40.6 (+ 1.5)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparing R50, R101, R152, BoT50, BoT101 and BoT152; all 6 setups using the canonical training schedule of 36 epochs, 1024 × 1024 images, multi-scale jitter [0.8, 1.25].",
+      "value_canonical": 40.6
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "45.9 (+ 1.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "All the models are trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 45.9
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "40.7 (+ 1.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "All the models are trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 40.7
+    },
+    {
+      "model": "BoT101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "47.4 (+ 1.0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "All the models are trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 47.4
+    },
+    {
+      "model": "BoT101",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "42.0 (+ 0.8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "All the models are trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 42.0
+    },
+    {
+      "model": "BoT152",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "49.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BoT152 and BoT200 trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 49.5
+    },
+    {
+      "model": "BoT152",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "43.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BoT152 and BoT200 trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 43.7
+    },
+    {
+      "model": "BoT200",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{bb}",
+      "value_surface": "49.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "BoT152 and BoT200 trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 49.7
+    },
+    {
+      "model": "BoT200",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mk}",
+      "value_surface": "44.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "BoT152 and BoT200 trained for 72 epochs with a multi-scale jitter of [0.1, 2.0].",
+      "value_canonical": 44.4
+    },
+    {
+      "model": "R50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "76.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in regular training setting: 100 epochs, batch size 1024, weight decay 1e-4, standard ResNet augmentation, for all three models.",
+      "value_canonical": 76.8
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "77.0 (+0.2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in regular training setting: 100 epochs, batch size 1024, weight decay 1e-4, standard ResNet augmentation, for all three models.",
+      "value_canonical": 77.0
+    },
+    {
+      "model": "BoT-S1-50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "77.7 (+ 0.9)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in regular training setting: 100 epochs, batch size 1024, weight decay 1e-4, standard ResNet augmentation, for all three models.",
+      "value_canonical": 77.7
+    },
+    {
+      "model": "R50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "77.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in an improved training setting: 200 epochs, batch size 4096, weight decay 8e-5, RandAugment (2 layers, magnitude 10), and label smoothing of 0.1",
+      "value_canonical": 77.7
+    },
+    {
+      "model": "BoT50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "78.3 ( +0.6 )",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in an improved training setting: 200 epochs, batch size 4096, weight decay 8e-5, RandAugment (2 layers, magnitude 10), and label smoothing of 0.1",
+      "value_canonical": 78.3
+    },
+    {
+      "model": "BoT-S1-50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "79.1 ( +1.4 )",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ImageNet results in an improved training setting: 200 epochs, batch size 4096, weight decay 8e-5, RandAugment (2 layers, magnitude 10), and label smoothing of 0.1",
+      "value_canonical": 79.1
+    }
+  ],
+  "training_details": {
+    "compute_surface": "up to 1.64x faster in “compute” time than the popular EfficientNet models on TPU-v3 hardware",
+    "batch_size": 64,
+    "epochs": 200
+  },
+  "methods_used": [
+    "self-attention",
+    "Multi-Head Self-Attention (MHSA)",
+    "ResNet bottleneck blocks",
+    "global self-attention",
+    "relative position encodings",
+    "2D relative position self-attention",
+    "average-pooling",
+    "FPN",
+    "Mask R-CNN",
+    "Faster R-CNN",
+    "cross-replica batch normalization",
+    "bfloat16 precision",
+    "multi-scale jitter",
+    "RandAugment",
+    "label smoothing",
+    "SGD with momentum"
+  ],
+  "novel_contributions": [
+    "BoTNet, a conceptually simple yet powerful backbone architecture that incorporates self-attention for multiple computer vision tasks including image classification, object detection and instance segmentation.",
+    "Replacing the spatial convolutions with global self-attention in the final three bottleneck blocks of a ResNet and no other changes improves the baselines significantly on instance segmentation and object detection while reducing the parameters, with minimal overhead in latency.",
+    "ResNet bottleneck blocks with self-attention can be viewed as Transformer blocks, and the paper names this block Bottleneck Transformer (BoT).",
+    "BoTNet achieves 44.4% Mask AP and 49.7% Box AP on COCO Instance Segmentation using Mask R-CNN, surpassing the previous best published single model and single scale results of ResNeSt.",
+    "BoTNet achieves 84.7% top-1 accuracy on ImageNet while being up to 1.64x faster in compute time than EfficientNet models on TPU-v3 hardware."
+  ],
+  "key_claims": [
+    {
+      "claim": "BoTNet is a simple backbone architecture that replaces the final three spatial convolutions in a ResNet with global self-attention and improves detection and segmentation with minimal latency overhead.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BoTNet achieves 44.4% Mask AP and 49.7% Box AP on COCO Instance Segmentation using Mask R-CNN, surpassing the previous best published single model and single scale results of ResNeSt.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "BoTNet-based image classification models achieve 84.7% top-1 accuracy on ImageNet and are up to 1.64x faster in compute time than EfficientNet models on TPU-v3 hardware.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Replacing the final three 3 × 3 convolutions in a ResNet with MHSA layers forms BoTNet, and the architecture reduces parameters relative to ResNet-50 in Table 1.",
+      "evidence_section": "3. Method",
+      "page": null
+    },
+    {
+      "claim": "BoT50 improves over R50 on COCO instance segmentation across longer training schedules, with the largest gains appearing in the 3x and 6x settings.",
+      "evidence_section": "4.1. BoTNet improves over ResNet on COCO Instance Segmentation with Mask R-CNN",
+      "page": null
+    },
+    {
+      "claim": "Relative position encodings improve performance, and combining qk^T with qr_{relative}^T gives additive gains over the baseline.",
+      "evidence_section": "4.3. Relative Position Encodings Boost Performance",
+      "page": null
+    },
+    {
+      "claim": "BoTNet improves backbones in the ResNet family and BoT101/BoT152 outperform their ResNet counterparts on COCO.",
+      "evidence_section": "4.4. BoTNet improves backbones in ResNet Family",
+      "page": null
+    },
+    {
+      "claim": "BoTNet scales well with larger images, and BoT200 reaches 49.7 AP^{bb} and 44.4 AP^{mk} on COCO.",
+      "evidence_section": "4.5. BoTNet scales well with larger images",
+      "page": null
+    }
+  ]
+}

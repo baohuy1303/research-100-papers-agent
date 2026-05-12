@@ -1,0 +1,536 @@
+{
+  "paper_id": "8e33914d6051dd031a5e096962b9398fc1d16067",
+  "architecture_summary": "The paper introduces the dense prediction transformer (DPT), an encoder-decoder architecture that uses a vision transformer backbone, reassembles tokens from multiple transformer stages into image-like feature maps at multiple resolutions, and fuses them with a convolutional decoder for dense prediction.",
+  "model_variants": [
+    {
+      "name": "DPT-Base",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DPT-Large",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "DPT-Hybrid",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MIX 6",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MIX 5",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "NYUv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "KITTI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pascal Context",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HRWSI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BlendedMVS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ReDWeb",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DIW",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ETH3D",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Sintel",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TUM",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "DIW",
+      "metric_surface": "WHDR",
+      "value_surface": "10.82",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 10.82
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "ETH3D",
+      "metric_surface": "AbsRel",
+      "value_surface": "0.089",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 0.089
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "Sintel",
+      "metric_surface": "AbsRel",
+      "value_surface": "0.270",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 0.27
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "KITTI",
+      "metric_surface": "$\\delta > 1.25$",
+      "value_surface": "8.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 8.46
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "NYU",
+      "metric_surface": "$\\delta > 1.25$",
+      "value_surface": "8.32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 8.32
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "TUM",
+      "metric_surface": "$\\delta > 1.25$",
+      "value_surface": "9.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison to the state of the art on monocular depth estimation. We evaluate zero-shot cross-dataset transfer according to the protocol defined in [30]. Relative performance is computed with respect to the original MiDaS model [30]. Lower is better for all metrics.",
+      "value_canonical": 9.97
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "$\\delta > 1.25$",
+      "value_surface": "0.904",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.904
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "$\\delta > 1.25^2$",
+      "value_surface": "0.988",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.988
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "$\\delta > 1.25^3$",
+      "value_surface": "0.998",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.998
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "AbsRel",
+      "value_surface": "0.110",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.11
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "RMSE",
+      "value_surface": "0.357",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.357
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "NYUv2",
+      "metric_surface": "log10",
+      "value_surface": "0.045",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on NYUv2 depth.",
+      "value_canonical": 0.045
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "$\\delta > 1.25$",
+      "value_surface": "0.959",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 0.959
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "$\\delta > 1.25^2$",
+      "value_surface": "0.995",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 0.995
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "$\\delta > 1.25^3$",
+      "value_surface": "0.999",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 0.999
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "AbsRel",
+      "value_surface": "0.062",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 0.062
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "RMSE",
+      "value_surface": "2.573",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 2.573
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "KITTI",
+      "metric_surface": "RMSE log",
+      "value_surface": "0.092",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Evaluation on KITTI (Eigen split).",
+      "value_canonical": 0.092
+    },
+    {
+      "model": "OCNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "45.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 45.45
+    },
+    {
+      "model": "ACNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "45.90",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 45.9
+    },
+    {
+      "model": "DeepLabV3",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "46.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 46.91
+    },
+    {
+      "model": "DeepLabV3",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "48.36",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 48.36
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "49.02",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 49.02
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "47.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the ADE20K validation set.",
+      "value_canonical": 47.63
+    },
+    {
+      "model": "OCNet",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "56.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Finetuning results on the Pascal Context validation set.",
+      "value_canonical": 56.2
+    },
+    {
+      "model": "DeepLabV3",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "58.37",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Finetuning results on the Pascal Context validation set.",
+      "value_canonical": 58.37
+    },
+    {
+      "model": "DeepLabV3",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "58.92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Finetuning results on the Pascal Context validation set.",
+      "value_canonical": 58.92
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "Pascal Context",
+      "metric_surface": "mIoU [%]",
+      "value_surface": "60.46",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Finetuning results on the Pascal Context validation set.",
+      "value_canonical": 60.46
+    },
+    {
+      "model": "Base",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Mean",
+      "value_surface": "0.0822",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of attaching skip connections to different encoder layers.",
+      "value_canonical": 0.0822
+    },
+    {
+      "model": "Hybrid",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Mean",
+      "value_surface": "0.0733",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of attaching skip connections to different encoder layers.",
+      "value_canonical": 0.0733
+    },
+    {
+      "model": "Ignore",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Mean",
+      "value_surface": "0.0822",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of approaches to handle the readout token.",
+      "value_canonical": 0.0822
+    },
+    {
+      "model": "Project",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Mean",
+      "value_surface": "0.0819",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of approaches to handle the readout token.",
+      "value_canonical": 0.0819
+    },
+    {
+      "model": "MiDaS",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Time [ms]",
+      "value_surface": "32",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model statistics. DPT has comparable inference speed to the state of the art.",
+      "value_canonical": 32.0
+    },
+    {
+      "model": "DPT-Base",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Time [ms]",
+      "value_surface": "17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model statistics. DPT has comparable inference speed to the state of the art.",
+      "value_canonical": 17.0
+    },
+    {
+      "model": "DPT-Hybrid",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Time [ms]",
+      "value_surface": "38",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model statistics. DPT has comparable inference speed to the state of the art.",
+      "value_canonical": 38.0
+    },
+    {
+      "model": "DPT-Large",
+      "dataset_surface": "HRWSI",
+      "metric_surface": "Time [ms]",
+      "value_surface": "35",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model statistics. DPT has comparable inference speed to the state of the art.",
+      "value_canonical": 35.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 16,
+    "epochs": 60
+  },
+  "methods_used": [
+    "vision transformer",
+    "multi-headed self-attention",
+    "convolutional decoder",
+    "patch embedding",
+    "ResNet50 feature extractor",
+    "positional embedding",
+    "readout token",
+    "Reassemble",
+    "Resample",
+    "RefineNet-based feature fusion",
+    "linear interpolation",
+    "multi-objective optimization",
+    "Adam",
+    "random horizontal flips",
+    "cross-entropy loss",
+    "auxiliary output head",
+    "auxiliary loss",
+    "SGD with momentum 0.9",
+    "polynomial learning rate scheduler",
+    "batch normalization",
+    "dropout",
+    "bilinear interpolation"
+  ],
+  "novel_contributions": [
+    "Introduce dense prediction transformer (DPT), a dense prediction architecture based on a vision transformer backbone",
+    "Reassemble tokens from multiple transformer stages into image-like representations at multiple resolutions",
+    "Show that DPT sets a new state of the art on ADE20K with 49.02% mIoU",
+    "Show that DPT sets a new state of the art on Pascal Context with 60.46 mIoU",
+    "Show that DPT improves monocular depth estimation by more than 28% relative performance over a state-of-the-art fully-convolutional network"
+  ],
+  "key_claims": [
+    {
+      "claim": "DPT leverages a vision transformer backbone for dense prediction by reassembling tokens from multiple stages into image-like representations and fusing them with a convolutional decoder.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "For monocular depth estimation, DPT improves relative performance by up to 28% compared to a state-of-the-art fully-convolutional network.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DPT sets a new state of the art on ADE20K with 49.02% mIoU.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "DPT also sets the new state of the art on NYUv2, KITTI, and Pascal Context after fine-tuning on smaller datasets.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The architecture maintains constant token dimensionality and a global receptive field at every stage after the initial embedding.",
+      "evidence_section": "3. Architecture",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K validation, DPT-Hybrid achieves 49.02 mIoU, outperforming the listed convolutional baselines.",
+      "evidence_section": "4.2. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On Pascal Context validation, DPT-Hybrid achieves 60.46 mIoU.",
+      "evidence_section": "4.2. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "DPT-Hybrid and DPT-Large have comparable latency to MiDaS while DPT-Large has 343 parameters [million] and DPT-Hybrid has 123 parameters [million].",
+      "evidence_section": "4.3. Ablations",
+      "page": null
+    }
+  ]
+}

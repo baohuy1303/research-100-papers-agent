@@ -1,0 +1,524 @@
+{
+  "paper_id": "28630034bb29760df01ab033b743e30b37f336ae",
+  "architecture_summary": "PaLI is a multimodal sequence-to-sequence Transformer derived from the T5 encoder-decoder architecture that takes an image and text as input and autoregressively generates text. It reuses pre-trained mT5 language backbones and ViT vision backbones, and scales both modalities jointly with a large multilingual image-text pretraining mix.",
+  "model_variants": [
+    {
+      "name": "PaLI-3B",
+      "param_count_surface": "3.0B",
+      "page": null,
+      "param_count_millions": 3000.0
+    },
+    {
+      "name": "PaLI-15B",
+      "param_count_surface": "14.8B",
+      "page": null,
+      "param_count_millions": 14800.0
+    },
+    {
+      "name": "PaLI-17B",
+      "param_count_surface": "16.9B",
+      "page": null,
+      "param_count_millions": 16900.0
+    },
+    {
+      "name": "ViT-e",
+      "param_count_surface": "4B parameters",
+      "page": null,
+      "param_count_millions": 4000.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "WebLI",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CC3M-35L",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQ2A-CC3M-35L",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Open Images",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Object365",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "COCO Captions",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "NoCaps",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TextCaps",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "VizWiz-Cap",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Crossmodal-3600",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "VQAv2",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "OKVQA",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "TextVQA",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "VizWiz-QA",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "ST-VQA",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "xGQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MaXM",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-R",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-A",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Sketch",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ObjectNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SuperGLUE",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "XNLI",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "XQuAD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TyDiQA-GoldP",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "COCO Captions",
+      "metric_surface": "CIDEr",
+      "value_surface": "149.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "CIDEr results for image captioning over the English benchmarks COCO Captions (Karpathy split), NoCaps, TextCaps, and VizWiz-Cap.",
+      "value_canonical": 149.1
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "CIDEr",
+      "value_surface": "124.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CIDEr results for image captioning over the English benchmarks COCO Captions (Karpathy split), NoCaps, TextCaps, and VizWiz-Cap.",
+      "value_canonical": 124.4
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "TextCaps",
+      "metric_surface": "CIDEr",
+      "value_surface": "160.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CIDEr results for image captioning over the English benchmarks COCO Captions (Karpathy split), NoCaps, TextCaps, and VizWiz-Cap.",
+      "value_canonical": 160.4
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "VizWiz-Cap",
+      "metric_surface": "CIDEr",
+      "value_surface": "124.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CIDEr results for image captioning over the English benchmarks COCO Captions (Karpathy split), NoCaps, TextCaps, and VizWiz-Cap.",
+      "value_canonical": 124.7
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "Crossmodal-3600",
+      "metric_surface": "CIDEr",
+      "value_surface": "53.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CIDEr scores on image captioning for the Crossmodal-3600 benchmark for seven diverse languages (English, French, Hindi, Hebrew, Romanian, Thai, and Chinese), as well as the average of the 35 languages covered by the benchmark.",
+      "value_canonical": 53.6
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "accuracy",
+      "value_surface": "84.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "VQA Accuracy results on VQAv2, OKVQA, TextVQA, VizWiz-QA, and ANLS result on ST-VQA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification (SimVLM, CoCa, BEiT-3, OFA).",
+      "value_canonical": 84.3
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "OKVQA",
+      "metric_surface": "accuracy",
+      "value_surface": "64.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "VQA Accuracy results on VQAv2, OKVQA, TextVQA, VizWiz-QA, and ANLS result on ST-VQA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification (SimVLM, CoCa, BEiT-3, OFA).",
+      "value_canonical": 64.5
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "TextVQA",
+      "metric_surface": "accuracy",
+      "value_surface": "71.81",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "VQA Accuracy results on VQAv2, OKVQA, TextVQA, VizWiz-QA, and ANLS result on ST-VQA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification (SimVLM, CoCa, BEiT-3, OFA).",
+      "value_canonical": 71.81
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "VizWiz-QA",
+      "metric_surface": "accuracy",
+      "value_surface": "74.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "VQA Accuracy results on VQAv2, OKVQA, TextVQA, VizWiz-QA, and ANLS result on ST-VQA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification (SimVLM, CoCa, BEiT-3, OFA).",
+      "value_canonical": 74.4
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ST-VQA",
+      "metric_surface": "ANLS",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "VQA Accuracy results on VQAv2, OKVQA, TextVQA, VizWiz-QA, and ANLS result on ST-VQA. PaLI models are evaluated in the open-vocabulary generation setting, and still outperform previous models that use closed-vocabulary classification (SimVLM, CoCa, BEiT-3, OFA).",
+      "value_canonical": 79.9
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "xGQA",
+      "metric_surface": "exact-match accuracy",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Cross-lingual VQA results on xGQA (Pfeiffer et al., 2022) (left) and multilingual VQA results on MaXM (Changpinyo et al., 2022b) (right). All models are fine-tuned on translated VQAv2 in 13 languages. Exact-match accuracy is reported. Referenced MPT results are from (Changpinyo et al., 2022b)",
+      "value_canonical": 54.2
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "MaXM",
+      "metric_surface": "exact-match accuracy",
+      "value_surface": "56.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Cross-lingual VQA results on xGQA (Pfeiffer et al., 2022) (left) and multilingual VQA results on MaXM (Changpinyo et al., 2022b) (right). All models are fine-tuned on translated VQAv2 in 13 languages. Exact-match accuracy is reported. Referenced MPT results are from (Changpinyo et al., 2022b)",
+      "value_canonical": 56.4
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 72.11
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet-R",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "81.97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 81.97
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet-A",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "44.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 44.7
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet-Sketch",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "63.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 63.83
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet-v2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "64.46",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 64.46
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "42.62",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Top 1 accuracy results of 0-shot image classification on ImageNet, ImageNet-R, ImageNet-A, ImageNet-Sketch, Imagenet-v2, and ObjectNet. Top-5 results are in the Appendix (Table 22).",
+      "value_canonical": 42.62
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "SuperGLUE",
+      "metric_surface": "Avg. Score",
+      "value_surface": "88.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on SuperGLUE and three XTREME tasks. The first row is the result reported by mT5 (Xue et al., 2021) and ByT5 (Xue et al., 2022) paper. The second row is our repetition using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.",
+      "value_canonical": 88.2
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "XNLI",
+      "metric_surface": "Accuracy",
+      "value_surface": "84.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on SuperGLUE and three XTREME tasks. The first row is the result reported by mT5 (Xue et al., 2021) and ByT5 (Xue et al., 2022) paper. The second row is our repetition using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.",
+      "value_canonical": 84.9
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "XQuAD",
+      "metric_surface": "F1/EM",
+      "value_surface": "81.8 / 66.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on SuperGLUE and three XTREME tasks. The first row is the result reported by mT5 (Xue et al., 2021) and ByT5 (Xue et al., 2022) paper. The second row is our repetition using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "TyDiQA-GoldP",
+      "metric_surface": "F1/EM",
+      "value_surface": "81.2 / 66.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on SuperGLUE and three XTREME tasks. The first row is the result reported by mT5 (Xue et al., 2021) and ByT5 (Xue et al., 2022) paper. The second row is our repetition using the publicly available mT5-XXL checkpoint, which is also the starting point for PaLI-17B. The third row results are using the trained PaLI-17B model.",
+      "value_canonical": 81.2
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "COCO-Cap",
+      "metric_surface": "CIDEr",
+      "value_surface": "149.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Result on a 5B version of PaLI consisting of mT5-Large and ViT-e. Results on COCO-Cap and OKVQA with 490 × 490 are shown together with other sizes.",
+      "value_canonical": 149.0
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "OKVQA",
+      "metric_surface": "accuracy",
+      "value_surface": "62.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Result on a 5B version of PaLI consisting of mT5-Large and ViT-e. Results on COCO-Cap and OKVQA with 490 × 490 are shown together with other sizes.",
+      "value_canonical": 62.4
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "TallyQA",
+      "metric_surface": "Weighted average",
+      "value_surface": "71.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Result of 700M, 3B and 17B versions of PaLI on TallyQA (Acharya et al., 2019).",
+      "value_canonical": 71.9
+    },
+    {
+      "model": "PaLI-17B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-e on ImageNet and OOD test sets.",
+      "value_canonical": 90.9
+    },
+    {
+      "model": "ViT-e",
+      "dataset_surface": "ObjectNet",
+      "metric_surface": "zero-shot accuracy",
+      "value_surface": "84.9%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Zero-shot transfer results of ViT-e on ImageNet, OOD test sets and VTAB-Natural datasets.",
+      "value_canonical": 84.9
+    }
+  ],
+  "training_details": {
+    "compute_surface": "1,024 GCP-TPUv4 chips for 7 days",
+    "batch_size": 4096,
+    "epochs": 1
+  },
+  "methods_used": [
+    "sequence-to-sequence learning",
+    "encoder-decoder Transformer",
+    "Vision Transformer",
+    "cross-attention",
+    "text-based prompts",
+    "autoregressive text generation",
+    "multilingual pre-training",
+    "span corruption",
+    "split-captioning",
+    "captioning",
+    "OCR",
+    "visual question answering",
+    "visual question generation",
+    "object-aware VQA",
+    "generative object detection",
+    "teacher forcing",
+    "softmax cross-entropy loss",
+    "model souping",
+    "inverse square-root learning rate decay",
+    "AdaFactor",
+    "learning rate warmup",
+    "high-resolution fine-tuning",
+    "LiT transfer"
+  ],
+  "novel_contributions": [
+    "We introduce PaLI, a jointly scaled multilingual language-image model with a single image-and-text to text interface.",
+    "We create WebLI, a new high-volume multilingual image-and-language dataset containing 10 billion images and texts in over 100 languages.",
+    "We train ViT-e, a 4-billion parameter ViT, to study scaling of the vision backbone beyond previous models.",
+    "We show that jointly scaling the vision and language components improves performance, with the vision side giving a better return on investment.",
+    "We empirically validate that a mixture-of-objectives benefits large vision-and-language models.",
+    "We show that a properly-scaled model can handle many languages while still achieving SOTA performance on English-only tasks."
+  ],
+  "key_claims": [
+    {
+      "claim": "PaLI uses a simple, modular image-and-text to text interface that can handle image-only, language-only, and multimodal tasks across many languages.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "Joint scaling of the vision and language components is important, and the vision backbone provides a better return on investment than the language backbone.",
+      "evidence_section": "1 INTRODUCTION",
+      "page": null
+    },
+    {
+      "claim": "PaLI-17B achieves state-of-the-art results on multiple benchmarks, including COCO Captioning and VQAv2.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "WebLI is a new multilingual image-text dataset with 10 billion images and texts in over 100 languages.",
+      "evidence_section": "1 INTRODUCTION / 3.2 DATA",
+      "page": null
+    },
+    {
+      "claim": "ViT-e is a 4B-parameter vision transformer and improves PaLI’s vision-language performance compared with ViT-G.",
+      "evidence_section": "3.1 ARCHITECTURE",
+      "page": null
+    },
+    {
+      "claim": "PaLI-17B preserves strong language-understanding capabilities despite multimodal pretraining.",
+      "evidence_section": "4.3 LANGUAGE-UNDERSTANDING CAPABILITIES",
+      "page": null
+    },
+    {
+      "claim": "The mixture-of-objectives design is effective, with split-captioning, object-related tasks, and OCR contributing strongly.",
+      "evidence_section": "4.6 ABLATION STUDIES",
+      "page": null
+    }
+  ]
+}

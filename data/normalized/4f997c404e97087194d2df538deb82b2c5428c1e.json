@@ -1,0 +1,394 @@
+{
+  "paper_id": "4f997c404e97087194d2df538deb82b2c5428c1e",
+  "architecture_summary": "MAST3R extends DUST3R by adding a second head that regresses dense local feature maps, trained with an additional InfoNCE matching loss, and by introducing a fast reciprocal matching scheme plus coarse-to-fine matching for high-resolution images.",
+  "model_variants": [
+    {
+      "name": "MAST3R",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "MAST3R-M",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "MASt3R top1",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "MASt3R top20",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "MAST3R Coarse",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Habitat",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ARKitScenes",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Blended MVS",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MegaDepth",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Static Scenes 3D",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ScanNet++",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CO3D-v2",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Waymo",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Mapfree",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "WildRgB",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VirtualKitti",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Unreal4K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TartanAir",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Map-free relocalization benchmark",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CO3Dv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealEstate10k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Aachen Day-Night",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "InLoc",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTU",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DUST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "45.2%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on the validation set of the Map-free dataset. (First and second best)",
+      "value_canonical": 45.2
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "51.5%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on the validation set of the Map-free dataset. (First and second best)",
+      "value_canonical": 51.5
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "75.9%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results on the validation set of the Map-free dataset. (First and second best)",
+      "value_canonical": 75.9
+    },
+    {
+      "model": "DUST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "0.697",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state of the art on the test set of the Map-free dataset.",
+      "value_canonical": 0.697
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "0.726",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with the state of the art on the test set of the Map-free dataset.",
+      "value_canonical": 0.726
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "0.933",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with the state of the art on the test set of the Map-free dataset.",
+      "value_canonical": 0.933
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "0.941",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with the state of the art on the test set of the Map-free dataset.",
+      "value_canonical": 0.941
+    },
+    {
+      "model": "LoFTR",
+      "dataset_surface": "Map-free dataset",
+      "metric_surface": "VCRE (<90px) AUC",
+      "value_surface": "0.634",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the state of the art on the test set of the Map-free dataset.",
+      "value_canonical": 0.634
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "CO3Dv2",
+      "metric_surface": "RRA@15",
+      "value_surface": "94.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Multi-view pose regression on the CO3Dv2 [67] and RealEstate10K [121] with 10 random frames. Parenthesis () denote methods that do not report results on the 10 views set, we report their best for comparison (8 views). We distinguish between (a) multi-view and (b) pairwise methods. *Right*: Dense MVS results on the DTU dataset, in *mm*. Handcrafted methods (c) perform worse than learning-based approaches (d) that train on this specific domain. Among the methods that operate in a zero-shot setting (e), MAST3R is the only one attaining reasonable performance.",
+      "value_canonical": 94.6
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "CO3Dv2",
+      "metric_surface": "RTA@15",
+      "value_surface": "91.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Multi-view pose regression on the CO3Dv2 [67] and RealEstate10K [121] with 10 random frames. Parenthesis () denote methods that do not report results on the 10 views set, we report their best for comparison (8 views). We distinguish between (a) multi-view and (b) pairwise methods. *Right*: Dense MVS results on the DTU dataset, in *mm*. Handcrafted methods (c) perform worse than learning-based approaches (d) that train on this specific domain. Among the methods that operate in a zero-shot setting (e), MAST3R is the only one attaining reasonable performance.",
+      "value_canonical": 91.9
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "CO3Dv2",
+      "metric_surface": "mAA(30)",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Multi-view pose regression on the CO3Dv2 [67] and RealEstate10K [121] with 10 random frames. Parenthesis () denote methods that do not report results on the 10 views set, we report their best for comparison (8 views). We distinguish between (a) multi-view and (b) pairwise methods. *Right*: Dense MVS results on the DTU dataset, in *mm*. Handcrafted methods (c) perform worse than learning-based approaches (d) that train on this specific domain. Among the methods that operate in a zero-shot setting (e), MAST3R is the only one attaining reasonable performance.",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "RealEstate10K",
+      "metric_surface": "mAA(30)",
+      "value_surface": "76.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Multi-view pose regression on the CO3Dv2 [67] and RealEstate10K [121] with 10 random frames. Parenthesis () denote methods that do not report results on the 10 views set, we report their best for comparison (8 views). We distinguish between (a) multi-view and (b) pairwise methods. *Right*: Dense MVS results on the DTU dataset, in *mm*. Handcrafted methods (c) perform worse than learning-based approaches (d) that train on this specific domain. Among the methods that operate in a zero-shot setting (e), MAST3R is the only one attaining reasonable performance.",
+      "value_canonical": 76.4
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Aachen Day-Night",
+      "metric_surface": "Day",
+      "value_surface": "79.6/93.5/98.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual localization results on Aachen Day-Night and InLoc. We report our results for different number of retrieved database images (topN).",
+      "value_canonical": 79.6
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "Aachen Day-Night",
+      "metric_surface": "Night",
+      "value_surface": "70.2/88.0/97.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual localization results on Aachen Day-Night and InLoc. We report our results for different number of retrieved database images (topN).",
+      "value_canonical": 70.2
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "InLoc",
+      "metric_surface": "DUC1",
+      "value_surface": "55.1/77.8/90.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual localization results on Aachen Day-Night and InLoc. We report our results for different number of retrieved database images (topN).",
+      "value_canonical": 55.1
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "InLoc",
+      "metric_surface": "DUC2",
+      "value_surface": "71.0/84.7/89.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Visual localization results on Aachen Day-Night and InLoc. We report our results for different number of retrieved database images (topN).",
+      "value_canonical": 71.0
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "DTU",
+      "metric_surface": "Acc.",
+      "value_surface": "0.403",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Coarse matching compared to Coarse-to-Fine for the tasks of visual localization on Aachen Day-Night (left) and MVS reconstruction on the DTU dataset (right).",
+      "value_canonical": 0.403
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "DTU",
+      "metric_surface": "Comp.",
+      "value_surface": "0.344",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Coarse matching compared to Coarse-to-Fine for the tasks of visual localization on Aachen Day-Night (left) and MVS reconstruction on the DTU dataset (right).",
+      "value_canonical": 0.344
+    },
+    {
+      "model": "MAST3R",
+      "dataset_surface": "DTU",
+      "metric_surface": "Overall",
+      "value_surface": "0.374",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Coarse matching compared to Coarse-to-Fine for the tasks of visual localization on Aachen Day-Night (left) and MVS reconstruction on the DTU dataset (right).",
+      "value_canonical": 0.374
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 64,
+    "epochs": 35
+  },
+  "methods_used": [
+    "DUST3R",
+    "ViT",
+    "cross-attention",
+    "pointmaps regression",
+    "dense local features",
+    "InfoNCE loss",
+    "fast reciprocal matching",
+    "coarse-to-fine matching",
+    "AdamW",
+    "cosine decay",
+    "random crop",
+    "color jitter",
+    "FAISS",
+    "K-d trees"
+  ],
+  "novel_contributions": [
+    "We propose MAST3R, a 3D-aware matching approach building on the recently released DUST3R framework.",
+    "It outputs local feature maps that enable highly accurate and extremely robust matching.",
+    "We propose a coarse-to-fine matching scheme associated with a fast matching algorithm, enabling to work with high-resolution images.",
+    "MAST3R significantly outperform the state-of-the-art on several absolute and relative pose localization benchmarks."
+  ],
+  "key_claims": [
+    {
+      "claim": "MAST3R augments DUST3R with a new dense local-feature head trained with an additional matching loss, improving matching accuracy while preserving robustness to viewpoint changes.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces a fast reciprocal matching scheme that accelerates dense matching by orders of magnitude and yields improved results.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "MAST3R beats the best published methods by 30% absolute improvement in VCRE AUC on the Map-free localization dataset.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Training uses a mixture of 14 datasets and 650k pairs per epoch for 35 epochs with a batch size of 64.",
+      "evidence_section": "4.1. Training",
+      "page": null
+    },
+    {
+      "claim": "On the Map-free validation set, using local features and the full MAST3R objective improves pose estimation over matching 3D points and over training with only the matching loss.",
+      "evidence_section": "4.2. Map-free localization",
+      "page": null
+    },
+    {
+      "claim": "On the Map-free test set, MAST3R achieves more than 93% in VCRE AUC and reduces median translation error to 36cm.",
+      "evidence_section": "4.2. Map-free localization",
+      "page": null
+    },
+    {
+      "claim": "MAST3R performs competitively on Aachen Day-Night and significantly outperforms the state of the art on InLoc.",
+      "evidence_section": "4.4. Visual localization",
+      "page": null
+    },
+    {
+      "claim": "MAST3R can be applied in a zero-shot setting for DTU multiview stereo and remains competitive with the best methods.",
+      "evidence_section": "4.5. Multiview 3D reconstruction",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "paper_id": "b3bf9fe13195e9aa70e1dac04e01fcff7008e812",
+  "architecture_summary": "Perceiver is a Transformer-based architecture that uses asymmetric cross-attention to project very large inputs into a fixed-size latent bottleneck, then processes the latents with a deep Transformer stack. It iteratively alternates cross-attention and latent self-attention, optionally sharing weights across repeats, and uses position/modality encodings such as Fourier features to handle images, audio, video, and point clouds without domain-specific convolutions.",
+  "model_variants": [
+    {
+      "name": "Perceiver",
+      "param_count_surface": "~ 45 million parameters",
+      "page": null,
+      "param_count_millions": 45.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ILSVRC 2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AudioSet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ModelNet40",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ResNet-50",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 77.6
+    },
+    {
+      "model": "ViT-B-16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 77.9
+    },
+    {
+      "model": "ResNet-50 (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "73.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 73.5
+    },
+    {
+      "model": "ViT-B-16 (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 76.7
+    },
+    {
+      "model": "Transformer (64x64, FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "57.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 57.0
+    },
+    {
+      "model": "Perceiver (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "78.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 1. Top-1 validation accuracy (in %) on ImageNet.",
+      "value_canonical": 78.0
+    },
+    {
+      "model": "ResNet-50 (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "73.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Top-1 validation accuracy (in %) on standard (raw) and permuted ImageNet (higher is better).",
+      "value_canonical": 73.5
+    },
+    {
+      "model": "ViT-B-16 (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "76.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Top-1 validation accuracy (in %) on standard (raw) and permuted ImageNet (higher is better).",
+      "value_canonical": 76.7
+    },
+    {
+      "model": "Transformer (64x64) (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "57.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Top-1 validation accuracy (in %) on standard (raw) and permuted ImageNet (higher is better).",
+      "value_canonical": 57.0
+    },
+    {
+      "model": "Perceiver (FF)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "78.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Top-1 validation accuracy (in %) on standard (raw) and permuted ImageNet (higher is better).",
+      "value_canonical": 78.0
+    },
+    {
+      "model": "(Learned pos.)",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "Top-1 validation accuracy",
+      "value_surface": "70.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Top-1 validation accuracy (in %) on standard (raw) and permuted ImageNet (higher is better).",
+      "value_canonical": 70.9
+    },
+    {
+      "model": "Benchmark (Gemmeke et al., 2017)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "31.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 31.4
+    },
+    {
+      "model": "Attention (Kong et al., 2018)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "32.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 32.7
+    },
+    {
+      "model": "Multi-level Attention (Yu et al., 2018)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "36.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 36.0
+    },
+    {
+      "model": "ResNet-50 (Ford et al., 2019)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "38.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 38.0
+    },
+    {
+      "model": "CNN-14 (Kong et al., 2020)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "43.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 43.1
+    },
+    {
+      "model": "CNN-14 (no balancing & no mixup) (Kong et al., 2020)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "37.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 37.5
+    },
+    {
+      "model": "G-blend (Wang et al., 2020c)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "32.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 32.4
+    },
+    {
+      "model": "Attention AV-fusion (Fayek & Kumar, 2020)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "38.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 38.4
+    },
+    {
+      "model": "Perceiver (raw audio)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "38.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 38.3
+    },
+    {
+      "model": "Perceiver (mel spectrogram)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "38.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 38.4
+    },
+    {
+      "model": "Perceiver (mel spectrogram - tuned)",
+      "dataset_surface": "AudioSet",
+      "metric_surface": "mAP",
+      "value_surface": "44.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Perceiver performance on AudioSet, compared to state-of-the-art models (mAP, higher is better).",
+      "value_canonical": 44.2
+    },
+    {
+      "model": "PointNet++ (Qi et al., 2017)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "91.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 91.9
+    },
+    {
+      "model": "ResNet-50 (FF)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "66.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 66.3
+    },
+    {
+      "model": "ViT-B-2 (FF)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "78.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 78.9
+    },
+    {
+      "model": "ViT-B-4 (FF)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 73.4
+    },
+    {
+      "model": "ViT-B-8 (FF)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "65.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 65.3
+    },
+    {
+      "model": "ViT-B-16 (FF)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "59.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 59.6
+    },
+    {
+      "model": "Transformer (44x44)",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "82.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 82.1
+    },
+    {
+      "model": "Perceiver",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "Accuracy",
+      "value_surface": "85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Top-1 test-set classification accuracy (in %) on ModelNet40. Higher is better.",
+      "value_canonical": 85.7
+    },
+    {
+      "model": "Perceiver",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 6. Performance as a function of # of cross-attends and their arrangement.",
+      "value_canonical": 78.0
+    },
+    {
+      "model": "Perceiver",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "72.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7. Weight sharing mitigates overfitting and leads to better validation performance on ImageNet.",
+      "value_canonical": 72.9
+    },
+    {
+      "model": "Perceiver",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "78.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 7. Weight sharing mitigates overfitting and leads to better validation performance on ImageNet.",
+      "value_canonical": 78.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": "32 TPUs",
+    "batch_size": 512,
+    "epochs": 120
+  },
+  "methods_used": [
+    "cross-attention",
+    "latent self-attention",
+    "Transformer",
+    "weight sharing",
+    "Fourier features",
+    "RandAugment",
+    "Inception-style preprocessing",
+    "LAMB optimizer",
+    "GELU",
+    "layer norm",
+    "sigmoid cross entropy loss",
+    "SpecAugment",
+    "video dropout"
+  ],
+  "novel_contributions": [
+    "a Transformer-based model that scales to more than a hundred thousand inputs",
+    "an asymmetric attention mechanism that iteratively distills inputs into a tight latent bottleneck",
+    "a single architecture that handles images, point clouds, audio, video, and multimodal combinations without domain-specific assumptions",
+    "Fourier feature position encodings adapted for scalable multimodal inputs",
+    "iterative cross-attention with optional weight sharing to improve parameter efficiency"
+  ],
+  "key_claims": [
+    {
+      "claim": "The Perceiver scales to hundreds of thousands of inputs by using an asymmetric attention mechanism and a latent bottleneck, while remaining flexible across modalities.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The Perceiver obtains performance comparable to ResNet-50 and ViT on ImageNet without 2D convolutions by directly attending to 50,000 pixels.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The architecture is competitive in all modalities in AudioSet.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet, the Perceiver is competitive with models specifically designed for processing images and reaches 78.0 top-1 validation accuracy in Table 1.",
+      "evidence_section": "4.1. Images – ImageNet",
+      "page": null
+    },
+    {
+      "claim": "On AudioSet, the Perceiver achieves near state-of-the-art results on audio-only, video-only, and audio+video settings, with 44.2 mAP for the tuned mel spectrogram model.",
+      "evidence_section": "4.2. Audio and video – AudioSet",
+      "page": null
+    },
+    {
+      "claim": "On ModelNet40, the Perceiver reaches 85.7 accuracy and outperforms the generic baselines listed in Table 4, though it remains below PointNet++.",
+      "evidence_section": "4.3. Point clouds – ModelNet40",
+      "page": null
+    },
+    {
+      "claim": "Weight sharing reduces parameters by approximately 10x and improves validation performance on ImageNet.",
+      "evidence_section": "3.1. The Perceiver architecture",
+      "page": null
+    }
+  ]
+}

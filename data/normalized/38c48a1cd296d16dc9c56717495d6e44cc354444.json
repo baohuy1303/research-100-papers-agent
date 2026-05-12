@@ -1,0 +1,817 @@
+{
+  "paper_id": "38c48a1cd296d16dc9c56717495d6e44cc354444",
+  "architecture_summary": "Vision Mamba (Vim) is a generic vision backbone built with bidirectional Mamba blocks and position embeddings. It splits images into patches, linearly projects them into token sequences, and processes them with forward and backward state space modeling instead of self-attention.",
+  "model_variants": [
+    {
+      "name": "Vim-Ti",
+      "param_count_surface": "7M",
+      "page": null,
+      "param_count_millions": 7.0
+    },
+    {
+      "name": "Vim-S",
+      "param_count_surface": "26M",
+      "page": null,
+      "param_count_millions": 26.0
+    },
+    {
+      "name": "Vim-B",
+      "param_count_surface": "98M",
+      "page": null,
+      "param_count_millions": 98.0
+    },
+    {
+      "name": "Vim-Ti",
+      "param_count_surface": "7M",
+      "page": null,
+      "param_count_millions": 7.0
+    },
+    {
+      "name": "Vim-S",
+      "param_count_surface": "26M",
+      "page": null,
+      "param_count_millions": 26.0
+    },
+    {
+      "name": "Vim-B",
+      "param_count_surface": "98M",
+      "page": null,
+      "param_count_millions": 98.0
+    },
+    {
+      "name": "Hier-Vim-T",
+      "param_count_surface": "30M",
+      "page": null,
+      "param_count_millions": 30.0
+    },
+    {
+      "name": "Hier-Vim-S",
+      "param_count_surface": "50M",
+      "page": null,
+      "param_count_millions": 50.0
+    },
+    {
+      "name": "Hier-Vim-B",
+      "param_count_surface": "89M",
+      "page": null,
+      "param_count_millions": 89.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO 2017",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "ResNet-18",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "69.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 69.8
+    },
+    {
+      "model": "ResNet-50",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "76.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 76.2
+    },
+    {
+      "model": "ResNet-101",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "77.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 77.4
+    },
+    {
+      "model": "ResNet-152",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 78.3
+    },
+    {
+      "model": "ResNeXt50-32×4d",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 77.6
+    },
+    {
+      "model": "RegNetY-4GF",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "80.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 80.0
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 77.9
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 76.5
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "72.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 72.2
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 79.8
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "S4ND-ViT-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "80.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 80.4
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "76.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 76.1
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "78.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 78.3
+    },
+    {
+      "model": "Vim-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "80.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 80.3
+    },
+    {
+      "model": "Vim-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 81.4
+    },
+    {
+      "model": "Vim-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "81.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 81.9
+    },
+    {
+      "model": "Vim-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "83.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with different backbones on ImageNet-1K validation set",
+      "value_canonical": 83.2
+    },
+    {
+      "model": "DeepLab v3+",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "44.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 44.1
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "41.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 41.2
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "44.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 44.9
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "39.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 39.2
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "44.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 44.0
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "41.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 41.0
+    },
+    {
+      "model": "UperNet",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "val mIoU",
+      "value_surface": "44.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of semantic segmentation on the ADE20K val. set",
+      "value_canonical": 44.9
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{box}",
+      "value_surface": "44.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 44.4
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{box}",
+      "value_surface": "45.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 45.7
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{50}^{box}",
+      "value_surface": "63.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 63.0
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{50}^{box}",
+      "value_surface": "63.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 63.9
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{75}^{box}",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 47.8
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{75}^{box}",
+      "value_surface": "49.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 49.6
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{1}^{box}",
+      "value_surface": "26.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 26.1
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{1}^{box}",
+      "value_surface": "26.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 26.1
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_m^{box}",
+      "value_surface": "47.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 47.4
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_m^{box}",
+      "value_surface": "49.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 49.0
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_1^{box}",
+      "value_surface": "61.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 61.8
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_1^{box}",
+      "value_surface": "63.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 63.2
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mask}",
+      "value_surface": "38.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 38.1
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP^{mask}",
+      "value_surface": "39.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 39.2
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{50}^{mask}",
+      "value_surface": "59.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 59.9
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{50}^{mask}",
+      "value_surface": "60.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 60.9
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{75}^{mask}",
+      "value_surface": "40.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 40.5
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{75}^{mask}",
+      "value_surface": "41.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 41.7
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{1}^{mask}",
+      "value_surface": "18.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 18.1
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_{1}^{mask}",
+      "value_surface": "18.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 18.2
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_m^{mask}",
+      "value_surface": "40.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 40.5
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_m^{mask}",
+      "value_surface": "41.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 41.8
+    },
+    {
+      "model": "DeiT-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_1^{mask}",
+      "value_surface": "58.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 58.4
+    },
+    {
+      "model": "Vim-Ti",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP_1^{mask}",
+      "value_surface": "60.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results of object detection and instance segmentation on the COCO val set using Cascade Mask R-CNN framework",
+      "value_canonical": 60.2
+    },
+    {
+      "model": "None",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "73.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 73.2
+    },
+    {
+      "model": "None",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K mIoU",
+      "value_surface": "32.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 32.3
+    },
+    {
+      "model": "Bidirectional Layer",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "70.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 70.9
+    },
+    {
+      "model": "Bidirectional Layer",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K mIoU",
+      "value_surface": "33.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 33.6
+    },
+    {
+      "model": "Bidirectional SSM",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "72.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 72.8
+    },
+    {
+      "model": "Bidirectional SSM",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K mIoU",
+      "value_surface": "33.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 33.2
+    },
+    {
+      "model": "Bidirectional SSM + Conv1d",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "73.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 73.9
+    },
+    {
+      "model": "Bidirectional SSM + Conv1d",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "ADE20K mIoU",
+      "value_surface": "35.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the bidirectional design",
+      "value_canonical": 35.9
+    },
+    {
+      "model": "Mean pool",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "73.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the classification design",
+      "value_canonical": 73.9
+    },
+    {
+      "model": "Max pool",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "73.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the classification design",
+      "value_canonical": 73.4
+    },
+    {
+      "model": "Head class token",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "75.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the classification design",
+      "value_canonical": 75.2
+    },
+    {
+      "model": "Double class token",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "74.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the classification design",
+      "value_canonical": 74.3
+    },
+    {
+      "model": "Middle class token",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "76.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation study on the classification design",
+      "value_canonical": 76.1
+    },
+    {
+      "model": "Hier-Vim-T",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with hierarchical architectures on ImageNet-1K validation set",
+      "value_canonical": 82.5
+    },
+    {
+      "model": "Hier-Vim-S",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with hierarchical architectures on ImageNet-1K validation set",
+      "value_canonical": 83.4
+    },
+    {
+      "model": "Hier-Vim-B",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "ImageNet top-1 acc.",
+      "value_surface": "83.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with hierarchical architectures on ImageNet-1K validation set",
+      "value_canonical": 83.9
+    }
+  ],
+  "training_details": {
+    "compute_surface": "8 A800 GPUs",
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "bidirectional state space models",
+    "position embeddings",
+    "patch embedding",
+    "class token",
+    "1-D convolution",
+    "SiLU",
+    "AdamW",
+    "mixup",
+    "random erasing",
+    "label-smoothing regularization",
+    "random cropping",
+    "random horizontal flipping",
+    "random re-scaling",
+    "random photometric distortion",
+    "large-scale jitter data augmentation",
+    "EMA",
+    "cosine schedule",
+    "linear learning rate decay",
+    "feature pyramid network (FPN)",
+    "UperNet",
+    "Cascade Mask R-CNN",
+    "Segmenter",
+    "long sequence fine-tuning"
+  ],
+  "novel_contributions": [
+    "We propose Vision Mamba (Vim), which incorporates bidirectional SSM for data-dependent global visual context modeling and position embeddings for location-aware visual understanding.",
+    "Without the need of attention, the proposed Vim has the same modeling power as ViT while it only has subquadratic-time computation and linear memory complexity.",
+    "We conduct extensive experiments on ImageNet classification and dense prediction downstream tasks.",
+    "We propose another variant Hier-Vim by replacing shifted local window attention in SwinTransformer with the proposed global bidirectional SSM."
+  ],
+  "key_claims": [
+    {
+      "claim": "Vim is a new generic vision backbone built from bidirectional Mamba blocks and position embeddings, without self-attention.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Vim achieves higher performance than well-established vision transformers like DeiT on ImageNet classification, COCO object detection, and ADE20K semantic segmentation.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Vim is 2.8× faster than DeiT and saves 86.8% GPU memory when performing batch inference on images with a resolution of 1248×1248.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper claims Vim has subquadratic-time computation and linear memory complexity while retaining the modeling power of ViT.",
+      "evidence_section": "1. Introduction",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet-1K validation, Vim-Ti, Vim-S, and Vim-B outperform the corresponding DeiT variants, and long-sequence fine-tuning further improves results.",
+      "evidence_section": "4. Experiment",
+      "page": null
+    },
+    {
+      "claim": "On ADE20K semantic segmentation, Vim consistently outperforms DeiT across scales, and Vim-S achieves the same segmentation performance as ResNet-101 with nearly 2× fewer parameters.",
+      "evidence_section": "4.2. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On COCO 2017 detection and instance segmentation, Vim-Ti surpasses DeiT-Ti by 1.3 box AP and 1.1 mask AP.",
+      "evidence_section": "4.3. Object Detection and Instance Segmentation",
+      "page": null
+    },
+    {
+      "claim": "The hierarchical variant Hier-Vim outperforms Swin Transformer at tiny, small, and base sizes on ImageNet-1K validation.",
+      "evidence_section": "C. Extended Comparison on Hierarchical Architecture",
+      "page": null
+    }
+  ]
+}

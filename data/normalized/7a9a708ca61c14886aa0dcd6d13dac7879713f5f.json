@@ -1,0 +1,405 @@
+{
+  "paper_id": "7a9a708ca61c14886aa0dcd6d13dac7879713f5f",
+  "architecture_summary": "SwinIR is an image restoration model based on the Swin Transformer, composed of shallow feature extraction, deep feature extraction with residual Swin Transformer blocks (RSTB), and high-quality image reconstruction. It uses local attention and shifted window mechanisms for restoration tasks including image super-resolution, image denoising, and JPEG compression artifact reduction.",
+  "model_variants": [
+    {
+      "name": "SwinIR",
+      "param_count_surface": "11.8M",
+      "page": null,
+      "param_count_millions": 11.8
+    },
+    {
+      "name": "SwinIR+",
+      "param_count_surface": "11.8M",
+      "page": null,
+      "param_count_millions": 11.8
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "DIV2K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Flickr2K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Manga109",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set5",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set14",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BSD100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Urban100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Classics5",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LIVE1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Set12",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BSD68",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CBSD68",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kodak24",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "McMaster",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.35",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 38.35
+    },
+    {
+      "model": "SwinIR+",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.38",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 38.38
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "34.46",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 34.46
+    },
+    {
+      "model": "SwinIR+",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "34.61",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 34.61
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.53",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 32.53
+    },
+    {
+      "model": "SwinIR+",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.55",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 32.55
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "33.81",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 33.81
+    },
+    {
+      "model": "SwinIR+",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "33.95",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 33.95
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "39.92",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 39.92
+    },
+    {
+      "model": "SwinIR+",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "40.02",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 2: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for classical image SR on benchmark datasets.",
+      "value_canonical": 40.02
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Set5",
+      "metric_surface": "PSNR",
+      "value_surface": "38.14",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for lightweight image SR on benchmark datasets.",
+      "value_canonical": 38.14
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Set14",
+      "metric_surface": "PSNR",
+      "value_surface": "33.86",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for lightweight image SR on benchmark datasets.",
+      "value_canonical": 33.86
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "BSD100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.31",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for lightweight image SR on benchmark datasets.",
+      "value_canonical": 32.31
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "32.76",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for lightweight image SR on benchmark datasets.",
+      "value_canonical": 32.76
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Manga109",
+      "metric_surface": "PSNR",
+      "value_surface": "39.12",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 3: Quantitative comparison (average PSNR/SSIM) with state-of-the-art methods for lightweight image SR on benchmark datasets.",
+      "value_canonical": 39.12
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Classics5",
+      "metric_surface": "PSNR",
+      "value_surface": "30.27",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4: Quantitative comparison (average PSNR/SSIM/PSNR-B) with state-of-the-art methods for JPEG compression artifact reduction on benchmark datasets.",
+      "value_canonical": 30.27
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "LIVE1",
+      "metric_surface": "PSNR",
+      "value_surface": "29.86",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4: Quantitative comparison (average PSNR/SSIM/PSNR-B) with state-of-the-art methods for JPEG compression artifact reduction on benchmark datasets.",
+      "value_canonical": 29.86
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Set12",
+      "metric_surface": "PSNR",
+      "value_surface": "33.36",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 5: Quantitative comparison (average PSNR) with state-of-the-art methods for grayscale image denoising on benchmark datasets.",
+      "value_canonical": 33.36
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "BSD68",
+      "metric_surface": "PSNR",
+      "value_surface": "31.97",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 5: Quantitative comparison (average PSNR) with state-of-the-art methods for grayscale image denoising on benchmark datasets.",
+      "value_canonical": 31.97
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "33.70",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 5: Quantitative comparison (average PSNR) with state-of-the-art methods for grayscale image denoising on benchmark datasets.",
+      "value_canonical": 33.7
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "CBSD68",
+      "metric_surface": "PSNR",
+      "value_surface": "34.42",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 6: Quantitative comparison (average PSNR) with state-of-the-art methods for color image denoising on benchmark datasets.",
+      "value_canonical": 34.42
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Kodak24",
+      "metric_surface": "PSNR",
+      "value_surface": "35.34",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 6: Quantitative comparison (average PSNR) with state-of-the-art methods for color image denoising on benchmark datasets.",
+      "value_canonical": 35.34
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "McMaster",
+      "metric_surface": "PSNR",
+      "value_surface": "35.61",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 6: Quantitative comparison (average PSNR) with state-of-the-art methods for color image denoising on benchmark datasets.",
+      "value_canonical": 35.61
+    },
+    {
+      "model": "SwinIR",
+      "dataset_surface": "Urban100",
+      "metric_surface": "PSNR",
+      "value_surface": "35.13",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 6: Quantitative comparison (average PSNR) with state-of-the-art methods for color image denoising on benchmark datasets.",
+      "value_canonical": 35.13
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Swin Transformer",
+    "shallow feature extraction",
+    "deep feature extraction",
+    "high-quality image reconstruction",
+    "residual Swin Transformer blocks (RSTB)",
+    "Swin Transformer layers (STL)",
+    "local attention",
+    "shifted window mechanism",
+    "multi-head self-attention",
+    "LayerNorm",
+    "MLP",
+    "sub-pixel convolution layer",
+    "residual learning",
+    "L1 pixel loss",
+    "Charbonnier loss",
+    "GAN loss",
+    "perceptual loss",
+    "self-ensemble strategy"
+  ],
+  "novel_contributions": [
+    "We propose a strong baseline model SwinIR for image restoration based on the Swin Transformer.",
+    "SwinIR consists of three parts: shallow feature extraction, deep feature extraction and high-quality image reconstruction.",
+    "The deep feature extraction module is composed of several residual Swin Transformer blocks (RSTB), each of which has several Swin Transformer layers together with a residual connection.",
+    "SwinIR outperforms state-of-the-art methods on different tasks by up to 0.14~0.45dB, while the total number of parameters can be reduced by up to 67%."
+  ],
+  "key_claims": [
+    {
+      "claim": "SwinIR is a strong baseline model for image restoration based on the Swin Transformer, with shallow feature extraction, deep feature extraction, and high-quality image reconstruction modules.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "SwinIR outperforms state-of-the-art methods on three representative tasks by up to 0.14~0.45dB, while reducing the total number of parameters by up to 67%.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The deep feature extraction module uses residual Swin Transformer blocks (RSTB), each containing several Swin Transformer layers and a residual connection.",
+      "evidence_section": "3. Method",
+      "page": null
+    },
+    {
+      "claim": "For classical image SR, SwinIR achieves best performance on almost all five benchmark datasets for all scale factors when trained on DIV2K.",
+      "evidence_section": "4.3. Results on Image SR",
+      "page": null
+    },
+    {
+      "claim": "For lightweight image SR, SwinIR outperforms competitive methods by a PSNR margin of up to 0.53dB on different benchmark datasets.",
+      "evidence_section": "4.3. Results on Image SR",
+      "page": null
+    },
+    {
+      "claim": "For JPEG compression artifact reduction, the proposed SwinIR has average PSNR gains of at least 0.11dB and 0.07dB on two testing datasets for different quality factors.",
+      "evidence_section": "4.4. Results on JPEG Compression Artifact Reduction",
+      "page": null
+    },
+    {
+      "claim": "For grayscale and color image denoising, SwinIR achieves better performance than all compared methods and surpasses DRUNet by up to 0.3dB on Urban100.",
+      "evidence_section": "4.5. Results on Image Denoising",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,468 @@
+{
+  "paper_id": "ef7d31137ef06c5be8c2824ecc5af6ce3358cc8f",
+  "architecture_summary": "The paper introduces the Open X-Embodiment Repository, a standardized large-scale robot learning dataset and pretrained checkpoints for X-embodied robot learning. It evaluates RT-1-X and RT-2-X, which adapt RT-1 and RT-2 to co-train on multi-embodiment robotic data with a coarsely aligned action and observation space.",
+  "model_variants": [
+    {
+      "name": "RT-1",
+      "param_count_surface": "35M parameter network",
+      "page": null,
+      "param_count_millions": 35.0
+    },
+    {
+      "name": "RT-2-X",
+      "param_count_surface": "55B",
+      "page": null,
+      "param_count_millions": 55000.0
+    },
+    {
+      "name": "RT-2-X",
+      "param_count_surface": "5B",
+      "page": null,
+      "param_count_millions": 5000.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Open X-Embodiment Dataset",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "22 robot embodiments",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "60 existing robot datasets",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "RLDS",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "tfrecord",
+      "purpose": "other",
+      "page": null
+    },
+    {
+      "surface": "RT-1",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "QT-Opt",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Bridge",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Task Agnostic Robot Play",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Jaco Play",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Cable Routing",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "RoboTurk",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "NYU VINN",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Austin VIOLA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Berkeley Autolab UR5",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TOTO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Language Table",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kitchen Manipulation",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AUTOLab UR5",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Robot Play",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Bridge",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RT-1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Google Robot",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "WidowX",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "WebLI",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Kitchen Manipulation",
+      "metric_surface": "mean success rate",
+      "value_surface": "63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 63.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Cable Routing",
+      "metric_surface": "mean success rate",
+      "value_surface": "56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 56.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "NYU Door Opening",
+      "metric_surface": "mean success rate",
+      "value_surface": "80",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 80.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Autolab UR5",
+      "metric_surface": "mean success rate",
+      "value_surface": "45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 45.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Task-Agnostic Play",
+      "metric_surface": "mean success rate",
+      "value_surface": "72",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 72.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Mean",
+      "metric_surface": "mean success rate",
+      "value_surface": "63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 63.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "Kitchen Manipulation",
+      "metric_surface": "mean success rate",
+      "value_surface": "43",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 43.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "Cable Routing",
+      "metric_surface": "mean success rate",
+      "value_surface": "24",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 24.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "NYU Door Opening",
+      "metric_surface": "mean success rate",
+      "value_surface": "53",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 53.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "Autolab UR5",
+      "metric_surface": "mean success rate",
+      "value_surface": "53",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 53.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "Task-Agnostic Play",
+      "metric_surface": "mean success rate",
+      "value_surface": "33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 33.0
+    },
+    {
+      "model": "Original Method",
+      "dataset_surface": "Mean",
+      "metric_surface": "mean success rate",
+      "value_surface": "41",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 41.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Kitchen Manipulation",
+      "metric_surface": "mean success rate",
+      "value_surface": "48",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 48.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Cable Routing",
+      "metric_surface": "mean success rate",
+      "value_surface": "18",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 18.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "NYU Door Opening",
+      "metric_surface": "mean success rate",
+      "value_surface": "65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 65.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Autolab UR5",
+      "metric_surface": "mean success rate",
+      "value_surface": "25",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 25.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Task-Agnostic Play",
+      "metric_surface": "mean success rate",
+      "value_surface": "68",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 68.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Mean",
+      "metric_surface": "mean success rate",
+      "value_surface": "44",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "RT-1-X mean success rate is 50% higher than that of either the Original Method or RT-1.",
+      "value_canonical": 44.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Bridge",
+      "metric_surface": "success rate",
+      "value_surface": "27%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE I: Parameter count scaling experiment to assess the impact of capacity on absorbing large-scale diverse embodiment data.",
+      "value_canonical": 27.0
+    },
+    {
+      "model": "RT-1-X",
+      "dataset_surface": "Bridge",
+      "metric_surface": "success rate",
+      "value_surface": "27%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE I: Parameter count scaling experiment to assess the impact of capacity on absorbing large-scale diverse embodiment data.",
+      "value_canonical": 27.0
+    },
+    {
+      "model": "RT-2-X",
+      "dataset_surface": "Bridge",
+      "metric_surface": "success rate",
+      "value_surface": "50%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE I: Parameter count scaling experiment to assess the impact of capacity on absorbing large-scale diverse embodiment data.",
+      "value_canonical": 50.0
+    },
+    {
+      "model": "RT-2-X",
+      "dataset_surface": "Google Robot",
+      "metric_surface": "Emergent Skills Evaluation",
+      "value_surface": "75.8%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE II: Ablations to show the impact of design decisions on generalization (to unseen objects, backgrounds, and environments) and emergent skills (skills from other datasets on the Google Robot), showing the importance of Web-pretraining, model size, and history.",
+      "value_canonical": 75.8
+    },
+    {
+      "model": "RT-2-X",
+      "dataset_surface": "Google Robot",
+      "metric_surface": "RT-2 Generalization Evaluation",
+      "value_surface": "61%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE II: Ablations to show the impact of design decisions on generalization (to unseen objects, backgrounds, and environments) and emergent skills (skills from other datasets on the Google Robot), showing the importance of Web-pretraining, model size, and history.",
+      "value_canonical": 61.0
+    },
+    {
+      "model": "RT-2",
+      "dataset_surface": "Google Robot",
+      "metric_surface": "Emergent Skills Evaluation",
+      "value_surface": "27.3%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE II: Ablations to show the impact of design decisions on generalization (to unseen objects, backgrounds, and environments) and emergent skills (skills from other datasets on the Google Robot), showing the importance of Web-pretraining, model size, and history.",
+      "value_canonical": 27.3
+    },
+    {
+      "model": "RT-2",
+      "dataset_surface": "Google Robot",
+      "metric_surface": "RT-2 Generalization Evaluation",
+      "value_surface": "62%",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "TABLE II: Ablations to show the impact of design decisions on generalization (to unseen objects, backgrounds, and environments) and emergent skills (skills from other datasets on the Google Robot), showing the importance of Web-pretraining, model size, and history.",
+      "value_canonical": 62.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer",
+    "FiLM",
+    "EfficientNet",
+    "ViT",
+    "LLM",
+    "De-Tokenizer",
+    "RLDS",
+    "tfrecord",
+    "categorical cross-entropy",
+    "co-training",
+    "co-fine-tuning",
+    "language-conditioned imitation learning",
+    "web-scale pretraining",
+    "pre-trained language embeddings",
+    "pre-trained vision-language models"
+  ],
+  "novel_contributions": [
+    "Open X-Embodiment Repository, an open-source repository which includes large-scale data along with pre-trained model checkpoints for X-embodied robot learning research",
+    "Open X-Embodiment Dataset with 1M+ robot trajectories from 22 robot embodiments",
+    "RT-X models that train RT-1 and RT-2 on multi-embodiment robotic data to demonstrate positive transfer",
+    "A standardized data format for pooling 60 existing robot datasets into a consistent repository"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper assembles a dataset from 22 different robots collected through a collaboration between 21 institutions, demonstrating 527 skills (160266 tasks).",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "RT-X exhibits positive transfer and improves the capabilities of multiple robots by leveraging experience from other platforms.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The Open X-Embodiment Dataset contains 1M+ real robot trajectories spanning 22 robot embodiments.",
+      "evidence_section": "III. THE OPEN X-EMBEDIMENT REPOSITORY",
+      "page": null
+    },
+    {
+      "claim": "RT-1-X outperforms the Original Method trained on each of the robot-specific datasets on 4 of the 5 small-scale dataset domains.",
+      "evidence_section": "V. EXPERIMENTAL RESULTS",
+      "page": null
+    },
+    {
+      "claim": "In the large-dataset setting, RT-1-X does not outperform the RT-1 baseline trained on only the embodiment-specific dataset, but the larger RT-2-X model outperforms both the Original Method and RT-1.",
+      "evidence_section": "V. EXPERIMENTAL RESULTS",
+      "page": null
+    },
+    {
+      "claim": "RT-2-X outperforms RT-2 by ~3× on emergent skills for the Google Robot, suggesting transfer from other robots adds new capabilities.",
+      "evidence_section": "V. EXPERIMENTAL RESULTS",
+      "page": null
+    },
+    {
+      "claim": "Including a short history of images and web-based pre-training are critical to achieving high performance for the large RT-2-X models.",
+      "evidence_section": "V. EXPERIMENTAL RESULTS",
+      "page": null
+    }
+  ]
+}

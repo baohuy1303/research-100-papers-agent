@@ -1,0 +1,507 @@
+{
+  "paper_id": "9f4b69762ffb1ba42b573fd4ced996f3153e21c0",
+  "architecture_summary": "CoAtNet is a family of hybrid models that combines depthwise convolution and self-attention via simple relative attention, and uses a vertically stacked multi-stage layout with convolution stages early and Transformer stages later. The paper adapts the C-C-T-T layout for the main CoAtNet design.",
+  "model_variants": [
+    {
+      "name": "CoAtNet-0",
+      "param_count_surface": "25M",
+      "page": null,
+      "param_count_millions": 25.0
+    },
+    {
+      "name": "CoAtNet-1",
+      "param_count_surface": "42M",
+      "page": null,
+      "param_count_millions": 42.0
+    },
+    {
+      "name": "CoAtNet-2",
+      "param_count_surface": "75M",
+      "page": null,
+      "param_count_millions": 75.0
+    },
+    {
+      "name": "CoAtNet-3",
+      "param_count_surface": "168M",
+      "page": null,
+      "param_count_millions": 168.0
+    },
+    {
+      "name": "CoAtNet-4",
+      "param_count_surface": "275M",
+      "page": null,
+      "param_count_millions": 275.0
+    },
+    {
+      "name": "CoAtNet-5",
+      "param_count_surface": "688M",
+      "page": null,
+      "param_count_millions": 688.0
+    },
+    {
+      "name": "CoAtNet-6",
+      "param_count_surface": "1.47B",
+      "page": null,
+      "param_count_millions": 1470.0
+    },
+    {
+      "name": "CoAtNet-7",
+      "param_count_surface": "2.44B",
+      "page": null,
+      "param_count_millions": 2440.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "JFT",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "JFT-3B",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 81.6
+    },
+    {
+      "model": "CoAtNet-1",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "83.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 83.3
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 84.1
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "84.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 84.5
+    },
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "83.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 83.9
+    },
+    {
+      "model": "CoAtNet-1",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "85.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 85.1
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 85.7
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "85.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 85.8
+    },
+    {
+      "model": "CoAtNet-4",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "87.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 87.9
+    },
+    {
+      "model": "+ PT-RA",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "88.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 88.3
+    },
+    {
+      "model": "+ PT-RA-E150",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 88.4
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "86.0",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 86.0
+    },
+    {
+      "model": "CoAtNet-4",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "88.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 88.1
+    },
+    {
+      "model": "+ PT-RA",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "88.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 88.4
+    },
+    {
+      "model": "+ PT-RA-E150",
+      "dataset_surface": "ImageNet. 1K",
+      "metric_surface": "ImageNet Top-1 Accuracy",
+      "value_surface": "88.56",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Model performance on ImageNet. 1K only denotes training on ImageNet-1K only; 21K+1K denotes pre-training on ImageNet-21K and finetuning on ImageNet-1K; PT-RA denotes applying RandAugment during 21K pre-training, and E150 means 150 epochs of 21K pre-training, which is longer than the standard 90 epochs. More results are in Appendix A.3.",
+      "value_canonical": 88.56
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.52",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 88.52
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "88.81",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 88.81
+    },
+    {
+      "model": "CoAtNet-4",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.11",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 89.11
+    },
+    {
+      "model": "CoAtNet-5",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "89.77",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 89.77
+    },
+    {
+      "model": "ViT-G/14",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 90.45
+    },
+    {
+      "model": "CoAtNet-6",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.45",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 90.45
+    },
+    {
+      "model": "CoAtNet-7",
+      "dataset_surface": "JFT",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "90.88",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance Comparison on large-scale JFT dataset. TPUv3-core-days denotes the pre-training time, *Top-1 Accuracy* denotes the finetuned accuracy on ImageNet. Note that the last 3 rows use a larger dataset JFT-3B [26] for pre-training, while others use JFT-300M [15]. See Appendix A.2 for the size details of CoAtNet-5/6/7. †: Down-sampling in the MBConv block is achieved by stride-2 Depthwise Convolution. °: ViT-G/14 computation consumption is read from Fig. 1 of the paper [26].",
+      "value_canonical": 90.88
+    },
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Accuracy",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on relative attention.",
+      "value_canonical": 84.1
+    },
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Accuracy",
+      "value_surface": "85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on relative attention.",
+      "value_canonical": 85.7
+    },
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet-21K",
+      "metric_surface": "Pre-train Precision@1",
+      "value_surface": "53.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on relative attention.",
+      "value_canonical": 53.0
+    },
+    {
+      "model": "CoAtNet-0",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Finetune Accuracy",
+      "value_surface": "87.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on relative attention.",
+      "value_canonical": 87.9
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Accuracy",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on architecture layout.",
+      "value_canonical": 84.1
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Accuracy",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on architecture layout.",
+      "value_canonical": 83.4
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Top-1 Accuracy",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on architecture layout.",
+      "value_canonical": 84.0
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "ImageNet-21K",
+      "metric_surface": "53.0",
+      "value_surface": "87.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on architecture layout.",
+      "value_canonical": 87.6
+    },
+    {
+      "model": "CoAtNet-3",
+      "dataset_surface": "ImageNet-21K",
+      "metric_surface": "53.0",
+      "value_surface": "87.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on architecture layout.",
+      "value_canonical": 87.4
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Accuracy",
+      "value_surface": "82.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The effect of performing down-sampling in first Conv v.s. the Depthwise Conv.",
+      "value_canonical": 82.0
+    },
+    {
+      "model": "CoAtNet-1",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Accuracy",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The effect of performing down-sampling in first Conv v.s. the Depthwise Conv.",
+      "value_canonical": 83.5
+    },
+    {
+      "model": "CoAtNet-2",
+      "dataset_surface": "ImageNet-1K",
+      "metric_surface": "Accuracy",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "The effect of performing down-sampling in first Conv v.s. the Depthwise Conv.",
+      "value_canonical": 84.1
+    }
+  ],
+  "training_details": {
+    "compute_surface": "256 TPUv3-core-days",
+    "batch_size": 4096,
+    "epochs": 300
+  },
+  "methods_used": [
+    "depthwise convolution",
+    "self-attention",
+    "relative attention",
+    "MBConv blocks",
+    "squeeze-excitation",
+    "stochastic depth",
+    "label smoothing",
+    "weight decay",
+    "RandAugment",
+    "MixUp",
+    "BatchNorm",
+    "LayerNorm",
+    "GELUs",
+    "global average pooling"
+  ],
+  "novel_contributions": [
+    "A family of hybrid models, CoAtNets, that marry convolution and attention for vision.",
+    "A simple relative-attention formulation that unifies depthwise convolution and self-attention with minimum additional cost.",
+    "A principled vertical layout design showing that convolution stages are better early and Transformer stages later.",
+    "State-of-the-art performance under different resource constraints across ImageNet-1K, ImageNet-21K, and JFT."
+  ],
+  "key_claims": [
+    {
+      "claim": "CoAtNet combines convolution and self-attention through simple relative attention and a staged architecture that stacks convolution layers before attention layers.",
+      "evidence_section": "Abstract; 2 Model",
+      "page": null
+    },
+    {
+      "claim": "Without extra data, CoAtNet achieves 86.0% ImageNet top-1 accuracy and matches the prior art NFNet under similar computation and training conditions.",
+      "evidence_section": "Abstract; 4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "When pre-trained with ImageNet-21K, CoAtNet achieves 88.56% top-1 accuracy on ImageNet-1K and matches ViT-Huge pre-trained on JFT-300M while using 23x less data.",
+      "evidence_section": "Abstract; 4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "With JFT-3B pre-training, CoAtNet reaches 90.88% top-1 accuracy on ImageNet and establishes a new state-of-the-art result.",
+      "evidence_section": "Abstract; 4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "Relative attention improves generalization and transfer accuracy compared with standard attention.",
+      "evidence_section": "4.3 Ablation Studies",
+      "page": null
+    },
+    {
+      "claim": "The C-C-T-T layout is selected because it balances generalization, model capacity, transferability, and efficiency better than the alternative layouts.",
+      "evidence_section": "2.2 Vertical Layout Design",
+      "page": null
+    },
+    {
+      "claim": "CoAtNet-7 achieves 90.88% top-1 accuracy on ImageNet with 1.5x less computation than the prior art set by ViT-G/14.",
+      "evidence_section": "Abstract; 4.2 Main Results",
+      "page": null
+    }
+  ]
+}

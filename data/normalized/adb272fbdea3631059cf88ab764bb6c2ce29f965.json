@@ -1,0 +1,508 @@
+{
+  "paper_id": "adb272fbdea3631059cf88ab764bb6c2ce29f965",
+  "architecture_summary": "Visual Prompt Tuning (VPT) adapts pre-trained vision Transformers by prepending a small number of learnable prompt embeddings in the input space while freezing the entire backbone. It has two variants, VPT-SHALLOW and VPT-DEEP, which insert prompts only at the first layer or at every Transformer layer, respectively.",
+  "model_variants": [
+    {
+      "name": "VPT-SHALLOW",
+      "param_count_surface": "less than 1% of model parameters",
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "VPT-DEEP",
+      "param_count_surface": "less than 1% of model parameters",
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-21k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CUB-200-2011",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NABirds",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Oxford Flowers",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Stanford Dogs",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Stanford Cars",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VTAB-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Caltech101",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DTD",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flowers102",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Pets",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SVHN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Sun397",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Patch Camelyon",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "EuroSAT",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Resisc45",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Retinopathy",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Clevr/count",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Clevr/distance",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DMLab",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "KITTI/distance",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "dSprites/location",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "dSprites/orientation",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SmallNORB/azimuth",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SmallNORB/elevation",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MAE",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MoCo v3",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ConvNeXt-Base",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ResNet-50",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.48 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. “Scope” denotes the tuning scope of each method. “Extra params” denotes the presence of additional parameters besides the pre-trained backbone and linear head. Best results among all methods except FULL are bolded. VPT outshines the full fine-tuning 20 out of 24 cases with significantly less trainable parameters",
+      "value_canonical": 78.48
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "76.81 (4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. “Scope” denotes the tuning scope of each method. “Extra params” denotes the presence of additional parameters besides the pre-trained backbone and linear head. Best results among all methods except FULL are bolded. VPT outshines the full fine-tuning 20 out of 24 cases with significantly less trainable parameters",
+      "value_canonical": 76.81
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "84.53 (0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different Transformer architecture: Swin-B pre-trained on supervised ImageNet-21k as backbone. For each method and each downstream task group, we report the average test accuracy score and number of wins in (-) compared to FULL. The column “Total params” denotes total parameters needed for all 19 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 84.53
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "79.85 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Different Transformer architecture: Swin-B pre-trained on supervised ImageNet-21k as backbone. For each method and each downstream task group, we report the average test accuracy score and number of wins in (-) compared to FULL. The column “Total params” denotes total parameters needed for all 19 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 79.85
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU-SS",
+      "value_surface": "44.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic Segmentation: ADE20k [90] validation results with SETR [89] on ViT-L. The best mIoU scores among all methods but FULL are bolded. Results of fully fine-tuning a ResNet-101 [10] are included. SS/MS: single/multi-scale inference",
+      "value_canonical": 44.04
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU-MS",
+      "value_surface": "45.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic Segmentation: ADE20k [90] validation results with SETR [89] on ViT-L. The best mIoU scores among all methods but FULL are bolded. Results of fully fine-tuning a ResNet-101 [10] are included. SS/MS: single/multi-scale inference",
+      "value_canonical": 45.63
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "82.86 (2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 82.86
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.50 (0)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 78.5
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "79.37 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 79.37
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "75.30 (4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 75.3
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.48 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Combining VPT with BIAS with a pre-trained ViT-B in Sec. 4.2. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. The difference between the hybrid methods and their VPT counterpart are color coded",
+      "value_canonical": 78.48
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "76.81 (4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Combining VPT with BIAS with a pre-trained ViT-B in Sec. 4.2. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. The difference between the hybrid methods and their VPT counterpart are color coded",
+      "value_canonical": 76.81
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "79.37 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 79.37
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.5 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of expanding input sequence. The top part shows four diagrams of prompt strategies: Prompt-Learned (default), Prompt-Fixed, [CLS]-Learned, and Prompt-Learned (p=1). The bottom part shows three bar charts for VTAB-Natural (7), VTAB-Specialized (4), and VTAB-Structured (8) tasks, comparing performance across different prompt lengths and strategies.",
+      "value_canonical": 78.5
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "82.4 (2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of expanding input sequence. The top part shows four diagrams of prompt strategies: Prompt-Learned (default), Prompt-Fixed, [CLS]-Learned, and Prompt-Learned (p=1). The bottom part shows three bar charts for VTAB-Natural (7), VTAB-Specialized (4), and VTAB-Structured (8) tasks, comparing performance across different prompt lengths and strategies.",
+      "value_canonical": 82.4
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "55.0 (8)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of expanding input sequence. The top part shows four diagrams of prompt strategies: Prompt-Learned (default), Prompt-Fixed, [CLS]-Learned, and Prompt-Learned (p=1). The bottom part shows three bar charts for VTAB-Natural (7), VTAB-Specialized (4), and VTAB-Structured (8) tasks, comparing performance across different prompt lengths and strategies.",
+      "value_canonical": 55.0
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.9 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of sharing prompts. The top part shows four diagrams of Transformer layers with prompts. The first diagram shows 'Tuned' (orange) and 'Frozen' (grey) prompts. The second diagram shows 'Default' prompts. The third diagram shows 'Shared (intra-layer)' prompts. The fourth diagram shows 'Shared (inter-layer)' prompts. The fifth diagram shows 'Shared (all)' prompts. The bottom part shows three bar charts for VTAB-Natural (7), VTAB-Specialized (4), and VTAB-Structured (8) tasks. Each chart compares 'Full' (orange), 'Default' (blue), 'Default_{i=1}' (blue), 'Shared-intra' (blue), 'Shared-inter' (blue), 'Shared-all' (blue), and 'Linear' (grey) prompt strategies. The charts show that the 'Default' strategy consistently achieves high performance across all tasks, while the 'Linear' strategy consistently achieves low performance.",
+      "value_canonical": 78.9
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "55.3 (7)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of sharing prompts. The top part shows four diagrams of Transformer layers with prompts. The first diagram shows 'Tuned' (orange) and 'Frozen' (grey) prompts. The second diagram shows 'Default' prompts. The third diagram shows 'Shared (intra-layer)' prompts. The fourth diagram shows 'Shared (inter-layer)' prompts. The fifth diagram shows 'Shared (all)' prompts. The bottom part shows three bar charts for VTAB-Natural (7), VTAB-Specialized (4), and VTAB-Structured (8) tasks. Each chart compares 'Full' (orange), 'Default' (blue), 'Default_{i=1}' (blue), 'Shared-intra' (blue), 'Shared-inter' (blue), 'Shared-all' (blue), and 'Linear' (grey) prompt strategies. The charts show that the 'Default' strategy consistently achieves high performance across all tasks, while the 'Linear' strategy consistently achieves low performance.",
+      "value_canonical": 55.3
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "78.5 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of prompt initialization. For easy comparison, the two blue dashed line represents the performance of default VPT-DEEP and VPT-SHALLOW, respectively",
+      "value_canonical": 78.5
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "82.4 (2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Effect of prompt initialization. For easy comparison, the two blue dashed line represents the performance of default VPT-DEEP and VPT-SHALLOW, respectively",
+      "value_canonical": 82.4
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "79.37 (6)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k, fine-tuned with resolution 384 × 384. We also include VPT with image resolution 224 × 224, p = 380, so the effective image resolution is 384 × 384. For each method and each downstream task group, we report the average test accuracy score and number of wins in ( ) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. Best results among all methods except FULL are bolded",
+      "value_canonical": 79.37
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "44.04",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic Segmentation: ADE20k [90] validation results with SETR [89] on ViT-L. The best mIoU scores among all methods but FULL are bolded. Results of fully fine-tuning a ResNet-101 [10] are included. SS/MS: single/multi-scale inference",
+      "value_canonical": 44.04
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "45.63",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Semantic Segmentation: ADE20k [90] validation results with SETR [89] on ViT-L. The best mIoU scores among all methods but FULL are bolded. Results of fully fine-tuning a ResNet-101 [10] are included. SS/MS: single/multi-scale inference",
+      "value_canonical": 45.63
+    },
+    {
+      "model": "VPT-DEEP",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "89.11 (4)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. “Scope” denotes the tuning scope of each method. “Extra params” denotes the presence of additional parameters besides the pre-trained backbone and linear head. Best results among all methods except FULL are bolded. VPT outshines the full fine-tuning 20 out of 24 cases with significantly less trainable parameters",
+      "value_canonical": 89.11
+    },
+    {
+      "model": "VPT-SHALLOW",
+      "dataset_surface": "VTAB-1k",
+      "metric_surface": "average test accuracy score",
+      "value_surface": "84.62 (1)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "ViT-B/16 pre-trained on supervised ImageNet-21k. For each method and each downstream task group, we report the average test accuracy score and number of wins in (·) compared to FULL. “Total params” denotes total parameters needed for all 24 downstream tasks. “Scope” denotes the tuning scope of each method. “Extra params” denotes the presence of additional parameters besides the pre-trained backbone and linear head. Best results among all methods except FULL are bolded. VPT outshines the full fine-tuning 20 out of 24 cases with significantly less trainable parameters",
+      "value_canonical": 84.62
+    }
+  ],
+  "training_details": {
+    "compute_surface": "NVIDIA A100-40GB GPUs",
+    "batch_size": 64,
+    "epochs": 100
+  },
+  "methods_used": [
+    "Visual Prompt Tuning",
+    "prompt tuning",
+    "prepending learnable prompt embeddings",
+    "frozen backbone",
+    "linear head",
+    "Multiheaded Self-Attention (MSA)",
+    "Feed-Forward Networks (FFN)",
+    "LayerNorm",
+    "residual connections",
+    "AdamW",
+    "SGD",
+    "cosine decay",
+    "random resize crop",
+    "random horizontal flip",
+    "image normalization",
+    "dropout",
+    "xavier uniform initialization",
+    "multi-scale inference",
+    "Wilcoxon signed-rank test",
+    "Welch’s t-test"
+  ],
+  "novel_contributions": [
+    "Visual Prompt Tuning (VPT) as an efficient and effective alternative to full fine-tuning for large-scale Transformer models in vision",
+    "Two variants of VPT: VPT-SHALLOW and VPT-DEEP",
+    "VPT introduces only a small amount (less than 1% of model parameters) of trainable parameters in the input space while keeping the model backbone frozen",
+    "VPT outperforms full fine-tuning in many cases across model capacities and training data scales",
+    "VPT is applied beyond classification to semantic segmentation and to different backbones including ViT, Swin, and ConvNets"
+  ],
+  "key_claims": [
+    {
+      "claim": "VPT introduces only a small amount (less than 1% of model parameters) of trainable parameters in the input space while keeping the model backbone frozen.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "VPT achieves significant performance gains compared to other parameter efficient tuning protocols and even outperforms full fine-tuning in many cases across model capacities and training data scales.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On 24 downstream recognition tasks spanning different domains using a pre-trained ViT backbone, VPT beats all other transfer learning baselines, even surpassing full fine-tuning in 20 cases.",
+      "evidence_section": "Introduction",
+      "page": null
+    },
+    {
+      "claim": "VPT-DEEP outperforms Full on 3 out of the 4 problem classes (20 out of 24 tasks) while using significantly fewer total model parameters.",
+      "evidence_section": "4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "VPT-DEEP outperforms all the other parameter-efficient tuning protocols across all task groups.",
+      "evidence_section": "4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "VPT continues to outperform other parameter-efficient fine-tuning methods on Swin-B and remains competitive on ADE20K semantic segmentation.",
+      "evidence_section": "4.2 Main Results",
+      "page": null
+    },
+    {
+      "claim": "Random initialized prompts works better in general than the CLS-based initialization strategy.",
+      "evidence_section": "B Extended Analysis",
+      "page": null
+    }
+  ]
+}

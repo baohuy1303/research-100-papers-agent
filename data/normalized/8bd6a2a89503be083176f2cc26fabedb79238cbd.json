@@ -1,0 +1,323 @@
+{
+  "paper_id": "8bd6a2a89503be083176f2cc26fabedb79238cbd",
+  "architecture_summary": "InstructBLIP is a vision-language instruction tuning framework built on pretrained BLIP-2 models, where the Q-Former is finetuned while the image encoder and LLM are frozen. It adds instruction-aware visual feature extraction by feeding instruction text into the Q-Former, and uses balanced dataset sampling during instruction tuning.",
+  "model_variants": [
+    {
+      "name": "FlanT5-XL",
+      "param_count_surface": "3B",
+      "page": null,
+      "param_count_millions": 3000.0
+    },
+    {
+      "name": "FlanT5-XXL",
+      "param_count_surface": "11B",
+      "page": null,
+      "param_count_millions": 11000.0
+    },
+    {
+      "name": "Vicuna-7B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Vicuna-13B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "COCO Caption",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Web CapFilt",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "NoCaps",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TextCaps",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQAv2",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VizWiz",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Visual Spatial Reasoning",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IconQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OKVQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "A-OKVQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ScienceQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Visual Dialog",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LLaVA-Instruct-150K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MSVD QA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSRVTT QA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OCR-VQA",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "TextVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HatefulMemes",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "InstructBLIP (FlanT5 XL)",
+      "dataset_surface": "Flickr 30K",
+      "metric_surface": "CIDEr",
+      "value_surface": "84.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 84.5
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "VSR",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "65.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 65.6
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "IconQA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "51.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 51.2
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "Visual Dialog",
+      "metric_surface": "MRR",
+      "value_surface": "48.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 48.5
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "ScienceQA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "70.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 70.6
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "MSVD QA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "44.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 44.3
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "MSRVTT QA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "25.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 25.6
+    },
+    {
+      "model": "InstructBLIP (FlanT5 XXL)",
+      "dataset_surface": "iVQA",
+      "metric_surface": "iVQA accuracy",
+      "value_surface": "53.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 53.8
+    },
+    {
+      "model": "InstructBLIP (Vicuna-7B)",
+      "dataset_surface": "NoCaps",
+      "metric_surface": "CIDEr",
+      "value_surface": "123.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 123.1
+    },
+    {
+      "model": "InstructBLIP (Vicuna-7B)",
+      "dataset_surface": "HatefulMemes",
+      "metric_surface": "AUC score",
+      "value_surface": "59.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 59.6
+    },
+    {
+      "model": "InstructBLIP (Vicuna-7B)",
+      "dataset_surface": "VizWiz",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "34.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 34.5
+    },
+    {
+      "model": "InstructBLIP (Vicuna-13B)",
+      "dataset_surface": "GQA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "49.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 49.5
+    },
+    {
+      "model": "InstructBLIP (Vicuna-13B)",
+      "dataset_surface": "TextVQA",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "50.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Table 1: Zero-shot results on the held-out datasets. Here, Visdial, HM and SciQA denote the Visual Dialog, HatefulMemes and ScienceQA datasets, respectively. For ScienceQA, we only evaluate on the set with image context. Following previous works [4, 49, 32], we report the CIDEr score [42] for NoCaps and Flickr30K, iVQA accuracy for iVQA, AUC score for HatefulMemes, and Mean Reciprocal Rank (MRR) for Visual Dialog. For all other datasets, we report the top-1 accuracy (%).",
+      "value_canonical": 50.7
+    }
+  ],
+  "training_details": {
+    "compute_surface": "16 Nvidia A100 (40G) GPUs",
+    "batch_size": 192,
+    "epochs": null
+  },
+  "methods_used": [
+    "instruction tuning",
+    "Query Transformer",
+    "Q-Former",
+    "cross attention",
+    "self-attention",
+    "linear projection",
+    "balanced sampling strategy",
+    "language modeling loss",
+    "OCR tokens",
+    "vocabulary ranking method",
+    "soft visual prompts",
+    "frozen image encoder",
+    "frozen LLM",
+    "instruction-aware visual feature extraction"
+  ],
+  "novel_contributions": [
+    "A systematic and comprehensive study on vision-language instruction tuning using 26 publicly available datasets transformed into instruction tuning format",
+    "An instruction-aware Query Transformer that takes instruction text as additional input to extract task-relevant visual features",
+    "A balanced sampling strategy that samples datasets with probabilities proportional to the square root of their sizes",
+    "A suite of InstructBLIP models using FlanT5 and Vicuna backbones, open-sourced by the authors"
+  ],
+  "key_claims": [
+    {
+      "claim": "InstructBLIP attains state-of-the-art zero-shot performance across all 13 held-out datasets and substantially outperforms BLIP-2 and larger Flamingo models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces an instruction-aware Query Transformer that extracts informative features tailored to the given instruction.",
+      "evidence_section": "Abstract / 2.3 Instruction-aware Visual Feature Extraction",
+      "page": null
+    },
+    {
+      "claim": "The paper transforms 26 publicly available datasets into instruction tuning format and uses 13 held-in datasets for instruction tuning and 13 held-out datasets for zero-shot evaluation.",
+      "evidence_section": "Abstract / 2.1 Tasks and Datasets",
+      "page": null
+    },
+    {
+      "claim": "Balanced dataset sampling improves overall performance for both held-in evaluation and held-out generalization.",
+      "evidence_section": "2.4 Balancing Training Datasets",
+      "page": null
+    },
+    {
+      "claim": "InstructBLIP achieves state-of-the-art finetuning performance on downstream tasks such as ScienceQA, OCR-VQA, and A-OKVQA.",
+      "evidence_section": "3.5 Finetuning InstructBLIP on Downstream Tasks",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,841 @@
+{
+  "paper_id": "b364cdb02d18b9d9a3c097f5ea446f7e9ab10325",
+  "architecture_summary": "The paper proposes LayerScale, a per-channel learnable diagonal scaling on the output of each residual block to stabilize deeper image transformers, and CaiT, a two-stage image transformer that separates self-attention over patches from later class-attention layers that summarize patch information into the class token.",
+  "model_variants": [
+    {
+      "name": "DeiT-S",
+      "param_count_surface": "22M",
+      "page": null,
+      "param_count_millions": 22.0
+    },
+    {
+      "name": "CaiT-XXS-24",
+      "param_count_surface": "12.0",
+      "page": null,
+      "param_count_millions": 12.0
+    },
+    {
+      "name": "CaiT-XXS-36",
+      "param_count_surface": "17.3",
+      "page": null,
+      "param_count_millions": 17.3
+    },
+    {
+      "name": "CaiT-XS-24",
+      "param_count_surface": "26.6",
+      "page": null,
+      "param_count_millions": 26.6
+    },
+    {
+      "name": "CaiT-XS-36",
+      "param_count_surface": "38.6",
+      "page": null,
+      "param_count_millions": 38.6
+    },
+    {
+      "name": "CaiT-S-24",
+      "param_count_surface": "46.9",
+      "page": null,
+      "param_count_millions": 46.9
+    },
+    {
+      "name": "CaiT-S-36",
+      "param_count_surface": "68.2",
+      "page": null,
+      "param_count_millions": 68.2
+    },
+    {
+      "name": "CaiT-S-48",
+      "param_count_surface": "89.5",
+      "page": null,
+      "param_count_millions": 89.5
+    },
+    {
+      "name": "CaiT-M-24",
+      "param_count_surface": "185.9",
+      "page": null,
+      "param_count_millions": 185.9
+    },
+    {
+      "name": "CaiT-M-36",
+      "param_count_surface": "270.9",
+      "page": null,
+      "param_count_millions": 270.9
+    },
+    {
+      "name": "CaiT-M-48",
+      "param_count_surface": "356M",
+      "page": null,
+      "param_count_millions": 356.0
+    },
+    {
+      "name": "CaiT-S36",
+      "param_count_surface": "68M",
+      "page": null,
+      "param_count_millions": 68.0
+    },
+    {
+      "name": "CaiT-S36†384",
+      "param_count_surface": "68M",
+      "page": null,
+      "param_count_millions": 68.0
+    },
+    {
+      "name": "CaiT-S48†384",
+      "param_count_surface": "89M",
+      "page": null,
+      "param_count_millions": 89.0
+    },
+    {
+      "name": "CaiT-S36†",
+      "param_count_surface": "68M",
+      "page": null,
+      "param_count_millions": 68.0
+    },
+    {
+      "name": "CaiT-S36†384†",
+      "param_count_surface": "68M",
+      "page": null,
+      "param_count_millions": 68.0
+    },
+    {
+      "name": "CaiT-M36†384†",
+      "param_count_surface": "271M",
+      "page": null,
+      "param_count_millions": 271.0
+    },
+    {
+      "name": "CaiT-M36†448†",
+      "param_count_surface": "271M",
+      "page": null,
+      "param_count_millions": 271.0
+    },
+    {
+      "name": "CaiT-M48†448†",
+      "param_count_surface": "356M",
+      "page": null,
+      "param_count_millions": 356.0
+    },
+    {
+      "name": "CaiT-S-36",
+      "param_count_surface": "68M",
+      "page": null,
+      "param_count_millions": 68.0
+    },
+    {
+      "name": "CaiT-M-36",
+      "param_count_surface": "53.7B",
+      "page": null,
+      "param_count_millions": 53700.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Imagenet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Imagenet1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1k",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Imagenet V2 matched frequency",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet [54]",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2018 [30]",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "iNaturalist 2019 [31]",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Flowers-102 [46]",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "Stanford Cars [38]",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-100 [39]",
+      "purpose": "finetune",
+      "page": null
+    },
+    {
+      "surface": "CIFAR-10 [39]",
+      "purpose": "finetune",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 79.9
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 80.1
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "78.9†",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 78.9
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "78.9†",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 78.9
+    },
+    {
+      "model": "CaiT-XXS-24",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "77.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 77.6
+    },
+    {
+      "model": "CaiT-XXS-36",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 79.1
+    },
+    {
+      "model": "CaiT-XS-24",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "CaiT-XS-36",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 82.6
+    },
+    {
+      "model": "CaiT-S-24",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "82.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 82.7
+    },
+    {
+      "model": "CaiT-S-36",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "83.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 83.3
+    },
+    {
+      "model": "CaiT-S-48",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 83.5
+    },
+    {
+      "model": "CaiT-M-24",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 83.4
+    },
+    {
+      "model": "CaiT-M-36",
+      "dataset_surface": "Imagenet1k-val",
+      "metric_surface": "Top-1 acc. (%)",
+      "value_surface": "83.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "CaiT models",
+      "value_canonical": 83.8
+    },
+    {
+      "model": "RegNetY-16GF",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 82.9
+    },
+    {
+      "model": "EfficientNet-B5",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 83.6
+    },
+    {
+      "model": "EfficientNet-B7",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 84.3
+    },
+    {
+      "model": "EfficientNet-B5 RA",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "EfficientNet-B7 RA",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "84.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 84.7
+    },
+    {
+      "model": "EfficientNet-B7 AdvProp",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.2
+    },
+    {
+      "model": "Fix-EfficientNet-B8",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.7
+    },
+    {
+      "model": "NFNet-F0",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "83.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 83.6
+    },
+    {
+      "model": "NFNet-F1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "84.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 84.7
+    },
+    {
+      "model": "NFNet-F2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.1
+    },
+    {
+      "model": "NFNet-F3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.7
+    },
+    {
+      "model": "NFNet-F4",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "NFNet-F5",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "86.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 86.0
+    },
+    {
+      "model": "NFNet-F6+SAM",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "86.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 86.5
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 77.9
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 76.5
+    },
+    {
+      "model": "T2T-ViT t-14",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 80.7
+    },
+    {
+      "model": "TNT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "81.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 81.3
+    },
+    {
+      "model": "TNT-S + SE",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 81.6
+    },
+    {
+      "model": "TNT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "82.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 82.8
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 79.8
+    },
+    {
+      "model": "DeiT-B",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "DeiT-B†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "83.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 83.1
+    },
+    {
+      "model": "DeiT-B†384† 1000 epochs",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.2
+    },
+    {
+      "model": "CaiT-S36",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "83.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 83.3
+    },
+    {
+      "model": "CaiT-S36†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.0
+    },
+    {
+      "model": "CaiT-S48†384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.1
+    },
+    {
+      "model": "CaiT-S36†",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "84.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 84.0
+    },
+    {
+      "model": "CaiT-S36†384†",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "85.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 85.4
+    },
+    {
+      "model": "CaiT-M36†384†",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "86.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 86.1
+    },
+    {
+      "model": "CaiT-M36†448†",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "86.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 86.3
+    },
+    {
+      "model": "CaiT-M48†448†",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImNet top-1",
+      "value_surface": "86.5",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Complexity vs accuracy on Imagenet, Imagenet Real and Imagenet V2 matched frequency for models trained without external data",
+      "value_canonical": 86.5
+    },
+    {
+      "model": "RegNetY-16GF",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "84.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 84.3
+    },
+    {
+      "model": "ViT-B/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "77.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 77.9
+    },
+    {
+      "model": "ViT-L/16",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "76.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 76.5
+    },
+    {
+      "model": "DeiT-B 224",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "CaiT-S-36 224",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 83.4
+    },
+    {
+      "model": "CaiT-M-36 224",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "CaiT-S-36 Y 224",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "CaiT-M-36 Y 224",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "ImageNet",
+      "value_surface": "84.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Results in transfer learning",
+      "value_canonical": 84.8
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "80.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 80.5
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 81.7
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "82.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 82.4
+    },
+    {
+      "model": "DeiT-S",
+      "dataset_surface": "ImageNet-1k",
+      "metric_surface": "top-1 acc.",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Improving convergence at depth on ImageNet-1k",
+      "value_canonical": 82.9
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": 1024,
+    "epochs": 400
+  },
+  "methods_used": [
+    "LayerScale",
+    "class-attention layers",
+    "self-attention",
+    "feed-forward networks",
+    "LayerNorm",
+    "stochastic depth",
+    "AdamW",
+    "repeated augmentation",
+    "hard distillation",
+    "talking-heads attention",
+    "average pooling",
+    "fine-tuning at higher resolution",
+    "crop-ratio",
+    "sharded training",
+    "fp16 precision"
+  ],
+  "novel_contributions": [
+    "LayerScale, a per-channel learnable diagonal scaling on residual block outputs, to improve optimization of deeper image transformers.",
+    "CaiT, a two-stage image transformer that separates patch self-attention from class-attention layers devoted to summarizing the class embedding.",
+    "A demonstration that deeper image transformers can be trained effectively on ImageNet only, achieving 86.5% top-1 accuracy without external data.",
+    "New state of the art on ImageNet-Real and ImageNet-V2 matched frequency with no additional training data."
+  ],
+  "key_claims": [
+    {
+      "claim": "LayerScale significantly facilitates convergence and improves the accuracy of image transformers at larger depths, while adding only a few thousands of parameters at training time.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "CaiT separates self-attention over patches from class-attention layers that only update the class embedding, avoiding the contradictory objectives of standard ViT class-token processing.",
+      "evidence_section": "3 Specializing layers for class attention",
+      "page": null
+    },
+    {
+      "claim": "The best CaiT models establish the new state of the art on Imagenet-Real and Imagenet V2 matched frequency with no additional training data.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On ImageNet1k-val, CaiT-M48 ↑ 448 Υ achieves 86.5% top-1 accuracy while using less FLOPs and fewer parameters than the best competing model.",
+      "evidence_section": "4.4.2 Comparison with the state of the art on Imagenet",
+      "page": null
+    },
+    {
+      "claim": "Fine-tuning at higher resolution and hard distillation both provide substantial boosts without changing the number of parameters.",
+      "evidence_section": "4.4.1 Performance/complexity of CaiT models",
+      "page": null
+    },
+    {
+      "claim": "The paper achieves competitive transfer learning results and overall better performance than EfficientNet-B7 across datasets.",
+      "evidence_section": "4.4.3 Transfer learning",
+      "page": null
+    },
+    {
+      "claim": "LayerScale makes the residual branch contribution more uniform across layers and helps deeper models train stably.",
+      "evidence_section": "4.1.3 Analysis of Layerscale",
+      "page": null
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "paper_id": "14014c024674991149f3ecf9314c93f7e029ef1a",
+  "architecture_summary": "This is a survey-style paper that presents Geometric Deep Learning as a unified framework for learning on signals defined over grids, groups, graphs, geodesics, and gauges, derived from symmetry, geometric stability, and scale separation. It does not propose a single new model, but instead gives a blueprint that explains CNNs, GNNs, Deep Sets, Transformers, spherical CNNs, and intrinsic mesh CNNs under common geometric principles.",
+  "model_variants": [],
+  "datasets_mentioned": [],
+  "benchmark_results": [],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "convolutional neural networks",
+    "group-equivariant CNNs",
+    "graph neural networks",
+    "Deep Sets",
+    "Transformers",
+    "equivariant message passing networks",
+    "intrinsic mesh CNNs",
+    "recurrent neural networks",
+    "Long Short-Term Memory networks",
+    "Fourier transform",
+    "wavelets",
+    "group convolution",
+    "local pooling",
+    "global pooling",
+    "permutation invariance",
+    "permutation equivariance",
+    "shift equivariance",
+    "isometry invariance",
+    "geometric stability"
+  ],
+  "novel_contributions": [
+    "A unified geometric blueprint for deep learning on grids, groups, graphs, geodesics, and gauges.",
+    "A derivation of common architectures from first principles of symmetry, invariance, deformation stability, and scale separation.",
+    "A systematic connection between convolution, Fourier analysis, and equivariance on Euclidean domains and groups.",
+    "A framework that extends geometric priors to graphs and manifolds, including varying-domain settings and intrinsic geometry."
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes Geometric Deep Learning as a unifying perspective that derives many successful neural architectures from symmetry and invariance principles.",
+      "evidence_section": "Preface; 1 Introduction; 3.5 The Blueprint of Geometric Deep Learning",
+      "page": null
+    },
+    {
+      "claim": "The text argues that geometric priors consist of symmetry, geometric stability, and scale separation, and that these are the key ingredients for learning on structured high-dimensional data.",
+      "evidence_section": "3 Geometric Priors",
+      "page": null
+    },
+    {
+      "claim": "It states that CNNs, GNNs, Deep Sets, Transformers, spherical CNNs, intrinsic mesh CNNs, and LSTMs can all be placed within the same blueprint with different choices of domain and symmetry group.",
+      "evidence_section": "3.5 The Blueprint of Geometric Deep Learning",
+      "page": null
+    },
+    {
+      "claim": "The paper explains that convolution is the linear shift-equivariant operator on grids and that the Fourier transform diagonalises convolution.",
+      "evidence_section": "4.2 Grids and Euclidean spaces",
+      "page": null
+    },
+    {
+      "claim": "It generalises convolution to arbitrary groups via group convolution and shows that this construction is equivariant by design.",
+      "evidence_section": "4.3 Groups and Homogeneous spaces",
+      "page": null
+    },
+    {
+      "claim": "For graphs, the paper shows that permutation-invariant and permutation-equivariant functions arise naturally from the graph structure and local neighbourhood aggregation.",
+      "evidence_section": "4.1 Graphs and Sets",
+      "page": null
+    },
+    {
+      "claim": "For manifolds, the paper emphasizes intrinsic, metric-based constructions and invariance to isometries as the right notion of geometric stability.",
+      "evidence_section": "4.4 Geodesics and Manifolds",
+      "page": null
+    }
+  ]
+}

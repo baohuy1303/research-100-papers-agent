@@ -1,0 +1,358 @@
+{
+  "paper_id": "fd1cf28a2b8caf2fe29af5e7fa9191cecfedf84d",
+  "architecture_summary": "RT-1 is a Transformer-based robot policy that takes a history of images and a natural-language instruction, encodes them with a FiLM-conditioned EfficientNet-B3 and TokenLearner, and outputs discretized robot actions with a decoder-only Transformer for real-time control.",
+  "model_variants": [
+    {
+      "name": "RT-1",
+      "param_count_surface": "35M parameters",
+      "page": null,
+      "param_count_millions": 35.0
+    },
+    {
+      "name": "Gato",
+      "param_count_surface": "37M parameters",
+      "page": null,
+      "param_count_millions": 37.0
+    },
+    {
+      "name": "BC-Z XL",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "RT-1 w/o big model",
+      "param_count_surface": "21M parameters",
+      "page": null,
+      "param_count_millions": 21.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "130k episodes",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "700+ tasks",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet pretrained EfficientNet-B3",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Universal Sentence Encoder",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Kitchen1",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kitchen2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SayCan",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "QT-Opt",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Seen Tasks",
+      "metric_surface": "success rate",
+      "value_surface": "97",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 97.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Unseen Tasks",
+      "metric_surface": "success rate",
+      "value_surface": "76",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 76.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Distractors",
+      "metric_surface": "success rate",
+      "value_surface": "83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 83.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Backgrounds",
+      "metric_surface": "success rate",
+      "value_surface": "59",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 59.0
+    },
+    {
+      "model": "Gato (Reed et al., 2022)",
+      "dataset_surface": "Seen Tasks",
+      "metric_surface": "success rate",
+      "value_surface": "65",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 65.0
+    },
+    {
+      "model": "BC-Z (Jang et al., 2021)",
+      "dataset_surface": "Seen Tasks",
+      "metric_surface": "success rate",
+      "value_surface": "72",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 72.0
+    },
+    {
+      "model": "BC-Z XL",
+      "dataset_surface": "Seen Tasks",
+      "metric_surface": "success rate",
+      "value_surface": "56",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Overall performance of RT-1 and baselines across seen tasks, generalization to unseen tasks, and robustness to distractors and backgrounds.",
+      "value_canonical": 56.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Kitchen1",
+      "metric_surface": "execution success rate",
+      "value_surface": "67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "SayCan style long horizon tasks in Kitchen1 and Kitchen2.",
+      "value_canonical": 67.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Kitchen2",
+      "metric_surface": "execution success rate",
+      "value_surface": "67",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "SayCan style long horizon tasks in Kitchen1 and Kitchen2.",
+      "value_canonical": 67.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real Only",
+      "metric_surface": "success rate",
+      "value_surface": "92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 92.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real + Sim",
+      "metric_surface": "success rate",
+      "value_surface": "90(-2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 90.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real Only",
+      "metric_surface": "success rate",
+      "value_surface": "23",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 23.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real + Sim",
+      "metric_surface": "success rate",
+      "value_surface": "87(+64)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 87.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real Only",
+      "metric_surface": "success rate",
+      "value_surface": "7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 7.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Real + Sim",
+      "metric_surface": "success rate",
+      "value_surface": "33(+26)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for incorporating simulation data in RT-1.",
+      "value_canonical": 33.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Classroom eval",
+      "metric_surface": "success rate",
+      "value_surface": "92",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for mixing data from two different robots.",
+      "value_canonical": 92.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Bin-picking eval",
+      "metric_surface": "success rate",
+      "value_surface": "39",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for mixing data from two different robots.",
+      "value_canonical": 39.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Classroom eval",
+      "metric_surface": "success rate",
+      "value_surface": "90(-2)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for mixing data from two different robots.",
+      "value_canonical": 90.0
+    },
+    {
+      "model": "RT-1",
+      "dataset_surface": "Bin-picking eval",
+      "metric_surface": "success rate",
+      "value_surface": "39(+17)",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Experimental results for mixing data from two different robots.",
+      "value_canonical": 39.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Kitchen1",
+      "metric_surface": "planning success rate",
+      "value_surface": "87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "SayCan style long horizon tasks in Kitchen1 and Kitchen2.",
+      "value_canonical": 87.0
+    },
+    {
+      "model": "RT-1 (ours)",
+      "dataset_surface": "Kitchen2",
+      "metric_surface": "planning success rate",
+      "value_surface": "87",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "SayCan style long horizon tasks in Kitchen1 and Kitchen2.",
+      "value_canonical": 87.0
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "Transformer",
+    "self-attention",
+    "FiLM",
+    "EfficientNet-B3",
+    "TokenLearner",
+    "Universal Sentence Encoder",
+    "behavioral cloning",
+    "categorical cross-entropy loss",
+    "causal masking",
+    "discretized action tokens",
+    "ImageNet pretraining",
+    "simulation data",
+    "multi-task RL",
+    "RetinaGAN"
+  ],
+  "novel_contributions": [
+    "We present a model class, dubbed Robotics Transformer, that exhibits promising scalable model properties.",
+    "We propose a novel architecture that we call RT-1 (Robotics Transformer 1), which encodes high-dimensional inputs and outputs into compact token representations to enable efficient inference at runtime.",
+    "We show that RT-1 can perform over 700 training instructions at 97% success rate and generalize to new tasks, distractors, and backgrounds better than prior techniques.",
+    "We show that RT-1 can incorporate data from simulation or even other robot types, retaining performance on the original tasks and improving generalization to new scenarios."
+  ],
+  "key_claims": [
+    {
+      "claim": "RT-1 can perform over 700 training instructions at 97% success rate and generalize to new tasks, distractors, and backgrounds better than the next best baseline.",
+      "evidence_section": "ABSTRACT",
+      "page": null
+    },
+    {
+      "claim": "RT-1 takes images and natural language instructions and outputs discretized base and arm actions at 3 Hz, despite its size (35M parameters).",
+      "evidence_section": "Figure 1(a)",
+      "page": null
+    },
+    {
+      "claim": "The model uses a FiLM-conditioned EfficientNet-B3, TokenLearner, and a decoder-only Transformer to achieve efficient real-time control.",
+      "evidence_section": "5.1 MODEL",
+      "page": null
+    },
+    {
+      "claim": "RT-1 is able to perform 97% of seen tasks, 76% of unseen tasks, 83% of distractor tasks, and 59% of background tasks.",
+      "evidence_section": "6.2 CAN RT-1 LEARN TO PERFORM A LARGE NUMBER OF INSTRUCTIONS, AND TO GENERALIZE TO NEW TASKS, OBJECTS AND ENVIRONMENTS?",
+      "page": null
+    },
+    {
+      "claim": "RT-1 can execute long-horizon SayCan tasks with 67% execution success rate in both Kitchen1 and Kitchen2.",
+      "evidence_section": "6.4 HOW DO VARIOUS METHODS GENERALIZE LONG-HORIZON ROBOTIC SCENARIOS?",
+      "page": null
+    },
+    {
+      "claim": "Adding simulation data does not hurt real-object performance and improves performance on simulation-only objects from 23% to 87% and unseen instructions from 7% to 33%.",
+      "evidence_section": "6.3 CAN WE PUSH THE RESULTING MODEL FURTHER BY INCORPORATING HETEROGENEOUS DATA SOURCES SUCH AS SIMULATION OR DATA FROM DIFFERENT ROBOTS?",
+      "page": null
+    },
+    {
+      "claim": "Mixing Kuka bin-picking data with EDR data minimally impacts classroom performance and improves bin-picking eval from 22% to 39%.",
+      "evidence_section": "6.3 CAN WE PUSH THE RESULTING MODEL FURTHER BY INCORPORATING HETEROGENEOUS DATA SOURCES SUCH AS SIMULATION OR DATA FROM DIFFERENT ROBOTS?",
+      "page": null
+    },
+    {
+      "claim": "Data diversity has a higher impact on performance and generalization than data quantity.",
+      "evidence_section": "6.5 HOW DO GENERALIZATION METRICS CHANGE WITH VARYING AMOUNTS OF DATA QUANTITY AND DATA DIVERSITY?",
+      "page": null
+    }
+  ]
+}

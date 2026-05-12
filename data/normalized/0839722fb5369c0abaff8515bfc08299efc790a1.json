@@ -1,0 +1,565 @@
+{
+  "paper_id": "0839722fb5369c0abaff8515bfc08299efc790a1",
+  "architecture_summary": "ViLT is a minimal vision-and-language transformer that removes convolutional visual embedders and region supervision, using linear patch projection for images and a single-stream transformer for multimodal interaction.",
+  "model_variants": [
+    {
+      "name": "ViLT-B/32",
+      "param_count_surface": "2.4M parameters",
+      "page": null,
+      "param_count_millions": 2.4
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Visual Genome",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "MSCOCO",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "SBU Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Google Conceptual Captions",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "VQAv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "NLQv2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MSCOCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Flickr30K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-21K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Open Images",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "UNITER-Base",
+      "dataset_surface": "NLQ2",
+      "metric_surface": "test-P Acc.",
+      "value_surface": "75.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 75.8
+    },
+    {
+      "model": "Pixel-BERT-R50",
+      "dataset_surface": "NLQ2",
+      "metric_surface": "test-P Acc.",
+      "value_surface": "72.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 72.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "NLQ2",
+      "metric_surface": "test-P Acc.",
+      "value_surface": "76.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 76.1
+    },
+    {
+      "model": "UNITER-Base",
+      "dataset_surface": "F30K",
+      "metric_surface": "TR R@1",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "Pixel-BERT-R50",
+      "dataset_surface": "F30K",
+      "metric_surface": "TR R@1",
+      "value_surface": "75.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 75.7
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "F30K",
+      "metric_surface": "TR R@1",
+      "value_surface": "83.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 83.5
+    },
+    {
+      "model": "UNITER-Base",
+      "dataset_surface": "F30K",
+      "metric_surface": "IR R@1",
+      "value_surface": "72.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 72.5
+    },
+    {
+      "model": "Pixel-BERT-R50",
+      "dataset_surface": "F30K",
+      "metric_surface": "IR R@1",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 53.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "F30K",
+      "metric_surface": "IR R@1",
+      "value_surface": "64.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Figure 1: Visual comparison of conventional VLP architectures and our proposed ViLT. The bottom part shows Running Time comparisons for UNITER-Base, Pixel-BERT-R50, and ViLT-B/32 (Ours) on NLQ2 test-P Acc., F30K TR R@1, and F30K IR R@1 tasks.",
+      "value_canonical": 64.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "test-dev",
+      "value_surface": "70.33",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 70.33
+    },
+    {
+      "model": "ViLT-B/32@",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "test-dev",
+      "value_surface": "70.85",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 70.85
+    },
+    {
+      "model": "ViLT-B/32@⊕",
+      "dataset_surface": "VQAv2",
+      "metric_surface": "test-dev",
+      "value_surface": "71.26",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 71.26
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "dev",
+      "value_surface": "74.41",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 74.41
+    },
+    {
+      "model": "ViLT-B/32@",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "dev",
+      "value_surface": "74.91",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 74.91
+    },
+    {
+      "model": "ViLT-B/32@⊕",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "dev",
+      "value_surface": "75.70",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 75.7
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "test-P",
+      "value_surface": "74.57",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 74.57
+    },
+    {
+      "model": "ViLT-B/32@",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "test-P",
+      "value_surface": "75.57",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 75.57
+    },
+    {
+      "model": "ViLT-B/32@⊕",
+      "dataset_surface": "NLQv2",
+      "metric_surface": "test-P",
+      "value_surface": "76.13",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 2. Comparison of ViLT-B/32 with other models on downstream classification tasks.",
+      "value_canonical": 76.13
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@1",
+      "value_surface": "69.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 69.7
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@5",
+      "value_surface": "91.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 91.0
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@10",
+      "value_surface": "96.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 96.0
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@1",
+      "value_surface": "53.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 53.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@5",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 80.7
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@10",
+      "value_surface": "88.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 88.8
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@1",
+      "value_surface": "51.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 51.3
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@5",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 79.9
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@10",
+      "value_surface": "87.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 87.9
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@1",
+      "value_surface": "37.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 37.3
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@5",
+      "value_surface": "67.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 67.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@10",
+      "value_surface": "79.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 3. Comparison of ViLT-B/32 with other models on downstream zero-shot retrieval tasks.",
+      "value_canonical": 79.0
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@1",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 81.4
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@5",
+      "value_surface": "95.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 95.6
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@10",
+      "value_surface": "97.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 97.6
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@1",
+      "value_surface": "61.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 61.8
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@5",
+      "value_surface": "86.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 86.2
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@10",
+      "value_surface": "92.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 92.6
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@1",
+      "value_surface": "61.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 61.9
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@5",
+      "value_surface": "86.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 86.8
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "Flickr30k (1K)",
+      "metric_surface": "R@10",
+      "value_surface": "92.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 92.8
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@1",
+      "value_surface": "41.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 41.3
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@5",
+      "value_surface": "72.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 72.0
+    },
+    {
+      "model": "ViLT-B/32",
+      "dataset_surface": "MSCOCO (5K)",
+      "metric_surface": "R@10",
+      "value_surface": "82.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Table 4. Comparison of ViLT-B/32 with other models on downstream retrieval tasks.",
+      "value_canonical": 82.5
+    }
+  ],
+  "training_details": {
+    "compute_surface": "64 NVIDIA V100 GPUs",
+    "batch_size": 4096,
+    "epochs": 10
+  },
+  "methods_used": [
+    "single-stream transformer",
+    "linear projection",
+    "patch projection",
+    "word embedding",
+    "multiheaded self-attention",
+    "masked language modeling",
+    "image text matching",
+    "word patch alignment",
+    "optimal transports",
+    "whole word masking",
+    "RandAugment",
+    "AdamW",
+    "masked patch prediction"
+  ],
+  "novel_contributions": [
+    "A minimal vision-and-language transformer (ViLT) that removes convolutional visual embedders and region supervision",
+    "A shallow, convolution-free visual embedding pipeline based on linear projection of flattened image patches",
+    "The first VLP model of type Figure 2d, where visual embedding is as lightweight as textual embedding",
+    "Empirical evidence that whole word masking and image augmentations improve VLP training",
+    "A word patch alignment objective using IPOT for cross-modal alignment visualization and training"
+  ],
+  "key_claims": [
+    {
+      "claim": "ViLT is up to tens of times faster than previous VLP models, while achieving competitive or better downstream task performance.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "ViLT is the first VLP model of which the modal-specific components require less computation than the transformer component for multimodal interactions.",
+      "evidence_section": "Figure 1",
+      "page": null
+    },
+    {
+      "claim": "ViLT achieves competent performance on vision-and-language tasks without using region features or deep convolutional visual embedders.",
+      "evidence_section": "Our key contributions can be summarized as follows",
+      "page": null
+    },
+    {
+      "claim": "Whole word masking and image augmentations further drive downstream performance.",
+      "evidence_section": "Our key contributions can be summarized as follows",
+      "page": null
+    },
+    {
+      "claim": "ViLT-B/32 uses a 32 × 32 patch projection and only requires 2.4M parameters for the visual embedding step.",
+      "evidence_section": "2.3. Visual Embedding Schema",
+      "page": null
+    },
+    {
+      "claim": "ViLT-B/32 is pre-trained with ImageNet-21K and fine-tuned on ImageNet-1K for image classification.",
+      "evidence_section": "3.1. Model Overview",
+      "page": null
+    },
+    {
+      "claim": "ViLT-B/32 is pre-trained for 100K or 200K steps on 64 NVIDIA V100 GPUs with a batch size of 4,096.",
+      "evidence_section": "4.2. Implementation Details",
+      "page": null
+    },
+    {
+      "claim": "More training steps, whole word masking, and image augmentation improve performance, while masked patch prediction does not.",
+      "evidence_section": "4.5. Ablation Study",
+      "page": null
+    }
+  ]
+}

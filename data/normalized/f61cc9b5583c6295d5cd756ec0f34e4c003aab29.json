@@ -1,0 +1,1276 @@
+{
+  "paper_id": "f61cc9b5583c6295d5cd756ec0f34e4c003aab29",
+  "architecture_summary": "Qwen2.5-VL is a vision-language model series built around a native dynamic-resolution Vision Transformer with Window Attention, 2D-RoPE, and an MLP-based vision-language merger, initialized from the pre-trained Qwen2.5 LLM. It adds dynamic FPS sampling and absolute-time-aligned MRoPE for video understanding, and is trained with large-scale pre-training plus SFT and DPO post-training.",
+  "model_variants": [
+    {
+      "name": "Qwen2.5-VL-3B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Qwen2.5-VL-7B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Qwen2.5-VL-72B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Qwen2-VL-72B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "Qwen2.5-72B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "DataComp",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Qwen2.5 LLM",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Qwen2-VL",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "PixMo",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "CC-OCR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OmniDocBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AI2D",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TextVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "DocVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "InfoVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ChartQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CharXiv",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "SEED-Bench-2-Plus",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OCRBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "VCR",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OCRBench_v2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Refcoco",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Refcoco+",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ODinW",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PointGrounding",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CountBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Video-MME",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Video-MMMU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMVU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MVBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMBench-Video",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LongVideoBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "EgoSchema",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "PerceptionTest",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MLVU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LVBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "TempCompass",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Charades-STA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ScreenSpot",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ScreenSpot Pro",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Android Control",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "AndroidWorld",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MobileMiniWob++",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "OSWorld",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMMU",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMMU-Pro",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MathVista",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MATH-Vision",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MathVerse",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MegaBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMBench-EN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMBench-CN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMBench-VL1-EN",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMStar",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MME",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MuirBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BLINK",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "CRP",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HallBench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MTVQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "RealWorldQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MME-RealWorld",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMVet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MM-MT-Bench",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMLU-Pro",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MMLU-redux",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "LiveBench-0831",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GPQA",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MATH",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "GSM8K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "HumanEval",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "MultiPL-E",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "IFEval",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMMU",
+      "metric_surface": "dev",
+      "value_surface": "70.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 70.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMMU-Pro",
+      "metric_surface": "overall",
+      "value_surface": "51.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 51.1
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MathVista",
+      "metric_surface": "mini",
+      "value_surface": "74.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 74.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MATH-Vision",
+      "metric_surface": "off",
+      "value_surface": "38.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 38.1
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MathVerse",
+      "metric_surface": "semi",
+      "value_surface": "57.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 57.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MegaBench",
+      "metric_surface": "",
+      "value_surface": "51.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 51.3
+    },
+    {
+      "model": "GPT-4o 0513",
+      "dataset_surface": "MegaBench",
+      "metric_surface": "",
+      "value_surface": "54.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 54.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMBench-EN",
+      "metric_surface": "test",
+      "value_surface": "88.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 88.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMBench-CN",
+      "metric_surface": "dev",
+      "value_surface": "87.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 87.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMBench-VL1-EN",
+      "metric_surface": "dev",
+      "value_surface": "88.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 88.4
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMStar",
+      "metric_surface": "",
+      "value_surface": "70.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 70.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MME",
+      "metric_surface": "sum",
+      "value_surface": "2448",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 2448.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MuirBench",
+      "metric_surface": "",
+      "value_surface": "70.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 70.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "BLINK",
+      "metric_surface": "off",
+      "value_surface": "64.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 64.4
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "CRP",
+      "metric_surface": "test",
+      "value_surface": "79.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 79.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "HallBench",
+      "metric_surface": "eng",
+      "value_surface": "55.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 55.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MTVQA",
+      "metric_surface": "",
+      "value_surface": "31.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 31.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "RealWorldQA",
+      "metric_surface": "eng",
+      "value_surface": "75.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 75.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MME-RealWorld",
+      "metric_surface": "dev",
+      "value_surface": "63.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 63.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMVet",
+      "metric_surface": "sum",
+      "value_surface": "76.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 76.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MM-MT-Bench",
+      "metric_surface": "",
+      "value_surface": "7.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and State-of-the-art.",
+      "value_canonical": 7.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMLU-Pro",
+      "metric_surface": "",
+      "value_surface": "71.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 71.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMLU-redux",
+      "metric_surface": "",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "LiveBench-0831",
+      "metric_surface": "",
+      "value_surface": "57.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 57.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "GPQA",
+      "metric_surface": "",
+      "value_surface": "49.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 49.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MATH",
+      "metric_surface": "",
+      "value_surface": "83.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 83.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "GSM8K",
+      "metric_surface": "",
+      "value_surface": "95.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 95.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "HumanEval",
+      "metric_surface": "",
+      "value_surface": "87.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 87.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MultiPL-E",
+      "metric_surface": "",
+      "value_surface": "79.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 79.5
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "IFEval",
+      "metric_surface": "",
+      "value_surface": "86.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 86.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "CC-OCR",
+      "metric_surface": "",
+      "value_surface": "79.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 79.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "OmniDocBench",
+      "metric_surface": "edit en/zh",
+      "value_surface": "0.226/0.324",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 0.226
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "AI2D",
+      "metric_surface": "en , M.",
+      "value_surface": "88.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 88.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "TextVQA",
+      "metric_surface": "val",
+      "value_surface": "84.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 84.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "DocVQA",
+      "metric_surface": "test",
+      "value_surface": "96.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 96.4
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "InfoVQA",
+      "metric_surface": "test",
+      "value_surface": "87.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 87.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "ChartQA",
+      "metric_surface": "test Avg.",
+      "value_surface": "89.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 89.5
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "CharXivHQ",
+      "metric_surface": "rdg",
+      "value_surface": "49.7/87.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 49.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "SEED-Bench-2-Plus",
+      "metric_surface": "",
+      "value_surface": "73.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 73.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "OCRBench",
+      "metric_surface": "",
+      "value_surface": "885",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 885.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "VCR",
+      "metric_surface": "En-Hard-EM",
+      "value_surface": "79.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 79.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "OCRBench_v2",
+      "metric_surface": "en/zh",
+      "value_surface": "61.5/63.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on OCR, chart, and document understanding benchmarks.",
+      "value_canonical": 61.5
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco",
+      "metric_surface": "val",
+      "value_surface": "92.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 92.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco",
+      "metric_surface": "testA",
+      "value_surface": "94.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 94.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco",
+      "metric_surface": "testB",
+      "value_surface": "89.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 89.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco+",
+      "metric_surface": "val",
+      "value_surface": "88.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 88.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco+",
+      "metric_surface": "testA",
+      "value_surface": "92.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 92.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco+",
+      "metric_surface": "testB",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco",
+      "metric_surface": "gval",
+      "value_surface": "89.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 89.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Refcoco",
+      "metric_surface": "gtest",
+      "value_surface": "90.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 90.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "ODinW",
+      "metric_surface": "",
+      "value_surface": "43.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 43.1
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "PointGrounding",
+      "metric_surface": "",
+      "value_surface": "67.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on grounding.",
+      "value_canonical": 67.5
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "CountBench",
+      "metric_surface": "",
+      "value_surface": "93.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on counting.",
+      "value_canonical": 93.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Video-MME",
+      "metric_surface": "w/o sub.",
+      "value_surface": "73.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 73.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Video-MME",
+      "metric_surface": "w sub.",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 79.1
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Video-MMMU",
+      "metric_surface": "",
+      "value_surface": "60.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 60.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMVU",
+      "metric_surface": "val",
+      "value_surface": "62.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 62.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MVBench",
+      "metric_surface": "",
+      "value_surface": "70.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 70.4
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMBench-Video",
+      "metric_surface": "",
+      "value_surface": "2.02",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 2.02
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "LongVideoBench",
+      "metric_surface": "val",
+      "value_surface": "60.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 60.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "LVBench",
+      "metric_surface": "",
+      "value_surface": "47.3",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 47.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "EgoSchema",
+      "metric_surface": "test",
+      "value_surface": "76.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 76.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "PerceptionTest",
+      "metric_surface": "test",
+      "value_surface": "73.2",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 73.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MLVU",
+      "metric_surface": "M-Avg",
+      "value_surface": "74.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 74.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "TempCompass",
+      "metric_surface": "Avg",
+      "value_surface": "74.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 74.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Charades-STA",
+      "metric_surface": "mIoU",
+      "value_surface": "50.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on video benchmarks.",
+      "value_canonical": 50.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "ScreenSpot",
+      "metric_surface": "",
+      "value_surface": "87.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 87.1
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "ScreenSpot Pro",
+      "metric_surface": "",
+      "value_surface": "43.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 43.6
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Android Control High",
+      "metric_surface": "EM",
+      "value_surface": "67.36",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 67.36
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "Android Control Low",
+      "metric_surface": "EM",
+      "value_surface": "93.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 93.7
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "AndroidWorld",
+      "metric_surface": "DR",
+      "value_surface": "35%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 35.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MobileMiniWob++",
+      "metric_surface": "SR",
+      "value_surface": "68%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 68.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "OSWorld",
+      "metric_surface": "",
+      "value_surface": "8.83",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance of Qwen2.5-VL and other models on GUI Agent benchmarks.",
+      "value_canonical": 8.83
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMLU-Pro",
+      "metric_surface": "",
+      "value_surface": "71.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 71.2
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MMLU-redux",
+      "metric_surface": "",
+      "value_surface": "85.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 85.9
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "LiveBench-0831",
+      "metric_surface": "",
+      "value_surface": "57.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 57.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "GPQA",
+      "metric_surface": "",
+      "value_surface": "49.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 49.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MATH",
+      "metric_surface": "",
+      "value_surface": "83.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 83.0
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "GSM8K",
+      "metric_surface": "",
+      "value_surface": "95.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 95.3
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "HumanEval",
+      "metric_surface": "",
+      "value_surface": "87.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 87.8
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "MultiPL-E",
+      "metric_surface": "",
+      "value_surface": "79.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 79.5
+    },
+    {
+      "model": "Qwen2.5-VL-72B",
+      "dataset_surface": "IFEval",
+      "metric_surface": "",
+      "value_surface": "86.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Performance on pure text tasks of the 70B+ Instruct models and Qwen2.5-VL.",
+      "value_canonical": 86.3
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": null
+  },
+  "methods_used": [
+    "window attention",
+    "dynamic resolution processing",
+    "absolute time encoding",
+    "native dynamic-resolution Vision Transformer",
+    "2D-RoPE",
+    "3D patch partitioning",
+    "RMSNorm",
+    "SwiGLU",
+    "MLP-based Vision-Language Merger",
+    "dynamic FPS sampling",
+    "MRoPE",
+    "copy-paste augmentation",
+    "Grounding DINO",
+    "SAM",
+    "HTML formatting",
+    "OCR data curation",
+    "rejection sampling",
+    "Supervised Fine-Tuning",
+    "Direct Preference Optimization",
+    "ChatML format"
+  ],
+  "novel_contributions": [
+    "dynamic resolution processing and absolute time encoding for images and videos of varying sizes and extended durations",
+    "a native dynamic-resolution Vision Transformer trained from scratch with Window Attention to reduce computational overhead while maintaining native resolution",
+    "dynamic FPS sampling that extends dynamic resolution to the temporal dimension",
+    "absolute-time-aligned MRoPE for more sophisticated temporal sequence learning",
+    "high-quality data curation for both pre-training and supervised fine-tuning, scaling the pre-training corpus from 1.2 trillion tokens to 4.1 trillion tokens"
+  ],
+  "key_claims": [
+    {
+      "claim": "Qwen2.5-VL introduces dynamic resolution processing and absolute time encoding, enabling it to process images of varying sizes and videos of extended durations (up to hours) with second-level event localization.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model trains a native dynamic-resolution Vision Transformer from scratch and incorporates Window Attention to reduce computational overhead while maintaining native resolution.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Qwen2.5-VL is available in three sizes, and the flagship Qwen2.5-VL-72B matches state-of-the-art models like GPT-4o and Claude 3.5 Sonnet, particularly in document and diagram understanding.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper’s four technical contributions are window attention in the visual encoder, dynamic FPS sampling, absolute-time-aligned MRoPE, and large-scale data curation for pre-training and supervised fine-tuning.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "The pre-training corpus is expanded from 1.2 trillion tokens to 4.1 trillion tokens.",
+      "evidence_section": "1 Introduction",
+      "page": null
+    },
+    {
+      "claim": "Qwen2.5-VL-72B achieves 70.2 on MMMU dev, 74.8 on MathVista mini, and 88.6 on MMBench-EN test in Table 3.",
+      "evidence_section": "3.1 Comparison with the SOTA Models",
+      "page": null
+    },
+    {
+      "claim": "Qwen2.5-VL-72B sets new state-of-the-art results on several OCR/document benchmarks including CC-OCR, OmniDocBench, DocVQA, InfoVQA, OCRBench, and OCRBench_v2.",
+      "evidence_section": "3.3.2 Document Understanding and OCR",
+      "page": null
+    },
+    {
+      "claim": "Qwen2.5-VL-72B achieves strong video understanding and grounding results, including 50.9 mIoU on Charades-STA and leading scores on MVBench, LVBench, EgoSchema, MLVU, TempCompass, and GUI agent benchmarks.",
+      "evidence_section": "3.3.4 Video Understanding and Grounding",
+      "page": null
+    }
+  ]
+}

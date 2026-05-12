@@ -1,0 +1,224 @@
+{
+  "paper_id": "f7410f535bda5b5a9888512fb954193245c1d0b2",
+  "architecture_summary": "Swin UNETR is a U-shaped 3D segmentation model that uses a hierarchical Swin transformer encoder with shifted-window self-attention and a CNN-based decoder connected by skip connections at multiple resolutions. It reformulates multi-modal MRI brain tumor segmentation as a sequence-to-sequence prediction problem for BraTS 2021.",
+  "model_variants": [
+    {
+      "name": "Swin UNETR",
+      "param_count_surface": "61.98M",
+      "page": null,
+      "param_count_millions": 61.98
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "BraTS 2021",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2021 dataset",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2021 validation set",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "BraTS 2021 testing set",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "mean Dice score",
+      "value_surface": "0.858",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.858
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "mean Dice score",
+      "value_surface": "0.926",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.926
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "mean Dice score",
+      "value_surface": "0.885",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.885
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "6.016",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 6.016
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "5.831",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 5.831
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 validation dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "3.770",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 validation dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 3.77
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Dice",
+      "value_surface": "0.853",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.853
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Dice",
+      "value_surface": "0.927",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.927
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Dice",
+      "value_surface": "0.876",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 0.876
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "16.326",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 16.326
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "4.739",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 4.739
+    },
+    {
+      "model": "Swin UNETR",
+      "dataset_surface": "BraTS 2021 testing dataset",
+      "metric_surface": "Hausdorff (mm)",
+      "value_surface": "15.309",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "BraTS 2021 testing dataset benchmarks in terms of mean Dice score and Hausdorff distance values. ET, WT and TC denote Enhancing Tumor, Whole Tumor and Tumor Core respectively.",
+      "value_canonical": 15.309
+    }
+  ],
+  "training_details": {
+    "compute_surface": "trained on a DGX-1 cluster with 8 NVIDIA V100 GPUs",
+    "batch_size": 1,
+    "epochs": 800
+  },
+  "methods_used": [
+    "Swin transformer",
+    "shifted windows",
+    "self-attention",
+    "patch partition",
+    "patch merging",
+    "skip connections",
+    "CNN-based decoder",
+    "residual block",
+    "instance normalization",
+    "deconvolutional layer",
+    "soft Dice loss",
+    "random axis mirror flip",
+    "random per channel intensity shift",
+    "random scale of intensity",
+    "linear warmup",
+    "cosine annealing learning rate scheduler",
+    "sliding window approach",
+    "ensemble"
+  ],
+  "novel_contributions": [
+    "We propose a novel segmentation model termed Swin UNet Transformers (Swin UNETR).",
+    "The task of 3D brain tumor semantic segmentation is reformulated as a sequence to sequence prediction problem wherein multi-modal input data is projected into a 1D sequence of embedding and used as an input to a hierarchical Swin transformer as the encoder.",
+    "The swin transformer encoder extracts features at five different resolutions by utilizing shifted windows for computing self-attention and is connected to an FCNN-based decoder at each resolution via skip connections.",
+    "The final result was obtained with an ensemble of 10 Swin UNETR models to improve the performance and achieve a better consensus for all predictions."
+  ],
+  "key_claims": [
+    {
+      "claim": "Swin UNETR is a novel U-shaped segmentation architecture that uses a hierarchical Swin transformer encoder and a CNN-based decoder with skip connections.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The model reformulates 3D brain tumor semantic segmentation as a sequence to sequence prediction problem using multi-modal MRI input projected into a 1D sequence of embedding.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Swin UNETR ranks among the top-performing approaches in the BraTS 2021 validation phase.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The encoder uses shifted windows for computing self-attention and extracts features at five different resolutions.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Swin UNETR outperforms all competing approaches across all 5 folds and on average for ET, WT and TC in the internal cross-validation benchmarks.",
+      "evidence_section": "4 Results and Discussion",
+      "page": null
+    },
+    {
+      "claim": "According to the official challenge results, the benchmarks are considered as one of the top-ranking methodologies during the validation phase.",
+      "evidence_section": "4 Results and Discussion",
+      "page": null
+    },
+    {
+      "claim": "The model demonstrates competitive performance in the BraTS 2021 testing phase.",
+      "evidence_section": "Abstract",
+      "page": null
+    }
+  ]
+}

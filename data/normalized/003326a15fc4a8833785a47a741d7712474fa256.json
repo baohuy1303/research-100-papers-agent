@@ -1,0 +1,451 @@
+{
+  "paper_id": "003326a15fc4a8833785a47a741d7712474fa256",
+  "architecture_summary": "LeViT is a hybrid vision transformer for fast inference image classification that reintroduces convolutional components, uses a multi-stage pyramid with pooling/downsampling, and replaces explicit positional embeddings with a learned attention bias. It is built on ViT/DeiT-style transformer blocks but optimized for speed with smaller keys, reduced MLP expansion, batch normalization, Hardswish, and no classification token.",
+  "model_variants": [
+    {
+      "name": "LeViT-128S",
+      "param_count_surface": "7.8",
+      "page": null,
+      "param_count_millions": 7.8
+    },
+    {
+      "name": "LeViT-128",
+      "param_count_surface": "9.2",
+      "page": null,
+      "param_count_millions": 9.2
+    },
+    {
+      "name": "LeViT-192",
+      "param_count_surface": "10.9",
+      "page": null,
+      "param_count_millions": 10.9
+    },
+    {
+      "name": "LeViT-256",
+      "param_count_surface": "18.9",
+      "page": null,
+      "param_count_millions": 18.9
+    },
+    {
+      "name": "LeViT-384",
+      "param_count_surface": "39.1",
+      "page": null,
+      "param_count_millions": 39.1
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "Imagenet-1k-val",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-2012",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Imagenet",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-Real",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "JFT300M",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Imagenet-21k",
+      "purpose": "pretrain",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "LeViT-128S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "76.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 76.6
+    },
+    {
+      "model": "EfficientNet B0",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "77.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 77.1
+    },
+    {
+      "model": "LeViT-128",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "78.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 78.6
+    },
+    {
+      "model": "LeViT-192",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "80.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 80.0
+    },
+    {
+      "model": "EfficientNet B1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 79.1
+    },
+    {
+      "model": "EfficientNet B2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "80.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 80.1
+    },
+    {
+      "model": "LeViT-256",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 81.6
+    },
+    {
+      "model": "DeiT-Tiny",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "76.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 76.6
+    },
+    {
+      "model": "EfficientNet B3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "81.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 81.6
+    },
+    {
+      "model": "LeViT-384",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 82.6
+    },
+    {
+      "model": "EfficientNet B4",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "82.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 82.9
+    },
+    {
+      "model": "DeiT-Small",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "82.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Characteristics of LeViT w.r.t. two strong families of competitors: DeiT [3] and EfficientNet [17]. The top-1 numbers are accuracies on ImageNet or ImageNet-Real and ImageNet-V2 (two last columns). The others are images per second on the different platforms. LeViT models optimize the trade-off between efficiency and accuracy (and not #params). The rows are sorted by FLOP counts.",
+      "value_canonical": 82.6
+    },
+    {
+      "model": "T2T-ViT-14 [49]",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "80.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 80.7
+    },
+    {
+      "model": "T2T-ViT-19",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "81.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 81.4
+    },
+    {
+      "model": "T2T-ViT-24",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 82.2
+    },
+    {
+      "model": "BoT-S1-50 [46]",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 79.1
+    },
+    {
+      "model": "VT-R34 [47]",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "79.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 79.9
+    },
+    {
+      "model": "VT-R50",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "80.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 80.6
+    },
+    {
+      "model": "VT-R101",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "82.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 82.3
+    },
+    {
+      "model": "PiT-Ti [59]",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "74.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 74.6
+    },
+    {
+      "model": "PiT-XS",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "79.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 79.1
+    },
+    {
+      "model": "PiT-S",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "81.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 81.9
+    },
+    {
+      "model": "CvT-13-NAS [60]",
+      "dataset_surface": "INET",
+      "metric_surface": "top-1",
+      "value_surface": "82.2",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with the recent state of the art in the high-throughput regime. All inference are performed on images of size  $224 \\times 224$ , and training is done on ImageNet only.",
+      "value_canonical": 82.2
+    },
+    {
+      "model": "LeViT-128S",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "71.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 71.9
+    },
+    {
+      "model": "A1",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "56.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 56.5
+    },
+    {
+      "model": "A2",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "65.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 65.3
+    },
+    {
+      "model": "A3",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "66.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 66.6
+    },
+    {
+      "model": "A4",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "69.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 69.7
+    },
+    {
+      "model": "A5",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "70.4",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 70.4
+    },
+    {
+      "model": "A6",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "70.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 70.9
+    },
+    {
+      "model": "A7",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1",
+      "value_surface": "71.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation of various components w.r.t. the baseline LeViT-128S. Each row is the baseline minus some LeViT component (1st column: experiment id). The training is run for 100 epochs only.",
+      "value_canonical": 71.1
+    }
+  ],
+  "training_details": {
+    "compute_surface": "32 GPUs that perform the 1000 training epochs in 3 to 5 days",
+    "batch_size": null,
+    "epochs": 1000
+  },
+  "methods_used": [
+    "attention bias",
+    "multi-stage transformer architecture",
+    "pooling",
+    "downsampling",
+    "patch embedding",
+    "batch normalization",
+    "Hardswish",
+    "distillation",
+    "self-attention",
+    "average pooling",
+    "stochastic depth"
+  ],
+  "novel_contributions": [
+    "A multi-stage transformer architecture using attention as a downsampling mechanism",
+    "A computationally efficient patch descriptor that shrinks the number of features in the first layers",
+    "A learnt, per-head translation-invariant attention bias that replaces ViT’s positional embedding",
+    "A redesigned Attention-MLP block that improves the network capacity for a given compute time"
+  ],
+  "key_claims": [
+    {
+      "claim": "LeViT significantly outperforms existing convnets and vision transformers with respect to the speed/accuracy tradeoff, and at 80% ImageNet top-1 accuracy it is 5 times faster than EfficientNet on CPU.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The paper introduces an attention bias as a new way to integrate positional information in vision transformers.",
+      "evidence_section": "Abstract / 4.2 LeViT components",
+      "page": null
+    },
+    {
+      "claim": "LeViT uses a pyramid with pooling and convolutional components to better optimize inference speed on GPU, Intel CPUs, and ARM hardware.",
+      "evidence_section": "1 Introduction / 4 Model",
+      "page": null
+    },
+    {
+      "claim": "LeViT is trained with distillation-driven training using two classification heads and a RegNetY-16GF teacher model.",
+      "evidence_section": "5.2 Training LeViT",
+      "page": null
+    },
+    {
+      "claim": "LeViT-384 is on-par with DeiT-Small in accuracy but uses half the number of FLOPs, and LeViT-128S is on-par with DeiT-Tiny and uses 4 × fewer FLOPs.",
+      "evidence_section": "5.3 Speed-accuracy tradeoffs",
+      "page": null
+    },
+    {
+      "claim": "The paper claims a new state of the art in the trade-off between accuracy and precision in the high-speed domain.",
+      "evidence_section": "6 Conclusion",
+      "page": null
+    }
+  ]
+}

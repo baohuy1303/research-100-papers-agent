@@ -1,0 +1,186 @@
+{
+  "paper_id": "e1d082562981a9f51649c60663aa484ee623dbb0",
+  "architecture_summary": "Point Transformer designs a self-attention layer for 3D point clouds using local kNN neighborhoods, vector attention, and trainable relative position encoding, and builds residual point transformer blocks into encoder-decoder networks for classification and dense prediction.",
+  "model_variants": [],
+  "datasets_mentioned": [
+    {
+      "surface": "S3DIS",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ModelNet40",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ShapeNetPart",
+      "purpose": "eval",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "mIoU",
+      "value_surface": "70.4%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated on Area 5.",
+      "value_canonical": 70.4
+    },
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "mAcc",
+      "value_surface": "76.5%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated on Area 5.",
+      "value_canonical": 76.5
+    },
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "OA",
+      "value_surface": "90.8%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated on Area 5.",
+      "value_canonical": 90.8
+    },
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "mIoU",
+      "value_surface": "73.5%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated with 6-fold cross-validation.",
+      "value_canonical": 73.5
+    },
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "mAcc",
+      "value_surface": "81.9%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated with 6-fold cross-validation.",
+      "value_canonical": 81.9
+    },
+    {
+      "model": "Point Transformer",
+      "dataset_surface": "S3DIS",
+      "metric_surface": "OA",
+      "value_surface": "90.2%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Semantic segmentation results on the S3DIS dataset, evaluated with 6-fold cross-validation.",
+      "value_canonical": 90.2
+    },
+    {
+      "model": "PointTransformer",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "mAcc",
+      "value_surface": "90.6",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Shape classification results on the ModelNet40 dataset.",
+      "value_canonical": 90.6
+    },
+    {
+      "model": "PointTransformer",
+      "dataset_surface": "ModelNet40",
+      "metric_surface": "OA",
+      "value_surface": "93.7",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Shape classification results on the ModelNet40 dataset.",
+      "value_canonical": 93.7
+    },
+    {
+      "model": "PointTransformer",
+      "dataset_surface": "ShapeNetPart",
+      "metric_surface": "ins. mIoU",
+      "value_surface": "86.6",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Object part segmentation results on the ShapeNetPart dataset.",
+      "value_canonical": 86.6
+    }
+  ],
+  "training_details": {
+    "compute_surface": null,
+    "batch_size": null,
+    "epochs": 200
+  },
+  "methods_used": [
+    "self-attention",
+    "vector attention",
+    "local neighborhoods",
+    "kNN",
+    "relative position encoding",
+    "trainable position encoding",
+    "farthest point sampling",
+    "batch normalization",
+    "ReLU",
+    "max pooling",
+    "trilinear interpolation",
+    "U-net",
+    "residual connection",
+    "global average pooling",
+    "MLP",
+    "SGD optimizer",
+    "weight decay"
+  ],
+  "novel_contributions": [
+    "We design a highly expressive Point Transformer layer for point cloud processing.",
+    "The layer is invariant to permutation and cardinality and is thus inherently suited to point cloud processing.",
+    "Based on the Point Transformer layer, we construct high-performing Point Transformer networks for classification and dense prediction on point clouds.",
+    "We report extensive experiments over multiple domains and datasets and set the new state of the art on multiple highly competitive benchmarks."
+  ],
+  "key_claims": [
+    {
+      "claim": "Point Transformer applies self-attention to 3D point clouds using local neighborhoods, vector attention, and trainable relative position encoding.",
+      "evidence_section": "3. Point Transformer / 3.2. Point Transformer Layer / 3.3. Position Encoding",
+      "page": null
+    },
+    {
+      "claim": "The resulting networks are based entirely on point transformer layers, pointwise transformations, and pooling, without convolutions for preprocessing or auxiliary branches.",
+      "evidence_section": "3.5. Network Architecture",
+      "page": null
+    },
+    {
+      "claim": "Point Transformer sets the new state of the art on S3DIS, ModelNet40, and ShapeNetPart.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "On S3DIS Area 5, Point Transformer attains 70.4% mIoU and crosses the 70% mIoU threshold for the first time.",
+      "evidence_section": "Abstract / 4.1. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On S3DIS 6-fold cross-validation, Point Transformer reaches 73.5% mIoU and outperforms the prior state of the art by 2.9 absolute percentage points.",
+      "evidence_section": "4.1. Semantic Segmentation",
+      "page": null
+    },
+    {
+      "claim": "On ModelNet40, Point Transformer achieves 93.7% overall accuracy and sets the new state of the art in both metrics.",
+      "evidence_section": "4.2. Shape Classification",
+      "page": null
+    },
+    {
+      "claim": "On ShapeNetPart, Point Transformer achieves 86.6 instance mIoU and outperforms all prior models as measured by instance mIoU.",
+      "evidence_section": "4.3. Object Part Segmentation",
+      "page": null
+    },
+    {
+      "claim": "The paper reports that vector attention is significantly better than scalar attention on S3DIS Area 5, with 70.4% vs. 64.6% mIoU.",
+      "evidence_section": "4.4. Ablation Study",
+      "page": null
+    }
+  ]
+}

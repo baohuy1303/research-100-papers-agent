@@ -1,0 +1,390 @@
+{
+  "paper_id": "be0fbb810583930c071d0b9b2c5187fe260783f5",
+  "architecture_summary": "Swin Transformer V2 adapts the original Swin Transformer with residual post-normalization, scaled cosine attention, and log-spaced continuous position bias to scale model capacity and window resolution more effectively. It also uses SimMIM self-supervised pre-training and memory-saving implementations such as ZeRO, activation check-pointing, and sequential self-attention computation to train models up to 3 billion parameters.",
+  "model_variants": [
+    {
+      "name": "SwinV2-T",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "SwinV2-S",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "SwinV2-B",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "SwinV2-L",
+      "param_count_surface": null,
+      "page": null,
+      "param_count_millions": null
+    },
+    {
+      "name": "SwinV2-H",
+      "param_count_surface": "658 million parameters",
+      "page": null,
+      "param_count_millions": 658.0
+    },
+    {
+      "name": "SwinV2-G",
+      "param_count_surface": "3 billion parameters",
+      "page": null,
+      "param_count_millions": 3.0
+    }
+  ],
+  "datasets_mentioned": [
+    {
+      "surface": "ImageNet-V2",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "COCO",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ADE20K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "Kinetics-400",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-1K",
+      "purpose": "eval",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "ImageNet-22K-ext",
+      "purpose": "pretrain",
+      "page": null
+    },
+    {
+      "surface": "Object 365 v2",
+      "purpose": "finetune",
+      "page": null
+    }
+  ],
+  "benchmark_results": [
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "ImageNet-V2",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "84.0%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 84.0
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "box AP",
+      "value_surface": "63.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 63.1
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "mask AP",
+      "value_surface": "54.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 54.4
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "59.9",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 59.9
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1 accuracy",
+      "value_surface": "86.8%",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": null,
+      "value_canonical": 86.8
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "ImageNet-1K-V1",
+      "metric_surface": "top-1 acc",
+      "value_surface": "90.17",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison with previous largest vision models on ImageNet-1K V1 and V2 classification",
+      "value_canonical": 90.17
+    },
+    {
+      "model": "SwinV2-G",
+      "dataset_surface": "ImageNet-1K-V2",
+      "metric_surface": "top-1 acc",
+      "value_surface": "84.00",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous largest vision models on ImageNet-1K V1 and V2 classification",
+      "value_canonical": 84.0
+    },
+    {
+      "model": "SwinV2-G (HTC++)",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "box",
+      "value_surface": "63.1",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous best results on COCO object detection and instance segmentation",
+      "value_canonical": 63.1
+    },
+    {
+      "model": "SwinV2-G (HTC++)",
+      "dataset_surface": "COCO test-dev",
+      "metric_surface": "mask",
+      "value_surface": "54.4",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous best results on COCO object detection and instance segmentation",
+      "value_canonical": 54.4
+    },
+    {
+      "model": "SwinV2-G (UperNet)",
+      "dataset_surface": "ADE20K",
+      "metric_surface": "mIoU",
+      "value_surface": "59.9*",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous best results on ADE20K semantic segmentation",
+      "value_canonical": 59.9
+    },
+    {
+      "model": "Video-SwinV2-G",
+      "dataset_surface": "Kinetics-400",
+      "metric_surface": "top-1",
+      "value_surface": "86.8",
+      "is_sota_claim": true,
+      "page": null,
+      "table_caption": "Comparison with previous best results on Kinetics-400 video action classification",
+      "value_canonical": 86.8
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc",
+      "value_surface": "81.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 81.7
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ImageNet",
+      "metric_surface": "top-1 acc",
+      "value_surface": "81.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 81.8
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "50.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 50.8
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "COCO",
+      "metric_surface": "AP box",
+      "value_surface": "51.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 51.1
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "45.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 45.5
+    },
+    {
+      "model": "Swin-T",
+      "dataset_surface": "ADE20k",
+      "metric_surface": "mIoU",
+      "value_surface": "47.8",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Comparison of different position bias computation approaches using Swin-T",
+      "value_canonical": 47.8
+    },
+    {
+      "model": "SwinV2-S",
+      "dataset_surface": "ImageNet*",
+      "metric_surface": "W8, I256",
+      "value_surface": "83.7",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 83.7
+    },
+    {
+      "model": "SwinV2-S",
+      "dataset_surface": "ImageNet†",
+      "metric_surface": "W12, I384",
+      "value_surface": "84.5",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 84.5
+    },
+    {
+      "model": "SwinV2-S",
+      "dataset_surface": "ImageNet†",
+      "metric_surface": "W16, I512",
+      "value_surface": "84.9",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 84.9
+    },
+    {
+      "model": "SwinV2-B",
+      "dataset_surface": "ImageNet*",
+      "metric_surface": "W8, I256",
+      "value_surface": "84.1",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 84.1
+    },
+    {
+      "model": "SwinV2-B",
+      "dataset_surface": "ImageNet†",
+      "metric_surface": "W12, I384",
+      "value_surface": "85.0",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 85.0
+    },
+    {
+      "model": "SwinV2-B",
+      "dataset_surface": "ImageNet†",
+      "metric_surface": "W16, I512",
+      "value_surface": "85.3",
+      "is_sota_claim": false,
+      "page": null,
+      "table_caption": "Ablation on Log-CPB using different model sizes",
+      "value_canonical": 85.3
+    }
+  ],
+  "training_details": {
+    "compute_surface": "Nvidia A100-40G GPUs",
+    "batch_size": 1024,
+    "epochs": 300
+  },
+  "methods_used": [
+    "residual post normalization",
+    "scaled cosine attention",
+    "log-spaced continuous position bias",
+    "SimMIM",
+    "ZeRO",
+    "activation check-pointing",
+    "sequential self-attention computation",
+    "AdamW",
+    "RandAugment",
+    "Mixup",
+    "Cutmix",
+    "random erasing",
+    "stochastic depth",
+    "soft-NMS",
+    "cascade mask R-CNN",
+    "HTC++",
+    "UperNet",
+    "layer-wise learning rate decay"
+  ],
+  "novel_contributions": [
+    "a residual-post-norm method combined with cosine attention to improve training stability",
+    "A log-spaced continuous position bias method to effectively transfer models pre-trained using low-resolution images to downstream tasks with high-resolution inputs",
+    "A self-supervised pre-training method, SimMIM, to reduce the needs of vast labeled images",
+    "trained a 3 billion-parameter Swin Transformer V2 model, which is the largest dense vision model to date",
+    "makes it capable of training with images of up to 1,536×1,536 resolution"
+  ],
+  "key_claims": [
+    {
+      "claim": "The paper proposes residual-post-norm, scaled cosine attention, and log-spaced continuous position bias to address training instability and resolution-transfer issues in large vision models.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Swin Transformer V2 can be scaled to a 3 billion-parameter model and trained with images of up to 1,536×1,536 resolution.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Using SimMIM self-supervised pre-training reduces the dependence on labeled data, and the paper reports using 40 times less labelled data than JFT-3B.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "The 3B model sets new performance records on ImageNet-V2, COCO, ADE20K, and Kinetics-400.",
+      "evidence_section": "Abstract",
+      "page": null
+    },
+    {
+      "claim": "Log-spaced CPB transfers better than parameterized position bias and linear-spaced CPB when moving from low-resolution pre-training to higher-resolution fine-tuning.",
+      "evidence_section": "3.3. Scaling Up Window Resolution",
+      "page": null
+    },
+    {
+      "claim": "Residual post normalization and scaled cosine attention improve stability and accuracy, especially for larger models.",
+      "evidence_section": "3.2. Scaling Up Model Capacity",
+      "page": null
+    },
+    {
+      "claim": "The largest model uses ZeRO, activation check-pointing, and sequential self-attention computation to reduce GPU memory consumption.",
+      "evidence_section": "3.5. Implementation to Save GPU Memory",
+      "page": null
+    }
+  ]
+}
