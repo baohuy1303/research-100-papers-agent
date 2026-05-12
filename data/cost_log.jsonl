@@ -203,3 +203,5 @@
 {"ts": 1778555405.826665, "label": "normalize_entities", "usd": 0.004228599999999999, "budget_level": "$5", "embed_tokens": 6230, "llm_cost": 0.004103999999999999}
 {"ts": 1778555916.775598, "label": "normalize_entities", "usd": 0.0352926, "budget_level": "$5", "embed_tokens": 6230, "llm_cost": 0.035168}
 {"ts": 1778558934.5722446, "label": "normalize_entities", "usd": 0.03976865999999999, "budget_level": "$5", "embed_tokens": 7408, "llm_cost": 0.03962049999999999}
+{"ts": 1778566218.7111344, "label": "normalize_entities", "usd": 0.040853579999999994, "budget_level": "$5", "embed_tokens": 8029, "llm_cost": 0.04069299999999999}
+{"ts": 1778566599.8212981, "label": "chroma_embed", "usd": 0.0529178, "budget_level": "$5", "model": "text-embedding-3-small", "total_tokens": 2645890, "n_chunks": 3768}

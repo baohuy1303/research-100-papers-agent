@@ -10,10 +10,11 @@
         "ImageNet-1K",
         "ImageNet-1k",
         "ImageNet1K",
+        "ImageNet1k",
         "Imagenet",
         "Imagenet1k"
       ],
-      "mention_count": 124,
+      "mention_count": 938,
       "source": "curated",
       "paperswithcode_id": "imagenet-1k-1",
       "hf_id": "ILSVRC/imagenet-1k"
@@ -25,11 +26,36 @@
         "COCO",
         "COCO 2017",
         "COCO2017",
+        "Coco",
         "MS COCO",
         "MS-COCO",
         "MSCOCO"
       ],
-      "mention_count": 47,
+      "mention_count": 343,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ADE20K",
+      "type": "dataset",
+      "aliases": [
+        "ADE20K",
+        "ADE20k"
+      ],
+      "mention_count": 146,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flickr30K",
+      "type": "dataset",
+      "aliases": [
+        "Flickr30K",
+        "Flickr30k"
+      ],
+      "mention_count": 107,
       "source": "curated",
       "paperswithcode_id": null,
       "hf_id": null
@@ -46,19 +72,33 @@
         "ImageNet21k",
         "Imagenet-21k"
       ],
-      "mention_count": 37,
+      "mention_count": 86,
       "source": "curated",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "ADE20K",
+      "canonical": "COCO val2017",
       "type": "dataset",
       "aliases": [
-        "ADE20K",
-        "ADE20k"
+        "COCO 2017 val",
+        "COCO val",
+        "COCO val2017"
       ],
-      "mention_count": 24,
+      "mention_count": 68,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kinetics-400",
+      "type": "dataset",
+      "aliases": [
+        "K400",
+        "Kinetics 400",
+        "Kinetics-400"
+      ],
+      "mention_count": 61,
       "source": "curated",
       "paperswithcode_id": null,
       "hf_id": null
@@ -70,10 +110,236 @@
         "CIFAR-100",
         "CIFAR100"
       ],
-      "mention_count": 18,
+      "mention_count": 54,
       "source": "curated",
       "paperswithcode_id": "cifar-100",
       "hf_id": "uoft-cs/cifar100"
+    },
+    {
+      "canonical": "VCR",
+      "type": "dataset",
+      "aliases": [
+        "VCR",
+        "VCR [25]"
+      ],
+      "mention_count": 47,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VQA 2.0",
+      "type": "dataset",
+      "aliases": [
+        "VQA 2.0",
+        "VQA v2.0",
+        "VQA2.0"
+      ],
+      "mention_count": 40,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "COCO Captions",
+      "type": "dataset",
+      "aliases": [
+        "COCO Caption",
+        "COCO Captions"
+      ],
+      "mention_count": 34,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NLVR2",
+      "type": "dataset",
+      "aliases": [
+        "NLVR2"
+      ],
+      "mention_count": 32,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Librispeech",
+      "type": "dataset",
+      "aliases": [
+        "Librispeech"
+      ],
+      "mention_count": 32,
+      "source": "hf-pwc",
+      "paperswithcode_id": "librispeech-1",
+      "hf_id": "openslr/librispeech_asr"
+    },
+    {
+      "canonical": "ImageNet Real",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet Real",
+        "ImageNet Real.",
+        "ImageNet RealL",
+        "ImageNet-Real"
+      ],
+      "mention_count": 31,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CIFAR-10",
+      "type": "dataset",
+      "aliases": [
+        "CIFAR-10",
+        "CIFAR10"
+      ],
+      "mention_count": 29,
+      "source": "curated",
+      "paperswithcode_id": "cifar-10",
+      "hf_id": "uoft-cs/cifar10"
+    },
+    {
+      "canonical": "VTAB-1k",
+      "type": "dataset",
+      "aliases": [
+        "VTAB-1k"
+      ],
+      "mention_count": 28,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Urban100",
+      "type": "dataset",
+      "aliases": [
+        "Urban100",
+        "Urban100 [29]"
+      ],
+      "mention_count": 27,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VQA",
+      "type": "dataset",
+      "aliases": [
+        "VQA",
+        "VQA [3]"
+      ],
+      "mention_count": 26,
+      "source": "hf-pwc",
+      "paperswithcode_id": "vqa-rad",
+      "hf_id": "flaviagiammarino/vqa-rad"
+    },
+    {
+      "canonical": "Brain US",
+      "type": "dataset",
+      "aliases": [
+        "Brain US"
+      ],
+      "mention_count": 25,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kinetics-600",
+      "type": "dataset",
+      "aliases": [
+        "K600",
+        "Kinetics 600",
+        "Kinetics-600"
+      ],
+      "mention_count": 21,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet-V2",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet V2",
+        "ImageNet-V2",
+        "ImageNet-v2",
+        "ImageNetV2"
+      ],
+      "mention_count": 20,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ETTm2",
+      "type": "dataset",
+      "aliases": [
+        "ETTm2"
+      ],
+      "mention_count": 20,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Zerkani network",
+      "type": "dataset",
+      "aliases": [
+        "Zerkani network"
+      ],
+      "mention_count": 20,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GQA",
+      "type": "dataset",
+      "aliases": [
+        "GQA"
+      ],
+      "mention_count": 18,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet top-1 (%)",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet Top-1",
+        "ImageNet top-1 (%)"
+      ],
+      "mention_count": 18,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MoNuSeg",
+      "type": "dataset",
+      "aliases": [
+        "MoNuSeg",
+        "MoNuSeg (microscopic)"
+      ],
+      "mention_count": 18,
+      "source": "llm-confirmed",
+      "paperswithcode_id": "monuseg",
+      "hf_id": "RationAI/MoNuSeg"
+    },
+    {
+      "canonical": "AudioSet",
+      "type": "dataset",
+      "aliases": [
+        "AudioSet"
+      ],
+      "mention_count": 18,
+      "source": "hf-pwc",
+      "paperswithcode_id": "audioset",
+      "hf_id": "agkphysics/AudioSet"
     },
     {
       "canonical": "JFT-300M",
@@ -88,16 +354,175 @@
       "hf_id": null
     },
     {
-      "canonical": "CIFAR-10",
+      "canonical": "NoCaps",
       "type": "dataset",
       "aliases": [
-        "CIFAR-10",
-        "CIFAR10"
+        "NoCaps"
       ],
-      "mention_count": 13,
+      "mention_count": 17,
       "source": "curated",
-      "paperswithcode_id": "cifar-10",
-      "hf_id": "uoft-cs/cifar10"
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GlaS",
+      "type": "dataset",
+      "aliases": [
+        "GLAS",
+        "GlaS"
+      ],
+      "mention_count": 17,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet. 1K",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet. 1K"
+      ],
+      "mention_count": 16,
+      "source": "hf-pwc",
+      "paperswithcode_id": "imagenet-1k-1",
+      "hf_id": "ILSVRC/imagenet-1k"
+    },
+    {
+      "canonical": "Something-Something V2",
+      "type": "dataset",
+      "aliases": [
+        "Something-Something V2",
+        "Something-Something v2"
+      ],
+      "mention_count": 15,
+      "source": "hf-pwc",
+      "paperswithcode_id": "something-something",
+      "hf_id": "HuggingFaceM4/something_something_v2"
+    },
+    {
+      "canonical": "CO3Dv2",
+      "type": "dataset",
+      "aliases": [
+        "CO3Dv2",
+        "Co3Dv2"
+      ],
+      "mention_count": 15,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BTCV",
+      "type": "dataset",
+      "aliases": [
+        "BTCV"
+      ],
+      "mention_count": 15,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SVHN",
+      "type": "dataset",
+      "aliases": [
+        "SVHN"
+      ],
+      "mention_count": 15,
+      "source": "hf-pwc",
+      "paperswithcode_id": "svhn",
+      "hf_id": "ufldl-stanford/svhn"
+    },
+    {
+      "canonical": "COCO Fine-tuned (5K test set)",
+      "type": "dataset",
+      "aliases": [
+        "COCO Fine-tuned",
+        "COCO Fine-tuned (5K test set)",
+        "COCO finetuning objectives",
+        "COCO test set"
+      ],
+      "mention_count": 15,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Image Retrieval [26]",
+      "type": "dataset",
+      "aliases": [
+        "Image Retrieval [26]"
+      ],
+      "mention_count": 15,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ZS Image Retrieval [26]",
+      "type": "dataset",
+      "aliases": [
+        "ZS Image Retrieval [26]"
+      ],
+      "mention_count": 15,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "T2I-CompBench",
+      "type": "dataset",
+      "aliases": [
+        "T2I-CompBench"
+      ],
+      "mention_count": 15,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MS COCO val",
+      "type": "dataset",
+      "aliases": [
+        "MS COCO val"
+      ],
+      "mention_count": 15,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Food-101",
+      "type": "dataset",
+      "aliases": [
+        "Food-101"
+      ],
+      "mention_count": 14,
+      "source": "hf-pwc",
+      "paperswithcode_id": "food-101",
+      "hf_id": "ethz/food101"
+    },
+    {
+      "canonical": "HMDB51",
+      "type": "dataset",
+      "aliases": [
+        "HMDB51"
+      ],
+      "mention_count": 14,
+      "source": "hf-pwc",
+      "paperswithcode_id": "hmdb51",
+      "hf_id": "jili5044/hmdb51"
+    },
+    {
+      "canonical": "Kinetics",
+      "type": "dataset",
+      "aliases": [
+        "Kinetics"
+      ],
+      "mention_count": 14,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "Visual Genome",
@@ -111,41 +536,385 @@
       "hf_id": "ranjaykrishna/visual_genome"
     },
     {
-      "canonical": "Kinetics-400",
+      "canonical": "INET",
       "type": "dataset",
       "aliases": [
-        "K400",
-        "Kinetics 400",
-        "Kinetics-400"
+        "INET",
+        "INet"
+      ],
+      "mention_count": 13,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet val. set",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet [8] val. set",
+        "ImageNet val. set"
+      ],
+      "mention_count": 13,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SSv2",
+      "type": "dataset",
+      "aliases": [
+        "SSv2"
+      ],
+      "mention_count": 13,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ModelNet40",
+      "type": "dataset",
+      "aliases": [
+        "ModelNet40"
+      ],
+      "mention_count": 13,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LVIS",
+      "type": "dataset",
+      "aliases": [
+        "LVIS"
+      ],
+      "mention_count": 13,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DAVIS 2017",
+      "type": "dataset",
+      "aliases": [
+        "DAVIS 2017",
+        "DAVIS-2017"
+      ],
+      "mention_count": 13,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VQAv2",
+      "type": "dataset",
+      "aliases": [
+        "VQA v2",
+        "VQAv2"
+      ],
+      "mention_count": 12,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NLQv2",
+      "type": "dataset",
+      "aliases": [
+        "NLQ2",
+        "NLQv2"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flickr30k (1K)",
+      "type": "dataset",
+      "aliases": [
+        "Flickr30k (1K)"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MSCOCO (5K)",
+      "type": "dataset",
+      "aliases": [
+        "MSCOCO (5K)"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNetK",
+      "type": "dataset",
+      "aliases": [
+        "ImageNetK"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BraTS 2021",
+      "type": "dataset",
+      "aliases": [
+        "BraTS 2019",
+        "BraTS 2020",
+        "BraTS 2021"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Set5",
+      "type": "dataset",
+      "aliases": [
+        "Set5"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Set14",
+      "type": "dataset",
+      "aliases": [
+        "Set14"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "JFT",
+      "type": "dataset",
+      "aliases": [
+        "JFT"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Image Captioning",
+      "type": "dataset",
+      "aliases": [
+        "Image Captioning"
+      ],
+      "mention_count": 12,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SQuAD",
+      "type": "dataset",
+      "aliases": [
+        "SQuAD"
+      ],
+      "mention_count": 12,
+      "source": "hf-pwc",
+      "paperswithcode_id": "squad",
+      "hf_id": "rajpurkar/squad_v2"
+    },
+    {
+      "canonical": "ObjectNet",
+      "type": "dataset",
+      "aliases": [
+        "ObjectNet"
+      ],
+      "mention_count": 11,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RefCOCO+",
+      "type": "dataset",
+      "aliases": [
+        "RefCOCO+",
+        "Refcoco+"
+      ],
+      "mention_count": 11,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Refcoco",
+      "type": "dataset",
+      "aliases": [
+        "RefCOCO",
+        "Refcoco",
+        "refcoco"
+      ],
+      "mention_count": 11,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "PASCAL-VOC12 validation set",
+      "type": "dataset",
+      "aliases": [
+        "PASCAL-VOC12 validation set"
+      ],
+      "mention_count": 11,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Pets",
+      "type": "dataset",
+      "aliases": [
+        "Pet",
+        "Pets"
+      ],
+      "mention_count": 11,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet validation set",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet 2012 validation set",
+        "ImageNet validation set"
+      ],
+      "mention_count": 11,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Oxford-IIIT-Pets",
+      "type": "dataset",
+      "aliases": [
+        "Oxford IIIT Pets",
+        "Oxford-IIIT Pets",
+        "Oxford-IIIT-Pets"
+      ],
+      "mention_count": 11,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Oxford Flowers-102",
+      "type": "dataset",
+      "aliases": [
+        "Oxford Flowers",
+        "Oxford Flowers 102",
+        "Oxford Flowers-102",
+        "Oxford-102 flowers",
+        "oxford_flowers"
+      ],
+      "mention_count": 11,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RS-Haze-mix",
+      "type": "dataset",
+      "aliases": [
+        "RS-Haze-mix"
+      ],
+      "mention_count": 11,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SOTS-indoor",
+      "type": "dataset",
+      "aliases": [
+        "SOTS indoor set",
+        "SOTS-indoor"
+      ],
+      "mention_count": 11,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "KITTI",
+      "type": "dataset",
+      "aliases": [
+        "KITTI"
+      ],
+      "mention_count": 11,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Imagenet1k-val",
+      "type": "dataset",
+      "aliases": [
+        "Imagenet-1k-val",
+        "Imagenet1k-val"
       ],
       "mention_count": 10,
-      "source": "curated",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "ImageNet-V2",
+      "canonical": "Something-Something-v2",
       "type": "dataset",
       "aliases": [
-        "ImageNet V2",
-        "ImageNet-V2",
-        "ImageNet-v2",
-        "ImageNetV2"
+        "Something-Something-v2"
       ],
-      "mention_count": 9,
-      "source": "curated",
+      "mention_count": 10,
+      "source": "hf-pwc",
+      "paperswithcode_id": "something-something",
+      "hf_id": "HuggingFaceM4/something_something_v2"
+    },
+    {
+      "canonical": "Pascal Context",
+      "type": "dataset",
+      "aliases": [
+        "Pascal Context"
+      ],
+      "mention_count": 10,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "Flickr30K",
+      "canonical": "NYUv2",
       "type": "dataset",
       "aliases": [
-        "Flickr30K",
-        "Flickr30k"
+        "NYUv2"
       ],
-      "mention_count": 9,
-      "source": "curated",
+      "mention_count": 10,
+      "source": "hf-pwc",
+      "paperswithcode_id": "nyuv2",
+      "hf_id": "0jl/NYUv2"
+    },
+    {
+      "canonical": "ImageNet 256×256",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet 256×256"
+      ],
+      "mention_count": 10,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -163,25 +932,163 @@
       "hf_id": "google-research-datasets/conceptual_captions"
     },
     {
-      "canonical": "Kinetics-600",
+      "canonical": "BSD100",
       "type": "dataset",
       "aliases": [
-        "K600",
-        "Kinetics 600",
-        "Kinetics-600"
+        "BSD100"
       ],
-      "mention_count": 8,
-      "source": "curated",
+      "mention_count": 9,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "VQA 2.0",
+      "canonical": "Manga109",
       "type": "dataset",
       "aliases": [
-        "VQA 2.0",
-        "VQA v2.0",
-        "VQA2.0"
+        "Manga109"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SOTS-mix",
+      "type": "dataset",
+      "aliases": [
+        "SOTS-mix"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet ILSVRC 2012",
+      "type": "dataset",
+      "aliases": [
+        "ILSVRC-2012 ImageNet",
+        "ILSVRC-2012 ImageNet dataset",
+        "ImageNet (also known as ILSVRC2012)",
+        "ImageNet 2012",
+        "ImageNet 2012 training set",
+        "ImageNet ILSVRC 2012",
+        "ImageNet train set",
+        "ImageNet training set",
+        "ImageNet-2012"
+      ],
+      "mention_count": 9,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DTU",
+      "type": "dataset",
+      "aliases": [
+        "DTU"
+      ],
+      "mention_count": 9,
+      "source": "hf-pwc",
+      "paperswithcode_id": "acronym-identification",
+      "hf_id": "DTU54DL/common-voice-test16k"
+    },
+    {
+      "canonical": "Moments in Time",
+      "type": "dataset",
+      "aliases": [
+        "Moments in Time"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Image Retrieval",
+      "type": "dataset",
+      "aliases": [
+        "Image Retrieval"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Text Retrieval",
+      "type": "dataset",
+      "aliases": [
+        "Text Retrieval"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "HRWSI",
+      "type": "dataset",
+      "aliases": [
+        "HRWSI"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMLU",
+      "type": "dataset",
+      "aliases": [
+        "MMLU"
+      ],
+      "mention_count": 9,
+      "source": "hf-pwc",
+      "paperswithcode_id": "mmlu",
+      "hf_id": "cais/mmlu"
+    },
+    {
+      "canonical": "COCO test-dev",
+      "type": "dataset",
+      "aliases": [
+        "COCO test-dev"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MNLI",
+      "type": "dataset",
+      "aliases": [
+        "MNLI",
+        "MNLI-m"
+      ],
+      "mention_count": 9,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RealEstate10K",
+      "type": "dataset",
+      "aliases": [
+        "RealEstate10K",
+        "RealEstate10k"
+      ],
+      "mention_count": 8,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SOTS-outdoor",
+      "type": "dataset",
+      "aliases": [
+        "SOTS-outdoor"
       ],
       "mention_count": 8,
       "source": "clustered",
@@ -189,11 +1096,89 @@
       "hf_id": null
     },
     {
-      "canonical": "ImageNet Real",
+      "canonical": "Map-free dataset",
       "type": "dataset",
       "aliases": [
-        "ImageNet Real",
-        "ImageNet-Real"
+        "Map-free dataset"
+      ],
+      "mention_count": 8,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "PASCAL VOC12",
+      "type": "dataset",
+      "aliases": [
+        "PASCAL VOC12"
+      ],
+      "mention_count": 8,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Epic Kitchens",
+      "type": "dataset",
+      "aliases": [
+        "Epic Kitchens",
+        "Epic-Kitchens"
+      ],
+      "mention_count": 8,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "C4/English",
+      "type": "dataset",
+      "aliases": [
+        "C4/English"
+      ],
+      "mention_count": 8,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SST-2",
+      "type": "dataset",
+      "aliases": [
+        "SST-2"
+      ],
+      "mention_count": 8,
+      "source": "hf-pwc",
+      "paperswithcode_id": "sst",
+      "hf_id": "stanfordnlp/sst2"
+    },
+    {
+      "canonical": "GSM8K",
+      "type": "dataset",
+      "aliases": [
+        "GSM8K",
+        "GSM8k"
+      ],
+      "mention_count": 7,
+      "source": "hf-pwc",
+      "paperswithcode_id": "gsm8k",
+      "hf_id": "openai/gsm8k"
+    },
+    {
+      "canonical": "NYUd",
+      "type": "dataset",
+      "aliases": [
+        "NYUd"
+      ],
+      "mention_count": 7,
+      "source": "hf-pwc",
+      "paperswithcode_id": "nyuv2",
+      "hf_id": "sayakpaul/nyu_depth_v2"
+    },
+    {
+      "canonical": "VOC 2012",
+      "type": "dataset",
+      "aliases": [
+        "VOC 2012"
       ],
       "mention_count": 7,
       "source": "clustered",
@@ -201,16 +1186,127 @@
       "hf_id": null
     },
     {
-      "canonical": "Oxford-IIIT Pets",
+      "canonical": "COCO 20k",
       "type": "dataset",
       "aliases": [
-        "Oxford IIIT Pets",
-        "Oxford-IIIT Pets",
-        "Oxford-IIIT-Pets",
-        "Oxford-IIT Pet"
+        "COCO 20k"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Places205",
+      "type": "dataset",
+      "aliases": [
+        "Places205"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NUS-WIDE",
+      "type": "dataset",
+      "aliases": [
+        "NUS-WIDE"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ETH3D",
+      "type": "dataset",
+      "aliases": [
+        "ETH3D",
+        "ETH3D [97]"
       ],
       "mention_count": 7,
       "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ScienceQA",
+      "type": "dataset",
+      "aliases": [
+        "ScienceQA"
+      ],
+      "mention_count": 7,
+      "source": "hf-pwc",
+      "paperswithcode_id": "scienceqa",
+      "hf_id": "derek-thomas/ScienceQA"
+    },
+    {
+      "canonical": "MSR-VTT Full",
+      "type": "dataset",
+      "aliases": [
+        "MSR-VTT",
+        "MSR-VTT Full"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SNLI-VE",
+      "type": "dataset",
+      "aliases": [
+        "SNLI-VE"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MATH",
+      "type": "dataset",
+      "aliases": [
+        "MATH"
+      ],
+      "mention_count": 7,
+      "source": "hf-pwc",
+      "paperswithcode_id": "mathvista",
+      "hf_id": "AI4Math/MathVista"
+    },
+    {
+      "canonical": "S3DIS",
+      "type": "dataset",
+      "aliases": [
+        "S3DIS"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BraTS 2021 testing dataset",
+      "type": "dataset",
+      "aliases": [
+        "BraTS 2021 dataset",
+        "BraTS 2021 testing dataset"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BraTS 2021 validation dataset",
+      "type": "dataset",
+      "aliases": [
+        "BraTS 2021 validation dataset",
+        "BraTS 2021 validation set"
+      ],
+      "mention_count": 7,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -227,11 +1323,10 @@
       "hf_id": "vicenteor/sbu_captions"
     },
     {
-      "canonical": "VQAv2",
+      "canonical": "Cityscapes",
       "type": "dataset",
       "aliases": [
-        "VQA v2",
-        "VQAv2"
+        "Cityscapes"
       ],
       "mention_count": 6,
       "source": "curated",
@@ -239,13 +1334,91 @@
       "hf_id": null
     },
     {
-      "canonical": "Oxford Flowers-102",
+      "canonical": "Kinetics-700",
       "type": "dataset",
       "aliases": [
-        "Oxford Flowers 102",
-        "Oxford Flowers-102",
-        "Oxford-102 flowers",
-        "oxford_flowers"
+        "Kinetics-700"
+      ],
+      "mention_count": 6,
+      "source": "curated",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Cifar 10",
+      "type": "dataset",
+      "aliases": [
+        "CIFAR 10",
+        "Cifar 10"
+      ],
+      "mention_count": 6,
+      "source": "hf-pwc",
+      "paperswithcode_id": "cifar-10",
+      "hf_id": "uoft-cs/cifar10"
+    },
+    {
+      "canonical": "Cifar 100",
+      "type": "dataset",
+      "aliases": [
+        "CIFAR 100",
+        "Cifar 100"
+      ],
+      "mention_count": 6,
+      "source": "hf-pwc",
+      "paperswithcode_id": "cifar-100",
+      "hf_id": "uoft-cs/cifar100"
+    },
+    {
+      "canonical": "ImageNet V2 matched frequency",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet V2 matched frequency",
+        "Imagenet V2 matched frequency"
+      ],
+      "mention_count": 6,
+      "source": "rule",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "F30K",
+      "type": "dataset",
+      "aliases": [
+        "F30K"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VOC 2007",
+      "type": "dataset",
+      "aliases": [
+        "VOC 2007"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Charades",
+      "type": "dataset",
+      "aliases": [
+        "Charades"
+      ],
+      "mention_count": 6,
+      "source": "hf-pwc",
+      "paperswithcode_id": "charades",
+      "hf_id": "HuggingFaceM4/charades"
+    },
+    {
+      "canonical": "OKVQA",
+      "type": "dataset",
+      "aliases": [
+        "OK-VQA",
+        "OKVQA"
       ],
       "mention_count": 6,
       "source": "llm-confirmed",
@@ -253,15 +1426,46 @@
       "hf_id": null
     },
     {
-      "canonical": "ImageNet ILSVRC 2012",
+      "canonical": "TextVQA",
       "type": "dataset",
       "aliases": [
-        "ILSVRC-2012 ImageNet",
-        "ILSVRC-2012 ImageNet dataset",
-        "ImageNet (also known as ILSVRC2012)",
-        "ImageNet 2012",
-        "ImageNet ILSVRC 2012",
-        "ImageNet-2012"
+        "TextVQA"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RS-Haze-M",
+      "type": "dataset",
+      "aliases": [
+        "RS-Haze-D",
+        "RS-Haze-M"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flickr30K Zero-shot (1K test set)",
+      "type": "dataset",
+      "aliases": [
+        "Flickr30K Zero-shot (1K test set)"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ScanNet-1500 [18, 92]",
+      "type": "dataset",
+      "aliases": [
+        "ScanNet",
+        "ScanNet-1500",
+        "ScanNet-1500 [18, 92]"
       ],
       "mention_count": 6,
       "source": "llm-confirmed",
@@ -269,23 +1473,99 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO val2017",
+      "canonical": "COCO 1K test sets",
       "type": "dataset",
       "aliases": [
-        "COCO 2017 val",
-        "COCO val",
-        "COCO val2017"
+        "COCO 1K test sets"
       ],
       "mention_count": 6,
-      "source": "llm-confirmed",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "VTAB-1k",
+      "canonical": "COCO 5K test sets",
       "type": "dataset",
       "aliases": [
-        "VTAB-1k"
+        "COCO 5K test sets"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet 512×512",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet 512×512"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "AVA v2.2",
+      "type": "dataset",
+      "aliases": [
+        "AVA v2.2"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet†",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet*",
+        "ImageNet†"
+      ],
+      "mention_count": 6,
+      "source": "hf-pwc",
+      "paperswithcode_id": "imagenet-1k-1",
+      "hf_id": "ILSVRC/imagenet-1k"
+    },
+    {
+      "canonical": "HumanEval",
+      "type": "dataset",
+      "aliases": [
+        "HumanEval"
+      ],
+      "mention_count": 6,
+      "source": "hf-pwc",
+      "paperswithcode_id": "humaneval",
+      "hf_id": "openai/openai_humaneval"
+    },
+    {
+      "canonical": "ISIC17",
+      "type": "dataset",
+      "aliases": [
+        "ISIC17"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ISIC18",
+      "type": "dataset",
+      "aliases": [
+        "ISIC18"
+      ],
+      "mention_count": 6,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VTAB",
+      "type": "dataset",
+      "aliases": [
+        "VTAB"
       ],
       "mention_count": 5,
       "source": "curated",
@@ -306,11 +1586,10 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO Captions",
+      "canonical": "ImageNet-R",
       "type": "dataset",
       "aliases": [
-        "COCO Caption",
-        "COCO Captions"
+        "ImageNet-R"
       ],
       "mention_count": 5,
       "source": "curated",
@@ -318,15 +1597,15 @@
       "hf_id": null
     },
     {
-      "canonical": "NoCaps",
+      "canonical": "ImageNet-A",
       "type": "dataset",
       "aliases": [
-        "NoCaps"
+        "ImageNet-A"
       ],
       "mention_count": 5,
       "source": "curated",
-      "paperswithcode_id": null,
-      "hf_id": null
+      "paperswithcode_id": "imagenet",
+      "hf_id": "coallaoh/ImageNet-AB"
     },
     {
       "canonical": "JFT-3B",
@@ -340,35 +1619,68 @@
       "hf_id": null
     },
     {
-      "canonical": "GQA",
+      "canonical": "PASCAL VOC 2012",
       "type": "dataset",
       "aliases": [
-        "GQA"
+        "PASCAL VOC 2012",
+        "Pascal VOC 2012"
       ],
       "mention_count": 5,
-      "source": "curated",
+      "source": "rule",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "NLVR2",
+      "canonical": "Clevr/Count",
       "type": "dataset",
       "aliases": [
-        "NLVR2"
+        "Clevr/Count",
+        "Clevr/count"
       ],
       "mention_count": 5,
-      "source": "curated",
+      "source": "rule",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "BraTS 2021",
+      "canonical": "CropDiseases",
       "type": "dataset",
       "aliases": [
-        "BraTS",
-        "BraTS 2019",
-        "BraTS 2020",
-        "BraTS 2021"
+        "CropDiseases"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ChestXRay8",
+      "type": "dataset",
+      "aliases": [
+        "ChestXRay8"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Cars",
+      "type": "dataset",
+      "aliases": [
+        "Cars"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet benchmark",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet benchmark",
+        "ImageNet classification"
       ],
       "mention_count": 5,
       "source": "llm-confirmed",
@@ -376,33 +1688,180 @@
       "hf_id": null
     },
     {
-      "canonical": "VTAB",
+      "canonical": "AVA",
       "type": "dataset",
       "aliases": [
-        "VTAB"
+        "AVA"
       ],
-      "mention_count": 4,
-      "source": "curated",
+      "mention_count": 5,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "ObjectNet",
+      "canonical": "Synapse",
       "type": "dataset",
       "aliases": [
-        "ObjectNet"
+        "Synapse"
       ],
-      "mention_count": 4,
-      "source": "curated",
+      "mention_count": 5,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "CO3Dv2",
+      "canonical": "iNaturalist 2018",
       "type": "dataset",
       "aliases": [
-        "CO3Dv2",
-        "Co3Dv2"
+        "iNaturalist 2017",
+        "iNaturalist 2018",
+        "iNaturalist 2019"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kinetics-Sound",
+      "type": "dataset",
+      "aliases": [
+        "Kinetics-Sound",
+        "Kinetics-Sounds"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flickr",
+      "type": "dataset",
+      "aliases": [
+        "Flickr",
+        "Flickr (test)"
+      ],
+      "mention_count": 5,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Vaihingen",
+      "type": "dataset",
+      "aliases": [
+        "Vaihingen"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ETTm1",
+      "type": "dataset",
+      "aliases": [
+        "ETTm1"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "TUM",
+      "type": "dataset",
+      "aliases": [
+        "TUM"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ADE20K validation set",
+      "type": "dataset",
+      "aliases": [
+        "ADE20K validation set"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BSD68",
+      "type": "dataset",
+      "aliases": [
+        "BSD68"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Places2",
+      "type": "dataset",
+      "aliases": [
+        "Places2"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "revisited Oxford",
+      "type": "dataset",
+      "aliases": [
+        "revisited Oxford"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Bridge",
+      "type": "dataset",
+      "aliases": [
+        "Bridge"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Google Robot",
+      "type": "dataset",
+      "aliases": [
+        "Google Robot"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VGGSound",
+      "type": "dataset",
+      "aliases": [
+        "VGGSound"
+      ],
+      "mention_count": 5,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Autolab UR5",
+      "type": "dataset",
+      "aliases": [
+        "AUTOLab UR5",
+        "Autolab UR5"
       ],
       "mention_count": 4,
       "source": "rule",
@@ -410,14 +1869,80 @@
       "hf_id": null
     },
     {
-      "canonical": "RefCOCO+",
+      "canonical": "ImageNet-Segmentation",
       "type": "dataset",
       "aliases": [
-        "RefCOCO+",
-        "Refcoco+"
+        "ImageNet-Segmentation"
       ],
       "mention_count": 4,
-      "source": "rule",
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RealBlur-R [65]",
+      "type": "dataset",
+      "aliases": [
+        "RealBlur-J [65]",
+        "RealBlur-R [65]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Set12 [101]",
+      "type": "dataset",
+      "aliases": [
+        "Set12 [101]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BSD68 [52]",
+      "type": "dataset",
+      "aliases": [
+        "BSD68 [52]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kodak24 [20]",
+      "type": "dataset",
+      "aliases": [
+        "Kodak24 [20]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "McMaster [104]",
+      "type": "dataset",
+      "aliases": [
+        "McMaster [104]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "PAIP liver histopathological dataset",
+      "type": "dataset",
+      "aliases": [
+        "PAIP liver histopathological dataset"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -434,35 +1959,11 @@
       "hf_id": null
     },
     {
-      "canonical": "iNaturalist 2018",
+      "canonical": "Places365",
       "type": "dataset",
       "aliases": [
-        "iNaturalist 2017",
-        "iNaturalist 2018",
-        "iNaturalist 2019"
-      ],
-      "mention_count": 4,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Pascal Context",
-      "type": "dataset",
-      "aliases": [
-        "Pascal Context"
-      ],
-      "mention_count": 4,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Urban100",
-      "type": "dataset",
-      "aliases": [
-        "Urban100",
-        "Urban100 [29]"
+        "Places365",
+        "Places365 [44]"
       ],
       "mention_count": 4,
       "source": "llm-confirmed",
@@ -470,10 +1971,10 @@
       "hf_id": null
     },
     {
-      "canonical": "VCR",
+      "canonical": "TextCaps",
       "type": "dataset",
       "aliases": [
-        "VCR"
+        "TextCaps"
       ],
       "mention_count": 4,
       "source": "clustered",
@@ -481,15 +1982,376 @@
       "hf_id": null
     },
     {
-      "canonical": "AudioSet",
+      "canonical": "ImageNet-Sketch",
       "type": "dataset",
       "aliases": [
-        "AudioSet"
+        "ImageNet-Sketch"
       ],
       "mention_count": 4,
       "source": "hf-pwc",
-      "paperswithcode_id": "audioset",
-      "hf_id": "agkphysics/AudioSet"
+      "paperswithcode_id": "imagenet-sketch",
+      "hf_id": "songweig/imagenet_sketch"
+    },
+    {
+      "canonical": "RS-Haze-L",
+      "type": "dataset",
+      "aliases": [
+        "RS-Haze",
+        "RS-Haze-L"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VQAv2 test-dev",
+      "type": "dataset",
+      "aliases": [
+        "VQAv2 (test-dev)",
+        "VQAv2 test-dev"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NoCaps Zero-shot (validation set)",
+      "type": "dataset",
+      "aliases": [
+        "NoCaps Zero-shot (validation set)"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RGB-S",
+      "type": "dataset",
+      "aliases": [
+        "RGB-S"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DAVIS",
+      "type": "dataset",
+      "aliases": [
+        "DAVIS"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GSO [28]",
+      "type": "dataset",
+      "aliases": [
+        "GSO",
+        "GSO [28]"
+      ],
+      "mention_count": 4,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "IMC [54]",
+      "type": "dataset",
+      "aliases": [
+        "IMC",
+        "IMC [54]"
+      ],
+      "mention_count": 4,
+      "source": "llm-confirmed",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Potsdam",
+      "type": "dataset",
+      "aliases": [
+        "Potsdam"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "IN-C",
+      "type": "dataset",
+      "aliases": [
+        "IN-C"
+      ],
+      "mention_count": 4,
+      "source": "hf-pwc",
+      "paperswithcode_id": "beir",
+      "hf_id": "income/nfcorpus-top-20-gen-queries"
+    },
+    {
+      "canonical": "RefCOCO+ [32]",
+      "type": "dataset",
+      "aliases": [
+        "RefCOCO+ [32]"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GLUE",
+      "type": "dataset",
+      "aliases": [
+        "GLUE"
+      ],
+      "mention_count": 4,
+      "source": "hf-pwc",
+      "paperswithcode_id": "glue",
+      "hf_id": "nyu-mll/glue"
+    },
+    {
+      "canonical": "MME",
+      "type": "dataset",
+      "aliases": [
+        "MME"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Open LLM benchmark",
+      "type": "dataset",
+      "aliases": [
+        "Open LLM benchmark"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "HellaSwag",
+      "type": "dataset",
+      "aliases": [
+        "HellaSwag"
+      ],
+      "mention_count": 4,
+      "source": "hf-pwc",
+      "paperswithcode_id": "hellaswag",
+      "hf_id": "Rowan/hellaswag"
+    },
+    {
+      "canonical": "revisited Paris",
+      "type": "dataset",
+      "aliases": [
+        "revisited Paris"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flowers 102",
+      "type": "dataset",
+      "aliases": [
+        "Flowers 102",
+        "Flowers-102"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Epic Kitchens-100",
+      "type": "dataset",
+      "aliases": [
+        "Epic Kitchens 100",
+        "Epic Kitchens-100",
+        "Epic-Kitchens-100",
+        "EpicKitchens-100"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DUTS-TE",
+      "type": "dataset",
+      "aliases": [
+        "DUTS-TE"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ODiW",
+      "type": "dataset",
+      "aliases": [
+        "ODiW"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ODinW",
+      "type": "dataset",
+      "aliases": [
+        "ODinW"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "COCO minimal",
+      "type": "dataset",
+      "aliases": [
+        "COCO minimal"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ADE20K val",
+      "type": "dataset",
+      "aliases": [
+        "ADE20K val"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "iNat18",
+      "type": "dataset",
+      "aliases": [
+        "iNat18"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Clevr/Dist",
+      "type": "dataset",
+      "aliases": [
+        "Clevr/Dist"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Cable Routing",
+      "type": "dataset",
+      "aliases": [
+        "Cable Routing"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kitchen Manipulation",
+      "type": "dataset",
+      "aliases": [
+        "Kitchen Manipulation"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "OCRBench",
+      "type": "dataset",
+      "aliases": [
+        "OCRBench",
+        "OCRBench_v2"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Seen Tasks",
+      "type": "dataset",
+      "aliases": [
+        "Seen Tasks"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "OCHuman val",
+      "type": "dataset",
+      "aliases": [
+        "OCHuman val"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "OCHuman test",
+      "type": "dataset",
+      "aliases": [
+        "OCHuman test"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MPII val",
+      "type": "dataset",
+      "aliases": [
+        "MPII val"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "AI Challenger val",
+      "type": "dataset",
+      "aliases": [
+        "AI Challenger val"
+      ],
+      "mention_count": 4,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "PASCAL VOC",
@@ -516,40 +2378,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Cityscapes",
-      "type": "dataset",
-      "aliases": [
-        "Cityscapes"
-      ],
-      "mention_count": 3,
-      "source": "curated",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Kinetics-700",
-      "type": "dataset",
-      "aliases": [
-        "Kinetics-700"
-      ],
-      "mention_count": 3,
-      "source": "curated",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Something-Something V2",
-      "type": "dataset",
-      "aliases": [
-        "Something-Something V2",
-        "Something-Something v2"
-      ],
-      "mention_count": 3,
-      "source": "hf-pwc",
-      "paperswithcode_id": "something-something",
-      "hf_id": "HuggingFaceM4/something_something_v2"
-    },
-    {
       "canonical": "Resisc45",
       "type": "dataset",
       "aliases": [
@@ -562,34 +2390,10 @@
       "hf_id": null
     },
     {
-      "canonical": "RealEstate10k",
+      "canonical": "MSD",
       "type": "dataset",
       "aliases": [
-        "RealEstate10K",
-        "RealEstate10k"
-      ],
-      "mention_count": 3,
-      "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Pets",
-      "type": "dataset",
-      "aliases": [
-        "Pet",
-        "Pets"
-      ],
-      "mention_count": 3,
-      "source": "llm-confirmed",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Places205",
-      "type": "dataset",
-      "aliases": [
-        "Places205"
+        "MSD"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -597,14 +2401,35 @@
       "hf_id": null
     },
     {
-      "canonical": "Places365",
+      "canonical": "SIDD [1]",
       "type": "dataset",
       "aliases": [
-        "Places365",
-        "Places365 [44]"
+        "SIDD [1]"
       ],
       "mention_count": 3,
-      "source": "llm-confirmed",
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DND [60]",
+      "type": "dataset",
+      "aliases": [
+        "DND [60]"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CBSD68 [52]",
+      "type": "dataset",
+      "aliases": [
+        "CBSD68 [52]"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -620,33 +2445,10 @@
       "hf_id": null
     },
     {
-      "canonical": "TextCaps",
+      "canonical": "AVA benchmark",
       "type": "dataset",
       "aliases": [
-        "TextCaps"
-      ],
-      "mention_count": 3,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "OKVQA",
-      "type": "dataset",
-      "aliases": [
-        "OK-VQA",
-        "OKVQA"
-      ],
-      "mention_count": 3,
-      "source": "llm-confirmed",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "TextVQA",
-      "type": "dataset",
-      "aliases": [
-        "TextVQA"
+        "AVA benchmark"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -665,45 +2467,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Set5",
+      "canonical": "VQAv2 test-std",
       "type": "dataset",
       "aliases": [
-        "Set5"
-      ],
-      "mention_count": 3,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Set14",
-      "type": "dataset",
-      "aliases": [
-        "Set14"
-      ],
-      "mention_count": 3,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ImageNet 2012 training set",
-      "type": "dataset",
-      "aliases": [
-        "ImageNet 2012 training set",
-        "ImageNet train set",
-        "ImageNet training set"
-      ],
-      "mention_count": 3,
-      "source": "llm-confirmed",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ModelNet40",
-      "type": "dataset",
-      "aliases": [
-        "ModelNet40"
+        "VQAv2 test-std"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -722,55 +2489,10 @@
       "hf_id": null
     },
     {
-      "canonical": "ScanNet",
-      "type": "dataset",
-      "aliases": [
-        "ScanNet",
-        "ScanNet-1500"
-      ],
-      "mention_count": 3,
-      "source": "llm-confirmed",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Habitat",
       "type": "dataset",
       "aliases": [
         "Habitat"
-      ],
-      "mention_count": 3,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "DTU",
-      "type": "dataset",
-      "aliases": [
-        "DTU"
-      ],
-      "mention_count": 3,
-      "source": "hf-pwc",
-      "paperswithcode_id": "acronym-identification",
-      "hf_id": "DTU54DL/common-voice-test16k"
-    },
-    {
-      "canonical": "ETH3D",
-      "type": "dataset",
-      "aliases": [
-        "ETH3D"
-      ],
-      "mention_count": 3,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Kinetics",
-      "type": "dataset",
-      "aliases": [
-        "Kinetics"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -790,10 +2512,10 @@
       "hf_id": null
     },
     {
-      "canonical": "JFT",
+      "canonical": "Aachen Day-Night",
       "type": "dataset",
       "aliases": [
-        "JFT"
+        "Aachen Day-Night"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -801,10 +2523,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Moments in Time",
+      "canonical": "InLoc",
       "type": "dataset",
       "aliases": [
-        "Moments in Time"
+        "InLoc"
       ],
       "mention_count": 3,
       "source": "clustered",
@@ -812,16 +2534,26 @@
       "hf_id": null
     },
     {
-      "canonical": "BookCorpus",
+      "canonical": "BONN",
       "type": "dataset",
       "aliases": [
-        "BookCorpus",
-        "Books Corpus"
+        "BONN"
       ],
       "mention_count": 3,
-      "source": "llm-confirmed",
-      "paperswithcode_id": "bookcorpus",
-      "hf_id": "bookcorpus/bookcorpus"
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Waymo Open",
+      "type": "dataset",
+      "aliases": [
+        "Waymo Open"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "English Wikipedia",
@@ -835,27 +2567,35 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO 2017 train",
+      "canonical": "ReCOCO+ [32]",
       "type": "dataset",
       "aliases": [
-        "COCO 2017 train",
-        "COCO train",
-        "COCO train2017"
+        "ReCOCO+ [32]"
       ],
       "mention_count": 3,
-      "source": "llm-confirmed",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "BSD68",
+      "canonical": "Rain100L",
       "type": "dataset",
       "aliases": [
-        "BSD68",
-        "BSD68 [52]"
+        "Rain100L"
       ],
       "mention_count": 3,
-      "source": "llm-confirmed",
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GoPro",
+      "type": "dataset",
+      "aliases": [
+        "GoPro"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -871,60 +2611,302 @@
       "hf_id": null
     },
     {
-      "canonical": "GLUE",
+      "canonical": "Moments-in-Time",
       "type": "dataset",
       "aliases": [
-        "GLUE"
+        "Moments-in-Time"
       ],
       "mention_count": 3,
-      "source": "hf-pwc",
-      "paperswithcode_id": "glue",
-      "hf_id": "nyu-mll/glue"
-    },
-    {
-      "canonical": "LVIS",
-      "type": "dataset",
-      "aliases": [
-        "LVIS",
-        "LVIS v1.0"
-      ],
-      "mention_count": 3,
-      "source": "llm-confirmed",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "SQuAD",
+      "canonical": "Caltech101",
       "type": "dataset",
       "aliases": [
-        "SQuAD"
+        "Caltech101"
       ],
       "mention_count": 3,
-      "source": "hf-pwc",
-      "paperswithcode_id": "squad",
-      "hf_id": "rajpurkar/squad_v2"
-    },
-    {
-      "canonical": "ImageNet-R",
-      "type": "dataset",
-      "aliases": [
-        "ImageNet-R"
-      ],
-      "mention_count": 2,
-      "source": "curated",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "ImageNet-A",
+      "canonical": "Flowers102",
       "type": "dataset",
       "aliases": [
-        "ImageNet-A"
+        "Flowers102"
       ],
-      "mention_count": 2,
-      "source": "curated",
-      "paperswithcode_id": "imagenet",
-      "hf_id": "coallaoh/ImageNet-AB"
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "C-VQA",
+      "type": "dataset",
+      "aliases": [
+        "C-VQA"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Copydays",
+      "type": "dataset",
+      "aliases": [
+        "Copydays"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "INat 18",
+      "type": "dataset",
+      "aliases": [
+        "INat 18"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "INat 19",
+      "type": "dataset",
+      "aliases": [
+        "INat 19"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flwrs",
+      "type": "dataset",
+      "aliases": [
+        "Flwrs"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "COCO panoptic segmentation",
+      "type": "dataset",
+      "aliases": [
+        "COCO panoptic segmentation",
+        "COCO panoptic segmentation dataset"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MBPP",
+      "type": "dataset",
+      "aliases": [
+        "MBPP"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Winogrande",
+      "type": "dataset",
+      "aliases": [
+        "Winogrande"
+      ],
+      "mention_count": 3,
+      "source": "hf-pwc",
+      "paperswithcode_id": "winogrande",
+      "hf_id": "allenai/winogrande"
+    },
+    {
+      "canonical": "MMMU",
+      "type": "dataset",
+      "aliases": [
+        "MMMU"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NYU Door Opening",
+      "type": "dataset",
+      "aliases": [
+        "NYU Door Opening"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Task-Agnostic Play",
+      "type": "dataset",
+      "aliases": [
+        "Task-Agnostic Play"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Mean",
+      "type": "dataset",
+      "aliases": [
+        "Mean"
+      ],
+      "mention_count": 3,
+      "source": "hf-pwc",
+      "paperswithcode_id": "multi-xscience",
+      "hf_id": "allenai/multixscience_sparse_mean"
+    },
+    {
+      "canonical": "Video-MME",
+      "type": "dataset",
+      "aliases": [
+        "Video-MME"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MegaBench",
+      "type": "dataset",
+      "aliases": [
+        "MegaBench"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMLU-Pro",
+      "type": "dataset",
+      "aliases": [
+        "MMLU-Pro"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMLU-redux",
+      "type": "dataset",
+      "aliases": [
+        "MMLU-redux"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LiveBench-0831",
+      "type": "dataset",
+      "aliases": [
+        "LiveBench-0831"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "GPQA",
+      "type": "dataset",
+      "aliases": [
+        "GPQA"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MultiPL-E",
+      "type": "dataset",
+      "aliases": [
+        "MultiPL-E"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "IFEval",
+      "type": "dataset",
+      "aliases": [
+        "IFEval"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kitchen1",
+      "type": "dataset",
+      "aliases": [
+        "Kitchen1"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Kitchen2",
+      "type": "dataset",
+      "aliases": [
+        "Kitchen2"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Real Only",
+      "type": "dataset",
+      "aliases": [
+        "Real Only"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Real + Sim",
+      "type": "dataset",
+      "aliases": [
+        "Real + Sim"
+      ],
+      "mention_count": 3,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "PASCAL VOC 2007",
@@ -932,18 +2914,6 @@
       "aliases": [
         "PASCAL VOC 2007",
         "Pascal VOC 2007"
-      ],
-      "mention_count": 2,
-      "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Pascal VOC 2012",
-      "type": "dataset",
-      "aliases": [
-        "PASCAL VOC 2012",
-        "Pascal VOC 2012"
       ],
       "mention_count": 2,
       "source": "rule",
@@ -959,65 +2929,6 @@
       ],
       "mention_count": 2,
       "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ImageNet V2 matched frequency",
-      "type": "dataset",
-      "aliases": [
-        "ImageNet V2 matched frequency",
-        "Imagenet V2 matched frequency"
-      ],
-      "mention_count": 2,
-      "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Clevr/count",
-      "type": "dataset",
-      "aliases": [
-        "Clevr/Count",
-        "Clevr/count"
-      ],
-      "mention_count": 2,
-      "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "RefCOCO",
-      "type": "dataset",
-      "aliases": [
-        "RefCOCO",
-        "Refcoco"
-      ],
-      "mention_count": 2,
-      "source": "rule",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ImageNet val. set",
-      "type": "dataset",
-      "aliases": [
-        "ImageNet [8] val. set",
-        "ImageNet val. set"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "BTCV",
-      "type": "dataset",
-      "aliases": [
-        "BTCV"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1044,17 +2955,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Cars",
-      "type": "dataset",
-      "aliases": [
-        "Cars"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "DTD",
       "type": "dataset",
       "aliases": [
@@ -1066,11 +2966,10 @@
       "hf_id": null
     },
     {
-      "canonical": "ImageNet validation set",
+      "canonical": "COCO Instance Segmentation benchmark",
       "type": "dataset",
       "aliases": [
-        "ImageNet 2012 validation set",
-        "ImageNet validation set"
+        "COCO Instance Segmentation benchmark"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1078,32 +2977,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Something-Something-v2",
+      "canonical": "GoPro [56]",
       "type": "dataset",
       "aliases": [
-        "Something-Something-v2"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "something-something",
-      "hf_id": "HuggingFaceM4/something_something_v2"
-    },
-    {
-      "canonical": "Charades",
-      "type": "dataset",
-      "aliases": [
-        "Charades"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "charades",
-      "hf_id": "HuggingFaceM4/charades"
-    },
-    {
-      "canonical": "AVA",
-      "type": "dataset",
-      "aliases": [
-        "AVA"
+        "GoPro [56]"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1111,11 +2988,55 @@
       "hf_id": null
     },
     {
-      "canonical": "RealBlur-R [65]",
+      "canonical": "HIDE [67]",
       "type": "dataset",
       "aliases": [
-        "RealBlur-J [65]",
-        "RealBlur-R [65]"
+        "HIDE [67]"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Rain100H [86]",
+      "type": "dataset",
+      "aliases": [
+        "Rain100H [86]",
+        "Rain100L [86]"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Indoor Scenes",
+      "type": "dataset",
+      "aliases": [
+        "Indoor Scenes"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Outdoor Scenes",
+      "type": "dataset",
+      "aliases": [
+        "Outdoor Scenes"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Combined",
+      "type": "dataset",
+      "aliases": [
+        "Combined"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1135,10 +3056,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Synapse",
+      "canonical": "COVID-19 lungs POCUS dataset",
       "type": "dataset",
       "aliases": [
-        "Synapse"
+        "COVID-19 lungs POCUS dataset"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1157,6 +3078,39 @@
       "hf_id": null
     },
     {
+      "canonical": "Messidor-1",
+      "type": "dataset",
+      "aliases": [
+        "Messidor-1"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Messidor-2",
+      "type": "dataset",
+      "aliases": [
+        "Messidor-2"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "EyePACS",
+      "type": "dataset",
+      "aliases": [
+        "EyePACS"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "MIMIC-CXR",
       "type": "dataset",
       "aliases": [
@@ -1168,15 +3122,158 @@
       "hf_id": null
     },
     {
-      "canonical": "ImageNet-Sketch",
+      "canonical": "VTAB (19 tasks)",
       "type": "dataset",
       "aliases": [
-        "ImageNet-Sketch"
+        "VTAB (19 tasks)"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "COCO-Stuff-10K",
+      "type": "dataset",
+      "aliases": [
+        "COCO-Stuff-10K"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NYU Depth V2",
+      "type": "dataset",
+      "aliases": [
+        "NYU Depth V2"
       ],
       "mention_count": 2,
       "source": "hf-pwc",
-      "paperswithcode_id": "imagenet-sketch",
-      "hf_id": "songweig/imagenet_sketch"
+      "paperswithcode_id": "nyuv2",
+      "hf_id": "sayakpaul/nyu_depth_v2"
+    },
+    {
+      "canonical": "Mapillary Vistas",
+      "type": "dataset",
+      "aliases": [
+        "Mapillary Vistas"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VizWiz-Cap",
+      "type": "dataset",
+      "aliases": [
+        "VizWiz-Cap"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Crossmodal-3600",
+      "type": "dataset",
+      "aliases": [
+        "Crossmodal-3600"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "VizWiz-QA",
+      "type": "dataset",
+      "aliases": [
+        "VizWiz-QA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ST-VQA",
+      "type": "dataset",
+      "aliases": [
+        "ST-VQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "xGQA",
+      "type": "dataset",
+      "aliases": [
+        "xGQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MaXM",
+      "type": "dataset",
+      "aliases": [
+        "MaXM"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SuperGLUE",
+      "type": "dataset",
+      "aliases": [
+        "SuperGLUE"
+      ],
+      "mention_count": 2,
+      "source": "hf-pwc",
+      "paperswithcode_id": "superglue",
+      "hf_id": "aps/super_glue"
+    },
+    {
+      "canonical": "XNLI",
+      "type": "dataset",
+      "aliases": [
+        "XNLI"
+      ],
+      "mention_count": 2,
+      "source": "hf-pwc",
+      "paperswithcode_id": "xnli",
+      "hf_id": "facebook/xnli"
+    },
+    {
+      "canonical": "XQuAD",
+      "type": "dataset",
+      "aliases": [
+        "XQuAD"
+      ],
+      "mention_count": 2,
+      "source": "hf-pwc",
+      "paperswithcode_id": "xquad",
+      "hf_id": "google/xquad"
+    },
+    {
+      "canonical": "TyDiQA-GoldP",
+      "type": "dataset",
+      "aliases": [
+        "TyDiQA-GoldP"
+      ],
+      "mention_count": 2,
+      "source": "hf-pwc",
+      "paperswithcode_id": "tydi-qa",
+      "hf_id": "khalidalt/tydiqa-goldp"
     },
     {
       "canonical": "Flickr2K",
@@ -1190,67 +3287,10 @@
       "hf_id": null
     },
     {
-      "canonical": "BSD100",
-      "type": "dataset",
-      "aliases": [
-        "BSD100"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Manga109",
-      "type": "dataset",
-      "aliases": [
-        "Manga109"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "MAE",
       "type": "dataset",
       "aliases": [
         "MAE"
-      ],
-      "mention_count": 2,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "SVHN",
-      "type": "dataset",
-      "aliases": [
-        "SVHN"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "svhn",
-      "hf_id": "ufldl-stanford/svhn"
-    },
-    {
-      "canonical": "MoNuSeg",
-      "type": "dataset",
-      "aliases": [
-        "MoNuSeg",
-        "MoNuSeg (microscopic)"
-      ],
-      "mention_count": 2,
-      "source": "llm-confirmed",
-      "paperswithcode_id": "monuseg",
-      "hf_id": "RationAI/MoNuSeg"
-    },
-    {
-      "canonical": "RS-Haze",
-      "type": "dataset",
-      "aliases": [
-        "RS-Haze",
-        "RS-Haze-L"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1270,11 +3310,10 @@
       "hf_id": null
     },
     {
-      "canonical": "RS-Haze-M",
+      "canonical": "Kinetics dataset",
       "type": "dataset",
       "aliases": [
-        "RS-Haze-D",
-        "RS-Haze-M"
+        "Kinetics dataset"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1282,11 +3321,43 @@
       "hf_id": null
     },
     {
-      "canonical": "Kinetics-Sounds",
+      "canonical": "LIP",
       "type": "dataset",
       "aliases": [
-        "Kinetics-Sound",
-        "Kinetics-Sounds"
+        "LIP"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CamVid",
+      "type": "dataset",
+      "aliases": [
+        "CamVid"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "UCF101",
+      "type": "dataset",
+      "aliases": [
+        "UCF101"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ESC50",
+      "type": "dataset",
+      "aliases": [
+        "ESC50"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1317,14 +3388,101 @@
       "hf_id": null
     },
     {
-      "canonical": "ImageNet benchmark",
+      "canonical": "Human3.6M",
       "type": "dataset",
       "aliases": [
-        "ImageNet benchmark",
-        "ImageNet classification"
+        "Human3.6M"
       ],
       "mention_count": 2,
-      "source": "llm-confirmed",
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "3DPW",
+      "type": "dataset",
+      "aliases": [
+        "3DPW"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CIFAR-10/100",
+      "type": "dataset",
+      "aliases": [
+        "CIFAR-10/100"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "STL",
+      "type": "dataset",
+      "aliases": [
+        "STL"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "STL-10",
+      "type": "dataset",
+      "aliases": [
+        "STL-10"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DETR",
+      "type": "dataset",
+      "aliases": [
+        "DETR"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "NoCaps (val)",
+      "type": "dataset",
+      "aliases": [
+        "NoCaps (val)"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "UAVid",
+      "type": "dataset",
+      "aliases": [
+        "UAVid"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LoveDA",
+      "type": "dataset",
+      "aliases": [
+        "LoveDA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1396,10 +3554,43 @@
       "hf_id": null
     },
     {
-      "canonical": "ETTm2",
+      "canonical": "M4",
       "type": "dataset",
       "aliases": [
-        "ETTm2"
+        "M4"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "M3",
+      "type": "dataset",
+      "aliases": [
+        "M3"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "TOURISM",
+      "type": "dataset",
+      "aliases": [
+        "TOURISM"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ELECTR",
+      "type": "dataset",
+      "aliases": [
+        "ELECTR"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1419,10 +3610,10 @@
       "hf_id": null
     },
     {
-      "canonical": "KITTI",
+      "canonical": "7Scenes",
       "type": "dataset",
       "aliases": [
-        "KITTI"
+        "7Scenes"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1430,21 +3621,11 @@
       "hf_id": null
     },
     {
-      "canonical": "NYUv2",
+      "canonical": "Cambridge Landmarks",
       "type": "dataset",
       "aliases": [
-        "NYUv2"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "nyuv2",
-      "hf_id": "0jl/NYUv2"
-    },
-    {
-      "canonical": "TUM",
-      "type": "dataset",
-      "aliases": [
-        "TUM"
+        "Cambridge Landmarks",
+        "Cambridge-Landmarks"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1452,15 +3633,15 @@
       "hf_id": null
     },
     {
-      "canonical": "VQA",
+      "canonical": "IN vs. Places365",
       "type": "dataset",
       "aliases": [
-        "VQA"
+        "IN vs. Places365"
       ],
       "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "vqa-rad",
-      "hf_id": "flaviagiammarino/vqa-rad"
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "Conceptual 12M",
@@ -1486,14 +3667,57 @@
       "hf_id": null
     },
     {
-      "canonical": "VG-QA",
+      "canonical": "BookCorpus",
       "type": "dataset",
       "aliases": [
-        "VG-QA",
-        "VG-QAs"
+        "BookCorpus"
       ],
       "mention_count": 2,
-      "source": "llm-confirmed",
+      "source": "hf-pwc",
+      "paperswithcode_id": "bookcorpus",
+      "hf_id": "bookcorpus/bookcorpus"
+    },
+    {
+      "canonical": "B100",
+      "type": "dataset",
+      "aliases": [
+        "B100"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Flowers",
+      "type": "dataset",
+      "aliases": [
+        "Flowers"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Classics5",
+      "type": "dataset",
+      "aliases": [
+        "Classics5"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LIVE1",
+      "type": "dataset",
+      "aliases": [
+        "LIVE1"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1501,11 +3725,21 @@
       "canonical": "Set12",
       "type": "dataset",
       "aliases": [
-        "Set12",
-        "Set12 [101]"
+        "Set12"
       ],
       "mention_count": 2,
-      "source": "llm-confirmed",
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CBSD68",
+      "type": "dataset",
+      "aliases": [
+        "CBSD68"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1513,11 +3747,10 @@
       "canonical": "Kodak24",
       "type": "dataset",
       "aliases": [
-        "Kodak24",
-        "Kodak24 [20]"
+        "Kodak24"
       ],
       "mention_count": 2,
-      "source": "llm-confirmed",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1525,30 +3758,117 @@
       "canonical": "McMaster",
       "type": "dataset",
       "aliases": [
-        "McMaster",
-        "McMaster [104]"
+        "McMaster"
       ],
       "mention_count": 2,
-      "source": "llm-confirmed",
+      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
     {
-      "canonical": "ScienceQA",
+      "canonical": "VizWiz",
       "type": "dataset",
       "aliases": [
-        "ScienceQA"
+        "VizWiz"
       ],
       "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "scienceqa",
-      "hf_id": "derek-thomas/ScienceQA"
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "IconQA",
+      "type": "dataset",
+      "aliases": [
+        "IconQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Visual Dialog",
+      "type": "dataset",
+      "aliases": [
+        "Visual Dialog"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MSVD QA",
+      "type": "dataset",
+      "aliases": [
+        "MSVD QA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MSRVTT QA",
+      "type": "dataset",
+      "aliases": [
+        "MSRVTT QA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "iVQA",
+      "type": "dataset",
+      "aliases": [
+        "iVQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "OCR-VQA",
       "type": "dataset",
       "aliases": [
         "OCR-VQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "HatefulMemes",
+      "type": "dataset",
+      "aliases": [
+        "HatefulMemes"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DIW",
+      "type": "dataset",
+      "aliases": [
+        "DIW"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Sintel",
+      "type": "dataset",
+      "aliases": [
+        "Sintel"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1567,10 +3887,10 @@
       "hf_id": null
     },
     {
-      "canonical": "SSv2",
+      "canonical": "K-400",
       "type": "dataset",
       "aliases": [
-        "SSv2"
+        "K-400"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1578,10 +3898,10 @@
       "hf_id": null
     },
     {
-      "canonical": "SNLI-VE",
+      "canonical": "K-600",
       "type": "dataset",
       "aliases": [
-        "SNLI-VE"
+        "K-600"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1589,10 +3909,10 @@
       "hf_id": null
     },
     {
-      "canonical": "MME",
+      "canonical": "K-700",
       "type": "dataset",
       "aliases": [
-        "MME"
+        "K-700"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1600,10 +3920,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Caltech101",
+      "canonical": "MMBench",
       "type": "dataset",
       "aliases": [
-        "Caltech101"
+        "MMBench"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1611,10 +3931,21 @@
       "hf_id": null
     },
     {
-      "canonical": "Flowers102",
+      "canonical": "LVLM-eHub",
       "type": "dataset",
       "aliases": [
-        "Flowers102"
+        "LVLM-eHub"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "POPE",
+      "type": "dataset",
+      "aliases": [
+        "POPE"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1643,28 +3974,6 @@
       "source": "hf-pwc",
       "paperswithcode_id": "arcov-19",
       "hf_id": "bigIR/ar_cov19"
-    },
-    {
-      "canonical": "HellaSwag",
-      "type": "dataset",
-      "aliases": [
-        "HellaSwag"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "hellaswag",
-      "hf_id": "Rowan/hellaswag"
-    },
-    {
-      "canonical": "MMLU",
-      "type": "dataset",
-      "aliases": [
-        "MMLU"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "mmlu",
-      "hf_id": "cais/mmlu"
     },
     {
       "canonical": "TruthfulQA",
@@ -1702,11 +4011,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Epic Kitchens-100",
+      "canonical": "CUB-200 dataset",
       "type": "dataset",
       "aliases": [
-        "Epic Kitchens-100",
-        "Epic-Kitchens-100"
+        "CUB-200 dataset"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1714,43 +4022,10 @@
       "hf_id": null
     },
     {
-      "canonical": "GSM8K",
+      "canonical": "ADE20K benchmark",
       "type": "dataset",
       "aliases": [
-        "GSM8K"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "gsm8k",
-      "hf_id": "openai/gsm8k"
-    },
-    {
-      "canonical": "MATH",
-      "type": "dataset",
-      "aliases": [
-        "MATH"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "mathvista",
-      "hf_id": "AI4Math/MathVista"
-    },
-    {
-      "canonical": "HumanEval",
-      "type": "dataset",
-      "aliases": [
-        "HumanEval"
-      ],
-      "mention_count": 2,
-      "source": "hf-pwc",
-      "paperswithcode_id": "humaneval",
-      "hf_id": "openai/openai_humaneval"
-    },
-    {
-      "canonical": "MMMU",
-      "type": "dataset",
-      "aliases": [
-        "MMMU"
+        "ADE20K benchmark"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1758,10 +4033,99 @@
       "hf_id": null
     },
     {
-      "canonical": "ODinW",
+      "canonical": "COCO dataset",
       "type": "dataset",
       "aliases": [
-        "ODinW"
+        "COCO dataset"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "COCO benchmark for pose estimation",
+      "type": "dataset",
+      "aliases": [
+        "COCO benchmark for pose estimation"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ImageNet-1K-V1",
+      "type": "dataset",
+      "aliases": [
+        "ImageNet-1K-V1",
+        "ImageNet-1K-V2"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "AlpacaEval",
+      "type": "dataset",
+      "aliases": [
+        "AlpacaEval"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SuperClue",
+      "type": "dataset",
+      "aliases": [
+        "SuperClue"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Arc-C",
+      "type": "dataset",
+      "aliases": [
+        "Arc-C"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RefCOCOg",
+      "type": "dataset",
+      "aliases": [
+        "RefCOCOg"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LVIS minimal",
+      "type": "dataset",
+      "aliases": [
+        "LVIS minimal"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LVIS MiniVal",
+      "type": "dataset",
+      "aliases": [
+        "LVIS MiniVal"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1781,11 +4145,10 @@
       "hf_id": null
     },
     {
-      "canonical": "MNLI",
+      "canonical": "ShapeNetPart",
       "type": "dataset",
       "aliases": [
-        "MNLI",
-        "MNLI-m"
+        "ShapeNetPart"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1827,10 +4190,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Bridge",
+      "canonical": "mini-Audioset",
       "type": "dataset",
       "aliases": [
-        "Bridge"
+        "mini-Audioset"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1838,11 +4201,483 @@
       "hf_id": null
     },
     {
-      "canonical": "OCRBench",
+      "canonical": "CC-OCR",
       "type": "dataset",
       "aliases": [
-        "OCRBench",
-        "OCRBench_v2"
+        "CC-OCR"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "OmniDocBench",
+      "type": "dataset",
+      "aliases": [
+        "OmniDocBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "AI2D",
+      "type": "dataset",
+      "aliases": [
+        "AI2D"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "DocVQA",
+      "type": "dataset",
+      "aliases": [
+        "DocVQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "InfoVQA",
+      "type": "dataset",
+      "aliases": [
+        "InfoVQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ChartQA",
+      "type": "dataset",
+      "aliases": [
+        "ChartQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "SEED-Bench-2-Plus",
+      "type": "dataset",
+      "aliases": [
+        "SEED-Bench-2-Plus"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "PointGrounding",
+      "type": "dataset",
+      "aliases": [
+        "PointGrounding"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CountBench",
+      "type": "dataset",
+      "aliases": [
+        "CountBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Video-MMMU",
+      "type": "dataset",
+      "aliases": [
+        "Video-MMMU"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMVU",
+      "type": "dataset",
+      "aliases": [
+        "MMVU"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MVBench",
+      "type": "dataset",
+      "aliases": [
+        "MVBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMBench-Video",
+      "type": "dataset",
+      "aliases": [
+        "MMBench-Video"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LongVideoBench",
+      "type": "dataset",
+      "aliases": [
+        "LongVideoBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "EgoSchema",
+      "type": "dataset",
+      "aliases": [
+        "EgoSchema"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "PerceptionTest",
+      "type": "dataset",
+      "aliases": [
+        "PerceptionTest"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MLVU",
+      "type": "dataset",
+      "aliases": [
+        "MLVU"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LVBench",
+      "type": "dataset",
+      "aliases": [
+        "LVBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "TempCompass",
+      "type": "dataset",
+      "aliases": [
+        "TempCompass"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Charades-STA",
+      "type": "dataset",
+      "aliases": [
+        "Charades-STA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ScreenSpot",
+      "type": "dataset",
+      "aliases": [
+        "ScreenSpot"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "ScreenSpot Pro",
+      "type": "dataset",
+      "aliases": [
+        "ScreenSpot Pro"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "AndroidWorld",
+      "type": "dataset",
+      "aliases": [
+        "AndroidWorld"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MobileMiniWob++",
+      "type": "dataset",
+      "aliases": [
+        "MobileMiniWob++"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "OSWorld",
+      "type": "dataset",
+      "aliases": [
+        "OSWorld"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMMU-Pro",
+      "type": "dataset",
+      "aliases": [
+        "MMMU-Pro"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MathVista",
+      "type": "dataset",
+      "aliases": [
+        "MathVista"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MATH-Vision",
+      "type": "dataset",
+      "aliases": [
+        "MATH-Vision"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MathVerse",
+      "type": "dataset",
+      "aliases": [
+        "MathVerse"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMBench-EN",
+      "type": "dataset",
+      "aliases": [
+        "MMBench-EN"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMBench-CN",
+      "type": "dataset",
+      "aliases": [
+        "MMBench-CN"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMBench-VL1-EN",
+      "type": "dataset",
+      "aliases": [
+        "MMBench-VL1-EN"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMStar",
+      "type": "dataset",
+      "aliases": [
+        "MMStar"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MuirBench",
+      "type": "dataset",
+      "aliases": [
+        "MuirBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "BLINK",
+      "type": "dataset",
+      "aliases": [
+        "BLINK"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CRP",
+      "type": "dataset",
+      "aliases": [
+        "CRP"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "HallBench",
+      "type": "dataset",
+      "aliases": [
+        "HallBench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MTVQA",
+      "type": "dataset",
+      "aliases": [
+        "MTVQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "RealWorldQA",
+      "type": "dataset",
+      "aliases": [
+        "RealWorldQA"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MME-RealWorld",
+      "type": "dataset",
+      "aliases": [
+        "MME-RealWorld"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MMVet",
+      "type": "dataset",
+      "aliases": [
+        "MMVet"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MM-MT-Bench",
+      "type": "dataset",
+      "aliases": [
+        "MM-MT-Bench"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Classroom eval",
+      "type": "dataset",
+      "aliases": [
+        "Classroom eval"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Bin-picking eval",
+      "type": "dataset",
+      "aliases": [
+        "Bin-picking eval"
       ],
       "mention_count": 2,
       "source": "clustered",
@@ -1861,6 +4696,17 @@
       "hf_id": null
     },
     {
+      "canonical": "MS COCO test-dev",
+      "type": "dataset",
+      "aliases": [
+        "MS COCO test-dev"
+      ],
+      "mention_count": 2,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "ImageNet-C",
       "type": "dataset",
       "aliases": [
@@ -1868,17 +4714,6 @@
       ],
       "mention_count": 1,
       "source": "curated",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Imagenet-1k-val",
-      "type": "dataset",
-      "aliases": [
-        "Imagenet-1k-val"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
     },
@@ -1903,17 +4738,6 @@
       "source": "hf-pwc",
       "paperswithcode_id": "hong-kong-cantonese-corpus",
       "hf_id": "nanyang-technological-university-singapore/hkcancor"
-    },
-    {
-      "canonical": "PASCAL-VOC12 validation set",
-      "type": "dataset",
-      "aliases": [
-        "PASCAL-VOC12 validation set"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
     },
     {
       "canonical": "CUB [37]",
@@ -2103,28 +4927,6 @@
       "hf_id": null
     },
     {
-      "canonical": "NLQv2",
-      "type": "dataset",
-      "aliases": [
-        "NLQv2"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ImageNet-Segmentation",
-      "type": "dataset",
-      "aliases": [
-        "ImageNet-Segmentation"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Movies Reviews",
       "type": "dataset",
       "aliases": [
@@ -2147,65 +4949,10 @@
       "hf_id": null
     },
     {
-      "canonical": "CropDiseases",
-      "type": "dataset",
-      "aliases": [
-        "CropDiseases"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ChestXRay8",
-      "type": "dataset",
-      "aliases": [
-        "ChestXRay8"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Shutterstock",
       "type": "dataset",
       "aliases": [
         "Shutterstock"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "NYUd",
-      "type": "dataset",
-      "aliases": [
-        "NYUd"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "nyuv2",
-      "hf_id": "sayakpaul/nyu_depth_v2"
-    },
-    {
-      "canonical": "VOC 2012",
-      "type": "dataset",
-      "aliases": [
-        "VOC 2012"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "COCO 20k",
-      "type": "dataset",
-      "aliases": [
-        "COCO 20k"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2323,32 +5070,21 @@
       "hf_id": null
     },
     {
+      "canonical": "COCO train",
+      "type": "dataset",
+      "aliases": [
+        "COCO train"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "COCO mini val",
       "type": "dataset",
       "aliases": [
         "COCO mini val"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "GoPro [56]",
-      "type": "dataset",
-      "aliases": [
-        "GoPro [56]"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "HIDE [67]",
-      "type": "dataset",
-      "aliases": [
-        "HIDE [67]"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2367,10 +5103,10 @@
       "hf_id": null
     },
     {
-      "canonical": "SIDD [1]",
+      "canonical": "Test100 [97]",
       "type": "dataset",
       "aliases": [
-        "SIDD [1]"
+        "Test100 [97]"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2378,10 +5114,32 @@
       "hf_id": null
     },
     {
-      "canonical": "DND [60]",
+      "canonical": "Test2800 [22]",
       "type": "dataset",
       "aliases": [
-        "DND [60]"
+        "Test2800 [22]"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Test1200 [96]",
+      "type": "dataset",
+      "aliases": [
+        "Test1200 [96]"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Average",
+      "type": "dataset",
+      "aliases": [
+        "Average"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2455,43 +5213,10 @@
       "hf_id": null
     },
     {
-      "canonical": "PAIP liver histopathological dataset",
-      "type": "dataset",
-      "aliases": [
-        "PAIP liver histopathological dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "ACDC",
       "type": "dataset",
       "aliases": [
         "ACDC"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MSD",
-      "type": "dataset",
-      "aliases": [
-        "MSD"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "COVID-19 lungs POCUS dataset",
-      "type": "dataset",
-      "aliases": [
-        "COVID-19 lungs POCUS dataset"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2569,39 +5294,6 @@
       "type": "dataset",
       "aliases": [
         "RFMiD2020"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Messidor-1",
-      "type": "dataset",
-      "aliases": [
-        "Messidor-1"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Messidor-2",
-      "type": "dataset",
-      "aliases": [
-        "Messidor-2"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "EyePACS",
-      "type": "dataset",
-      "aliases": [
-        "EyePACS"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2763,6 +5455,17 @@
       "hf_id": null
     },
     {
+      "canonical": "BraTS",
+      "type": "dataset",
+      "aliases": [
+        "BraTS"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "multi-modal pelvic MRI-CT dataset",
       "type": "dataset",
       "aliases": [
@@ -2818,6 +5521,28 @@
       "hf_id": null
     },
     {
+      "canonical": "parotid tumor classification dataset",
+      "type": "dataset",
+      "aliases": [
+        "parotid tumor classification dataset"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CAMELYON16",
+      "type": "dataset",
+      "aliases": [
+        "CAMELYON16"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "YFCC-15M",
       "type": "dataset",
       "aliases": [
@@ -2840,10 +5565,10 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO-Stuff-10K",
+      "canonical": "LVIS v1.0",
       "type": "dataset",
       "aliases": [
-        "COCO-Stuff-10K"
+        "LVIS v1.0"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2873,21 +5598,21 @@
       "hf_id": null
     },
     {
-      "canonical": "NYU Depth V2",
+      "canonical": "Cityscapes (val)",
       "type": "dataset",
       "aliases": [
-        "NYU Depth V2"
+        "Cityscapes (val)"
       ],
       "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "nyuv2",
-      "hf_id": "sayakpaul/nyu_depth_v2"
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
-      "canonical": "Mapillary Vistas",
+      "canonical": "Cityscapes (test)",
       "type": "dataset",
       "aliases": [
-        "Mapillary Vistas"
+        "Cityscapes (test)"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2917,10 +5642,10 @@
       "hf_id": null
     },
     {
-      "canonical": "VizWiz-Cap",
+      "canonical": "COCO-Cap",
       "type": "dataset",
       "aliases": [
-        "VizWiz-Cap"
+        "COCO-Cap"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -2928,103 +5653,15 @@
       "hf_id": null
     },
     {
-      "canonical": "Crossmodal-3600",
+      "canonical": "TallyQA",
       "type": "dataset",
       "aliases": [
-        "Crossmodal-3600"
+        "TallyQA"
       ],
       "mention_count": 1,
       "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
-    },
-    {
-      "canonical": "VizWiz-QA",
-      "type": "dataset",
-      "aliases": [
-        "VizWiz-QA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ST-VQA",
-      "type": "dataset",
-      "aliases": [
-        "ST-VQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "xGQA",
-      "type": "dataset",
-      "aliases": [
-        "xGQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MaXM",
-      "type": "dataset",
-      "aliases": [
-        "MaXM"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "SuperGLUE",
-      "type": "dataset",
-      "aliases": [
-        "SuperGLUE"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "superglue",
-      "hf_id": "aps/super_glue"
-    },
-    {
-      "canonical": "XNLI",
-      "type": "dataset",
-      "aliases": [
-        "XNLI"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "xnli",
-      "hf_id": "facebook/xnli"
-    },
-    {
-      "canonical": "XQuAD",
-      "type": "dataset",
-      "aliases": [
-        "XQuAD"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "xquad",
-      "hf_id": "google/xquad"
-    },
-    {
-      "canonical": "TyDiQA-GoldP",
-      "type": "dataset",
-      "aliases": [
-        "TyDiQA-GoldP"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "tydi-qa",
-      "hf_id": "khalidalt/tydiqa-goldp"
     },
     {
       "canonical": "Caltech-UCSD Birds",
@@ -3038,10 +5675,10 @@
       "hf_id": null
     },
     {
-      "canonical": "AVA benchmark",
+      "canonical": "VTAB (light)",
       "type": "dataset",
       "aliases": [
-        "AVA benchmark"
+        "VTAB (light)"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3071,39 +5708,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Food-101",
-      "type": "dataset",
-      "aliases": [
-        "Food-101"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "food-101",
-      "hf_id": "ethz/food101"
-    },
-    {
-      "canonical": "HMDB51",
-      "type": "dataset",
-      "aliases": [
-        "HMDB51"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "hmdb51",
-      "hf_id": "jili5044/hmdb51"
-    },
-    {
-      "canonical": "NUS-WIDE",
-      "type": "dataset",
-      "aliases": [
-        "NUS-WIDE"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Brain anatomy segmentation (ultrasound)",
       "type": "dataset",
       "aliases": [
@@ -3119,39 +5723,6 @@
       "type": "dataset",
       "aliases": [
         "Gland segmentation (microscopic)"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Brain US",
-      "type": "dataset",
-      "aliases": [
-        "Brain US"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "GLAS",
-      "type": "dataset",
-      "aliases": [
-        "GLAS"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "SOTS indoor set",
-      "type": "dataset",
-      "aliases": [
-        "SOTS indoor set"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3203,28 +5774,6 @@
       "hf_id": null
     },
     {
-      "canonical": "SOTS-mix",
-      "type": "dataset",
-      "aliases": [
-        "SOTS-mix"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "RS-Haze-mix",
-      "type": "dataset",
-      "aliases": [
-        "RS-Haze-mix"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Diabetic Retinopathy detection",
       "type": "dataset",
       "aliases": [
@@ -3251,39 +5800,6 @@
       "type": "dataset",
       "aliases": [
         "JFT dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Kinetics dataset",
-      "type": "dataset",
-      "aliases": [
-        "Kinetics dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LIP",
-      "type": "dataset",
-      "aliases": [
-        "LIP"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CamVid",
-      "type": "dataset",
-      "aliases": [
-        "CamVid"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3324,87 +5840,10 @@
       "hf_id": null
     },
     {
-      "canonical": "UCF101",
-      "type": "dataset",
-      "aliases": [
-        "UCF101"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ESC50",
-      "type": "dataset",
-      "aliases": [
-        "ESC50"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "ShapeNet",
       "type": "dataset",
       "aliases": [
         "ShapeNet"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Human3.6M",
-      "type": "dataset",
-      "aliases": [
-        "Human3.6M"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "3DPW",
-      "type": "dataset",
-      "aliases": [
-        "3DPW"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CIFAR-10/100",
-      "type": "dataset",
-      "aliases": [
-        "CIFAR-10/100"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "STL",
-      "type": "dataset",
-      "aliases": [
-        "STL"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "STL-10",
-      "type": "dataset",
-      "aliases": [
-        "STL-10"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3456,6 +5895,72 @@
       "hf_id": null
     },
     {
+      "canonical": "Faster R-CNN",
+      "type": "dataset",
+      "aliases": [
+        "Faster R-CNN"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "17 out of 18 evaluated datasets",
+      "type": "dataset",
+      "aliases": [
+        "17 out of 18 evaluated datasets"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "CPU",
+      "type": "dataset",
+      "aliases": [
+        "CPU"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "super-resolution",
+      "type": "dataset",
+      "aliases": [
+        "super-resolution"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "256 × 256",
+      "type": "dataset",
+      "aliases": [
+        "256 × 256"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "30 different computer vision benchmarks",
+      "type": "dataset",
+      "aliases": [
+        "30 different computer vision benchmarks"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "SBU",
       "type": "dataset",
       "aliases": [
@@ -3465,17 +5970,6 @@
       "source": "hf-pwc",
       "paperswithcode_id": "sbu-captions-dataset",
       "hf_id": "vicenteor/sbu_captions"
-    },
-    {
-      "canonical": "Flickr",
-      "type": "dataset",
-      "aliases": [
-        "Flickr"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
     },
     {
       "canonical": "BlendMVS",
@@ -3610,17 +6104,6 @@
       "hf_id": null
     },
     {
-      "canonical": "GSO",
-      "type": "dataset",
-      "aliases": [
-        "GSO"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "TAP-Vid",
       "type": "dataset",
       "aliases": [
@@ -3632,76 +6115,10 @@
       "hf_id": null
     },
     {
-      "canonical": "RGB-S",
+      "canonical": "DTU [51] Dataset",
       "type": "dataset",
       "aliases": [
-        "RGB-S"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "DAVIS",
-      "type": "dataset",
-      "aliases": [
-        "DAVIS"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "IMC",
-      "type": "dataset",
-      "aliases": [
-        "IMC"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "UAVid",
-      "type": "dataset",
-      "aliases": [
-        "UAVid"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LoveDA",
-      "type": "dataset",
-      "aliases": [
-        "LoveDA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Vaihingen",
-      "type": "dataset",
-      "aliases": [
-        "Vaihingen"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Potsdam",
-      "type": "dataset",
-      "aliases": [
-        "Potsdam"
+        "DTU [51] Dataset"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3764,28 +6181,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Aachen Day-Night",
-      "type": "dataset",
-      "aliases": [
-        "Aachen Day-Night"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "InLoc",
-      "type": "dataset",
-      "aliases": [
-        "InLoc"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Flickr30K Entities",
       "type": "dataset",
       "aliases": [
@@ -3823,17 +6218,6 @@
       "type": "dataset",
       "aliases": [
         "ETT2"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ETTm1",
-      "type": "dataset",
-      "aliases": [
-        "ETTm1"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -3929,17 +6313,6 @@
       "hf_id": null
     },
     {
-      "canonical": "M4",
-      "type": "dataset",
-      "aliases": [
-        "M4"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "ILI",
       "type": "dataset",
       "aliases": [
@@ -3962,76 +6335,10 @@
       "hf_id": null
     },
     {
-      "canonical": "M3",
-      "type": "dataset",
-      "aliases": [
-        "M3"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "TOURISM",
-      "type": "dataset",
-      "aliases": [
-        "TOURISM"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ELECTR",
-      "type": "dataset",
-      "aliases": [
-        "ELECTR"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "7Scenes",
-      "type": "dataset",
-      "aliases": [
-        "7Scenes"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Cambridge Landmarks",
-      "type": "dataset",
-      "aliases": [
-        "Cambridge Landmarks"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "DDAD",
       "type": "dataset",
       "aliases": [
         "DDAD"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "BONN",
-      "type": "dataset",
-      "aliases": [
-        "BONN"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4336,6 +6643,17 @@
       "hf_id": null
     },
     {
+      "canonical": "VG-QAs",
+      "type": "dataset",
+      "aliases": [
+        "VG-QAs"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "OpenImagesV5",
       "type": "dataset",
       "aliases": [
@@ -4347,10 +6665,10 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO test set",
+      "canonical": "COCO 2017 train",
       "type": "dataset",
       "aliases": [
-        "COCO test set"
+        "COCO 2017 train"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4380,10 +6698,10 @@
       "hf_id": null
     },
     {
-      "canonical": "B100",
+      "canonical": "ReaL",
       "type": "dataset",
       "aliases": [
-        "B100"
+        "ReaL"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4391,10 +6709,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Rain100L",
+      "canonical": "Avg 5",
       "type": "dataset",
       "aliases": [
-        "Rain100L"
+        "Avg 5"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4402,10 +6720,10 @@
       "hf_id": null
     },
     {
-      "canonical": "GoPro",
+      "canonical": "Set4",
       "type": "dataset",
       "aliases": [
-        "GoPro"
+        "Set4"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4446,17 +6764,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Flowers",
-      "type": "dataset",
-      "aliases": [
-        "Flowers"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "GQA balanced version",
       "type": "dataset",
       "aliases": [
@@ -4468,43 +6775,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Classics5",
+      "canonical": "VG-QA",
       "type": "dataset",
       "aliases": [
-        "Classics5"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LIVE1",
-      "type": "dataset",
-      "aliases": [
-        "LIVE1"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CBSD68",
-      "type": "dataset",
-      "aliases": [
-        "CBSD68"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Places2",
-      "type": "dataset",
-      "aliases": [
-        "Places2"
+        "VG-QA"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4578,10 +6852,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Web CapFilt",
+      "canonical": "Oxford-IIT Pet",
       "type": "dataset",
       "aliases": [
-        "Web CapFilt"
+        "Oxford-IIT Pet"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4589,10 +6863,10 @@
       "hf_id": null
     },
     {
-      "canonical": "VizWiz",
+      "canonical": "Web CapFilt",
       "type": "dataset",
       "aliases": [
-        "VizWiz"
+        "Web CapFilt"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4611,32 +6885,10 @@
       "hf_id": null
     },
     {
-      "canonical": "IconQA",
-      "type": "dataset",
-      "aliases": [
-        "IconQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "A-OKVQA",
       "type": "dataset",
       "aliases": [
         "A-OKVQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Visual Dialog",
-      "type": "dataset",
-      "aliases": [
-        "Visual Dialog"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4655,10 +6907,10 @@
       "hf_id": null
     },
     {
-      "canonical": "MSVD QA",
+      "canonical": "Flickr 30K",
       "type": "dataset",
       "aliases": [
-        "MSVD QA"
+        "Flickr 30K"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4666,32 +6918,10 @@
       "hf_id": null
     },
     {
-      "canonical": "MSRVTT QA",
+      "canonical": "VSR",
       "type": "dataset",
       "aliases": [
-        "MSRVTT QA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "iVQA",
-      "type": "dataset",
-      "aliases": [
-        "iVQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "HatefulMemes",
-      "type": "dataset",
-      "aliases": [
-        "HatefulMemes"
+        "VSR"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4721,17 +6951,6 @@
       "hf_id": null
     },
     {
-      "canonical": "HRWSI",
-      "type": "dataset",
-      "aliases": [
-        "HRWSI"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "ReDWeb",
       "type": "dataset",
       "aliases": [
@@ -4743,37 +6962,26 @@
       "hf_id": null
     },
     {
-      "canonical": "DIW",
+      "canonical": "NYU",
       "type": "dataset",
       "aliases": [
-        "DIW"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Sintel",
-      "type": "dataset",
-      "aliases": [
-        "Sintel"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Librispeech",
-      "type": "dataset",
-      "aliases": [
-        "Librispeech"
+        "NYU"
       ],
       "mention_count": 1,
       "source": "hf-pwc",
-      "paperswithcode_id": "librispeech-1",
-      "hf_id": "openslr/librispeech_asr"
+      "paperswithcode_id": "glue",
+      "hf_id": "nyu-mll/glue"
+    },
+    {
+      "canonical": "Books Corpus",
+      "type": "dataset",
+      "aliases": [
+        "Books Corpus"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "LAION",
@@ -4809,10 +7017,10 @@
       "hf_id": null
     },
     {
-      "canonical": "T2I-CompBench",
+      "canonical": "COCO train2017",
       "type": "dataset",
       "aliases": [
-        "T2I-CompBench"
+        "COCO train2017"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4831,76 +7039,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Moments-in-Time",
-      "type": "dataset",
-      "aliases": [
-        "Moments-in-Time"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MSR-VTT",
-      "type": "dataset",
-      "aliases": [
-        "MSR-VTT"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "52K",
       "type": "dataset",
       "aliases": [
         "52K"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMBench",
-      "type": "dataset",
-      "aliases": [
-        "MMBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LVLM-eHub",
-      "type": "dataset",
-      "aliases": [
-        "LVLM-eHub"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "C-VQA",
-      "type": "dataset",
-      "aliases": [
-        "C-VQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "POPE",
-      "type": "dataset",
-      "aliases": [
-        "POPE"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4930,32 +7072,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Open LLM benchmark",
-      "type": "dataset",
-      "aliases": [
-        "Open LLM benchmark"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Google Landmarks v2 (GLDv2)",
       "type": "dataset",
       "aliases": [
         "Google Landmarks v2 (GLDv2)"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "revisited Oxford",
-      "type": "dataset",
-      "aliases": [
-        "revisited Oxford"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -4974,17 +7094,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Copydays",
-      "type": "dataset",
-      "aliases": [
-        "Copydays"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "YFCC100M",
       "type": "dataset",
       "aliases": [
@@ -4996,98 +7105,10 @@
       "hf_id": null
     },
     {
-      "canonical": "DAVIS-2017",
-      "type": "dataset",
-      "aliases": [
-        "DAVIS-2017"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "PASCAL VOC12",
-      "type": "dataset",
-      "aliases": [
-        "PASCAL VOC12"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Cifar 10",
-      "type": "dataset",
-      "aliases": [
-        "Cifar 10"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "cifar-10",
-      "hf_id": "uoft-cs/cifar10"
-    },
-    {
-      "canonical": "Cifar 100",
-      "type": "dataset",
-      "aliases": [
-        "Cifar 100"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "cifar-100",
-      "hf_id": "uoft-cs/cifar100"
-    },
-    {
-      "canonical": "INat 18",
-      "type": "dataset",
-      "aliases": [
-        "INat 18"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "INat 19",
-      "type": "dataset",
-      "aliases": [
-        "INat 19"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Flwrs",
-      "type": "dataset",
-      "aliases": [
-        "Flwrs"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "iNaturalist-18/19",
       "type": "dataset",
       "aliases": [
         "iNaturalist-18/19"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Flowers-102",
-      "type": "dataset",
-      "aliases": [
-        "Flowers-102"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5110,17 +7131,6 @@
       "type": "dataset",
       "aliases": [
         "NABirds"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Oxford Flowers",
-      "type": "dataset",
-      "aliases": [
-        "Oxford Flowers"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5348,17 +7358,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Epic Kitchens",
-      "type": "dataset",
-      "aliases": [
-        "Epic Kitchens"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "MiT",
       "type": "dataset",
       "aliases": [
@@ -5381,32 +7380,10 @@
       "hf_id": null
     },
     {
-      "canonical": "COCO panoptic segmentation dataset",
-      "type": "dataset",
-      "aliases": [
-        "COCO panoptic segmentation dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "COCO human pose estimation dataset",
       "type": "dataset",
       "aliases": [
         "COCO human pose estimation dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CUB-200 dataset",
-      "type": "dataset",
-      "aliases": [
-        "CUB-200 dataset"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5502,32 +7479,10 @@
       "hf_id": null
     },
     {
-      "canonical": "AlpacaEval",
-      "type": "dataset",
-      "aliases": [
-        "AlpacaEval"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Chatbot Arena",
       "type": "dataset",
       "aliases": [
         "Chatbot Arena"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MBPP",
-      "type": "dataset",
-      "aliases": [
-        "MBPP"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5623,17 +7578,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Winogrande",
-      "type": "dataset",
-      "aliases": [
-        "Winogrande"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "winogrande",
-      "hf_id": "allenai/winogrande"
-    },
-    {
       "canonical": "OpenBookQA",
       "type": "dataset",
       "aliases": [
@@ -5656,17 +7600,6 @@
       "hf_id": "tau/commonsense_qa"
     },
     {
-      "canonical": "SuperClue",
-      "type": "dataset",
-      "aliases": [
-        "SuperClue"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "VizWiz VQA",
       "type": "dataset",
       "aliases": [
@@ -5687,6 +7620,39 @@
       "source": "hf-pwc",
       "paperswithcode_id": "sharegpt4v",
       "hf_id": "d0rj/ShareGPT4V-ru"
+    },
+    {
+      "canonical": "Human-Eval pass@1",
+      "type": "dataset",
+      "aliases": [
+        "Human-Eval pass@1"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MBPP pass@1",
+      "type": "dataset",
+      "aliases": [
+        "MBPP pass@1"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "LMSys Chatbot Arena",
+      "type": "dataset",
+      "aliases": [
+        "LMSys Chatbot Arena"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
     },
     {
       "canonical": "O365",
@@ -5733,17 +7699,6 @@
       "hf_id": null
     },
     {
-      "canonical": "ODiW",
-      "type": "dataset",
-      "aliases": [
-        "ODiW"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "RefCOCO+/g",
       "type": "dataset",
       "aliases": [
@@ -5755,32 +7710,10 @@
       "hf_id": null
     },
     {
-      "canonical": "RefCOCOg",
-      "type": "dataset",
-      "aliases": [
-        "RefCOCOg"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "IN22K-LVIS-1M",
       "type": "dataset",
       "aliases": [
         "IN22K-LVIS-1M"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "COCO test-dev",
-      "type": "dataset",
-      "aliases": [
-        "COCO test-dev"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5854,32 +7787,43 @@
       "hf_id": null
     },
     {
+      "canonical": "VTAB suite of 19 tasks",
+      "type": "dataset",
+      "aliases": [
+        "VTAB suite of 19 tasks"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MOT17",
+      "type": "dataset",
+      "aliases": [
+        "MOT17"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "MOT20",
+      "type": "dataset",
+      "aliases": [
+        "MOT20"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
       "canonical": "is_Zerkani_network.csv",
       "type": "dataset",
       "aliases": [
         "is_Zerkani_network.csv"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "S3DIS",
-      "type": "dataset",
-      "aliases": [
-        "S3DIS"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ShapeNetPart",
-      "type": "dataset",
-      "aliases": [
-        "ShapeNetPart"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -5918,28 +7862,6 @@
       "source": "clustered",
       "paperswithcode_id": null,
       "hf_id": null
-    },
-    {
-      "canonical": "C4/English",
-      "type": "dataset",
-      "aliases": [
-        "C4/English"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "SST-2",
-      "type": "dataset",
-      "aliases": [
-        "SST-2"
-      ],
-      "mention_count": 1,
-      "source": "hf-pwc",
-      "paperswithcode_id": "sst",
-      "hf_id": "stanfordnlp/sst2"
     },
     {
       "canonical": "Oxford-IIIT-Pet",
@@ -5986,17 +7908,6 @@
       "hf_id": null
     },
     {
-      "canonical": "iNat18",
-      "type": "dataset",
-      "aliases": [
-        "iNat18"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "iNaturalist18",
       "type": "dataset",
       "aliases": [
@@ -6012,17 +7923,6 @@
       "type": "dataset",
       "aliases": [
         "Clevr"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Clevr/Dist",
-      "type": "dataset",
-      "aliases": [
-        "Clevr/Dist"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6107,17 +8007,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Cable Routing",
-      "type": "dataset",
-      "aliases": [
-        "Cable Routing"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "RoboTurk",
       "type": "dataset",
       "aliases": [
@@ -6184,28 +8073,6 @@
       "hf_id": null
     },
     {
-      "canonical": "Kitchen Manipulation",
-      "type": "dataset",
-      "aliases": [
-        "Kitchen Manipulation"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "AUTOLab UR5",
-      "type": "dataset",
-      "aliases": [
-        "AUTOLab UR5"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "Robot Play",
       "type": "dataset",
       "aliases": [
@@ -6217,32 +8084,10 @@
       "hf_id": null
     },
     {
-      "canonical": "Google Robot",
-      "type": "dataset",
-      "aliases": [
-        "Google Robot"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "WidowX",
       "type": "dataset",
       "aliases": [
         "WidowX"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "VGGSound",
-      "type": "dataset",
-      "aliases": [
-        "VGGSound"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6316,263 +8161,10 @@
       "hf_id": null
     },
     {
-      "canonical": "CC-OCR",
-      "type": "dataset",
-      "aliases": [
-        "CC-OCR"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "OmniDocBench",
-      "type": "dataset",
-      "aliases": [
-        "OmniDocBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "AI2D",
-      "type": "dataset",
-      "aliases": [
-        "AI2D"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "DocVQA",
-      "type": "dataset",
-      "aliases": [
-        "DocVQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "InfoVQA",
-      "type": "dataset",
-      "aliases": [
-        "InfoVQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ChartQA",
-      "type": "dataset",
-      "aliases": [
-        "ChartQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "CharXiv",
       "type": "dataset",
       "aliases": [
         "CharXiv"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "SEED-Bench-2-Plus",
-      "type": "dataset",
-      "aliases": [
-        "SEED-Bench-2-Plus"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "PointGrounding",
-      "type": "dataset",
-      "aliases": [
-        "PointGrounding"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CountBench",
-      "type": "dataset",
-      "aliases": [
-        "CountBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Video-MME",
-      "type": "dataset",
-      "aliases": [
-        "Video-MME"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Video-MMMU",
-      "type": "dataset",
-      "aliases": [
-        "Video-MMMU"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMVU",
-      "type": "dataset",
-      "aliases": [
-        "MMVU"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MVBench",
-      "type": "dataset",
-      "aliases": [
-        "MVBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMBench-Video",
-      "type": "dataset",
-      "aliases": [
-        "MMBench-Video"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LongVideoBench",
-      "type": "dataset",
-      "aliases": [
-        "LongVideoBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "EgoSchema",
-      "type": "dataset",
-      "aliases": [
-        "EgoSchema"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "PerceptionTest",
-      "type": "dataset",
-      "aliases": [
-        "PerceptionTest"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MLVU",
-      "type": "dataset",
-      "aliases": [
-        "MLVU"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LVBench",
-      "type": "dataset",
-      "aliases": [
-        "LVBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "TempCompass",
-      "type": "dataset",
-      "aliases": [
-        "TempCompass"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Charades-STA",
-      "type": "dataset",
-      "aliases": [
-        "Charades-STA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ScreenSpot",
-      "type": "dataset",
-      "aliases": [
-        "ScreenSpot"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ScreenSpot Pro",
-      "type": "dataset",
-      "aliases": [
-        "ScreenSpot Pro"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6591,10 +8183,10 @@
       "hf_id": null
     },
     {
-      "canonical": "AndroidWorld",
+      "canonical": "CharXivHQ",
       "type": "dataset",
       "aliases": [
-        "AndroidWorld"
+        "CharXivHQ"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6602,10 +8194,10 @@
       "hf_id": null
     },
     {
-      "canonical": "MobileMiniWob++",
+      "canonical": "Android Control High",
       "type": "dataset",
       "aliases": [
-        "MobileMiniWob++"
+        "Android Control High"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6613,296 +8205,10 @@
       "hf_id": null
     },
     {
-      "canonical": "OSWorld",
+      "canonical": "Android Control Low",
       "type": "dataset",
       "aliases": [
-        "OSWorld"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMMU-Pro",
-      "type": "dataset",
-      "aliases": [
-        "MMMU-Pro"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MathVista",
-      "type": "dataset",
-      "aliases": [
-        "MathVista"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MATH-Vision",
-      "type": "dataset",
-      "aliases": [
-        "MATH-Vision"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MathVerse",
-      "type": "dataset",
-      "aliases": [
-        "MathVerse"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MegaBench",
-      "type": "dataset",
-      "aliases": [
-        "MegaBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMBench-EN",
-      "type": "dataset",
-      "aliases": [
-        "MMBench-EN"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMBench-CN",
-      "type": "dataset",
-      "aliases": [
-        "MMBench-CN"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMBench-VL1-EN",
-      "type": "dataset",
-      "aliases": [
-        "MMBench-VL1-EN"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMStar",
-      "type": "dataset",
-      "aliases": [
-        "MMStar"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MuirBench",
-      "type": "dataset",
-      "aliases": [
-        "MuirBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "BLINK",
-      "type": "dataset",
-      "aliases": [
-        "BLINK"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "CRP",
-      "type": "dataset",
-      "aliases": [
-        "CRP"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "HallBench",
-      "type": "dataset",
-      "aliases": [
-        "HallBench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MTVQA",
-      "type": "dataset",
-      "aliases": [
-        "MTVQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "RealWorldQA",
-      "type": "dataset",
-      "aliases": [
-        "RealWorldQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MME-RealWorld",
-      "type": "dataset",
-      "aliases": [
-        "MME-RealWorld"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMVet",
-      "type": "dataset",
-      "aliases": [
-        "MMVet"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MM-MT-Bench",
-      "type": "dataset",
-      "aliases": [
-        "MM-MT-Bench"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMLU-Pro",
-      "type": "dataset",
-      "aliases": [
-        "MMLU-Pro"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MMLU-redux",
-      "type": "dataset",
-      "aliases": [
-        "MMLU-redux"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "LiveBench-0831",
-      "type": "dataset",
-      "aliases": [
-        "LiveBench-0831"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "GPQA",
-      "type": "dataset",
-      "aliases": [
-        "GPQA"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "MultiPL-E",
-      "type": "dataset",
-      "aliases": [
-        "MultiPL-E"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "IFEval",
-      "type": "dataset",
-      "aliases": [
-        "IFEval"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "BraTS 2021 dataset",
-      "type": "dataset",
-      "aliases": [
-        "BraTS 2021 dataset"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "BraTS 2021 validation set",
-      "type": "dataset",
-      "aliases": [
-        "BraTS 2021 validation set"
+        "Android Control Low"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -6965,32 +8271,43 @@
       "hf_id": null
     },
     {
-      "canonical": "Kitchen1",
-      "type": "dataset",
-      "aliases": [
-        "Kitchen1"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "Kitchen2",
-      "type": "dataset",
-      "aliases": [
-        "Kitchen2"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
       "canonical": "SayCan",
       "type": "dataset",
       "aliases": [
         "SayCan"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Unseen Tasks",
+      "type": "dataset",
+      "aliases": [
+        "Unseen Tasks"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Distractors",
+      "type": "dataset",
+      "aliases": [
+        "Distractors"
+      ],
+      "mention_count": 1,
+      "source": "clustered",
+      "paperswithcode_id": null,
+      "hf_id": null
+    },
+    {
+      "canonical": "Backgrounds",
+      "type": "dataset",
+      "aliases": [
+        "Backgrounds"
       ],
       "mention_count": 1,
       "source": "clustered",
@@ -7035,28 +8352,6 @@
       "type": "dataset",
       "aliases": [
         "CrowdPose"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ISIC17",
-      "type": "dataset",
-      "aliases": [
-        "ISIC17"
-      ],
-      "mention_count": 1,
-      "source": "clustered",
-      "paperswithcode_id": null,
-      "hf_id": null
-    },
-    {
-      "canonical": "ISIC18",
-      "type": "dataset",
-      "aliases": [
-        "ISIC18"
       ],
       "mention_count": 1,
       "source": "clustered",

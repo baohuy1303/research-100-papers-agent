@@ -614,7 +614,10 @@ async def amain():
 
     HF_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Collect surface forms from normalized JSONs
+    # Collect surface forms from normalized JSONs.
+    # Datasets are pulled from BOTH datasets_mentioned AND benchmark_results.dataset_surface
+    # — papers often use slightly different surface forms in benchmark tables
+    # (e.g. "ImageNet val", "COCO val2017") that aren't in the higher-level mention list.
     datasets, metrics, methods = Counter(), Counter(), Counter()
     files = sorted(NORM_DIR.glob("*.json"))
     for f in files:
@@ -623,6 +626,8 @@ async def amain():
             if ds.get("surface"):
                 datasets[ds["surface"].strip()] += 1
         for br in d.get("benchmark_results", []):
+            if br.get("dataset_surface"):
+                datasets[br["dataset_surface"].strip()] += 1
             if br.get("metric_surface"):
                 metrics[br["metric_surface"].strip()] += 1
         for m in d.get("methods_used", []):
