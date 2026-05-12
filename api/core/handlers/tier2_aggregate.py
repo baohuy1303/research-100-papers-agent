@@ -57,6 +57,20 @@ async def _generate_sql(question: str) -> tuple[_SQLPlan, float]:
                 "- Use COUNT(DISTINCT ...) to avoid double-counting from joins.\n"
                 "- Limit text columns where helpful with LIMIT 30.\n"
                 "- Filter benchmark joins by entity type (e.g. e.type='dataset').\n"
+                "\n"
+                "CRITICAL — when the question names a metric (top-1 accuracy, mIoU, FID,\n"
+                "AP, R@1, etc.), JOIN entities TWICE and filter BOTH dataset AND metric:\n"
+                "  SELECT ...\n"
+                "  FROM results r\n"
+                "  JOIN entities ed ON ed.entity_id = r.dataset_id\n"
+                "  JOIN entities em ON em.entity_id = r.metric_id\n"
+                "  WHERE ed.canonical = 'ImageNet' AND em.canonical = 'top-1 accuracy'\n"
+                "Without the metric filter you'll mix top-1 accuracy with FID, mIoU, etc.\n"
+                "and return numerically meaningless rows.\n"
+                "\n"
+                "Use canonical names from the entities table:\n"
+                "  metrics: 'top-1 accuracy', 'top-5 accuracy', 'mIoU', 'AP', 'mAP', 'R@1', 'PSNR', ...\n"
+                "  datasets: 'ImageNet', 'ImageNet-21k', 'COCO', 'ADE20K', 'CIFAR-10', 'CIFAR-100', ...\n"
             },
             {"role": "user", "content": question},
         ],

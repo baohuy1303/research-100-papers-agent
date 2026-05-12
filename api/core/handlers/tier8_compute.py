@@ -84,20 +84,27 @@ def _run_sandboxed(code: str, dfs: dict[str, pd.DataFrame]) -> tuple[Any, str | 
 async def handle(question: str, store, retriever, classifier_meta: dict | None = None) -> HandlerResult:
     client = get_openai_client()
 
-    plan_resp = await client.beta.chat.completions.parse(
-        model=MODEL_GPT_MINI,
-        messages=[
-            {"role": "system", "content":
-                "You write Python (pandas) snippets to compute quantitative answers from "
-                "the corpus. Code runs in a restricted sandbox.\n\n" + SCHEMA_BLURB
-            },
-            {"role": "user", "content": question},
-        ],
-        response_format=_CodePlan,
-        temperature=0,
-        max_completion_tokens=1024,
-        extra_body={"prompt_cache_key": "tier8-codeplan-v1"},
-    )
+    try:
+        plan_resp = await client.beta.chat.completions.parse(
+            model=MODEL_GPT_MINI,
+            messages=[
+                {"role": "system", "content":
+                    "You write Python (pandas) snippets to compute quantitative answers from "
+                    "the corpus. Code runs in a restricted sandbox.\n\n" + SCHEMA_BLURB
+                },
+                {"role": "user", "content": question},
+            ],
+            response_format=_CodePlan,
+            temperature=0,
+            max_completion_tokens=8192,  # gpt-5.4-mini is a reasoning model; needs headroom for reasoning + code
+            extra_body={"prompt_cache_key": "tier8-codeplan-v1"},
+        )
+    except Exception as e:
+        # Most common: JSON validation fails when max_completion_tokens runs out
+        # mid-output and produces a truncated structured payload.
+        return HandlerResult(tier=8, answer=f"Code planning failed: {e}",
+                             cost_usd=0.0, confidence=0.0)
+
     plan = plan_resp.choices[0].message.parsed
     plan_cost = oai_cost_for_usage(MODEL_GPT_MINI, plan_resp.usage)
     record_cost("tier8_plan", plan_cost)

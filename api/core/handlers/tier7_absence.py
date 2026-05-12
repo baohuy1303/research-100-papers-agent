@@ -64,7 +64,10 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         return HandlerResult(tier=7, answer="Failed to plan absence query.",
                              cost_usd=plan_cost, confidence=0.2)
 
-    # ── Build the OBSERVED set ──
+    # ── Build the OBSERVED set as union of canonical names + every alias ──
+    # The LLM proposes "expected" entities using whatever names it knows
+    # (e.g. "ImageNet-1K", "MS COCO"); we must match those against BOTH
+    # the canonical names AND the aliases table to avoid false negatives.
     if plan.scope_paper:
         rows = store.execute_sql(
             "SELECT * FROM papers WHERE LOWER(title) LIKE LOWER(?) "
@@ -73,26 +76,52 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         if target is None:
             return HandlerResult(tier=7, answer=f"Couldn't find paper matching '{plan.scope_paper}'.",
                                  cost_usd=plan_cost, confidence=0.2)
+        # All entities mentioned by this paper, including their aliases
         observed_rows = store.execute_sql(
-            """SELECT DISTINCT e.canonical FROM mentions m
+            """SELECT DISTINCT e.canonical, a.surface_form
+               FROM mentions m
                JOIN entities e ON e.entity_id = m.entity_id
+               LEFT JOIN aliases a ON a.entity_id = e.entity_id
                WHERE m.paper_id = ? AND e.type = ?""",
             (target["paper_id"], plan.type),
         )
         scope_label = f"in paper '{target['title']}'"
     else:
         observed_rows = store.execute_sql(
-            "SELECT DISTINCT canonical FROM entities WHERE type = ?", (plan.type,)
+            """SELECT e.canonical, a.surface_form
+               FROM entities e
+               LEFT JOIN aliases a ON a.entity_id = e.entity_id
+               WHERE e.type = ?""",
+            (plan.type,),
         )
         scope_label = "across the corpus"
 
-    observed_set = {r["canonical"].lower() for r in observed_rows}
+    # Build the lowercase observed lookup including BOTH canonical and aliases
+    observed_set: set[str] = set()
+    for r in observed_rows:
+        if r["canonical"]:
+            observed_set.add(r["canonical"].lower().strip())
+        if r["surface_form"]:
+            observed_set.add(r["surface_form"].lower().strip())
 
-    # Set difference (case-insensitive match against observed canonicals)
+    # Also accept fuzzy substring matches — "MS COCO" should match "COCO"
+    # because users often qualify common dataset names.
+    def _is_present(needle: str) -> bool:
+        n = needle.lower().strip()
+        if n in observed_set:
+            return True
+        # Substring fallback: any observed name contains the needle, or vice versa.
+        # Cap to ≥4 chars to avoid false positives like "AP" matching every entity.
+        if len(n) >= 4:
+            for obs in observed_set:
+                if n == obs or n in obs or obs in n:
+                    return True
+        return False
+
     missing: list[str] = []
     present: list[str] = []
     for exp in plan.expected:
-        if exp.lower() in observed_set:
+        if _is_present(exp):
             present.append(exp)
         else:
             missing.append(exp)

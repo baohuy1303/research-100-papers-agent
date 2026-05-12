@@ -18,6 +18,7 @@ from pydantic import BaseModel, Field
 
 from api.core.classifier import TierClassifier
 from api.core.handlers import Citation, get_handler
+from api.core.handlers.base import ADVERSARIAL_REPLY, is_adversarial
 from api.core.retrieval import Retriever
 from api.core.store import CorpusStore
 
@@ -111,6 +112,21 @@ async def ask(req: AskRequest) -> AskResponse:
         store = _get_store()
         retriever = _get_retriever()
         classifier = _get_classifier()
+
+        # 1.5. Adversarial pre-check (shared with CLI + battery via
+        # api.core.handlers.base) — bail early on non-existent/fictional
+        # references so we don't burn budget on the classifier + handler.
+        if is_adversarial(req.question):
+            return AskResponse(
+                question=req.question,
+                answer=ADVERSARIAL_REPLY,
+                tier=0, tier_confidence=1.0,
+                tier_reasoning="adversarial pre-check (marker matched)",
+                tier_normalized_question=req.question,
+                citations=[], evidence=[], cost_usd=0.0,
+                handler_confidence=1.0,
+                elapsed_seconds=time.time() - t_start,
+            )
 
         # 2. Classify
         try:

@@ -3,11 +3,14 @@ Shared types and helpers for the 8 tier handlers.
 
 All handlers expose:
     async def handle(question: str, store, retriever, classifier_meta=None) -> HandlerResult
+
+This module also exposes a top-level adversarial pre-check that callers
+(/ask route, CLI, battery test) should run BEFORE classification to bail
+early on questions referencing fictional/non-existent entities.
 """
 from __future__ import annotations
 
 import json
-from typing import Any
 
 from pydantic import BaseModel, Field
 
@@ -103,3 +106,28 @@ def build_citations(paper_ids: list[str], store, snippet_lookup: dict[str, str] 
             snippet=(snippet_lookup or {}).get(pid),
         ))
     return out
+
+
+# ── Adversarial pre-check (B5) ──────────────────────────────────────────────
+# Used by api/routes/ask.py, scripts/ask_cli.py, and scripts/cli_battery.py
+# before running the classifier. Bails early on questions that explicitly
+# reference fictional / non-existent entities so we don't burn budget.
+
+ADVERSARIAL_MARKERS: tuple[str, ...] = (
+    "doesn't exist", "does not exist", "doesnt exist",
+    "fictional", "imaginary", "made-up", "made up",
+    "hypothetical paper", "non-existent", "nonexistent",
+)
+
+ADVERSARIAL_REPLY = (
+    "That question references something marked as non-existent or fictional. "
+    "The corpus only contains real published papers — please rephrase to ask "
+    "about an actual paper, dataset, or method."
+)
+
+
+def is_adversarial(question: str) -> bool:
+    """Cheap substring check: True iff the question explicitly references a
+    fictional/non-existent entity. Callers should short-circuit on True."""
+    q = question.lower()
+    return any(m in q for m in ADVERSARIAL_MARKERS)
