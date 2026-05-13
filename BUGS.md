@@ -1,17 +1,25 @@
 # Known Bugs & Quality Issues
 
 Tracking what we've observed but haven't fixed yet, with severity + repro + impact.
-Updated 2026-05-12 after second `scripts/cli_battery.py` run (19/19 OK after fixes).
+Updated 2026-05-13 after Phase 9 eval runs (29–31/40 across $1/$5/$20).
 
-## Fixed in this round
+## Fixed in this round (Phase 9)
+- **B6** (Tier 8 code planning JSON validation) — switched from `client.beta.chat.completions.parse()` to `json_object` mode + `JSONDecoder().raw_decode()` to handle trailing content from reasoning model; T8-001/002/004/005 now pass
+- **B-T5a** (Tier 5 k=10 cap truncates citation counts) — system prompt now instructs k=100 for counting queries; `total_count` added to evidence notes; T5-002 (Swin citations=47) now passes
+- **B-T5b** (Tier 5 paper nickname lookup fails) — added `_PAPER_NICKNAMES` dict mapping acronyms to title substrings (DeiT→"data-efficient image transformers", etc.); T5-003 (DeiT→ViT citation) now passes
+
+Eval snapshot (2026-05-13): **$1 budget: 29/40 (72%)**, **$5 budget: 31/40 (78%)**, **$20 budget: 31/40 (78%)**. Cost: $0.0013–0.0014/question avg.
+
+---
+
+## Previously fixed (Phase 7–8)
 - **B1** (Tier 2 NL→SQL forgot metric filter) — fixed by adding worked example + canonical-name list to system prompt
 - **B2** (Tier 6 narration premature exit) — handler now nudges the LLM if a tool-less response looks like narration
 - **B3** (Tier 7 set diff missed aliases) — observed_set now unions canonical + aliases table, with substring fallback
 - **B4** (Tier 6 result truncation lost paper_ids) — `_safe_serialize` now trims the LARGEST list field first, preserving compact ID lists
 - **B5** (adversarial questions burned budget) — `is_adversarial()` shared helper in `handlers/base.py` short-circuits before classifier
-- Bonus fix found mid-iteration: Tier 6 `max_completion_tokens` raised 1024→4096 to fit reasoning + 80-id IN clauses, plus the system prompt now spells out `GROUP BY` + `ORDER BY` + `LIMIT` requirements explicitly
 
-Final battery snapshot: 19/19 OK, $0.029, 5.1s avg.
+Battery snapshot: 19/19 OK, $0.029, 5.1s avg.
 
 ---
 

@@ -36,16 +36,40 @@ class _GraphPlan(BaseModel):
     k: int = Field(default=10, ge=1, le=30)
 
 
+_PAPER_NICKNAMES: dict[str, str] = {
+    "vit": "image is worth 16x16",
+    "deit": "data-efficient image transformers",
+    "swin": "swin transformer",
+    "mae": "masked autoencoders",
+    "beit": "bert pre-training of image",
+    "dino": "emerging properties in self-supervised",
+    "clip": "learning transferable visual",
+    "convnext": "convnet for the 2020s",
+    "detr": "end-to-end object detection",
+    "bert": "bert: pre-training of deep",
+}
+
+
 def _resolve_paper(query: str, store) -> dict | None:
-    """Find a paper by title substring; prefer most-cited match."""
+    """Find a paper by title substring; prefer most-cited match.
+    Falls back to well-known nickname expansions when acronym search finds nothing.
+    """
     if not query:
         return None
-    rows = [r for r in store.execute_sql(
-        "SELECT * FROM papers WHERE LOWER(title) LIKE LOWER(?) "
-        "ORDER BY citation_count DESC LIMIT 5",
-        (f"%{query}%",),
-    )]
-    return rows[0] if rows else None
+    searches = [query]
+    # If query looks like an acronym/nickname, add the expanded search term
+    nickname_key = query.lower().strip()
+    if nickname_key in _PAPER_NICKNAMES:
+        searches.append(_PAPER_NICKNAMES[nickname_key])
+    for term in searches:
+        rows = [r for r in store.execute_sql(
+            "SELECT * FROM papers WHERE LOWER(title) LIKE LOWER(?) "
+            "ORDER BY citation_count DESC LIMIT 5",
+            (f"%{term}%",),
+        )]
+        if rows:
+            return rows[0]
+    return None
 
 
 async def handle(question: str, store, retriever, classifier_meta: dict | None = None) -> HandlerResult:
@@ -59,7 +83,10 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
                 "You convert citation-graph questions into a graph operation. "
                 "Pick the most appropriate op. For 'most cited within corpus' use most_cited. "
                 "For 'papers building on X' use descendants. For 'papers X is built on' use "
-                "ancestors. For citation chain between A and B use shortest_path."
+                "ancestors. For citation chain between A and B use shortest_path. "
+                "For 'does X cite Y' use references_of on X and check if Y is in the result. "
+                "IMPORTANT: If the question asks HOW MANY papers cite something, set k=100 so "
+                "you retrieve all of them, not just the default top-10."
             },
             {"role": "user", "content": question},
         ],
@@ -98,8 +125,10 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
             ids = store.cited_by(target["paper_id"])
         else:
             ids = store.references_of(target["paper_id"])
+        total_count = len(ids)
         notes.append(f"target paper: {target['title']}")
-        # Cap to top by citation_count for evidence brevity
+        notes.append(f"total_count: {total_count}")
+        # Cap to top by citation_count for evidence brevity, but keep total count
         rows = []
         for pid in ids:
             p = store.get_paper(pid)

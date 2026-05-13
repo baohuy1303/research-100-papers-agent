@@ -82,31 +82,52 @@ def _run_sandboxed(code: str, dfs: dict[str, pd.DataFrame]) -> tuple[Any, str | 
 
 
 async def handle(question: str, store, retriever, classifier_meta: dict | None = None) -> HandlerResult:
+    import json as _json
+    import re as _re
+
     client = get_openai_client()
 
     try:
-        plan_resp = await client.beta.chat.completions.parse(
+        plan_resp = await client.chat.completions.create(
             model=MODEL_GPT_MINI,
             messages=[
                 {"role": "system", "content":
                     "You write Python (pandas) snippets to compute quantitative answers from "
                     "the corpus. Code runs in a restricted sandbox.\n\n" + SCHEMA_BLURB
+                    + "\nRespond with ONLY a JSON object containing keys 'code' (Python string) "
+                    "and 'explanation' (one sentence). No markdown fences."
                 },
                 {"role": "user", "content": question},
             ],
-            response_format=_CodePlan,
+            response_format={"type": "json_object"},
             temperature=0,
-            max_completion_tokens=8192,  # gpt-5.4-mini is a reasoning model; needs headroom for reasoning + code
-            extra_body={"prompt_cache_key": "tier8-codeplan-v1"},
+            max_completion_tokens=8192,
+            extra_body={"prompt_cache_key": "tier8-codeplan-v2"},
         )
     except Exception as e:
-        # Most common: JSON validation fails when max_completion_tokens runs out
-        # mid-output and produces a truncated structured payload.
         return HandlerResult(tier=8, answer=f"Code planning failed: {e}",
                              cost_usd=0.0, confidence=0.0)
 
-    plan = plan_resp.choices[0].message.parsed
     plan_cost = oai_cost_for_usage(MODEL_GPT_MINI, plan_resp.usage)
+    raw = (plan_resp.choices[0].message.content or "").strip()
+
+    # Extract JSON — use raw_decode to consume first valid object and ignore trailing content.
+    # This handles cases where the model appends extra text or reasoning after the JSON.
+    stripped = raw.lstrip()
+    # Strip markdown fences if present
+    stripped = _re.sub(r"^```(?:json)?\s*", "", stripped, flags=_re.DOTALL)
+    stripped = _re.sub(r"\s*```$", "", stripped.rstrip(), flags=_re.DOTALL)
+    # Find the first { to start parsing from
+    start = stripped.find("{")
+    if start == -1:
+        return HandlerResult(tier=8, answer="Code planning failed: no JSON in response",
+                             cost_usd=plan_cost, confidence=0.0)
+    try:
+        data, _ = _json.JSONDecoder().raw_decode(stripped, idx=start)
+        plan = _CodePlan(**data)
+    except Exception as e:
+        return HandlerResult(tier=8, answer=f"Code planning failed: {e}",
+                             cost_usd=plan_cost, confidence=0.0)
     record_cost("tier8_plan", plan_cost)
 
     if plan is None:
