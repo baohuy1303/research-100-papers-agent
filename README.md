@@ -1,141 +1,140 @@
-# Research Comprehension System — 100 Vision Transformer Papers
+# Vision Transformer Research Comprehension System
 
-A retrieval-augmented system that answers natural-language questions over a corpus of the 100 most-cited Vision Transformer papers, with cited answers across 8 difficulty tiers.
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--5.4--mini-412991?logo=openai&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-vector_store-FF6B35)
+![NetworkX](https://img.shields.io/badge/NetworkX-citation_graph-4B8BBE)
+![Rich](https://img.shields.io/badge/Rich-CLI-1a1a2e)
 
-**Total pipeline cost**: ~$6.90 (one-time prep) + ~$0.07 per 40-question eval run  
-**Quality**: 100% pass rate at $1 / $5 / $20 budget levels on the 40-question eval set
+
+![CLI 1](docs/screenshots/1.png)
+![CLI 2](docs/screenshots/2.png)
+![CLI 3](docs/screenshots/3.png)
+
+Q&A system over the 100 most-cited Vision Transformer papers. Ask it anything about the corpus and it routes to the right handler, returns a cited answer, and shows its work.
+
+**One-time prep cost:** ~$6.90 | **Per eval run (40 questions):** ~$0.07 | **Accuracy:** 90%+ across all budget levels
+
+---
+
+## Why I built this
+
+Started as a take-home assessment, turned into a learning project around two things:
+
+**Building real RAG, not an AI wrapper.** Most RAG tutorials embed a PDF and call it done. That doesn't work when questions span different reasoning modes. "How many papers use COCO?" needs a SQL count. "Which ViT-citing paper has the largest model?" needs a multi-step agent. A single retriever can't handle both well, so I built a tiered system where each question type gets the right tool.
+
+**A niche version of NotebookLM.** I wanted to understand what it takes to make a domain-specific comprehension system that actually knows things like "mIoU" and "mean Intersection-over-Union" are the same entity, that there's a citation graph between papers, and that some questions need set arithmetic ("what's missing?") instead of retrieval. That specificity is the whole point.
+
+---
+
+## Try it
+
+The quickest way is the interactive CLI:
+
+```bash
+source venv/Scripts/activate
+python scripts/ask_cli.py
+```
+
+```
+($5) > Which paper introduced shifted window attention?
+($5) > How many papers benchmark on both ImageNet and COCO?
+($5) > Among papers citing ViT, which has the largest model variant?
+($5) > Which standard segmentation datasets are NOT covered in this corpus?
+($5) > /budget $1      # switch budget level
+($5) > /last           # dump full evidence JSON
+($5) > /help           # all commands
+```
+
+
+Or via the API after `uvicorn main:app --reload`:
+
+```bash
+curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{"question": "Which ViT variant has the best ImageNet top-1 accuracy?", "budget_level": "$5"}'
+```
+
+---
+
+## What it can answer
+
+Each question is routed to one of 8 handlers by a GPT classifier:
+
+| Tier | Type | Example |
+|------|------|---------|
+| T1 | Single-paper factual | "What architecture does ViT use?" |
+| T2 | Corpus aggregation | "How many papers benchmark on ImageNet?" |
+| T3 | Contradiction / comparison | "Do papers agree on ADE20K SOTA?" |
+| T4 | Temporal evolution | "How did top-1 accuracy change year over year?" |
+| T5 | Citation graph | "Which paper is most cited within this corpus?" |
+| T6 | Multi-hop compositional | "Among ViT-citing papers, which has the largest model?" |
+| T7 | Negation / absence | "Which segmentation datasets are NOT used here?" |
+| T8 | Quantitative compute | "What is the median parameter count across all models?" |
+
+Every answer includes citations and the evidence behind it (SQL query, retrieved chunks, graph results, etc.).
 
 ---
 
 ## Setup
 
 ```bash
-# Clone and create venv (Python 3.11+)
 python -m venv venv
-source venv/Scripts/activate      # Windows Git Bash
-# or: source venv/bin/activate    # macOS / Linux
-
+source venv/Scripts/activate   # Windows Git Bash
+# source venv/bin/activate     # macOS / Linux
 pip install -r requirements.txt
 ```
 
-Create `.env` in the project root:
+`.env` in project root:
 
 ```env
 OPENAI_API_KEY=sk-...
-DATALAB_API_KEY_1=...          # free-tier key for Phase 1 (PDF parsing)
-DATALAB_API_KEY_2=...          # second free-tier key (optional, for failover)
+DATALAB_API_KEY_1=...    # free-tier key for PDF parsing
+DATALAB_API_KEY_2=...    # optional second key for failover
 ```
 
 ---
 
-## Reproducing the full pipeline
+## Reproducing the pipeline
 
-The one-time prep pipeline takes ~57 minutes and costs ~$6.90 (dominated by Datalab PDF parsing). Each step is idempotent — re-running skips already-completed work.
+One-time prep, ~57 min, ~$6.90. Every step is idempotent.
 
 ```bash
-# 1. Assemble corpus manifest (queries Semantic Scholar Bulk API, no cost)
-python scripts/fetch_papers.py
-# Output: data/manifest.csv (100 papers, sorted by citation count)
-
-# 2. Download PDFs
-python scripts/download_pdfs.py
-# Output: data/pdfs/{paper_id}.pdf  (~2–3 minutes, skips existing)
-
-# 3. Parse PDFs to markdown (Datalab cloud Marker API, ~$5.35 if paid)
-python scripts/parse_pdfs.py
-# Output: data/markdown/{paper_id}.md  (~30 minutes, bounded concurrency=8)
-
-# 4. Extract structured data (GPT — ~$1.41, ~19 min, concurrency=10)
-python scripts/extract_papers.py
-# Output: data/extractions/{paper_id}.json
-
-# 5. Normalize numbers (regex, free, <1s)
-python scripts/normalize_numbers.py
-# Output: data/normalized/{paper_id}.json
-
-# 6. Normalize entities — collapse 2,269 surface forms → 1,950 canonical entities
-#    (embeddings + HF API + GPT disambiguation, ~$0.04, ~75s)
-python scripts/normalize_entities.py
-# Output: data/entity_map.json
-
-# 7. Build indexes (SQLite + Chroma + NetworkX, ~$0.05, ~2.5 min)
-python scripts/build_indexes.py
-# Output: data/corpus.db, data/chroma/, data/citation_graph.gpickle
-
-# 8. Verify everything is wired up (33 sanity checks, ~20s, ~$0.005)
-python scripts/sanity_check.py
+python scripts/fetch_papers.py      # pull 100 papers from Semantic Scholar
+python scripts/download_pdfs.py     # download PDFs (~2-3 min)
+python scripts/parse_pdfs.py        # Datalab Marker cloud API (~30 min, ~$5.35)
+python scripts/extract_papers.py    # GPT structured extraction (~19 min, ~$1.41)
+python scripts/normalize_numbers.py # regex number normalization (<1s, free)
+python scripts/normalize_entities.py # 6-stage entity canonicalization (~75s, ~$0.04)
+python scripts/build_indexes.py     # SQLite + Chroma + NetworkX (~2.5 min, ~$0.05)
+python scripts/sanity_check.py      # 33 end-to-end checks (~20s)
 ```
 
-> **Note on PDF parsing**: Datalab's free tier allows ~55 papers per API key. Two free-tier keys (`DATALAB_API_KEY_1` + `DATALAB_API_KEY_2`) are sufficient. The script rotates keys automatically on 403 rate-limit errors.
+> Datalab's free tier covers ~55 papers per key. Two keys handle all 100. The script rotates automatically on rate limits.
 
 ---
 
-## Running the API
+## Budget levels
+
+The `budget_level` field on `/ask` controls retrieval depth and agent step count:
+
+| Level | Retrieval k | T6 max steps | Notes |
+|-------|-------------|--------------|-------|
+| `$1`  | 3  | 3  | Fast, still 100% on eval |
+| `$5`  | 8  | 6  | Default |
+| `$20` | 15 | 10 | More headroom for complex questions |
+
+Run the eval suite:
 
 ```bash
-uvicorn main:app --reload
-# → http://localhost:8000
-```
-
-### Ask a question
-
-```bash
-curl -X POST http://localhost:8000/ask \
-  -H "Content-Type: application/json" \
-  -d '{"question": "Which paper has the highest ImageNet top-1 accuracy?", "budget_level": "$5"}'
-```
-
-Response:
-```json
-{
-  "answer": "CoCa achieves the highest reported ImageNet top-1 accuracy at 91.0%...",
-  "tier": 3,
-  "tier_confidence": 0.97,
-  "citations": [{"paper_id": "...", "paper_title": "CoCa: Contrastive Captioners..."}],
-  "cost_usd": 0.0018,
-  "handler_reasoning": "mode=numeric"
-}
-```
-
-The `budget_level` parameter controls retrieval depth and multi-hop step count:
-
-| Level | Chroma k | T6 max steps | Use case |
-|-------|----------|--------------|----------|
-| `$1`  | 3        | 3            | Fast / cheap (still 100% on eval) |
-| `$5`  | 8        | 6            | Default balanced setting |
-| `$20` | 15       | 10           | Thorough / complex questions |
-
-### Run the eval suite
-
-```bash
-# All 3 budget levels, 40 questions each
-python scripts/run_eval.py
-
-# Single budget level
+python scripts/run_eval.py             # all 3 budget levels
 python scripts/run_eval.py --budget '$5'
-
-# Quick smoke test (first 5 questions)
-python scripts/run_eval.py --budget '$1' --limit 5
+python scripts/run_eval.py --limit 5   # first 5 questions only
 ```
 
-Results are written to `eval/RESULTS.md` and `eval/reports/{timestamp}_{budget}.json`.
-
----
-
-## Question tiers
-
-The system routes each question to one of 8 handlers based on a GPT classifier:
-
-| Tier | Type | Example |
-|------|------|---------|
-| T1 | Single-paper factual | "What architecture does ViT use?" |
-| T2 | Corpus aggregation (SQL) | "How many papers benchmark on ImageNet?" |
-| T3 | Contradiction / comparison | "Do papers agree on ADE20K SOTA?" |
-| T4 | Temporal evolution | "How did top-1 accuracy change year over year?" |
-| T5 | Citation graph | "Which paper is most cited within this corpus?" |
-| T6 | Multi-hop compositional | "Among ViT-citing papers, which has the largest model?" |
-| T7 | Negation / absence | "Which segmentation datasets are NOT used in this corpus?" |
-| T8 | Quantitative compute | "What is the median parameter count across all models?" |
+Results go to `eval/RESULTS.md` and `eval/reports/`.
 
 ---
 
@@ -143,51 +142,30 @@ The system routes each question to one of 8 handlers based on a GPT classifier:
 
 ```
 data/
-  manifest.csv          # 100-paper corpus metadata
-  pdfs/                 # downloaded PDFs
-  markdown/             # Marker-parsed markdown
-  extractions/          # GPT structured extraction JSONs
-  normalized/           # number-normalized JSONs
-  entity_map.json       # canonical entity → aliases map
-  corpus.db             # SQLite: papers, entities, results, claims, ...
-  chroma/               # Chroma vector store (3768 chunks)
-  citation_graph.gpickle # NetworkX DiGraph (761 in-corpus edges)
-  cost_log.jsonl        # append-only spend log
+  corpus.db               # SQLite: papers, entities, results, claims, mentions
+  chroma/                 # vector store (3768 section-level chunks)
+  citation_graph.gpickle  # NetworkX DiGraph (761 in-corpus edges)
+  entity_map.json         # 1,950 canonical entities with aliases
+  cost_log.jsonl          # append-only spend log
 
-api/
-  core/
-    store.py            # typed SQLite + NetworkX wrapper
-    retrieval.py        # Chroma search
-    classifier.py       # tier router
-    handlers/           # tier1_*.py … tier8_*.py
-    budget.py           # spend tracking + BUDGET_LEVEL config
-    llm.py              # OpenAI client + cost helpers
-  routes/
-    ask.py              # POST /ask
-    eval.py             # POST /eval
+api/core/
+  store.py        # SQLite + NetworkX wrapper
+  retrieval.py    # Chroma search
+  classifier.py   # tier router
+  handlers/       # tier1.py ... tier8.py
+  budget.py       # BUDGET_LEVEL config + spend tracking
 
 scripts/
-  fetch_papers.py       # Semantic Scholar corpus assembly
-  download_pdfs.py      # PDF downloader
-  parse_pdfs.py         # Datalab Marker cloud API
-  extract_papers.py     # GPT structured extraction
-  normalize_numbers.py  # regex number normalization
-  normalize_entities.py # 6-stage entity canonicalization
-  build_indexes.py      # SQLite + Chroma + NetworkX builder
-  sanity_check.py       # 33 end-to-end checks
-  run_eval.py           # quality-vs-budget evaluation runner
-  ask_cli.py            # quick interactive CLI query tool
+  ask_cli.py      # interactive REPL (start here)
+  run_eval.py     # quality-vs-budget runner
+  build_indexes.py
+  ...
 
 eval/
-  questions.jsonl       # 40 eval questions with gold answers
-  RESULTS.md            # latest eval results
-  reports/              # per-run JSON reports
+  questions.jsonl  # 40 gold questions
+  RESULTS.md       # latest scores
 ```
 
 ---
 
-## Architecture
-
-See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions: why Marker over Nougat, why SQLite over DuckDB, why a tiered handler over a single ReAct agent, and the full quality-vs-budget tradeoff analysis.
-
-See [COST_REPORT.md](COST_REPORT.md) for the phase-by-phase cost breakdown and quality-vs-budget curve.
+See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions and [COST_REPORT.md](COST_REPORT.md) for the full cost and quality breakdown.
