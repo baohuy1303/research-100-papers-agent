@@ -54,7 +54,7 @@ async def synthesize_answer(
     evidence: list[dict] | dict,
     instructions: str = "",
     model: str = MODEL_GPT_MINI,
-    max_completion_tokens: int = 1024,
+    max_completion_tokens: int = 4096,
 ) -> tuple[str, list[str], float]:
     """Ask the LLM to write a final NL answer from structured evidence.
 

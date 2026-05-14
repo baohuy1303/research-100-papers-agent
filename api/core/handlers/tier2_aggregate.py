@@ -71,6 +71,13 @@ async def _generate_sql(question: str) -> tuple[_SQLPlan, float]:
                 "Use canonical names from the entities table:\n"
                 "  metrics: 'top-1 accuracy', 'top-5 accuracy', 'mIoU', 'AP', 'mAP', 'R@1', 'PSNR', ...\n"
                 "  datasets: 'ImageNet', 'ImageNet-21k', 'COCO', 'ADE20K', 'CIFAR-10', 'CIFAR-100', ...\n"
+                "\n"
+                "COUNTING ENTITIES — use the entities table DIRECTLY (not via mentions):\n"
+                "  To count unique canonical datasets across all papers:\n"
+                "    SELECT COUNT(DISTINCT canonical) FROM entities WHERE type='dataset'\n"
+                "  To count entities that appear in at least one paper:\n"
+                "    SELECT COUNT(DISTINCT e.canonical) FROM entities e JOIN mentions m ON m.entity_id=e.entity_id WHERE e.type='dataset'\n"
+                "  Do NOT add extra WHERE clauses (like WHERE purpose IS NOT NULL) that would drastically reduce the count.\n"
             },
             {"role": "user", "content": question},
         ],

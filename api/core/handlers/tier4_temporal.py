@@ -42,8 +42,8 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         ],
         response_format=_TemporalSQL,
         temperature=0,
-        max_completion_tokens=512,
-        extra_body={"prompt_cache_key": "tier4-temporal-v1"},
+        max_completion_tokens=1024,
+        extra_body={"prompt_cache_key": "tier4-temporal-v2"},
     )
     plan = plan_resp.choices[0].message.parsed
     plan_cost = oai_cost_for_usage(MODEL_GPT_MINI, plan_resp.usage)

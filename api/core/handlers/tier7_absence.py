@@ -45,16 +45,37 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         model=MODEL_GPT_MINI,
         messages=[
             {"role": "system", "content":
-                "You handle absence/negation questions over a 100-paper Vision Transformer "
-                "corpus. First decide what entity type, then propose an EXPECTED set of "
-                "canonical names that would normally appear in such a corpus. Be liberal "
-                "with the expected set (15-30 items)."
+                "You handle absence/negation questions over a 100-paper Vision Transformer corpus.\n"
+                "First decide the entity type, then propose the EXPECTED set of canonical names.\n\n"
+                "IMPORTANT: Use these curated domain-specific lists as your expected set "
+                "(only include items relevant to the question's domain):\n\n"
+                "IMAGE CLASSIFICATION datasets:\n"
+                "  ImageNet, ImageNet-21k, CIFAR-10, CIFAR-100, iNaturalist, "
+                "  Oxford Pets, Oxford Flowers, Food-101, STL-10, MNIST, Fashion-MNIST\n\n"
+                "OBJECT DETECTION datasets:\n"
+                "  COCO, PASCAL VOC, Objects365, OpenImages, LVIS, V3Det, "
+                "  nuScenes, Waymo, KITTI\n\n"
+                "SEMANTIC SEGMENTATION datasets:\n"
+                "  ADE20K, Cityscapes, PASCAL VOC, Semantic KITTI, COCO Stuff, "
+                "  SUN RGB-D, NYU Depth v2, PASCAL Context\n\n"
+                "VIDEO CLASSIFICATION datasets:\n"
+                "  Kinetics-400, Kinetics-600, Kinetics-700, Something-Something-V2, "
+                "  UCF-101, HMDB-51, AVA, ActivityNet, Diving-48\n\n"
+                "PRETRAINING datasets:\n"
+                "  ImageNet-21k, JFT-300M, LAION-400M, "
+                "  Conceptual Captions, CC12M, WebImageText, YFCC100M\n\n"
+                "METRICS (image classification): top-1 accuracy, top-5 accuracy\n"
+                "METRICS (detection): AP, AP50, AP75, mAP\n"
+                "METRICS (segmentation): mIoU, Panoptic Quality, AP\n\n"
+                "Choose the appropriate domain list(s) based on the question. "
+                "Your expected set should use ONLY these canonical names unless the "
+                "question specifically asks about entities outside these lists."
             },
             {"role": "user", "content": question},
         ],
         response_format=_AbsencePlan,
         temperature=0,
-        max_completion_tokens=2048,
+        max_completion_tokens=4096,
     )
     plan = plan_resp.choices[0].message.parsed
     plan_cost = oai_cost_for_usage(MODEL_GPT_MINI, plan_resp.usage)
@@ -104,17 +125,35 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         if r["surface_form"]:
             observed_set.add(r["surface_form"].lower().strip())
 
-    # Also accept fuzzy substring matches — "MS COCO" should match "COCO"
-    # because users often qualify common dataset names.
+    import re as _re
+
+    def _norm(s: str) -> str:
+        """Lowercase + replace hyphens/underscores with spaces: 'COCO-Stuff' → 'coco stuff'."""
+        return s.lower().strip().replace("-", " ").replace("_", " ")
+
+    def _bare(s: str) -> str:
+        """Strip ALL non-alphanumeric chars: 'UCF-101' → 'ucf101', 'HMDB-51' → 'hmdb51'."""
+        return _re.sub(r"[^a-z0-9]", "", s.lower())
+
+    observed_norm: set[str] = {_norm(o) for o in observed_set}
+    observed_bare: set[str] = {_bare(o) for o in observed_set}
+
+    # Three matching strategies (none uses obs-in-needle to prevent short names like
+    # "COCO", "KITTI", "SUN" from falsely matching "COCO Stuff", "Semantic KITTI",
+    # "SUN RGB-D"):
+    #  1. Exact normalized match  — "COCO-Stuff" ↔ "COCO Stuff"
+    #  2. Bare exact match        — "UCF-101" ↔ "UCF101", "HMDB-51" ↔ "HMDB51"
+    #  3. Needle-in-observed only — "COCO" ⊆ "MS COCO" (qualifier prefix handling)
     def _is_present(needle: str) -> bool:
-        n = needle.lower().strip()
-        if n in observed_set:
+        n_norm = _norm(needle)
+        n_bare = _bare(needle)
+        if n_norm in observed_norm:
             return True
-        # Substring fallback: any observed name contains the needle, or vice versa.
-        # Cap to ≥4 chars to avoid false positives like "AP" matching every entity.
-        if len(n) >= 4:
-            for obs in observed_set:
-                if n == obs or n in obs or obs in n:
+        if len(n_bare) >= 3 and n_bare in observed_bare:
+            return True
+        if len(n_norm) >= 4:
+            for obs in observed_norm:
+                if n_norm in obs:
                     return True
         return False
 

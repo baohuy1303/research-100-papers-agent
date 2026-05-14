@@ -1,0 +1,106 @@
+{
+  "budget_level": "$5",
+  "timestamp": "20260513_184955",
+  "total_questions": 5,
+  "passed": 5,
+  "pass_rate": 1.0,
+  "total_cost_usd": 0.0086,
+  "total_latency_seconds": 24.1,
+  "budget_at_start_usd": 8.978,
+  "budget_at_end_usd": 8.9866,
+  "per_tier": {
+    "1": {
+      "n": 4,
+      "passed": 4,
+      "pass_rate": 1.0,
+      "avg_cost": 0.0018,
+      "avg_latency": 4.9,
+      "avg_confidence": 0.985
+    },
+    "2": {
+      "n": 1,
+      "passed": 1,
+      "pass_rate": 1.0,
+      "avg_cost": 0.0013,
+      "avg_latency": 4.46,
+      "avg_confidence": 0.98
+    }
+  },
+  "questions": [
+    {
+      "id": "T1-001",
+      "tier": 1,
+      "actual_tier": 1,
+      "tier_confidence": 0.99,
+      "question": "What datasets did 'An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale' use?",
+      "gold_answer": "ImageNet, ImageNet-21k, CIFAR-100",
+      "system_answer": "The evidence indicates the paper used ImageNet, ImageNet-21k, and JFT-300M for pre-training, and it reports evaluation on ImageNet, ImageNet-Real, CIFAR-100, and the VTAB suite of 19 tasks. The evidence does not provide any additional datasets beyond these.",
+      "match_strategy": "structural",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.002079,
+      "elapsed_seconds": 6.81,
+      "error": null
+    },
+    {
+      "id": "T1-002",
+      "tier": 1,
+      "actual_tier": 1,
+      "tier_confidence": 0.99,
+      "question": "What is the parameter count of the largest variant in 'Training data-efficient image transformers & distillation through attention'?",
+      "gold_answer": "The largest DeiT variant is DeiT-B★ (DeiT-B with distillation) at 87M parameters.",
+      "system_answer": "The largest variant listed is DeiT-B★, which has 87M parameters. The paper’s reference vision transformer is 86M, but the biggest variant in the provided evidence is 87M.",
+      "match_strategy": "llm_judge",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.001802,
+      "elapsed_seconds": 3.81,
+      "error": null
+    },
+    {
+      "id": "T1-003",
+      "tier": 1,
+      "actual_tier": 1,
+      "tier_confidence": 0.98,
+      "question": "What architectural innovations does 'Swin Transformer: Hierarchical Vision Transformer using Shifted Windows' introduce?",
+      "gold_answer": "hierarchical structure, shifted window attention",
+      "system_answer": "The paper introduces a hierarchical vision Transformer that computes self-attention within non-overlapping local windows, then alternates with shifted window partitioning to create cross-window connections. It also uses patch merging to build multi-scale feature maps, which gives linear computational complexity with respect to image size; the paper additionally notes the use of relative position bias.",
+      "match_strategy": "structural",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.001649,
+      "elapsed_seconds": 3.75,
+      "error": null
+    },
+    {
+      "id": "T1-004",
+      "tier": 1,
+      "actual_tier": 1,
+      "tier_confidence": 0.98,
+      "question": "Briefly describe the architecture of 'Emerging Properties in Self-Supervised Vision Transformers'.",
+      "gold_answer": "DINO is a self-supervised vision transformer training method",
+      "system_answer": "The paper presents DINO, a simple self-supervised Vision Transformer architecture based on self-distillation without labels: a student network learns to match a momentum-teacher network across multiple augmented views, with centering and sharpening to prevent collapse. It is designed to work with both ViTs and convnets, but the paper emphasizes that ViTs with small patches benefit especially strongly.",
+      "match_strategy": "llm_judge",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.001796,
+      "elapsed_seconds": 5.22,
+      "error": null
+    },
+    {
+      "id": "T2-001",
+      "tier": 2,
+      "actual_tier": 2,
+      "tier_confidence": 0.98,
+      "question": "How many papers in the corpus mention or benchmark on ImageNet?",
+      "gold_answer": "72",
+      "system_answer": "72 papers in the corpus mention the dataset ImageNet.",
+      "match_strategy": "substring",
+      "passed": true,
+      "overlap": 1.0,
+      "cost_usd": 0.001254,
+      "elapsed_seconds": 4.46,
+      "error": null
+    }
+  ]
+}

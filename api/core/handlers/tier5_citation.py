@@ -92,7 +92,7 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         ],
         response_format=_GraphPlan,
         temperature=0,
-        max_completion_tokens=512,
+        max_completion_tokens=1024,
     )
     plan = plan_resp.choices[0].message.parsed
     plan_cost = oai_cost_for_usage(MODEL_GPT_MINI, plan_resp.usage)

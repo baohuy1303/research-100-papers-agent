@@ -89,11 +89,13 @@ Tools available: sql_query, search_chunks, graph_op, finalize_answer.
 
 SQLite schema (for sql_query):
   papers(paper_id, title, year, venue, citation_count)
+      WARNING: citation_count = TOTAL Semantic Scholar citations, NOT in-corpus count.
+               For "most cited within this corpus" use graph_op, NOT citation_count.
   entities(entity_id, canonical, type ['dataset'|'metric'|'method'], paperswithcode_id)
   mentions(paper_id, entity_id, surface_form, purpose)
   results(paper_id, model, dataset_id, metric_id, value_canonical, is_sota_claim)
   model_variants(paper_id, name, param_count_millions)
-  paper_refs(paper_id_src, paper_id_dst)  -- in-corpus citations
+  paper_refs(paper_id_src, paper_id_dst)  -- in-corpus citations (may be sparse)
 
 KEY PATTERN — looking up a paper by name:
   Papers are referenced by short names like "ViT", "Swin", "MAE". Use sql_query first
@@ -102,6 +104,15 @@ KEY PATTERN — looking up a paper by name:
     WHERE LOWER(title) LIKE '%image is worth%'
     ORDER BY citation_count DESC LIMIT 1
   Then pass that paper_id into graph_op or other queries.
+
+WORKED EXAMPLE — "Which paper published in 2022 is the most cited within this corpus?":
+  Step 1: graph_op  -> {op: "most_cited", k: 100}
+                     => returns list of papers with "year" and "in_corpus_citations" fields.
+  Step 2: finalize_answer — filter the returned list in your head: take the paper where
+          year==2022 AND in_corpus_citations is highest. State that paper's title and
+          in_corpus_citations count.
+  CRITICAL: graph_op("most_cited") returns full paper dicts including year — you can filter
+  by year directly from the returned list WITHOUT another SQL call.
 
 WORKED EXAMPLE — "Among papers that cite ViT, which has the largest model?":
   Step 1: sql_query  -> SELECT paper_id, title FROM papers
@@ -123,12 +134,36 @@ WORKED EXAMPLE — "Among papers that cite ViT, which has the largest model?":
                         LIMIT 5                                -- top-N
   Step 4: finalize_answer with the FIRST row's title + cited_paper_ids.
 
+WORKED EXAMPLE — "Among papers that use ADE20K, which reports highest ImageNet top-1 accuracy?":
+  Step 1: sql_query  -> SELECT entity_id FROM entities WHERE canonical='ADE20K' AND type='dataset'
+                     => ade20k_eid
+  Step 2: sql_query  -> SELECT DISTINCT paper_id FROM mentions WHERE entity_id=ade20k_eid
+                     => paper_ids = [list of 10-30 IDs]
+  Step 3: sql_query  -> SELECT r.paper_id, p.title, MAX(r.value_canonical) AS best_imagenet_acc
+                        FROM results r
+                        JOIN papers p ON p.paper_id=r.paper_id
+                        JOIN entities ed ON ed.entity_id=r.dataset_id
+                        JOIN entities em ON em.entity_id=r.metric_id
+                        WHERE r.paper_id IN ([IDs from step 2])
+                          AND ed.canonical = 'ImageNet'
+                          AND em.canonical = 'top-1 accuracy'
+                          AND r.value_canonical IS NOT NULL
+                        GROUP BY r.paper_id, p.title
+                        ORDER BY best_imagenet_acc DESC
+                        LIMIT 5
+  Step 4: finalize_answer with FIRST row as the winner.
+  CRITICAL: filter by BOTH ed.canonical (dataset) AND em.canonical (metric) so you
+  don't mix top-1 accuracy with mIoU, AP, etc. Use MAX() + GROUP BY to get each
+  paper's best result, then ORDER BY DESC + LIMIT to find the winner.
+
 COMMON SQL MISTAKES TO AVOID:
   - MAX() / SUM() / AVG() without GROUP BY: produces undefined ordering, wrong row.
   - Missing ORDER BY when the question says "largest", "highest", "best", "most": you'll
     get an arbitrary row instead of the top one.
   - Missing IS NOT NULL guards on numeric columns: NULLs sort last in SQLite but if the
     set is mostly NULL you'll get nonsense.
+  - Forgetting to filter by metric when ranking by accuracy: always join entities twice
+    (once for dataset, once for metric) and filter both.
 
 CRITICAL — chaining tool results:
   When a previous tool returns paper_ids (from graph_op or sql_query), USE THEM
@@ -208,7 +243,11 @@ def _exec_tool(name: str, args: dict, store, retriever):
         op = args["op"]
         k = args.get("k", 10)
         if op == "most_cited":
-            return {"papers": store.most_cited(k)}
+            papers = store.most_cited(k)
+            compact = [{"paper_id": p["paper_id"], "title": p["title"],
+                        "year": p["year"], "in_corpus_citations": p.get("in_corpus_citations")}
+                       for p in papers]
+            return {"papers": compact}
         if op in ("descendants", "ancestors", "cited_by", "references_of"):
             pid = args.get("paper_id")
             if not pid:
@@ -226,7 +265,7 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
     client = get_openai_client()
     from api.core.budget import get_budget_level
     bl = get_budget_level()
-    max_steps = {"$1": 2, "$5": 6, "$20": 10}[bl]
+    max_steps = {"$1": 3, "$5": 6, "$20": 10}[bl]
 
     messages: list[dict[str, Any]] = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -265,6 +304,8 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
             narration_markers = (
                 "let me", "i'm checking", "i'm gathering", "i'll check",
                 "i need to", "first,", "next,", "still gathering", "i will",
+                "i'm going to", "i'm going", "i should", "i'll look",
+                "i'm looking", "i have to", "to answer this",
             )
             looks_like_narration = any(m in content.lower() for m in narration_markers)
             on_last_step = step >= max_steps

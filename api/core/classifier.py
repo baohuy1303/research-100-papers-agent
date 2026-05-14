@@ -39,12 +39,12 @@ a corpus of 100 Vision Transformer papers. You must route each question to exact
 one of 8 tiers based on what kind of computation answers it.
 
 TIER 1 — Single-document factual.
-  The answer lives inside ONE paper, often in one section. The user names the paper
-  or the question is clearly about a single specific paper.
+  The answer lives inside ONE paper. The user names a specific paper explicitly.
   Examples:
     - "What architecture does ViT use?"
     - "How many parameters does Swin-L have?"
     - "What datasets did DeiT train on?"
+    - "What training hyperparameters did MAE use?"
 
 TIER 2 — Corpus-level aggregation.
   Counting / listing across many papers. Pure SQL: COUNT, GROUP BY, DISTINCT.
@@ -52,36 +52,47 @@ TIER 2 — Corpus-level aggregation.
     - "How many papers benchmark on ImageNet?"
     - "What datasets are used across the corpus?"
     - "Which papers from 2022 use self-attention?"
+    - "How many papers were published in 2023?"
 
-TIER 3 — Comparative / contradiction.
-  Two or more papers reporting different numbers on the same benchmark, or
-  contradicting each other on a methodological claim.
+TIER 3 — Comparative / contradiction / range across papers.
+  Comparing numbers or claims ACROSS multiple papers — disagreements, spread,
+  range of reported values, conflicting SOTA claims.
+  Use T3 whenever the question asks about variation, disagreement, or range of a
+  metric across many papers — even if it doesn't use the word "contradiction".
   Examples:
     - "Do ViT and Swin agree on ImageNet top-1 accuracy?"
     - "Do any papers contradict each other on the role of position embeddings?"
-    - "Which paper claims the highest top-1 accuracy on ImageNet — is the SOTA claim consistent?"
+    - "What is the range of top-1 accuracy values reported on CIFAR-100?" ← T3, not T8
+    - "How much do reported mIoU values on ADE20K vary across papers?" ← T3
+    - "Which paper claims the highest SOTA on ImageNet — are the claims consistent?"
 
 TIER 4 — Temporal / evolution.
-  How something changed over time (year-by-year). Bucket by year, plot a trend.
+  How something changed OVER TIME (year-by-year trends).
   Examples:
     - "How did top-1 accuracy on ImageNet improve from 2020 to 2024?"
     - "When did masked image modeling become popular?"
     - "What's the trend in model size over the years?"
+    - "In which year did papers first mention self-supervised learning?"
 
-TIER 5 — Citation-graph reasoning.
-  Questions about WHO CITES WHOM — uses the in-corpus citation graph.
+TIER 5 — Citation-graph reasoning (simple).
+  Direct citation-graph lookups with NO additional filter: WHO CITES WHOM,
+  most-cited, PageRank, citation paths. No year filter, no dataset filter.
   Examples:
-    - "Which paper is most cited within this corpus?"
-    - "What papers build on ViT?"
+    - "Which paper is most cited within this corpus?" ← pure citation rank
+    - "What papers build on ViT?" ← who cites ViT
     - "Is there a citation chain from MAE to BEiT?"
+    - "How many papers cite Swin?" ← direct count
 
 TIER 6 — Multi-hop / compositional.
-  Requires combining 2+ steps: first find X, then for each result do Y.
-  Often "among papers that ..., which/what ...".
+  Requires 2+ steps: first find/filter a SET, then rank/analyze that set.
+  Key signal: "among [filtered set], which/what ..." or ranking within a
+  constrained group (year, dataset usage, method).
   Examples:
-    - "Among papers that cite ViT, which use the most parameters?"
-    - "What's the average top-1 accuracy of papers published after MAE?"
-    - "Find papers that train on JFT-300M and report results on ADE20K."
+    - "Among papers that cite ViT, which has the largest model?" ← cite-then-rank
+    - "Which paper published in 2022 is the most cited?" ← year-filter THEN citation-rank → T6
+    - "Among papers using ADE20K, which has the highest ImageNet accuracy?" ← T6
+    - "What is the most cited paper among those published after 2021?" ← T6
+    - "Which 2023 paper uses the most parameters?" ← year-filter + property-rank → T6
 
 TIER 7 — Negation / absence.
   What's MISSING. Closed-world set difference: "expected but not observed".
@@ -90,21 +101,27 @@ TIER 7 — Negation / absence.
     - "What evaluation datasets are missing from MAE?"
     - "Which papers do NOT report compute requirements?"
 
-TIER 8 — Quantitative computation.
-  Math / stats over benchmark numbers — sums, medians, correlations, regressions.
+TIER 8 — Quantitative computation (novel math).
+  Statistical calculations that require writing code: medians, correlations,
+  regressions, percentages, aggregations OVER the whole corpus structure.
+  NOT for min/max/range of a benchmark (that's T3). Only for computations
+  that can't be expressed as a simple GROUP BY query.
   Examples:
-    - "What's the median parameter count for transformer-based papers?"
-    - "Is there a correlation between model size and ImageNet accuracy?"
-    - "Sum of training compute across all papers from 2023."
+    - "What's the median parameter count across all model variants?" ← needs pandas median
+    - "Is there a Pearson correlation between citation count and model size?" ← regression
+    - "What percentage of benchmark results include a SOTA claim?" ← ratio computation
+    - "Do ImageNet papers have more citations on average than non-ImageNet papers?" ← comparison of group means
 
-Important rules:
-  - Pick exactly ONE tier (the dominant computation needed).
-  - If a question could fit multiple tiers, prefer the simpler one
-    (tier 1 < 2 < 5 < 4 < 7 < 3 < 6 < 8 in increasing complexity).
-  - "How many" → usually tier 2.
-  - "Compare X and Y" / "Do they agree" → tier 3.
-  - Math / numeric computation → tier 8.
-  - Multi-step joins ("among X, find Y") → tier 6.
+DECISION RULES (apply in order):
+  1. If the user names ONE specific paper → T1.
+  2. If asking for a count/list across the whole corpus, no filters → T2.
+  3. If asking for range / spread / variation of a benchmark metric across papers → T3.
+  4. If asking about change over time / trends / first year → T4.
+  5. If a citation-graph question WITH a year or dataset filter ("most cited 2022 paper") → T6.
+  6. If a pure citation-graph question (no other filter) → T5.
+  7. If asking what's ABSENT / NOT present → T7.
+  8. If multi-step: find a set, then rank/analyze that set → T6.
+  9. If requires computing a statistic not expressible as SQL GROUP BY → T8.
 """
 
 
@@ -134,9 +151,9 @@ class TierClassifier:
             ],
             response_format=TierClassification,
             temperature=0,
-            max_completion_tokens=512,
+            max_completion_tokens=1024,
             extra_body={
-                "prompt_cache_key": "tier-classifier-v1",
+                "prompt_cache_key": "tier-classifier-v3",
                 "prompt_cache_retention": "in_memory",
             },
         )

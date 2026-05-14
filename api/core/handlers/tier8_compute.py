@@ -40,6 +40,28 @@ You CANNOT import other modules or open files/sockets.
 
 Convention: assign the final answer to a variable named RESULT.
 RESULT may be a number, dict, or small DataFrame (use .to_dict('records') if so).
+
+CRITICAL PATTERN — filtering papers by a named entity (dataset / metric / method):
+  # Step 1: find the entity_id(s) for the canonical name
+  entity_ids = entities.loc[
+      entities['canonical'].str.lower() == 'imagenet', 'entity_id'
+  ]
+  # Step 2: get paper_ids that mention those entities
+  paper_ids_with_entity = mentions.loc[
+      mentions['entity_id'].isin(entity_ids), 'paper_id'
+  ].unique()
+  # Step 3: filter the papers DataFrame
+  imagenet_papers = papers.loc[papers['paper_id'].isin(paper_ids_with_entity)]
+  other_papers    = papers.loc[~papers['paper_id'].isin(paper_ids_with_entity)]
+  # Now compute statistics on each group:
+  RESULT = {
+      'imagenet_avg_citations': float(imagenet_papers['citation_count'].mean()),
+      'other_avg_citations':    float(other_papers['citation_count'].mean()),
+  }
+
+Use this pattern ANY TIME the question asks about papers that use / benchmark on /
+mention a specific dataset, metric, or method. Always use .isin() — never .merge()
+on entity lookups, as merge can silently produce empty results.
 """
 
 
