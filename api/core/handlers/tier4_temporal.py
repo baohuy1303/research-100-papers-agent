@@ -53,14 +53,36 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
         return HandlerResult(tier=4, answer="Failed to plan temporal query.",
                              cost_usd=plan_cost, confidence=0.2)
 
-    try:
-        rows = store.execute_sql(plan.sql)
-    except Exception as e:
-        return HandlerResult(
-            tier=4, answer=f"SQL execution failed: {e}",
-            evidence=[{"sql": plan.sql, "error": str(e)}],
-            cost_usd=plan_cost, confidence=0.2,
-        )
+    rows = None
+    for attempt in range(2):
+        try:
+            rows = store.execute_sql(plan.sql)
+            break
+        except Exception as e:
+            if attempt == 1:
+                return HandlerResult(
+                    tier=4, answer=f"SQL execution failed: {e}",
+                    evidence=[{"sql": plan.sql, "error": str(e)}],
+                    cost_usd=plan_cost, confidence=0.2,
+                )
+            retry_resp = await client.beta.chat.completions.parse(
+                model=MODEL_GPT_MINI,
+                messages=[
+                    {"role": "system", "content":
+                        "You translate temporal-evolution questions into a SQLite SELECT with "
+                        "GROUP BY year (or YEAR-bucketed). Always include the year column so the "
+                        "result reads as a time series.\n\n" + SCHEMA_DOC},
+                    {"role": "user", "content":
+                        question + f"\n\nPrevious SQL failed: {e}\nFailed SQL: {plan.sql}\nPlease write corrected SQL."},
+                ],
+                response_format=_TemporalSQL,
+                temperature=0,
+                max_completion_tokens=1024,
+            )
+            plan_cost += oai_cost_for_usage(MODEL_GPT_MINI, retry_resp.usage)
+            record_cost("tier4_retry", plan_cost)
+            if retry_resp.choices[0].message.parsed:
+                plan = retry_resp.choices[0].message.parsed
 
     evidence = {
         "metric_name": plan.metric_name,

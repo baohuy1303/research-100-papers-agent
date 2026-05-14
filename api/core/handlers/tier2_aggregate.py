@@ -97,14 +97,24 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
     if plan is None:
         return HandlerResult(tier=2, answer="Failed to generate SQL.", cost_usd=plan_cost, confidence=0.2)
 
-    try:
-        rows = store.execute_sql(plan.sql)
-    except Exception as e:
-        return HandlerResult(
-            tier=2, answer=f"SQL execution failed: {e}",
-            evidence=[{"sql": plan.sql, "error": str(e)}],
-            cost_usd=plan_cost, confidence=0.2,
-        )
+    rows = None
+    for attempt in range(2):
+        try:
+            rows = store.execute_sql(plan.sql)
+            break
+        except Exception as e:
+            if attempt == 1:
+                return HandlerResult(
+                    tier=2, answer=f"SQL execution failed: {e}",
+                    evidence=[{"sql": plan.sql, "error": str(e)}],
+                    cost_usd=plan_cost, confidence=0.2,
+                )
+            retry_plan, retry_cost = await _generate_sql(
+                question + f"\n\nPrevious SQL failed: {e}\nFailed SQL was: {plan.sql}\nPlease write corrected SQL."
+            )
+            plan_cost += retry_cost
+            if retry_plan:
+                plan = retry_plan
 
     # Cap evidence size — if SQL returned thousands of rows, truncate
     truncated = False
