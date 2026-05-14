@@ -14,11 +14,11 @@ High-level execution plan derived from [ARCHITECTURE.md](ARCHITECTURE.md). Phase
 | 4 | SQLite + Chroma + NetworkX indexes | ~$0.05 | **~$0.05** | ✅ 100 papers / 3768 chunks / 761 edges |
 | 5 | Core query infrastructure (store, retrieval, classifier) | $0 | **~$0.005** | ✅ 28/28 sanity checks pass |
 | 6 | 8 tier handlers | ~$1 | **~$0.02** | ✅ all 8 working end-to-end |
-| 7 | FastAPI /ask and /eval | $0 | — | 🔜 next |
-| 8 | Build 40+ eval question set | ~$0.50 | — | pending |
-| 9 | Quality-vs-budget runs at $1/$5/$20 | ~$18 | — | pending |
-| 10 | Cost report, README, submission polish | $0 | — | pending |
-| **Total spent** | | | **~$6.90 / $30** (23%) | $23 remaining |
+| 7 | FastAPI /ask and /eval | $0 | **$0** | ✅ POST /ask + POST /eval wired |
+| 8 | Build 40+ eval question set | ~$0.50 | **~$0.10** | ✅ 40 questions, all gold verified |
+| 9 | Quality-vs-budget runs at $1/$5/$20 | ~$18 | **~$4.50** | ✅ 100% / 100% / 100% |
+| 10 | Cost report, README, submission polish | $0 | **$0** | ✅ done |
+| **Total spent** | | | **~$11.38 / $30** (38%) | $18.62 remaining |
 
 The `scripts/sanity_check.py` script exercises Phases 1–6 end-to-end (33 checks). Run before any major change.
 
