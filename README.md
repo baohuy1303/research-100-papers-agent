@@ -32,22 +32,27 @@ Q&A system over the 100 most-cited Vision Transformer papers. Ask it anything ab
 The quickest way is the interactive CLI:
 
 ```bash
-source venv/Scripts/activate
+python -m venv venv
+source venv/Scripts/activate   # Windows Git Bash
+pip install -r requirements.txt
+
 python scripts/ask_cli.py
 ```
 
-```
+Example CLI prompts:
+
+```text
 ($5) > Which paper introduced shifted window attention?
 ($5) > How many papers benchmark on both ImageNet and COCO?
 ($5) > Among papers citing ViT, which has the largest model variant?
 ($5) > Which standard segmentation datasets are NOT covered in this corpus?
-($5) > /budget $1      # switch budget level
-($5) > /last           # dump full evidence JSON
-($5) > /help           # all commands
 ```
 
+Run the API:
 
-Or via the API after `uvicorn main:app --reload`:
+```bash
+uvicorn main:app --reload
+```
 
 ```bash
 curl -X POST http://localhost:8000/ask \
@@ -55,115 +60,91 @@ curl -X POST http://localhost:8000/ask \
   -d '{"question": "Which ViT variant has the best ImageNet top-1 accuracy?", "budget_level": "$5"}'
 ```
 
----
-
-## What it can answer
-
-Each question is routed to one of 8 handlers by a GPT classifier:
-
-| Tier | Type | Example |
-|------|------|---------|
-| T1 | Single-paper factual | "What architecture does ViT use?" |
-| T2 | Corpus aggregation | "How many papers benchmark on ImageNet?" |
-| T3 | Contradiction / comparison | "Do papers agree on ADE20K SOTA?" |
-| T4 | Temporal evolution | "How did top-1 accuracy change year over year?" |
-| T5 | Citation graph | "Which paper is most cited within this corpus?" |
-| T6 | Multi-hop compositional | "Among ViT-citing papers, which has the largest model?" |
-| T7 | Negation / absence | "Which segmentation datasets are NOT used here?" |
-| T8 | Quantitative compute | "What is the median parameter count across all models?" |
-
-Every answer includes citations and the evidence behind it (SQL query, retrieved chunks, graph results, etc.).
-
----
-
 ## Setup
 
-```bash
-python -m venv venv
-source venv/Scripts/activate   # Windows Git Bash
-# source venv/bin/activate     # macOS / Linux
-pip install -r requirements.txt
-```
-
-`.env` in project root:
+Create `.env` in the project root:
 
 ```env
 OPENAI_API_KEY=sk-...
-DATALAB_API_KEY_1=...    # free-tier key for PDF parsing
-DATALAB_API_KEY_2=...    # optional second key for failover
+DATALAB_API_KEY_1=...
+DATALAB_API_KEY_2=...
+S2_API_KEY=...          # optional, raises Semantic Scholar rate limit
 ```
 
----
+## Rebuild The Corpus
 
-## Reproducing the pipeline
-
-One-time prep, ~57 min, ~$6.90. Every step is idempotent.
+The checked-in artifacts are kept so reviewers can demo the project quickly. The pipeline is still reproducible:
 
 ```bash
-python scripts/fetch_papers.py      # pull 100 papers from Semantic Scholar
-python scripts/download_pdfs.py     # download PDFs (~2-3 min)
-python scripts/parse_pdfs.py        # Datalab Marker cloud API (~30 min, ~$5.35)
-python scripts/extract_papers.py    # GPT structured extraction (~19 min, ~$1.41)
-python scripts/normalize_numbers.py # regex number normalization (<1s, free)
-python scripts/normalize_entities.py # 6-stage entity canonicalization (~75s, ~$0.04)
-python scripts/build_indexes.py     # SQLite + Chroma + NetworkX (~2.5 min, ~$0.05)
-python scripts/sanity_check.py      # 33 end-to-end checks (~20s)
+python scripts/fetch_papers.py
+python scripts/download_pdfs.py
+python scripts/parse_pdfs.py
+python scripts/extract_papers.py
+python scripts/normalize_numbers.py
+python scripts/normalize_entities.py
+python scripts/build_indexes.py
+python scripts/sanity_check.py --skip-llm
 ```
 
-> Datalab's free tier covers ~55 papers per key. Two keys handle all 100. The script rotates automatically on rate limits.
-
----
-
-## Budget levels
-
-The `budget_level` field on `/ask` controls retrieval depth and agent step count:
-
-| Level | Retrieval k | T6 max steps | Notes |
-|-------|-------------|--------------|-------|
-| `$1`  | 3  | 3  | Fast, still 100% on eval |
-| `$5`  | 8  | 6  | Default |
-| `$20` | 15 | 10 | More headroom for complex questions |
-
-Run the eval suite:
+## Evaluate
 
 ```bash
-python scripts/run_eval.py             # all 3 budget levels
-python scripts/run_eval.py --budget '$5'
-python scripts/run_eval.py --limit 5   # first 5 questions only
+python scripts/run_eval.py --budget '$5' --limit 5
+python scripts/run_eval.py
 ```
 
-Results go to `eval/RESULTS.md` and `eval/reports/`.
+Reports are written to `eval/reports/`; the latest summarized results live in `eval/RESULTS.md`.
 
----
+## Architecture
 
-## Repo layout
-
-```
-data/
-  corpus.db               # SQLite: papers, entities, results, claims, mentions
-  chroma/                 # vector store (3768 section-level chunks)
-  citation_graph.gpickle  # NetworkX DiGraph (761 in-corpus edges)
-  entity_map.json         # 1,950 canonical entities with aliases
-  cost_log.jsonl          # append-only spend log
+```text
+api/routes/
+  ask.py          HTTP request/response only
+  eval.py         eval endpoint only
+  papers.py       manifest browsing and corpus refresh endpoints
 
 api/core/
-  store.py        # SQLite + NetworkX wrapper
-  retrieval.py    # Chroma search
-  classifier.py   # tier router
-  handlers/       # tier1.py ... tier8.py
-  budget.py       # BUDGET_LEVEL config + spend tracking
+  pipeline.py     shared classify -> handle -> response orchestration
+  runtime.py      request-scoped budget config
+  budget.py       budget profiles and cost logging
+  sql_safety.py   read-only SQL validation
+  store.py        SQLite + citation graph wrapper
+  retrieval.py    Chroma retrieval wrapper
+  classifier.py   tier router
+  handlers/       one module per question tier
 
 scripts/
-  ask_cli.py      # interactive REPL (start here)
-  run_eval.py     # quality-vs-budget runner
-  build_indexes.py
-  ...
-
-eval/
-  questions.jsonl  # 40 gold questions
-  RESULTS.md       # latest scores
+  ask_cli.py      interactive CLI using the shared pipeline
+  run_eval.py     quality-vs-budget eval runner
+  build_indexes.py and ingestion/normalization scripts
 ```
 
----
+## Artifact Policy
 
-See [ARCHITECTURE.md](ARCHITECTURE.md) for design decisions and [COST_REPORT.md](COST_REPORT.md) for the full cost and quality breakdown.
+Kept in git for reviewer convenience:
+
+- `data/manifest.csv`
+- `data/corpus.db`
+- `data/chroma/`
+- `data/citation_graph.gpickle`
+- `data/extractions/`, `data/normalized/`, `data/markdown/`
+- `eval/questions.jsonl`, `eval/RESULTS.md`, selected `eval/reports/`
+
+Ignored going forward:
+
+- secrets and local envs
+- Python caches
+- transient cost/failure logs
+- temporary eval outputs
+
+## Quality And Cost
+
+The latest recorded 40-question eval run reports 100% pass rate across `$1`, `$5`, and `$20` settings, with roughly `$0.07` per full eval run. See `COST_REPORT.md` for the cost breakdown.
+
+## Verification
+
+```bash
+venv/Scripts/python.exe -m compileall -q main.py api scripts tests
+venv/Scripts/python.exe -m unittest tests.test_review_polish
+venv/Scripts/python.exe scripts/sanity_check.py --skip-llm
+```

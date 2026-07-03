@@ -1,23 +1,24 @@
 """
 Budget control & cost tracking for the system.
 
-Reads BUDGET_LEVEL from env: "$1", "$5", or "$20" (default: "$5").
+Reads the request-scoped runtime budget, falling back to BUDGET_LEVEL from env.
 Tracks per-call USD spend to data/cost_log.jsonl.
 """
 import json
 import os
 import time
 from pathlib import Path
-from typing import Literal
 
-BudgetLevel = Literal["$1", "$5", "$20"]
-DEFAULT_BUDGET = "$5"
+from api.core.runtime import BudgetLevel, DEFAULT_BUDGET, current_runtime
 
 COST_LOG = Path(__file__).parent.parent.parent / "data" / "cost_log.jsonl"
 
 
 def get_budget_level() -> BudgetLevel:
-    """Current budget level from env."""
+    """Current budget level from runtime context, then env."""
+    runtime_level = current_runtime().budget_level
+    if runtime_level:
+        return runtime_level
     val = os.getenv("BUDGET_LEVEL", DEFAULT_BUDGET)
     if val not in ("$1", "$5", "$20"):
         return DEFAULT_BUDGET

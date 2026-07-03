@@ -1,5 +1,5 @@
 """
-Phase 9 — Quality-vs-budget evaluation runner.
+Phase 9 - Quality-vs-budget evaluation runner.
 
 Runs all 40 eval questions at $1, $5, and $20 budget levels.
 Writes per-level JSON reports to eval/reports/ and a summary to eval/RESULTS.md.
@@ -14,7 +14,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-import os
 import re
 import sys
 import time
@@ -25,11 +24,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from api.core.budget import record_cost, total_spent
-from api.core.classifier import TierClassifier
-from api.core.handlers import get_handler
 from api.core.llm import MODEL_GPT_MINI, get_openai_client, oai_cost_for_usage
-from api.core.retrieval import Retriever
-from api.core.store import CorpusStore
+from api.core.pipeline import answer_question
+from api.core.runtime import RuntimeConfig
 
 ROOT = Path(__file__).parent.parent
 QUESTIONS_PATH = ROOT / "eval" / "questions.jsonl"
@@ -43,7 +40,7 @@ def safe_print(msg: str) -> None:
     print(msg.encode("ascii", errors="replace").decode("ascii"), flush=True)
 
 
-# ── Match strategies ──────────────────────────────────────────────────────────
+# Match strategies
 
 def _normalize(s: str) -> str:
     return re.sub(r"[^\w\s]", "", s.lower()).strip()
@@ -83,9 +80,9 @@ async def _llm_judge(question: str, answer: str, gold: str) -> tuple[bool, float
     return text.startswith("PASS"), cost
 
 
-# ── Single question runner ────────────────────────────────────────────────────
+# Single question runner
 
-async def run_one(q: dict, store, retriever, classifier) -> dict:
+async def run_one(q: dict, budget: str) -> dict:
     t0 = time.time()
     question = q["question"]
     gold_answer = q.get("gold_answer", "")
@@ -101,16 +98,13 @@ async def run_one(q: dict, store, retriever, classifier) -> dict:
     actual_confidence = 0.0
 
     try:
-        meta = await classifier.classify(question)
-        cost += meta.get("cost_usd", 0.0)
-        actual_tier = meta["tier"]
-        actual_confidence = meta["confidence"]
-        normalized_q = meta.get("normalized_question") or question
-
-        handle = get_handler(actual_tier)
-        result = await handle(normalized_q, store, retriever, classifier_meta=meta)
+        result = await answer_question(question, runtime=RuntimeConfig(budget_level=budget))
         cost += result.cost_usd
+        actual_tier = result.tier
+        actual_confidence = result.tier_confidence
         answer = result.answer
+        if result.error:
+            error = result.error
     except Exception as e:
         import traceback
         error = f"{type(e).__name__}: {e}"
@@ -148,22 +142,15 @@ async def run_one(q: dict, store, retriever, classifier) -> dict:
     }
 
 
-# ── Full budget-level run ─────────────────────────────────────────────────────
+# Full budget-level run
 
 async def run_budget_level(budget: str, questions: list[dict], concurrency: int = 2) -> dict:
-    prev = os.environ.get("BUDGET_LEVEL")
-    os.environ["BUDGET_LEVEL"] = budget
-
-    store = CorpusStore()
-    retriever = Retriever()
-    classifier = TierClassifier()
-
     budget_start = total_spent()
     sem = asyncio.Semaphore(concurrency)
 
     async def bounded(q):
         async with sem:
-            return await run_one(q, store, retriever, classifier)
+            return await run_one(q, budget)
 
     safe_print(f"\n{'='*60}")
     safe_print(f"Running {len(questions)} questions at budget {budget}")
@@ -173,7 +160,7 @@ async def run_budget_level(budget: str, questions: list[dict], concurrency: int 
 
     results = []
     tasks = [bounded(q) for q in questions]
-    # Run with controlled concurrency — gather returns in submission order
+    # Run with controlled concurrency; gather returns in submission order.
     for i, coro in enumerate(tasks, 1):
         r = await coro
         results.append(r)
@@ -242,19 +229,14 @@ async def run_budget_level(budget: str, questions: list[dict], concurrency: int 
     path.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     safe_print(f"Report saved: {path}")
 
-    if prev is None:
-        os.environ.pop("BUDGET_LEVEL", None)
-    else:
-        os.environ["BUDGET_LEVEL"] = prev
-
     return report
 
 
-# ── RESULTS.md writer ─────────────────────────────────────────────────────────
+# RESULTS.md writer
 
 def write_results_md(reports: list[dict]) -> None:
     lines = [
-        "# Eval Results — Quality vs Budget",
+        "# Eval Results - Quality vs Budget",
         "",
         f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
         "",
@@ -282,7 +264,7 @@ def write_results_md(reports: list[dict]) -> None:
 
     # Header
     header = "| Tier |" + "".join(f" {b} pass | {b} cost |" for b in budgets)
-    sep = "|------|" + "".join("|-----------|------------|" for _ in budgets)
+    sep = "|------|" + "".join("-----------|------------|" for _ in budgets)
     lines += [header, sep]
 
     for tier in all_tiers:
@@ -293,7 +275,7 @@ def write_results_md(reports: list[dict]) -> None:
                 pct = f"{ts['pass_rate']*100:.0f}% ({ts['passed']}/{ts['n']})"
                 cost = f"${ts['avg_cost']:.4f}"
             else:
-                pct, cost = "—", "—"
+                pct, cost = "n/a", "n/a"
             row += f" {pct} | {cost} |"
         lines.append(row)
 
@@ -306,7 +288,7 @@ def write_results_md(reports: list[dict]) -> None:
             "|----|------|------|-------|------|---------|-------|",
         ]
         for q in r["questions"]:
-            status = "✓" if q["passed"] else "✗"
+            status = "OK" if q["passed"] else "FAIL"
             overlap = f"{q['overlap']*100:.0f}%"
             tier_match = "" if q["tier"] == q["actual_tier"] else f" (routed T{q['actual_tier']})"
             err = q.get("error") or ""
@@ -329,7 +311,7 @@ def write_results_md(reports: list[dict]) -> None:
     safe_print(f"\nResults written to {RESULTS_MD}")
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# Main
 
 async def amain():
     p = argparse.ArgumentParser()
@@ -363,7 +345,7 @@ async def amain():
         all_reports.append(report)
 
         if total_spent() > ABORT_THRESHOLD:
-            safe_print("Budget threshold exceeded — stopping early.")
+            safe_print("Budget threshold exceeded - stopping early.")
             break
 
     write_results_md(all_reports)

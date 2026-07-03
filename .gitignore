@@ -1,7 +1,35 @@
+# Secrets and local environments
+.env
 *.env
-__pycache__/
-.venv
-*.pkl
+.venv/
+venv/
 
+# Python/runtime caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local-only assignment/source notes
 Good At Numbers - Take home - MD.md
 CLAUDE.md
+
+# Volatile generated outputs; key demo artifacts under data/ and eval/ stay tracked.
+data/cost_log.jsonl
+data/*_failures.json
+data/chroma/*.sqlite3-shm
+data/chroma/*.sqlite3-wal
+eval/reports/*.tmp
+eval/reports/*.json
+*.pkl
+
+# Local notebook/editor/OS noise
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

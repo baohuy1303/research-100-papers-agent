@@ -57,7 +57,12 @@ async def _resolve_paper(question: str, store) -> tuple[dict | None, float]:
 
 
 async def handle(question: str, store, retriever, classifier_meta: dict | None = None) -> HandlerResult:
-    paper, resolve_cost = await _resolve_paper(question, store)
+    target_paper_id = (classifier_meta or {}).get("target_paper_id")
+    if target_paper_id:
+        paper = store.get_paper(target_paper_id)
+        resolve_cost = 0.0
+    else:
+        paper, resolve_cost = await _resolve_paper(question, store)
     if paper is None:
         return HandlerResult(
             tier=1, answer="Could not identify which paper this question is about.",

@@ -13,6 +13,7 @@ from __future__ import annotations
 import math
 import sqlite3
 import statistics
+import ast
 from typing import Any
 
 import pandas as pd
@@ -79,21 +80,89 @@ def _load_dataframes(db_path) -> dict[str, pd.DataFrame]:
     return dfs
 
 
+BLOCKED_NAMES = {
+    "__import__",
+    "compile",
+    "dir",
+    "eval",
+    "exec",
+    "getattr",
+    "globals",
+    "input",
+    "locals",
+    "open",
+    "setattr",
+    "vars",
+}
+BLOCKED_ATTRS = {
+    "read_csv",
+    "read_excel",
+    "read_json",
+    "read_parquet",
+    "read_pickle",
+    "to_csv",
+    "to_excel",
+    "to_json",
+    "to_parquet",
+    "to_pickle",
+    "to_sql",
+}
+BLOCKED_NODES = (
+    ast.AsyncFunctionDef,
+    ast.ClassDef,
+    ast.Delete,
+    ast.FunctionDef,
+    ast.Global,
+    ast.Import,
+    ast.ImportFrom,
+    ast.Lambda,
+    ast.Nonlocal,
+    ast.Raise,
+    ast.Try,
+    ast.With,
+)
+
+
+def _validate_code(code: str) -> str | None:
+    """Return an error string when generated code violates sandbox rules."""
+    try:
+        tree = ast.parse(code, mode="exec")
+    except SyntaxError as e:
+        return f"SyntaxError: {e}"
+
+    for node in ast.walk(tree):
+        if isinstance(node, BLOCKED_NODES):
+            return f"{type(node).__name__} is not allowed"
+        if isinstance(node, ast.Name) and node.id in BLOCKED_NAMES:
+            return f"name {node.id!r} is not allowed"
+        if isinstance(node, ast.Name) and node.id.startswith("__"):
+            return "dunder names are not allowed"
+        if isinstance(node, ast.Attribute):
+            if node.attr.startswith("__"):
+                return "dunder attributes are not allowed"
+            if node.attr in BLOCKED_ATTRS:
+                return f"attribute {node.attr!r} is not allowed"
+    return None
+
+
 def _run_sandboxed(code: str, dfs: dict[str, pd.DataFrame]) -> tuple[Any, str | None]:
     """Exec code in a restricted namespace. Returns (RESULT, error_message)."""
+    validation_error = _validate_code(code)
+    if validation_error:
+        return None, validation_error
+
     # Namespace with only safe primitives
     safe_builtins = {
         "abs": abs, "all": all, "any": any, "bool": bool, "dict": dict,
         "enumerate": enumerate, "float": float, "int": int, "isinstance": isinstance,
         "len": len, "list": list, "max": max, "min": min, "range": range,
         "round": round, "set": set, "sorted": sorted, "str": str, "sum": sum,
-        "tuple": tuple, "zip": zip, "print": print, "True": True, "False": False,
-        "None": None,
+        "tuple": tuple, "zip": zip,
     }
     namespace: dict[str, Any] = {
         "__builtins__": safe_builtins,
         "pd": pd, "math": math, "statistics": statistics,
-        **dfs,
+        **{name: df.copy(deep=True) for name, df in dfs.items()},
         "RESULT": None,
     }
     try:

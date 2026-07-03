@@ -19,6 +19,8 @@ from typing import Any
 
 import networkx as nx
 
+from api.core.sql_safety import validate_readonly_sql
+
 ROOT = Path(__file__).parent.parent.parent
 DB_PATH = ROOT / "data" / "corpus.db"
 GRAPH_PATH = ROOT / "data" / "citation_graph.gpickle"
@@ -247,10 +249,8 @@ class CorpusStore:
 
         Refuses any statement starting with INSERT/UPDATE/DELETE/DROP/etc.
         """
-        first = sql.strip().split(None, 1)[0].upper()
-        if first not in {"SELECT", "WITH"}:
-            raise ValueError(f"Only SELECT/WITH allowed, got {first!r}")
-        return [_row_to_dict(r) for r in self.conn.execute(sql, params)]
+        cleaned = validate_readonly_sql(sql)
+        return [_row_to_dict(r) for r in self.conn.execute(cleaned, params)]
 
     # ── citation graph ────────────────────────────────────────────────────
 

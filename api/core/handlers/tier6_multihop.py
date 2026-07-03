@@ -228,7 +228,7 @@ def _safe_serialize(result: dict, max_chars: int = MAX_TOOL_RESULT_CHARS) -> str
     return out[:max_chars] if len(out) > max_chars else out
 
 
-def _exec_tool(name: str, args: dict, store, retriever):
+async def _exec_tool(name: str, args: dict, store, retriever):
     """Execute a tool call against our store/retriever. Returns a JSON-serializable dict."""
     if name == "sql_query":
         sql = args.get("sql")
@@ -258,6 +258,29 @@ def _exec_tool(name: str, args: dict, store, retriever):
         if op == "shortest_path":
             return {"path": store.shortest_citation_path(args.get("paper_id"), args.get("paper_id_2"))}
         return {"error": f"unknown op {op}"}
+    elif name == "search_chunks":
+        query = args.get("query")
+        if not query:
+            return {"error": "query required"}
+        k = min(max(int(args.get("k", 5)), 1), 15)
+        paper_id = args.get("paper_id")
+        try:
+            result = await retriever.search(query, k=k, paper_id=paper_id)
+        except Exception as e:
+            return {"error": str(e)}
+        return {
+            "query": result["query"],
+            "cost_usd": result["cost_usd"],
+            "chunks": [
+                {
+                    "paper_id": c["paper_id"],
+                    "section_title": c["section_title"],
+                    "score": c["score"],
+                    "text": c["text"][:800],
+                }
+                for c in result["chunks"]
+            ],
+        }
     return {"error": f"unknown tool {name}"}
 
 
@@ -340,7 +363,7 @@ async def handle(question: str, store, retriever, classifier_meta: dict | None =
                 })
                 break
 
-            result = _exec_tool(name, args, store, retriever)
+            result = await _exec_tool(name, args, store, retriever)
             messages.append({
                 "role": "tool", "tool_call_id": tc.id,
                 "content": _safe_serialize(result),

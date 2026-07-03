@@ -9,18 +9,14 @@ Usage:
 """
 import argparse
 import asyncio
-import os
 import sys
 import time
 import traceback
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from api.core.classifier import TierClassifier  # noqa: E402
-from api.core.handlers import get_handler  # noqa: E402
-from api.core.handlers.base import is_adversarial  # noqa: E402
-from api.core.retrieval import Retriever  # noqa: E402
-from api.core.store import CorpusStore  # noqa: E402
+from api.core.pipeline import answer_question  # noqa: E402
+from api.core.runtime import RuntimeConfig  # noqa: E402
 
 # Question bank — designed to find bugs across tiers
 # Each tuple: (expected_tier, question, sanity_check_substring or None)
@@ -71,8 +67,7 @@ def safe_print(msg: str) -> None:
     print(msg.encode("ascii", errors="replace").decode("ascii"), flush=True)
 
 
-async def run_one(q: str, expected_tier: int, sanity: str | None,
-                  store, retriever, classifier) -> dict:
+async def run_one(q: str, expected_tier: int, sanity: str | None, budget: str) -> dict:
     t0 = time.time()
     out = {
         "question": q, "expected_tier": expected_tier,
@@ -81,26 +76,10 @@ async def run_one(q: str, expected_tier: int, sanity: str | None,
         "status": "", "notes": "",
     }
     try:
-        # Adversarial pre-check (mirrors /ask + CLI). Maps to virtual tier 0.
-        if is_adversarial(q):
-            out["actual_tier"] = 0
-            out["confidence"] = 1.0
-            out["answer"] = "(adversarial pre-check refused)"
-            ok_tier = (expected_tier == 0)
-            out["status"] = "OK" if ok_tier else "TIER-MISMATCH"
-            if not ok_tier:
-                out["notes"] = f"expected T{expected_tier}, refused as adversarial (T0)"
-            return out
-
-        meta = await classifier.classify(q)
-        out["actual_tier"] = meta["tier"]
-        out["confidence"] = meta["confidence"]
-        out["cost_usd"] += meta.get("cost_usd", 0.0)
-        normalized = meta.get("normalized_question") or q
-
-        handle = get_handler(meta["tier"])
-        result = await handle(normalized, store, retriever, classifier_meta=meta)
-        out["cost_usd"] += result.cost_usd
+        result = await answer_question(q, runtime=RuntimeConfig(budget_level=budget))
+        out["actual_tier"] = result.tier
+        out["confidence"] = result.tier_confidence
+        out["cost_usd"] = result.cost_usd
         out["answer"] = result.answer
 
         # Pass criteria:
@@ -108,13 +87,13 @@ async def run_one(q: str, expected_tier: int, sanity: str | None,
         #   - tier matches expected (or close — fallback to T1 is fine)
         #   - answer is non-trivial
         #   - if sanity substring given, must be in answer (case-insensitive)
-        ok_tier = meta["tier"] == expected_tier
+        ok_tier = result.tier == expected_tier
         ok_answer = bool(result.answer) and len(result.answer) > 20
         ok_sanity = (sanity is None) or (sanity.lower() in result.answer.lower())
 
         if not ok_tier:
             out["status"] = "TIER-MISMATCH"
-            out["notes"] = f"expected T{expected_tier} got T{meta['tier']}"
+            out["notes"] = f"expected T{expected_tier} got T{result.tier}"
         elif not ok_answer:
             out["status"] = "EMPTY-ANSWER"
         elif not ok_sanity:
@@ -135,11 +114,6 @@ async def amain():
     p = argparse.ArgumentParser()
     p.add_argument("--budget", default="$5", choices=["$1", "$5", "$20"])
     args = p.parse_args()
-    os.environ["BUDGET_LEVEL"] = args.budget
-
-    store = CorpusStore()
-    retriever = Retriever()
-    classifier = TierClassifier()
 
     safe_print(f"Running {len(BATTERY)} battery tests at budget {args.budget}\n")
     safe_print(f"{'#':>3} {'Tier':>5} {'Conf':>5} {'Cost':>8} {'Time':>6}  {'Status':<14}  {'Question':<60}")
@@ -147,7 +121,7 @@ async def amain():
 
     results = []
     for i, (expected, q, sanity) in enumerate(BATTERY, 1):
-        out = await run_one(q, expected, sanity, store, retriever, classifier)
+        out = await run_one(q, expected, sanity, args.budget)
         results.append(out)
         tier_str = f"T{out['actual_tier']}" if out["actual_tier"] else "?"
         if out["actual_tier"] != expected and out["actual_tier"] is not None:
