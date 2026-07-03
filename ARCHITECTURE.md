@@ -2,7 +2,7 @@
 
 ## Context
 
-Take-home assessment requires a system that answers natural-language questions across **8 difficulty tiers** over our 100-paper Vision Transformer corpus, with cited answers. Tasks 1 & 2 (corpus assembly) are done — 100 PDFs are at `data/pdfs/` with manifest at `data/manifest.csv`.
+Requires a system that answers natural-language questions across **8 difficulty tiers** over our 100-paper Vision Transformer corpus, with cited answers. Tasks 1 & 2 (corpus assembly) are done — 100 PDFs are at `data/pdfs/` with manifest at `data/manifest.csv`.
 
 **Constraints**: $30 USD hard cap, no fine-tuning, results must be defensible/citeable, judged on robustness (45%), cost-efficiency (35%), live test-set performance (20%). The system must produce a quality-vs-budget curve at $1 / $5 / $20 levels.
 
